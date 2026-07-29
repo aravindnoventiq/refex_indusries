@@ -79,26 +79,26 @@ export default defineConfig({
     port: 3000,
     host: "0.0.0.0",
     allowedHosts: [".ngrok-free.app", ".ngrok.io", ".trycloudflare.com"],
-    // Same-origin style as Adonis: proxy API paths to Express (APP_PORT || 8080)
+    // Same-origin style as Adonis: proxy API paths to Express (APP_PORT || 3052)
     proxy: {
       "/api": {
-        target: process.env.VITE_PROXY_TARGET || "http://localhost:8080",
+        target: process.env.VITE_PROXY_TARGET || "http://localhost:3052",
         changeOrigin: true,
       },
       "/auth": {
-        target: process.env.VITE_PROXY_TARGET || "http://localhost:8080",
+        target: process.env.VITE_PROXY_TARGET || "http://localhost:3052",
         changeOrigin: true,
       },
       "/cms": {
-        target: process.env.VITE_PROXY_TARGET || "http://localhost:8080",
+        target: process.env.VITE_PROXY_TARGET || "http://localhost:3052",
         changeOrigin: true,
       },
       "/uploads": {
-        target: process.env.VITE_PROXY_TARGET || "http://localhost:8080",
+        target: process.env.VITE_PROXY_TARGET || "http://localhost:3052",
         changeOrigin: true,
       },
       "/nse": {
-        target: process.env.VITE_PROXY_TARGET || "http://localhost:8080",
+        target: process.env.VITE_PROXY_TARGET || "http://localhost:3052",
         changeOrigin: true,
       },
     },

@@ -688,7 +688,7 @@ app.all("/api/*", (req, res) => {
 
 // Serve React frontend build (Adonis-style single-server setup)
 // Workflow: cd client && npm run build  →  cd server && npm start
-// Then open http://localhost:APP_PORT (default 8080) for site + API + uploads
+// Then open http://localhost:APP_PORT (default 3052) for site + API + uploads
 const clientBuildPath = path.join(__dirname, "../client/out");
 const distIndexPath = path.join(clientBuildPath, "index.html");
 
@@ -737,8 +737,9 @@ if (fs.existsSync(clientBuildPath) && fs.existsSync(distIndexPath)) {
   });
 }
 
-// set port
-const PORT = process.env.APP_PORT || 8080;
+// set port / host (0.0.0.0 = reachable on LAN / tunnels, same idea as Vite host)
+const PORT = process.env.APP_PORT || 3052;
+const HOST = process.env.APP_HOST || "0.0.0.0";
 
 sequelize
   .sync({ alter: true })
@@ -760,8 +761,12 @@ sequelize
   });
 
 function startServer() {
-  const server = app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
+  const server = app.listen(PORT, HOST, () => {
+    console.log(`Server is running on http://${HOST}:${PORT}`);
+    console.log(`Local:   http://localhost:${PORT}`);
+    if (fs.existsSync(path.join(__dirname, "../client/out", "index.html"))) {
+      console.log(`Frontend: served from client/out`);
+    }
     
     // Auto-start cron jobs for daily stock data updates at 8:00 PM
     try {
