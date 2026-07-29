@@ -6,7 +6,6 @@ const morgan = require("morgan");
 const path = require("path");
 const cors = require("cors");
 const { sequelize } = require("./models");
-const history = require("connect-history-api-fallback");
 const status = require("./helpers/response");
 const session = require("express-session");
 const passport = require("passport");
@@ -687,40 +686,53 @@ app.all("/api/*", (req, res) => {
   return status.responseStatus(res, 404, "Endpoint Not Found");
 });
 
-// Serve static files from the 'client/dist' directory (only if it exists)
-const distPath = path.join(__dirname, "../client/out");
-const distIndexPath = path.join(__dirname, "../client/out", "index.html");
+// Serve React frontend build (Adonis-style single-server setup)
+// Workflow: cd client && npm run build  →  cd server && npm start
+// Then open http://localhost:APP_PORT (default 8080) for site + API + uploads
+const clientBuildPath = path.join(__dirname, "../client/out");
+const distIndexPath = path.join(clientBuildPath, "index.html");
 
-if (fs.existsSync(distPath) && fs.existsSync(distIndexPath)) {
+if (fs.existsSync(clientBuildPath) && fs.existsSync(distIndexPath)) {
+  console.log("Serving frontend from:", clientBuildPath);
+
   app.use(
-    history({
-      rewrites: [
-        { from: /^\/api\/.*$/, to: (context) => context.parsedUrl.pathname },
-        { from: /^\/assets\/.*$/, to: (context) => context.parsedUrl.pathname },
-        { from: /^\/uploads\/.*$/, to: (context) => context.parsedUrl.pathname },
-      ],
+    express.static(clientBuildPath, {
+      maxAge: "1d",
+      etag: true,
+      lastModified: true,
+      index: false,
     }),
   );
-  app.use(express.static(distPath, { index: false }));
 
-  app.get("*", (req, res) => {
-    if (/^\/(assets|uploads|api)\//.test(req.path)) {
-      return res.status(404).send("Not found");
+  // Non-API routes → index.html (React Router). Skip backend mounts.
+  app.get("*", (req, res, next) => {
+    if (
+      req.path.startsWith("/api/") ||
+      req.path.startsWith("/auth") ||
+      req.path.startsWith("/cms") ||
+      req.path.startsWith("/uploads") ||
+      req.path.startsWith("/nse")
+    ) {
+      return next();
     }
 
     if (/\.[a-z0-9]+$/i.test(req.path) && !/\.html?$/i.test(req.path)) {
       return res.status(404).send("Not found");
     }
 
-    res.sendFile(distIndexPath);
+    return res.sendFile(distIndexPath);
   });
 } else {
-  // In development, if dist doesn't exist, just return API info for root
+  console.warn(
+    "Client build folder not found at",
+    clientBuildPath,
+    "- API will work but frontend will not be served. Run 'npm run build' in the client folder.",
+  );
   app.get("/", (req, res) => {
     res.json({
       success: true,
       message: "Backend API server is running",
-      note: "Client should be running separately on its dev server"
+      note: "Build the client (cd client && npm run build) so this server can serve client/out",
     });
   });
 }
