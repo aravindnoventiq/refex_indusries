@@ -1,0 +1,29 @@
+{
+  "slug": "charter-documents",
+  "title": "Charter Documents",
+  "hasYearFilter": false,
+  "filterItems": [],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Charter Documents",
+      "documents": [
+        {
+          "title": "Certificate of Incorporation",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Certificate_of_Incorporation.pdf"
+        },
+        {
+          "title": "Memorandum of Association",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2025/08/RIL_MOA_August-05-2025.pdf"
+        },
+        {
+          "title": "Articles of Association",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Articles_of_Association.pdf"
+        }
+      ],
+      "contents": [],
+      "audios": []
+    }
+  ]
+}
+

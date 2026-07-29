@@ -1,0 +1,35 @@
+[
+  {
+    "letter": "P",
+    "title": "Principled Excellence",
+    "description": "Doing what's right, with integrity and intention",
+    "image": "https://refex.co.in/wp-content/uploads/2024/11/our-values05.jpg",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "letter": "A",
+    "title": "Authenticity",
+    "description": "Bringing your true self to work, and honouring that in others.",
+    "image": "https://refex.co.in/wp-content/uploads/2025/06/our-values032.jpg",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "letter": "C",
+    "title": "Customer Value",
+    "description": "Keeping our customers at the heart of everything we do.",
+    "image": "https://refex.co.in/wp-content/uploads/2024/11/our-values01.jpg",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "letter": "E",
+    "title": "Esteem Culture",
+    "description": "Fostering a workplace where respect, dignity, and belonging are everyday experiences.",
+    "image": "https://refex.co.in/wp-content/uploads/2024/11/our-values02.jpg",
+    "order": 4,
+    "isActive": true
+  }
+]
+

@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Ash Utilization and Coal Handling",
+    "description": "Providing end-to-end ash handling/disposal, coal yard management, and coal trading solutions for thermal power plants",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/07455fbd11f25781b1c0645ed45ecceb.png",
+    "link": "/ash-utilization",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Green Mobility",
+    "description": "Offering tailored mobility services for corporate commuting and daily rides, with a focus on sustainability through electric four-wheeler fleets.",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/71f2b6479f74d24cab18fe163beff0f1.png",
+    "link": "https://refexmobility.com/",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Venwind Refex",
+    "description": "Aiming to drive sustainable wind energy adoption nationwide with advanced 5.3 MW wind turbine manufacturing in India",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/14ac7f1fbbb4c730f253c0cc8078f920.png",
+    "link": "https://venwindrefex.com/",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "title": "Refrigerant Gas",
+    "description": "A leading global supplier specializing in eco-friendly refrigerant gases, equipped with automated filling, rigorous quality control, and certified storage facilities",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/a8311a97127f77813e6f7198f947d66c.png",
+    "link": "/refrigerant-gas",
+    "order": 4,
+    "isActive": true
+  }
+]

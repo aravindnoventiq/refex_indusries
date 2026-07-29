@@ -1,0 +1,13 @@
+{
+  "title": "Leading India's Ash Transformation",
+  "subtitle": "Refex Industries is India's largest organized ash utilization company, delivering coal handling, end-to-end ash utilization solutions & other ancillary services for thermal power plants. By combining operational excellence, technology, and a strong industrial utilization network, we transform ash from an operational liability into a valuable resource, supporting regulatory compliance, circular economy objectives, and sustainable infrastructure development.",
+  "slides": [
+    { "video": "/ash-utilization/hero.mp4" },
+    { "video": "/ash-utilization/collage-1.mp4" },
+    { "video": "/ash-utilization/collage-2.mp4" },
+    { "video": "/ash-utilization/collage-3.mp4" },
+    { "video": "/ash-utilization/collage-4.mp4" },
+    { "video": "/ash-utilization/collage-5.mp4" }
+  ],
+  "isActive": true
+}

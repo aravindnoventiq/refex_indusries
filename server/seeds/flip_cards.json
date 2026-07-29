@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Sustainability & ESG",
+    "description": "Advancing sustainable progress through circular economy solutions, responsible business practices, and a commitment to creating lasting value.",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/5c9042a5517cccc81c390f42360622c6.png",
+    "backImage": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/ff134ade3e7cdb06a591b9f787f35d1d.png",
+    "link": "/esg/",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Investors",
+    "description": "Stay informed with our latest financial results, investor presentations, stock information, and corporate announcements.",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/857fbfe05f675330f7e584bf0ab44ecc.png",
+    "backImage": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/4fdca67bdfb39a83d2b83210bb1b5cf3.png",
+    "link": "/investors/",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Life At Refex",
+    "description": "Great businesses are built by great people. At Refex, we foster an environment where talent is empowered, collaboration is celebrated, and every individual has the opportunity to make a meaningful impact.",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/8818c5d55c5844bdefd4f3d1721b90ed.png",
+    "backImage": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/c46bbd8b593bd9cb6b8790cb61632cd7.png",
+    "link": "/careers/",
+    "order": 3,
+    "isActive": true
+  }
+]
+

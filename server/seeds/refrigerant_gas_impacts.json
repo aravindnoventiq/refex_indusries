@@ -1,0 +1,45 @@
+[
+  {
+    "title": "450 +",
+    "description": "Dealers and Distributions",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/dealers.svg",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Delhi & Mumbai",
+    "description": "Warehouses",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/warehouse.svg",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Tamil Nadu",
+    "description": "Refilling Facility",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/11/refrigerant.svg",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "title": "1st Company",
+    "description": "To introduce disposable Cans\nProvide 450 ml Refilling Cans",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/company.svg",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "title": "Range of Products",
+    "description": "R32, R134A, R404A, R407C, R410A, R22, R290, R600a, HC Blend and Butane",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/can.svg",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "title": "1st ISO Certified",
+    "description": "Refrigerant Gas filling unit in India",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/iso.svg",
+    "order": 6,
+    "isActive": true
+  }
+]
+

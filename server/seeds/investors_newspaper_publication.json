@@ -1,0 +1,341 @@
+{
+  "slug": "newspaper-publication",
+  "title": "Newspaper Publication",
+  "hasYearFilter": true,
+  "filterItems": [
+    "2025-26",
+    "2024-25",
+    "2023-24",
+    "2022-23",
+    "2021-22"
+  ],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "AGM",
+      "documents": [
+        {
+          "year": "2025-26",
+          "title": "23rd AGM – Notice – Newspaper Publication – 2025",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/23rd-agm-notice-newspaper-publication-2025-1765861560179-140288964.pdf"
+        },
+        {
+          "year": "2025-26",
+          "title": "23rd AGM Pre-Notice – Newspaper Publication – 2025",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/23rd-agm-pre-notice-newspaper-publication-2025-1765861560665-635102573.pdf"
+        },
+        {
+          "year": "2024-25",
+          "title": "22nd AGM Newspaper Publication",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/22nd-agm-newspaper-publication-1765861561251-83792040.pdf"
+        },
+        {
+          "year": "2023-24",
+          "title": "21st AGM Newspaper Publication",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/21st-agm-newspaper-publication-1765861562416-801841078.pdf"
+        },
+        {
+          "year": "2022-23",
+          "title": "AGM Newspaper Ad and Corrigendum",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/agm-newspaper-ad-and-corrigendum-1765861564779-132701632.pdf"
+        },
+        {
+          "year": "2021-22",
+          "title": "Dinamani Refex AGM Notice",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-refex-agm-notice-1765861564945-396337693.pdf"
+        },
+        {
+          "year": "2021-22",
+          "title": "Business Standard Refex AGM Notice",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-refex-agm-notice-1765861565479-802192991.pdf"
+        }
+      ]
+    },
+    {
+      "title": "June 2025",
+      "documents": [
+        {
+          "year": "2025-26",
+          "title": "RIL- Financial Results FY26",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/ril--financial-results-fy26-1765861565795-853794986.pdf",
+          "publishedDate": "13/08/2025"
+        }
+      ]
+    },
+    {
+      "title": "March 2025",
+      "documents": [
+        {
+          "year": "2025-26",
+          "title": "RIL- Financial Results FY25",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/ril--financial-results-fy25-1765861566445-747078140.pdf",
+          "publishedDate": "25/04/2025"
+        }
+      ]
+    },
+    {
+      "title": "Postal ballot",
+      "documents": [
+        {
+          "year": "2025-26",
+          "title": "RIL- Copy of Newspaper publication – Postal Ballot",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/ril--copy-of-newspaper-publication-postal-ballot-1765861567400-419407613.pdf"
+        },
+        {
+          "year": "2023-24",
+          "title": "Postal ballot Notice Newspaper Publication",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/postal-ballot-notice-newspaper-publication-1765861569212-523434319.pdf"
+        }
+      ]
+    },
+    {
+      "title": "September 2025",
+      "documents": [
+        {
+          "year": "2025-26",
+          "title": "RIL- Financial Results FY26",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/ril--financial-results-fy26-1765861569550-9443751.pdf",
+          "publishedDate": "05/11/2025"
+        }
+      ]
+    },
+    {
+      "title": "December 2024",
+      "documents": [
+        {
+          "year": "2024-25",
+          "title": "Dinamani Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-results-1765861570458-356791003.pdf",
+          "publishedDate": "29/01/2025"
+        },
+        {
+          "year": "2024-25",
+          "title": "Business Standard Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-results-1765861571231-777517154.pdf",
+          "publishedDate": "28/01/2025"
+        }
+      ]
+    },
+    {
+      "title": "September 2024",
+      "documents": [
+        {
+          "year": "2024-25",
+          "title": "Dinamani Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-results-1765861572483-197261891.pdf",
+          "publishedDate": "15/11/2024"
+        },
+        {
+          "year": "2024-25",
+          "title": "Business Standard Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-results-1765861572928-351641617.pdf",
+          "publishedDate": "11/11/2024"
+        }
+      ]
+    },
+    {
+      "title": "June 2024",
+      "documents": [
+        {
+          "year": "2024-25",
+          "title": "Dinamani Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-results-1765861574393-527794473.pdf",
+          "publishedDate": "30/06/2024"
+        },
+        {
+          "year": "2024-25",
+          "title": "Business Standard Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-results-1765861575625-844408515.pdf",
+          "publishedDate": "30/06/2024"
+        }
+      ]
+    },
+    {
+      "title": "December 2023",
+      "documents": [
+        {
+          "year": "2023-24",
+          "title": "Dinamani Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-results-1765861577447-217873026.pdf",
+          "publishedDate": "31/12/2023"
+        },
+        {
+          "year": "2023-24",
+          "title": "Business Standard Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-results-1765861578184-273745139.pdf",
+          "publishedDate": "31/12/2023"
+        }
+      ]
+    },
+    {
+      "title": "September 2023",
+      "documents": [
+        {
+          "year": "2023-24",
+          "title": "Dinamani Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-results-1765861578451-435992493.pdf",
+          "publishedDate": "30/09/2023"
+        },
+        {
+          "year": "2023-24",
+          "title": "Business Standard Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-results-1765861579048-160958290.pdf",
+          "publishedDate": "30/09/2023"
+        }
+      ]
+    },
+    {
+      "title": "June 2023",
+      "documents": [
+        {
+          "year": "2023-24",
+          "title": "The Economic Times Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/the-economic-times-results-1765861579573-882026154.pdf",
+          "publishedDate": "30/06/2023"
+        },
+        {
+          "year": "2023-24",
+          "title": "Dinamani Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-results-1765861579837-531111158.pdf",
+          "publishedDate": "30/06/2023"
+        },
+        {
+          "year": "2023-24",
+          "title": "Business Standard Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-results-1765861580661-166104352.pdf",
+          "publishedDate": "30/06/2023"
+        }
+      ]
+    },
+    {
+      "title": "March 2024",
+      "documents": [
+        {
+          "year": "2023-24",
+          "title": "Dinamani-Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-results-1765861580920-503675482.pdf",
+          "publishedDate": "31/03/2024"
+        },
+        {
+          "year": "2023-24",
+          "title": "Business Standard Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-results-1765861582027-63968507.pdf",
+          "publishedDate": "31/03/2024"
+        }
+      ]
+    },
+    {
+      "title": "December 2022",
+      "documents": [
+        {
+          "year": "2022-23",
+          "title": "Business Standard and Dinamani",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-and-dinamani-1765861583346-720101495.pdf",
+          "publishedDate": "31/12/2022"
+        }
+      ]
+    },
+    {
+      "title": "September 2022",
+      "documents": [
+        {
+          "year": "2022-23",
+          "title": "Business Standard and Dinamani",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-and-dinamani-1765861585114-202914430.pdf",
+          "publishedDate": "30/09/2022"
+        }
+      ]
+    },
+    {
+      "title": "June 2022",
+      "documents": [
+        {
+          "year": "2022-23",
+          "title": "Business Standard Refex Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-refex-results-1765861585978-621738563.pdf",
+          "publishedDate": "30/06/2022"
+        },
+        {
+          "year": "2022-23",
+          "title": "Dinamani Refex Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-refex-results-1765861586210-836751280.pdf",
+          "publishedDate": "30/06/2022"
+        }
+      ]
+    },
+    {
+      "title": "March 2023",
+      "documents": [
+        {
+          "year": "2022-23",
+          "title": "The Economic Times Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/the-economic-times-results-1765861586327-468053132.pdf",
+          "publishedDate": "31/03/2023"
+        },
+        {
+          "year": "2022-23",
+          "title": "Dinamani Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-results-1765861586544-793946673.pdf",
+          "publishedDate": "31/03/2023"
+        },
+        {
+          "year": "2022-23",
+          "title": "Business Standard Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-results-1765861586843-550869607.pdf",
+          "publishedDate": "31/03/2023"
+        }
+      ]
+    },
+    {
+      "title": "December 2021",
+      "documents": [
+        {
+          "year": "2021-22",
+          "title": "Dinamani Refex Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-refex-results-1765861587057-757114116.pdf",
+          "publishedDate": "31/12/2021"
+        },
+        {
+          "year": "2021-22",
+          "title": "Business Standard Refex Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-refex-results-1765861587909-564061148.pdf",
+          "publishedDate": "31/12/2021"
+        }
+      ]
+    },
+    {
+      "title": "September 2021",
+      "documents": [
+        {
+          "year": "2021-22",
+          "title": "Dinamani Refex Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-refex-results-1765861588100-603395199.pdf",
+          "publishedDate": "30/09/2021"
+        },
+        {
+          "year": "2021-22",
+          "title": "Business Standard Refex Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-refex-results-1765861589399-444973765.pdf",
+          "publishedDate": "30/09/2021"
+        }
+      ]
+    },
+    {
+      "title": "March 2022",
+      "documents": [
+        {
+          "year": "2021-22",
+          "title": "Dinamani Refex Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/dinamani-refex-results-1765861589658-948035013.pdf",
+          "publishedDate": "31/03/2022"
+        },
+        {
+          "year": "2021-22",
+          "title": "Business Standard Refex Results",
+          "pdfUrl": "/uploads/pdfs/newspaper-publication/business-standard-refex-results-1765861590092-810724890.pdf",
+          "publishedDate": "31/03/2022"
+        }
+      ]
+    }
+  ]
+}

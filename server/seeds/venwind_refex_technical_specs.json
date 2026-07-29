@@ -1,0 +1,31 @@
+[
+  {
+    "value": "26016 m2",
+    "label": "Swept Area",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/06/swept-area-new.svg",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "value": "130m",
+    "label": "Hub Height",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/06/hub-height-new.svg",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "value": "2.5 m/s",
+    "label": "Cut-in Wind Speed",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/06/cut-in-wind-new.svg",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "value": "IEC S",
+    "label": "Class",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/06/IECs-Class-new.svg",
+    "order": 4,
+    "isActive": true
+  }
+]
+

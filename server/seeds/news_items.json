@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Dinesh Agarwal, CEO of Refex Group, on ET Now",
+    "image": "https://refex.co.in/wp-content/uploads/2025/11/newsroom-thumbnail-video.jpg",
+    "link": "/press_releases/dinesh-agarwal-ceo-of-refex-group-on-et-now/",
+    "category": "Press Release",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Refex Mobility expands operations to Delhi NCR",
+    "image": "https://refex.co.in/wp-content/uploads/2025/11/Refex-Mobility-expands.jpg",
+    "link": "/press_releases/refex-mobility-expands-operations-to-delhi-ncr/",
+    "category": "Press Release",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Refex eVeelz rebrands as Refex Mobility; to consolidate focus on existing Tier-1 market",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/2675d7edc8e086e4c4be378eba93a660.jpeg",
+    "link": "/press_releases/refex-eveelz-rebrands-as-refex-mobility-to-consolidate-focus-on-existing-tier-1-market/",
+    "category": "Press Release",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "title": "Refex Group is the Official Sponsor of Chennai Super Kings",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/d674bfc0dcb4ffb4355d91b67e0eb3b3.jpeg",
+    "link": "/press_releases/refex-group-is-the-official-sponsor-of-chennai-super-kings/",
+    "category": "Press Release",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "title": "Uber partners with Chennai-based Refex Green Mobility to deploy 1,000 EVs across cities",
+    "image": "https://refex.co.in/wp-content/uploads/2025/07/press-release02.jpg",
+    "link": "/press_releases/uber-partners-with-chennai-based-refex-green-mobility-to-deploy-1000-evs-across-cities/",
+    "category": "Press Release",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "title": "Refex Group Strengthens Leadership in Sustainability at UNGCNI Annual Convention 2025",
+    "image": "https://refex.co.in/wp-content/uploads/2025/07/press-release04.jpg",
+    "link": "/press_releases/refex-group-strengthens-leadership-in-sustainability-at-ungcni-annual-convention-2025/",
+    "category": "Press Release",
+    "order": 6,
+    "isActive": true
+  }
+]
+

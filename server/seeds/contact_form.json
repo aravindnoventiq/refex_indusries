@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Get in Touch",
+    "subtitle": "Have Questions? We're happy to help!",
+    "mapEmbedUrl": "https://maps.google.com/maps?q=Refex+Towers,+313+Sterling+Road,+Nungambakkam,+Chennai,+Tamil+Nadu+600034&hl=en&z=17&output=embed",
+    "formEndpointUrl": "https://readdy.ai/api/form/d4ijdrv1vras6h6ft1qg",
+    "successMessage": "Thank you! Your message has been sent successfully.",
+    "errorMessage": "Sorry, there was an error sending your message. Please try again.",
+    "isActive": true
+  }
+]
+

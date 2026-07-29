@@ -1,0 +1,19 @@
+{
+  "title": "STOCK CHART",
+  "filterToday": "Today",
+  "filter5Days": "5 Days",
+  "filter1Month": "1 Month",
+  "filter3Months": "3 Months",
+  "filter6Months": "6 Months",
+  "filter1Year": "1 Year",
+  "filter3Years": "3 Years",
+  "filterYTD": "YTD",
+  "filterMAX": "MAX",
+  "filterCustom": "Custom",
+  "defaultChartType": "line",
+  "defaultExchange": "BSE",
+  "defaultFilter": "Today",
+  "nonce": "44efac5c14",
+  "isActive": true
+}
+

@@ -1,0 +1,17 @@
+[
+  {
+    "key": "press",
+    "label": "Press Releases",
+    "order": 1,
+    "isActive": true,
+    "isDefault": true
+  },
+  {
+    "key": "events",
+    "label": "Events",
+    "order": 2,
+    "isActive": true,
+    "isDefault": false
+  }
+]
+

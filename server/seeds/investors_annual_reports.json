@@ -1,0 +1,87 @@
+{
+  "slug": "annual-reports",
+  "title": "Annual Reports",
+  "hasYearFilter": true,
+  "filterItems": ["2024-25", "2023-24", "2022-23", "2021-22", "2020-21", "2019-20", "2018-19", "2017-18", "2016-17", "2015-16", "2014-15", "2013-14", "2012-13", "2011-12"],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Annual Reports",
+      "documents": [
+        {
+          "title": "Annual Report 2024-25",
+          "year": "2024-25",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2025/07/RIL_23rd_AR_FY24-25.pdf",
+          "thumbnail": "https://refex.co.in/wp-content/uploads/2025/07/Capture.png"
+        },
+        {
+          "title": "Annual Report 2023-2024",
+          "year": "2023-24",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/RIL-Annual-Report-2023-24.pdf",
+          "thumbnail": "https://refex.co.in/wp-content/uploads/2023/12/Capture1.png"
+        },
+        {
+          "title": "Annual Report 2022-2023",
+          "year": "2022-23",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual-Report-2022-2023.pdf"
+        },
+        {
+          "title": "Annual Report 2021-2022",
+          "year": "2021-22",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual-Report-2021-2022.pdf"
+        },
+        {
+          "title": "Annual Report 2020-2021",
+          "year": "2020-21",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual-Report_2020-2021.pdf"
+        },
+        {
+          "title": "Annual Report 2019-2020",
+          "year": "2019-20",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual-Report_2019-2020.pdf"
+        },
+        {
+          "title": "Annual Report 2018-2019",
+          "year": "2018-19",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual-Report_2019.pdf"
+        },
+        {
+          "title": "Annual Report 2017-2018",
+          "year": "2017-18",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Refex_Annual_Report_2017_2018.pdf"
+        },
+        {
+          "title": "Annual Report 2016-2017",
+          "year": "2016-17",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual_Report_2016-2017.pdf"
+        },
+        {
+          "title": "Annual Report 2015-2016",
+          "year": "2015-16",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual-Book-Final-.pdf"
+        },
+        {
+          "title": "Annual Report 2014-2015",
+          "year": "2014-15",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Refex_Annual_Report_2014-2015.pdf"
+        },
+        {
+          "title": "Annual Report 2013-2014",
+          "year": "2013-14",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual_Report_2013-2014.pdf"
+        },
+        {
+          "title": "Annual Report 2012-2013",
+          "year": "2012-13",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual_Report_2012-2013.pdf"
+        },
+        {
+          "title": "Annual Report 2011-2012",
+          "year": "2011-12",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/2011_12_Annual_report.pdf"
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,31 @@
+[
+  {
+    "number": "436.16 lakh / 4.36+ crore",
+    "label": "e-Kms covered",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/leased.svg",
+    "order": 0,
+    "isActive": true
+  },
+  {
+    "number": "19+ lakh",
+    "label": "Happy Riders",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/dealers.svg",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "number": "7.6+ lakh",
+    "label": "Rides Completed",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/11/fleet.svg",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "number": "28.35+ lakh kg",
+    "label": "Tailpipe CO₂ abated",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/11/Co2.svg",
+    "order": 3,
+    "isActive": true
+  }
+]
+

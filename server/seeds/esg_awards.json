@@ -1,0 +1,33 @@
+[
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/11/ESG_CSR_Award_01-Medium-300x295-1.png",
+    "title": "Most Diversified Sustainable Company (India) by The Business Concept",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/11/Sustainability-report-award-Medium-300x225-1.png",
+    "title": "Bronze Prize of Asia's Best Integrated Report for our First-ever Sustainability Report by AIRA",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/green-apple-award01.png",
+    "title": "International Green Apple Environment Award 2024",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/waste-managemnet-award01.png",
+    "title": "Best Waste Management Solution Award",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/esg-excellence-award01.png",
+    "title": "ESG Excellence Award by ESG Grit Awards",
+    "order": 5,
+    "isActive": true
+  }
+]
+

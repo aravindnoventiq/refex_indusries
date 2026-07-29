@@ -1,0 +1,80 @@
+[
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/2-22-img03.jpg",
+    "name": "R22",
+    "link": "/product/r22",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/404a-img.jpg",
+    "name": "R404A",
+    "link": "/product/r404a",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/2cd30431e93d87e60025af1c06527b77.jpeg",
+    "name": "HFC-134A",
+    "link": "/product/hfc-134a",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/01/R32-img.png",
+    "name": "R32",
+    "link": "/product/r32",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/01/407a.png",
+    "name": "R407C",
+    "link": "/product/r407c",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/01/410a-img.jpg",
+    "name": "R410A",
+    "link": "/product/r410a",
+    "order": 6,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/r-600a.jpg",
+    "name": "R600A",
+    "link": "/product/r600a",
+    "order": 7,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/r-290a.jpg",
+    "name": "R290",
+    "link": "/product/r290",
+    "order": 8,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/hydrocarbon.jpg",
+    "name": "Hydrocarbon",
+    "link": "/product/hydrocarbon",
+    "order": 9,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/butane.jpg",
+    "name": "Butane",
+    "link": "/product/butane",
+    "order": 10,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/04/copper-tubes01.jpg",
+    "name": "Copper Tubes",
+    "link": "/product/copper-tubes",
+    "order": 11,
+    "isActive": true
+  }
+]
+

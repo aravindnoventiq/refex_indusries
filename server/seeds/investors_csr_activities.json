@@ -1,0 +1,21 @@
+{
+  "slug": "csr-activities",
+  "title": "CSR Activities",
+  "hasYearFilter": false,
+  "filterItems": [],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "CSR Activities",
+      "documents": [
+        {
+          "title": "CSR Activities 2023-24",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/CSR-Activities-2023-24.pdf"
+        }
+      ],
+      "contents": [],
+      "audios": []
+    }
+  ]
+}
+

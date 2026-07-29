@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Refex Gheun Tak – A Women's Ultimate Frisbee Tournament",
+    "date": "January 25, 2023",
+    "source": "Times of India",
+    "image": "https://refex.co.in/wp-content/uploads/2023/02/Refex-Gheun-Tak-A-Womenss-Ultimate-Frisbee-Tournament.jpg",
+    "link": "https://businessnewsthisweek.com/business/team-meraki-wins-refex-gheun-tak-a-womens-ultimate-frisbee-tournament/",
+    "category": "Frisbee Tournament",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Refex Group Road Safety Awareness event",
+    "date": "January 11, 2023",
+    "source": "Events",
+    "image": "https://refex.co.in/wp-content/uploads/2023/01/Refex-Group-Road-Safety-Awareness-event.jpg",
+    "link": "https://navjeevanexpress.com/csr-initiative-refex-group-kick-starts-road-safety-campaign-on-anna-salai-in-chennai/",
+    "category": "Awareness event",
+    "order": 2,
+    "isActive": true
+  }
+]
+

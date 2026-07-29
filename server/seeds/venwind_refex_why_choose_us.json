@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Hybrid Drive-Train for Superior Efficiency",
+    "description": "Gearbox + medium-speed PMG delivers high performance, reliability, and energy efficiency",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/06/icon012.svg",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Globally Proven Technology",
+    "description": "Deployed in Australia, South Africa, Brazil, and the Middle East, proving reliability across diverse conditions",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/06/icon03.svg",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Rapid Deployment",
+    "description": "Designed for fast manufacturing and installation to meet tight project schedules",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/06/icon014.svg",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "title": "Lower Operational Costs",
+    "description": "Hybrid system reduces maintenance and enhances reliability, cutting long-term Opex",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/06/icon015.svg",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "title": "Reduced BOP Costs",
+    "description": "Larger WTG sizes cut infrastructure needs, delivering 20–25% savings",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/06/icon016.svg",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "title": "Lower LCOE",
+    "description": "Improved technology and BOP savings drive down energy costs",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/06/save-money.svg",
+    "order": 6,
+    "isActive": true
+  }
+]
+

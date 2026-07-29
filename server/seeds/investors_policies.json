@@ -1,0 +1,70 @@
+{
+  "slug": "policies",
+  "title": "Policies",
+  "hasYearFilter": false,
+  "filterItems": [],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Policies",
+      "documents": [
+        {
+          "title": "RIL - Risk Management Policy",
+          "pdfUrl": "/uploads/pdfs/policies/ril---risk-management-policy-1765863125482-761125541.pdf"
+        },
+        {
+          "title": "Code for Trading in Securities by Designated Persons",
+          "pdfUrl": "/uploads/pdfs/policies/code-for-trading-in-securities-by-designated-perso-1765863125554-240418421.pdf"
+        },
+        {
+          "title": "Dividend Distribution Policy",
+          "pdfUrl": "/uploads/pdfs/policies/dividend-distribution-policy-1765863125595-191669679.pdf"
+        },
+        {
+          "title": "Grievance Redressal Mechanism Policy",
+          "pdfUrl": "/uploads/pdfs/policies/grievance-redressal-mechanism-policy-1765863125687-642196853.pdf"
+        },
+        {
+          "title": "Policy on Determining Materiality",
+          "pdfUrl": "/uploads/pdfs/policies/policy-on-determining-materiality-1765863125737-960752055.pdf"
+        },
+        {
+          "title": "Anti-Bribery Policy",
+          "pdfUrl": "/uploads/pdfs/policies/anti-bribery-policy-1765863125808-478871008.pdf"
+        },
+        {
+          "title": "Code for Trading in Securities by Designated Persons",
+          "pdfUrl": "/uploads/pdfs/policies/code-for-trading-in-securities-by-designated-perso-1765863125887-95170568.pdf"
+        },
+        {
+          "title": "Code of Conduct BoDs & SM",
+          "pdfUrl": "/uploads/pdfs/policies/code-of-conduct-bods-sm-1765863125927-23295570.pdf"
+        },
+        {
+          "title": "Policy for Determining Material Subsidiary",
+          "pdfUrl": "/uploads/pdfs/policies/policy-for-determining-material-subsidiary-1765863125982-374799878.pdf"
+        },
+        {
+          "title": "Vigil Mechanism or Whistle Blower Policy",
+          "pdfUrl": "/uploads/pdfs/policies/vigil-mechanism-or-whistle-blower-policy-1765863126021-556436638.pdf"
+        },
+        {
+          "title": "Policy on Related Party Transaction",
+          "pdfUrl": "/uploads/pdfs/policies/policy-on-related-party-transaction-1765863126071-460256057.pdf"
+        },
+        {
+          "title": "Policy on Archive and Preservation of documents",
+          "pdfUrl": "/uploads/pdfs/policies/policy-on-archive-and-preservation-of-documents-1765863126120-620552706.pdf"
+        },
+        {
+          "title": "Nomination Remuneration Policy",
+          "pdfUrl": "/uploads/pdfs/policies/nomination-remuneration-policy-1765863126157-630837237.pdf"
+        },
+        {
+          "title": "CSR Policy",
+          "pdfUrl": "/uploads/pdfs/policies/csr-policy-1765863126195-393554968.pdf"
+        }
+      ]
+    }
+  ]
+}

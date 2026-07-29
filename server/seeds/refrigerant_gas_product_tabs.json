@@ -1,0 +1,24 @@
+[
+  {
+    "tabId": "quality",
+    "label": "Product Quality",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/product-quality-img.jpg",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "tabId": "safety",
+    "label": "Product Safety",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/product-safet-new.jpg",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "tabId": "applications",
+    "label": "Product Applications",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/product-application-new.jpg",
+    "order": 3,
+    "isActive": true
+  }
+]
+

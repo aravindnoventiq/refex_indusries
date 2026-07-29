@@ -1,0 +1,131 @@
+[
+  {
+    "name": "Purvesh Kapadia",
+    "position": "Group CHRO",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/a3cdce632dade111205dc229ca702480.jpeg",
+    "category": "Leadership Team",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "name": "Jagdish Jain",
+    "position": "Business Head – Ash & Coal Handling",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/f2538c4119485fe4950056c01b3ea5c1.jpeg",
+    "category": "Leadership Team",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "name": "Tarun Arora",
+    "position": "Chief Business Officer - Ash & Coal Handling",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/7d00bda8147f6ca0402ffe4d0229c91a.jpeg",
+    "category": "Leadership Team",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "name": "Vishesh Mehta",
+    "position": "Head – Business Development",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/df5cd0840e6728325f93359639aa6af7.jpeg",
+    "category": "Leadership Team",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "name": "Harsh Dugar",
+    "position": "CGO - Ash Handling",
+    "image": "/leadership-harsh-dugar.png",
+    "category": "Leadership Team",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "name": "Gautam Jain",
+    "position": "Head – Investor Relations",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/6320746249dc94215f9abbc6931360d3.jpeg",
+    "category": "Leadership Team",
+    "order": 6,
+    "isActive": true
+  },
+  {
+    "name": "Sahil Singla",
+    "position": "President – Corporate Finance",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/7aa09c07a2f5ee0987f94fe77b52ad97.jpeg",
+    "category": "Leadership Team",
+    "order": 7,
+    "isActive": true
+  },
+  {
+    "name": "Sonal Jain",
+    "position": "VP – Accounts & Taxation",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/249a08fe6439bff3b3dd144954f457dc.jpeg",
+    "category": "Leadership Team",
+    "order": 8,
+    "isActive": true
+  },
+  {
+    "name": "Ankit Poddar",
+    "position": "Head - Company Secretarial",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/35e0da7c9f5ab0865c3900218fd86ee5.jpeg",
+    "category": "Leadership Team",
+    "order": 9,
+    "isActive": true
+  },
+  {
+    "name": "Harini Sriraman",
+    "position": "VP – Group General Counsel",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/a91805dd99005b82031b3337c82f6be9.jpeg",
+    "category": "Leadership Team",
+    "order": 10,
+    "isActive": true
+  },
+  {
+    "name": "Srividya Nirmalkumar",
+    "position": "VP – Corporate Communications",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/49646d988247ba663117d728c1a33578.jpeg",
+    "category": "Leadership Team",
+    "order": 11,
+    "isActive": true
+  },
+  {
+    "name": "Suhail Shariff",
+    "position": "VP – Administration & Facility",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/141c0f21775768dd0d8085ff8a4045a3.jpeg",
+    "category": "Leadership Team",
+    "order": 12,
+    "isActive": true
+  },
+  {
+    "name": "Srivaths Varadharajan",
+    "position": "Group CTO",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/b5a87c6ce8126d6f195386692ea36204.jpeg",
+    "category": "Leadership Team",
+    "order": 13,
+    "isActive": true
+  },
+  {
+    "name": "Jaya Krishna",
+    "position": "Director - Corporate Finance",
+    "image": "/leadership-jaya-krishna.png",
+    "category": "Leadership Team",
+    "order": 14,
+    "isActive": true
+  },
+  {
+    "name": "Prasad Jakkaraju",
+    "position": "Group Head - ESG",
+    "image": "/leadership-prasad-jakkaraju.png",
+    "category": "Leadership Team",
+    "order": 15,
+    "isActive": true
+  },
+  {
+    "name": "Mili Dubey",
+    "position": "Head – Policy Advocacy & Corporate Affairs",
+    "image": "/leadership-mili-dubey.png",
+    "category": "Leadership Team",
+    "order": 16,
+    "isActive": true
+  }
+]
+

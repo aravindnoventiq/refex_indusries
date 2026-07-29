@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Sustainability Report",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/sustainibility-report-new.jpg",
+    "link": "https://refex.co.in/wp-content/uploads/2025/02/Sustainability-Report-2023-24.pdf",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "BRSR",
+    "image": "https://refex.co.in/wp-content/uploads/2025/01/brsr-dashboard.jpg",
+    "link": "https://refex.co.in/wp-content/uploads/2025/09/BRSR.pdf",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "ESG Performance Dashboard",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/esg-dashboard.jpg",
+    "link": "https://refex.co.in/wp-content/uploads/2025/07/ESG_Dashboard_FY-24-25-1.pdf",
+    "order": 3,
+    "isActive": true
+  }
+]
+

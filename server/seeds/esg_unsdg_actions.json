@@ -1,0 +1,131 @@
+[
+  {
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/sdg03.png",
+    "title": "Good Health and Well-being",
+    "points": [
+      "Certified to ISO 45001:2018, demonstrating a robust Occupational Health and Safety Management System.",
+      "Mission Zero Harm initiative with a target to achieve a Lost Time Injury Rate (LTIR) ≤ 0.2 by 2035.",
+      "Regular health awareness, safety training, mental well-being sessions, and employee counseling programs.",
+      "Provided healthcare services, including first aid, nursing support, health check-ups and BLS training, benefiting around 600+ students."
+    ],
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "icon": "https://refex.co.in/wp-content/uploads/2025/06/sdg041.png",
+    "title": "Quality Education",
+    "points": [
+      "Merit scholarship and financial support to 5 Children in Ramakrishna Mission School, Chennai",
+      "Supported 130 tribal schools across 130 villages in Chhattisgarh, benefiting around 3250 children by improving access to quality early education.",
+      "In Bhasma, Sundargarh district, support extended to a residential school for 45 students, including orphans and children from underprivileged backgrounds."
+    ],
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "icon": "https://refex.co.in/wp-content/uploads/2025/02/sdg04.png",
+    "title": "Gender Equality",
+    "points": [
+      "Currently, women make up 12% of our workforce, and we aim to increase this representation to 15% within the next two years.",
+      "Implemented a 'Wellness Work from Home' choice, enabling women to prioritize self-care during their menstrual cycle."
+    ],
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/sdg06.png",
+    "title": "Clean Water & Sanitation",
+    "points": [
+      "Our \"Nirmal Jal\" initiative strives to ensure accessible clean water by rejuvenating dependent water bodies and rainwater harvesting.",
+      "Installed a 250 LPH RO water purification unit with a 3-year AMC at Chennai Middle School, providing access to safe drinking water for 310 students.",
+      "Achieve Water Positive status by 2035 under Refex Sustainability Vision 2035."
+    ],
+    "video": "https://www.youtube.com/embed/Jlk4HC70Jek?rel=0&modestbranding=1&showinfo=0&controls=0",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/sdg07.png",
+    "title": "Affordable & Clean Energy",
+    "points": [
+      "50% Green Energy Across Operations (at group level) by 2035 as part of Refex's Sustainability Vision.",
+      "Operating a 68 MW solar power facility at the Bhilai Plant, and supplying uninterrupted solar energy to South East Central Railway through a power purchase agreement (PPA)",
+      "Incorporated smart grid systems to elevate the efficiency and dependability of the solar power plant",
+      "Set up and commissioned two 1MW - 2MWH-BESS Solar Plant at Pratapur and Siachen for Indian Army",
+      "Installed a 43 kWp rooftop solar PV system at the Chennai Corporate Office, generating approximately 51,600 kWh of renewable electricity annually."
+    ],
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "icon": "https://refex.co.in/wp-content/uploads/2025/02/sdg09.png",
+    "title": "Industry, Innovation and Infrastructure",
+    "points": [
+      "Venwind Refex is focused on advancing India's clean energy future by manufacturing sustainable wind turbines to deliver scalable, low-carbon energy solutions.",
+      "Continued investments in digital technologies, fleet telematics, and operational efficiency."
+    ],
+    "order": 6,
+    "isActive": true
+  },
+  {
+    "icon": "https://refex.co.in/wp-content/uploads/2025/02/sdg10.png",
+    "title": "Reduced Inequalities",
+    "points": [
+      "Workforce Experience Blend: A harmonious mix of youthful energy and seasoned expertise among Refexians",
+      "We offer regional religious holidays that cater to their diverse festive observances, with a holiday calendar tailored to respect individual religious inclinations.",
+      "We have well-rounded diversity within our organization, embracing a harmonious mix of religious, linguistic, geographical, and age variations."
+    ],
+    "order": 7,
+    "isActive": true
+  },
+  {
+    "icon": "https://refex.co.in/wp-content/uploads/2025/02/sdg11.png",
+    "title": "Sustainable Cities and Communities",
+    "points": [
+      "Refex Green Mobility expanded its fleet by adding 182 electric vehicles and 15 CNG-petrol vehicles during FY 2025–26.",
+      "Provides clean mobility solutions across major Indian cities, reducing emissions and supporting sustainable urban transportation."
+    ],
+    "order": 8,
+    "isActive": true
+  },
+  {
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/sdg12.png",
+    "title": "Responsible Consumption & Production",
+    "points": [
+      "Ash utilization business facilitates eco-friendly disposal and management of ash, partnering with the cement manufacturing plant, brick manufacturer, and block industries, ensuring circularity of material and GHG emission reduction."
+    ],
+    "order": 9,
+    "isActive": true
+  },
+  {
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/sdg13.png",
+    "title": "Climate Action",
+    "points": [
+      "Target to achieve 50% Green Energy Across Operations (at group level) through the increased adoption and utilization of renewable energy across company operations.",
+      "Target to become a Carbon Neutral Company by 2035 (Net Zero by 2040)",
+      "Implementing climate action initiatives through afforestation, agroforestry and mangrove restoration projects."
+    ],
+    "order": 10,
+    "isActive": true
+  },
+  {
+    "icon": "https://refex.co.in/wp-content/uploads/2025/02/sdg15.png",
+    "title": "Life on Land",
+    "points": [
+      "Planted 10,000 saplings as of FY 2025-26.",
+      "Completed mangrove restoration at Uyyalikuppam, Kalpakkam, with 5,000 saplings planted during FY 2025-26."
+    ],
+    "order": 11,
+    "isActive": true
+  },
+  {
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/sdg17.png",
+    "title": "Partnerships for the Goals",
+    "points": [
+      "Refex is proud to be part of the United Nations Global Compact (UNGC). By joining forces with other partners, we're committed to ethical business practices and addressing the most pressing social and environmental issues",
+      "We've built a strong network of partners in the cement, brick, and block industries, local governments, educational institutions, concrete producers, road contractors, NGO, power plant operators and other industrial houses to promote and achieve UNSDG"
+    ],
+    "order": 12,
+    "isActive": true
+  }
+]

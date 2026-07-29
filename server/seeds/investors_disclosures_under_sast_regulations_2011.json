@@ -1,0 +1,25 @@
+{
+  "slug": "disclosures-under-sast-regulations-2011",
+  "title": "Disclosures under SAST Regulations 2011",
+  "hasYearFilter": false,
+  "filterItems": [],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Disclosures under SAST Regulations 2011",
+      "documents": [
+        {
+          "title": "Disclosure under 29(1) of SAST Regulations 2011",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Regulation-29-SAST_Change-in-Promoter.pdf"
+        },
+        {
+          "title": "Disclosure under 10(6) SAST Regulations 2011",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Regulation-10(6)-SAST-Disclosure.pdf"
+        }
+      ],
+      "contents": [],
+      "audios": []
+    }
+  ]
+}
+

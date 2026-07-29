@@ -1,0 +1,58 @@
+[
+  {
+    "name": "About Us",
+    "href": "#about",
+    "sectionId": "about",
+    "order": 0,
+    "isActive": true
+  },
+  {
+    "name": "Mission & Vision",
+    "href": "#mission-vision",
+    "sectionId": "mission-vision",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "name": "Core Values",
+    "href": "#core-values",
+    "sectionId": "core-values",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "name": "Board Members",
+    "href": "#board-members",
+    "sectionId": "board-members",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "name": "Committees",
+    "href": "#committees",
+    "sectionId": "committees",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "name": "Leadership",
+    "href": "#leadership-team",
+    "sectionId": "leadership-team",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "name": "Our Presence",
+    "href": "#our presence",
+    "sectionId": "our presence",
+    "order": 6,
+    "isActive": true
+  },
+  {
+    "name": "Our Journey",
+    "href": "#journey",
+    "sectionId": "journey",
+    "order": 7,
+    "isActive": true
+  }
+]

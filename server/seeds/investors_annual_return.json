@@ -1,0 +1,50 @@
+{
+  "slug": "annual-return",
+  "title": "Annual Return",
+  "hasYearFilter": true,
+  "filterItems": ["2024-25", "2023-24", "2022-23", "2021-22", "2020-21", "2019-20", "2018-19"],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Annual Return",
+      "documents": [
+        {
+          "title": "Annual Return 2024-2025",
+          "year": "2024-25",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2025/06/RIL_MGT7FY25.pdf"
+        },
+        {
+          "title": "Annual Return 2023-2024",
+          "year": "2023-24",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2024/03/RIL_MGT7_pdfV_FY24.pdf"
+        },
+        {
+          "title": "Annual Return 2022-2023",
+          "year": "2022-23",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Form-MGT-7-2022-23-RIL.pdf"
+        },
+        {
+          "title": "Annual Return 2021-2022",
+          "year": "2021-22",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual-Return-2021-22.pdf"
+        },
+        {
+          "title": "Annual Return 2020-2021",
+          "year": "2020-21",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual-Return-2020-2021.pdf"
+        },
+        {
+          "title": "Annual Return 2019-2020",
+          "year": "2019-20",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual-Return-2019-20.pdf"
+        },
+        {
+          "title": "Annual Return 2018-2019",
+          "year": "2018-19",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Annual-Return-2018-19.pdf"
+        }
+      ]
+    }
+  ]
+}
+

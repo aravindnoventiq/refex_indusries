@@ -1,0 +1,44 @@
+{
+  "slug": "monitoring-agency-report",
+  "title": "Monitoring Agency Report",
+  "hasYearFilter": false,
+  "filterItems": [],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Monitoring Agency Report",
+      "audios": [],
+      "contents": [],
+      "documents": [
+        {
+          "title": "Monitoring Agency Report for the quarter ended 30th June 2024",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2024/08/Monitoring-Agency-Report-for-the-quarter-ended-30th-June-2024.pdf"
+        },
+        {
+          "title": "Monitoring Agency Report for the quarter ended 31st March 2024",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2024/05/Monitoring-Agency-Report-for-the-quarter-ended-31st-March-2024.pdf"
+        },
+        {
+          "title": "Monitoring Agency Report for the quarter ended 31st December 2023",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2024/02/Monitoring-Agency-Report-for-the-quarter-ended-31st-December-2023.pdf"
+        },
+        {
+          "title": "Monitoring Agency Report for the quarter ended 30th September 2023",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2023/11/Monitoring-Agency-Report-for-the-quarter-ended-30th-September-2023.pdf"
+        },
+        {
+          "title": "Monitoring Agency Report for the quarter ended 30th June 2023",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2023/08/Monitoring-Agency-Report-for-the-quarter-ended-30th-June-2023.pdf"
+        },
+        {
+          "title": "Monitoring Agency Report for the quarter ended 31st March 2023",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2023/05/Monitoring-Agency-Report-for-the-quarter-ended-31st-March-2023.pdf"
+        },
+        {
+          "title": "Monitoring Agency Report for the quarter ended 31st December 2022",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2023/02/Monitoring-Agency-Report-for-the-quarter-ended-31st-December-2022.pdf"
+        }
+      ]
+    }
+  ]
+}

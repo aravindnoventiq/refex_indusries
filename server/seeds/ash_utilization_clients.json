@@ -1,0 +1,189 @@
+[
+  {
+    "category": "thermal",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/ash-client12.jpg",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "category": "thermal",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/thermal-client02.jpg",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "category": "thermal",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/thermal-client05.jpg",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "category": "thermal",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/ash-client13.jpg",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "category": "thermal",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/thermal-client03.jpg",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "category": "thermal",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/thermal-client01.jpg",
+    "order": 6,
+    "isActive": true
+  },
+  {
+    "category": "thermal",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/thermal-client10.jpg",
+    "order": 7,
+    "isActive": true
+  },
+  {
+    "category": "thermal",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/thermal-client04.jpg",
+    "order": 8,
+    "isActive": true
+  },
+  {
+    "category": "thermal",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/ash-client14.jpg",
+    "order": 9,
+    "isActive": true
+  },
+  {
+    "category": "cement",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/ash-client01.jpg",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "category": "cement",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/ash-client06.jpg",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "category": "cement",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/ash-client021.jpg",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "category": "cement",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/ash-client031.jpg",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "category": "cement",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/ash-client03.jpg",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "category": "cement",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/ash-client08.jpg",
+    "order": 6,
+    "isActive": true
+  },
+  {
+    "category": "cement",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/ash-client04.jpg",
+    "order": 7,
+    "isActive": true
+  },
+  {
+    "category": "cement",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/ash-client07.jpg",
+    "order": 8,
+    "isActive": true
+  },
+  {
+    "category": "cement",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/ash-client09.jpg",
+    "order": 9,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/road-client01-1.jpg",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/road-client01.jpg",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/construction-client01.jpg",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/road-client02.jpg",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/construction-client02.jpg",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/road-client02-1.jpg",
+    "order": 6,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/road-client03.jpg",
+    "order": 7,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/road-client05.jpg",
+    "order": 8,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/construction-client03.jpg",
+    "order": 9,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/road-client04.jpg",
+    "order": 10,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/road-client06.jpg",
+    "order": 11,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/construction-client04.jpg",
+    "order": 12,
+    "isActive": true
+  },
+  {
+    "category": "concessionaires",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/road-client03-1.jpg",
+    "order": 13,
+    "isActive": true
+  }
+]
+

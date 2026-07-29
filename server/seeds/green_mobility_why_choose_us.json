@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Clean, sanitized and well-maintained vehicles",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/sanitize.png",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Professionally trained and compliant chauffeurs",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/driver.png",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Robust travel safety features available",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/app-icon.png",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "title": "Tech-driven trip management tools",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/sustainibility.png",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "title": "Zero cancellation",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/07/remove.svg",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "title": "Customized packages to suit your needs",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/07/box.svg",
+    "order": 6,
+    "isActive": true
+  },
+  {
+    "title": "Centralized management for the entire fleet",
+    "icon": "https://refex.co.in/wp-content/uploads/2025/07/truck.svg",
+    "order": 7,
+    "isActive": true
+  }
+]
+

@@ -1,0 +1,77 @@
+{
+  "slug": "rights-issue",
+  "title": "Rights Issue",
+  "hasYearFilter": false,
+  "filterItems": [],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Documents",
+      "documents": [
+        {
+          "title": "Refex Draft Letter of Offer",
+          "pdfUrl": "/uploads/pdfs/rights-issue/refex-draft-letter-of-offer-1765864249637-605939038.pdf"
+        },
+        {
+          "title": "Public Announcement Rights Issue",
+          "pdfUrl": "/uploads/pdfs/rights-issue/public-announcement-rights-issue-1765864250312-534910958.pdf"
+        },
+        {
+          "title": "Outcome of Board Meeting",
+          "pdfUrl": "/uploads/pdfs/rights-issue/outcome-of-board-meeting-1765864250553-504368374.pdf"
+        },
+        {
+          "title": "Advertisement Refex Industries",
+          "pdfUrl": "/uploads/pdfs/rights-issue/advertisement-refex-industries-1765864252879-107657560.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Issue Documents",
+      "documents": [
+        {
+          "title": "ALOF (Refex Industries Limited)",
+          "pdfUrl": "/uploads/pdfs/rights-issue/alof-refex-industries-limited-1765864252992-923410829.pdf"
+        },
+        {
+          "title": "Application Form (Refex Industries Limited)",
+          "pdfUrl": "/uploads/pdfs/rights-issue/application-form-refex-industries-limited-1765864253102-42636512.pdf"
+        },
+        {
+          "title": "FAQs",
+          "pdfUrl": "/uploads/pdfs/rights-issue/faqs-1765864253192-230903252.pdf"
+        },
+        {
+          "title": "Letter of Offer (Refex Industries Limited)",
+          "pdfUrl": "/uploads/pdfs/rights-issue/letter-of-offer-refex-industries-limited-1765864256816-890254595.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Material Documents",
+      "documents": [
+        {
+          "title": "Prospectus IPO",
+          "pdfUrl": "/uploads/pdfs/rights-issue/prospectus-ipo-1765864257068-337886400.pdf"
+        },
+        {
+          "title": "Consolidated Results March 2020",
+          "pdfUrl": "/uploads/pdfs/rights-issue/consolidated-results-march-2020-1765864259870-174884868.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Material Contracts",
+      "documents": [
+        {
+          "title": "Banker to Issue Agreement (Escrow)",
+          "pdfUrl": "/uploads/pdfs/rights-issue/banker-to-issue-agreement-escrow-1765864260592-890117478.pdf"
+        },
+        {
+          "title": "Statements of Utilization",
+          "pdfUrl": "/uploads/pdfs/rights-issue/statements-of-utilization-1765864261046-886718890.pdf"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Best Organisations for Women 2024 Award by ET Now",
+    "image": "https://refex.co.in/wp-content/uploads/2024/11/BEST-ORGANISATIONS-FOR-WOMEN-2024-With-Work-force-1-300x281-1.png",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Most Diversified Sustainable Company (India) by The Business Concept. UK",
+    "image": "https://refex.co.in/wp-content/uploads/2024/11/ESG_CSR_Award_01-Medium-300x295-1.png",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Bronze Prize of Asia's Best Integrated Report for our First-ever Sustainability Report by AIRA",
+    "image": "https://refex.co.in/wp-content/uploads/2024/11/Sustainability-report-award-Medium-300x225-1.png",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "title": "GOLD STEVIE AWARD WINNER Conglomerates Category (Medium Size)",
+    "image": "https://refex.co.in/wp-content/uploads/2024/11/Gold-Stieve-Refex.png",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "title": "International Green Apple Environment Award 2024",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/green-apple-award01.png",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "title": "Best Waste Management Solution Award",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/waste-managemnet-award01.png",
+    "order": 6,
+    "isActive": true
+  },
+  {
+    "title": "ESG Excellence Award by ESG Grit Awards",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/esg-excellence-award01.png",
+    "order": 7,
+    "isActive": true
+  },
+  {
+    "title": "Great Place to Work Certified Apr 2025 - Apr 2026 India",
+    "image": "https://refex.co.in/wp-content/uploads/2025/06/GPTW-award-img.png",
+    "order": 8,
+    "isActive": true
+  },
+  {
+    "title": "Most Preferred Workplace 2025-2026 by Marksmen Daily",
+    "image": "https://refex.co.in/wp-content/uploads/2025/07/award-img-1.png",
+    "order": 9,
+    "isActive": true
+  }
+]
+

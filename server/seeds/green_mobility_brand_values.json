@@ -1,0 +1,21 @@
+[
+  {
+    "title": "RELIABILITY",
+    "icon": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/c2c6d33309ccb0487f7cfdacdd0d0b58.png",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "SUSTAINABILITY",
+    "icon": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/354f6a3ba64db048e981dad094115f27.png",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "SAFETY",
+    "icon": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/acf5c792e0eef91b506ef26c3c3b27df.png",
+    "order": 3,
+    "isActive": true
+  }
+]
+

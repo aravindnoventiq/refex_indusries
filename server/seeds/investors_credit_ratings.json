@@ -1,0 +1,39 @@
+{
+  "slug": "credit-ratings",
+  "title": "Credit Ratings",
+  "hasYearFilter": true,
+  "filterItems": ["2025-26", "2024-25", "2023-24", "2021-22"],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Credit Ratings",
+      "documents": [
+        {
+          "title": "Credit Rating",
+          "publishedDate": "07/07/2025",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2025/07/REFEX-INDUSTRIES-LIMITED_RL_08-07-2025_25212.pdf",
+          "year": "2025-26"
+        },
+        {
+          "title": "Credit Rating",
+          "publishedDate": "24/10/2024",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Credit-rating-24-10-2024.pdf",
+          "year": "2024-25"
+        },
+        {
+          "title": "Credit Rating",
+          "publishedDate": "14/01/2024",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Credit-Rating-Jan-24-2024.pdf",
+          "year": "2023-24"
+        },
+        {
+          "title": "Credit Rating",
+          "publishedDate": "19/01/2022",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/RIL-Rating.pdf",
+          "year": "2021-22"
+        }
+      ]
+    }
+  ]
+}
+

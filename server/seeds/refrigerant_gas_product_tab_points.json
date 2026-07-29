@@ -1,0 +1,115 @@
+[
+  {
+    "tabId": "quality",
+    "title": "Purity and Commitment",
+    "description": "Our refrigerants are >99.9% pure. Refex is fundamentally committed to ensuring the quality of our materials from filling to customer service, meeting safety, quality, and performance expectations.",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "tabId": "quality",
+    "title": "Continuous Improvement",
+    "description": "We are dedicated to continuous improvement, innovation, and implementation, staying in pace with market revolutions.",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "tabId": "quality",
+    "title": "Customer Satisfaction",
+    "description": "Our success stands on the pillars of Quality, Delivery, and Customer Satisfaction.",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "tabId": "quality",
+    "title": "Quality Assurance",
+    "description": "Each customer receives a Certificate of Analysis conforming to the highest quality standards for all our processes. Products are tested and analyzed before and after refilling in our state-of-the-art laboratory.",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "tabId": "safety",
+    "title": "Dedicated Storage Facilities",
+    "description": "Each product has a dedicated, secure storage facility approved by Facilities that maintains 100% compliance with required regulations and is equipped with the best safety devices.",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "tabId": "safety",
+    "title": "ISO Certification",
+    "description": "Certified with ISO 14001:2015. Products are tested and analyzed for gas purity and moisture content before and after filling, ensuring the quality of both our cylinders and customers' cylinders before filling.",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "tabId": "safety",
+    "title": "Quality Refilling",
+    "description": "At Refex, quality and safety are paramount. Every gas cylinder is stored in PESO and PCB-approved facilities and undergoes rigorous testing in our ISO 14001:2015 certified in-house lab. We ensure each product meets strict purity and moisture standards before and after refilling, using top-grade fabricators and adhering to full regulatory compliance for safe, reliable refilling.",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "tabId": "safety",
+    "title": "Cylinder Refurbishment",
+    "description": "Takes special precautions for cylinders. Our refurbishment system is a benchmark in the industry, including internal cleaning, internal drying, removal of old paint and repainting on every rotation, and valve replacement.",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "tabId": "applications",
+    "title": null,
+    "description": "Commercial & Domestic Refrigeration",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "tabId": "applications",
+    "title": null,
+    "description": "Commercial & Domestic Air Conditioning",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "tabId": "applications",
+    "title": null,
+    "description": "Chillers for Buildings & Large Systems",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "tabId": "applications",
+    "title": null,
+    "description": "Automotive Air Conditioning",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "tabId": "applications",
+    "title": null,
+    "description": "Industrial Refrigeration",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "tabId": "applications",
+    "title": null,
+    "description": "Cold Storage Refrigeration",
+    "order": 6,
+    "isActive": true
+  },
+  {
+    "tabId": "applications",
+    "title": null,
+    "description": "Food Processing",
+    "order": 7,
+    "isActive": true
+  },
+  {
+    "tabId": "applications",
+    "title": null,
+    "description": "Aerosol Propellants",
+    "order": 8,
+    "isActive": true
+  }
+]
+

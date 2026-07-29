@@ -1,0 +1,75 @@
+[
+  {
+    "title": "Registered Office",
+    "details": [
+      "2nd Floor, No.313, Refex Towers,",
+      "Sterling Road, Valluvar Kottam High Road,",
+      "Nungambakkam, Chennai,",
+      "Tamil Nadu, India – 600034",
+      "Phone: +91-44 – 3504 0050",
+      "Email: info@refex.co.in"
+    ],
+    "image": "https://refex.co.in/wp-content/uploads/2025/07/Towers-289x300.jpg",
+    "isTopOffice": true,
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Corporate Office",
+    "details": [
+      "Refex, 67, Bazullah Road,",
+      "Next to Sri Ramakrishna Mission",
+      "Matriculation Higher Secondary School",
+      "T Nagar, Chennai, Tamil Nadu, India – 600017"
+    ],
+    "image": "https://refex.co.in/wp-content/uploads/2025/07/Bazullah-Office-267x300.jpg",
+    "isTopOffice": true,
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Factory",
+    "details": [
+      "No: 1/171, Old Mahabalipuram Road,",
+      "Thiruporur, Kanchipuram Dist – 603 110.",
+      "Tamil Nadu, India – 600034",
+      "Phone: +91-44 – 2744 5295",
+      "Email: factory@refex.co.in"
+    ],
+    "isTopOffice": false,
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Investors Grievances",
+    "details": [
+      "Mr. Ankit Poddar",
+      "Company Secretary / Compliance Officer",
+      "2nd Floor, No.313, Refex Towers,",
+      "Sterling Road, Valluvar Kottam High Road,",
+      "Nungambakkam, Chennai,",
+      "Tamil Nadu, India – 600034",
+      "Phone: +91-44 – 3504 0050",
+      "Email: investor.relations@refex.co.in"
+    ],
+    "isTopOffice": false,
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "For Determining Materiality of Events",
+    "details": [
+      "Mr. Ankit Poddar – CS / Compliance Officer",
+      "2nd Floor, No.313, Refex Towers,",
+      "Sterling Road, Valluvar Kottam High Road,",
+      "Nungambakkam, Chennai,",
+      "Tamil Nadu, India – 600034",
+      "Phone: +91-44 – 3504 0050",
+      "Email: investor.relations@refex.co.in"
+    ],
+    "isTopOffice": false,
+    "order": 3,
+    "isActive": true
+  }
+]
+

@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables (secrets)
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Client (Vite + React)
+client/dist/
+client/out/
+client/.vite/
+client/coverage/
+
+# Server (Node.js)
+server/uploads/
+server/downloads/
+server/temp/
+server/tmp/
+
+# Build / cache
+dist/
+build/
+.cache/
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE / editor
+.idea/
+*.swp
+*.swo
+*~
+
+# Optional local tooling
+.cursor/
+*.local

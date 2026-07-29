@@ -1,0 +1,48 @@
+[
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/client-logo01.jpg",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/client-logo02.jpg",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/client-logo03.jpg",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/client-logo04.jpg",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/client-logo06.jpg",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/client-logo07.jpg",
+    "order": 6,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/client-logo08.jpg",
+    "order": 7,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/client-logo09.jpg",
+    "order": 8,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/client-logo05.jpg",
+    "order": 9,
+    "isActive": true
+  }
+]
+

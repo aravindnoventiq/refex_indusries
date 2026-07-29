@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Reliable Transport Solution",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-reliable.png",
+    "imagePosition": "left",
+    "subtitle": "We provide bundled offerings –",
+    "pointsJson": [
+      "Corporate transport solutions",
+      "Complete in-house fleet management",
+      "Technology-integrated operations",
+      "Premium experience with well-trained, courteous chauffeurs",
+      "End-to-end route mapping for transport efficiency",
+      "Real-time, tech-driven vehicle monitoring",
+      "Ensured employee safety and security"
+    ],
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Leveraging Technology",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-leverage.jpg",
+    "imagePosition": "left",
+    "subtitle": null,
+    "pointsJson": [
+      "End-to-end monitoring via a command and control centre",
+      "Battery Management System",
+      "Exclusive App available for Commuters, Drivers, Corporate Supervisors",
+      "Alerts and notifications, routing algorithms (safety measures), instant billing, etc.",
+      "Analytics dashboard"
+    ],
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Safety Guaranteed",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-safety.jpg",
+    "imagePosition": "left",
+    "subtitle": "We ensure the complete safety of your employees and commuters and have in place a very robust protocol and practices.",
+    "pointsJson": [
+      "Complete background verification of our drivers",
+      "Highly trained and skilful chauffeurs",
+      "Digital remote monitoring, speed governance, and GPS",
+      "Regular medical screening and fitness checks of our Chauffeurs",
+      "Regular behavioural training for our Chauffeurs to sensitize them on how to deal with the LGBT community, persons with special abilities, and elderly persons",
+      "Swift action on complaints received through our helpline number"
+    ],
+    "order": 3,
+    "isActive": true
+  }
+]
+

@@ -1,0 +1,61 @@
+{
+  "slug": "recording-transcripts-of-post-earnings-quarterly-calls",
+  "title": "Recording & Transcripts of Post Earnings / Quarterly Calls",
+  "hasYearFilter": true,
+  "filterItems": [
+    "2025-26",
+    "2024-25"
+  ],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Recording and Transcripts",
+      "audios": [
+        {
+          "name": "Audio Recordings of Earnings Conference Call – Q2 FY 26",
+          "year": "2025-26",
+          "pdfUrl": "/uploads/pdfs/recording-transcripts/audio-recordings-of-earnings-conference-call-q2-fy-1765863499980-911033571.pdf",
+          "audioUrl": "https://refex.co.in/wp-content/uploads/2025/11/Refex-Industries-Earnings-Nov06-2025-Audio.mp3"
+        },
+        {
+          "name": "Audio Recordings of Earnings Conference Call – Q1 FY 26",
+          "year": "2025-26",
+          "pdfUrl": "/uploads/pdfs/recording-transcripts/audio-recordings-of-earnings-conference-call-q1-fy-1765863500039-747546919.pdf",
+          "audioUrl": "https://refex.co.in/wp-content/uploads/2025/08/Q1-FY26.mp3"
+        },
+        {
+          "name": "Audio Recordings of Earnings Conference Call – Q4 & FY25",
+          "year": "2024-25",
+          "pdfUrl": "/uploads/pdfs/recording-transcripts/audio-recordings-of-earnings-conference-call-q4-fy-1765863500083-823286118.pdf",
+          "audioUrl": "https://refex.co.in/wp-content/uploads/2025/04/Q4_FY25-earnings_concall_audio.mp3"
+        },
+        {
+          "name": "Audio Recording of Earnings Conference Call – Q3FY25",
+          "year": "2024-25",
+          "pdfUrl": "/uploads/pdfs/recording-transcripts/audio-recording-of-earnings-conference-call-q3fy25-1765863500114-901097482.pdf",
+          "audioUrl": "https://refex.co.in/wp-content/uploads/2025/01/Earning-Audio-Call-Q3FY25.mp3"
+        },
+        {
+          "name": "Audio Recording of Earnings Conference Call – Q2 & H1 FY25",
+          "year": "2024-25",
+          "pdfUrl": "/uploads/pdfs/recording-transcripts/audio-recording-of-earnings-conference-call-q2-h1--1765863500146-930650217.pdf",
+          "audioUrl": "https://refex.co.in/wp-content/uploads/2024/11/Refex-Industries-Q2-H1-FY25-Earnings-Call-Audio.mp3"
+        },
+        {
+          "name": "Audio Recording of Earnings Conference Call – Q1 & FY25",
+          "year": "2024-25",
+          "pdfUrl": "/uploads/pdfs/recording-transcripts/audio-recording-of-earnings-conference-call-q1-fy2-1765863500179-586896017.pdf",
+          "audioUrl": "https://refex.co.in/wp-content/uploads/2024/08/Audio_Recording_of_Earnings_Conference_Call_Q1_FY25.mp3"
+        },
+        {
+          "name": "Audio Recording of Earnings Conference Call – Q4 & FY24",
+          "year": "2024-25",
+          "pdfUrl": "/uploads/pdfs/recording-transcripts/audio-recording-of-earnings-conference-call-q4-fy2-1765863500215-533777587.pdf",
+          "audioUrl": "https://refex.co.in/wp-content/uploads/2024/05/Audio-Recording-of-Earnings-Conference-Call.mp3"
+        }
+      ],
+      "contents": [],
+      "documents": []
+    }
+  ]
+}

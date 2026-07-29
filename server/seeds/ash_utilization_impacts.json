@@ -1,0 +1,31 @@
+[
+  {
+    "number": "2000+",
+    "label": "Fleet network",
+    "icon": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/2fbba1b40464605ef45109b08ba5f402.png",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "number": "40+",
+    "label": "Power projects",
+    "icon": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/03b83a9256266b6870f5183167c8508f.png",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "number": "70,000 MT",
+    "label": "Ash handled daily",
+    "icon": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/a89554bfd8530b5648a0e4d24dfeb8cc.png",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "number": "15+",
+    "label": "Presence in states",
+    "icon": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/e8074c5c8a93d2409fbc4388c739414c.png",
+    "order": 4,
+    "isActive": true
+  }
+]
+

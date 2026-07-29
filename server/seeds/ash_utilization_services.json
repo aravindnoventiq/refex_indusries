@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Ash Utilisation",
+    "image": "https://refex.co.in/wp-content/uploads/2025/06/supply-img01.jpg",
+    "imagePosition": "left",
+    "intro": "Ash, if released into the atmosphere, can cause significant environmental harm. Refex plays a vital role in its safe and responsible utilisation by ensuring efficient transportation from plant silos and dykes to designated sites using trucks, hywas, bulkers, and rail rakes. The ash is then utilised at various locations in full compliance with regulatory standards.",
+    "subtitle": "With a strong focus on innovation and environmental stewardship, Refex continues to be a trusted partner in ash management solutions, supporting power plants through:",
+    "pointsJson": [
+      "Extensive network of fleets and vendor partners",
+      "Advanced tracking technology, sensors and equipment providing real-time information",
+      "Customized solutions tailored to the needs of power plant operators.",
+      "Comprehensive utilisation strategy for both Fly Ash and Pond Ash for each power plant",
+      "Strong partnerships with cement companies, road concessionaires, brick manufacturers, mine operators and government agencies",
+      "100% compliance to MOEF guidelines and Pollution Control Board standards"
+    ],
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Coal Supply and Handling",
+    "image": "https://refex.co.in/wp-content/uploads/2025/06/supply-img02.jpg",
+    "imagePosition": "right",
+    "intro": "Refex is dedicated to guaranteeing the seamless and efficient supply of coal to various power plants at competitive prices.",
+    "subtitle": "We also provide comprehensive services for over burden excavation and coal yard management encompassing,",
+    "pointsJson": [
+      "Coal handling Plant Room Operations",
+      "Segregation of Coal and Stone",
+      "Housekeeping",
+      "Initial Crushing",
+      "Management of Heavy Machinery",
+      "Maintenance of CHP Equipment"
+    ],
+    "order": 2,
+    "isActive": true
+  }
+]
+

@@ -1,0 +1,40 @@
+[
+  {
+    "title": "EMPLOYEE TRANSPORTATION",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-reliable.png",
+    "description": "Our Employee Transfer service provides efficient and reliable transportation with multiple customizable models designed to meet the unique needs of each organization. Our employee commute service ensures a safe and seamless experience with clean cars and verified, professional drivers.",
+    "additionalText": "We are the most preferred mobility partner for leading MNCs, helping them transition to cleaner mobility solutions that align with their sustainability goals.",
+    "featuresJson": [
+      { "icon": "ri-money-dollar-circle-line", "title": "Cost Savings" },
+      { "icon": "ri-calendar-check-line", "title": "Easy Booking" },
+      { "icon": "ri-map-pin-line", "title": "Live-Tracking" }
+    ],
+    "order": 0,
+    "isActive": true
+  },
+  {
+    "title": "ON-CALL / ON-DEMAND RIDES",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-reliable.png",
+    "description": "Refex Green Mobility offers flexible and customizable on-call ride packages for corporates and events designed to meet varying distance and time requirements. Choose from options such as 4hr/40km, 8hr/80km, or 10hr/100km, with the ability to tailor services based on your specific needs.",
+    "rideTypesJson": [
+      { "icon": "ri-car-line", "title": "LOCAL RIDES" },
+      { "icon": "ri-plane-line", "title": "AIRPORT RIDES" }
+    ],
+    "citiesJson": ["Chennai", "Bengaluru", "Mumbai", "Hyderabad", "Delhi"],
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "CORPORATE AIRPORT TRANSFERS",
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-reliable.png",
+    "description": "Individual travellers can conveniently book airport rides through the Refex Mobility app and Website for a hassle-free experience. Available in Chennai, Bangalore, Mumbai, Hyderabad, Delhi.",
+    "additionalText": "Individual travelers can conveniently book airport rides through the Refex eVeelz app and Website for a hassle free experience.",
+    "buttonsJson": [
+      { "text": "Download App", "link": "https://refex.co.in/wp-content/uploads/2024/12/Qr-code-eveelz.png" },
+      { "text": "Book Airport Taxi", "link": "https://booking.eveelz.in/" }
+    ],
+    "order": 2,
+    "isActive": true
+  }
+]
+

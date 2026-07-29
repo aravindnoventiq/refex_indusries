@@ -1,0 +1,50 @@
+{
+  "slug": "financial-information",
+  "title": "Financial Information",
+  "hasYearFilter": true,
+  "filterItems": ["2025-26", "2024-25", "2023-24", "2022-23"],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Financial Results",
+      "documents": [
+        { "title": "Un-Audited Financial Results – Q2 FY26", "date": "04/11/2025", "year": "2025-26", "pdfUrl": "https://example.com/financial-results-q2-fy26.pdf" },
+        { "title": "Unaudited Financial Results", "date": "30/06/2025", "year": "2025-26", "pdfUrl": "https://example.com/financial-results-q1-fy26.pdf" },
+        { "title": "RIL- Audited Financial Results for 4th Quarter and Financial Year ended", "date": "31/03/2025", "year": "2024-25", "pdfUrl": "https://example.com/financial-results-q4-fy25.pdf" },
+        { "title": "Integrated Filing (Financials) for 3rd Quarter ended", "date": "31/12/2024", "year": "2024-25", "pdfUrl": "https://example.com/financial-results-q3-fy25.pdf" },
+        { "title": "Unaudited Financial Results", "date": "31/12/2024", "year": "2024-25", "pdfUrl": "https://example.com/financial-results-q3-fy25-unaudited.pdf" },
+        { "title": "Unaudited Financial Results", "date": "30/09/2024", "year": "2024-25", "pdfUrl": "https://example.com/financial-results-q2-fy25.pdf" },
+        { "title": "Unaudited Financial Results", "date": "30/06/2024", "year": "2024-25", "pdfUrl": "https://example.com/financial-results-q1-fy25.pdf" },
+        { "title": "Audited Financial Results for the Quarter and Year ended", "date": "31/03/2024", "year": "2023-24", "pdfUrl": "https://example.com/financial-results-q4-fy24.pdf" },
+        { "title": "Unaudited Financial Results", "date": "31/12/2023", "year": "2023-24", "pdfUrl": "https://example.com/financial-results-q3-fy24.pdf" },
+        { "title": "Unaudited Financial Results", "date": "30/09/2023", "year": "2023-24", "pdfUrl": "https://example.com/financial-results-q2-fy24.pdf" },
+        { "title": "Unaudited Financial Results", "date": "30/06/2023", "year": "2023-24", "pdfUrl": "https://example.com/financial-results-q1-fy24.pdf" },
+        { "title": "Audited Financial Results for the Quarter and Year ended", "date": "31/03/2023", "year": "2022-23", "pdfUrl": "https://example.com/financial-results-q4-fy23.pdf" },
+        { "title": "Unaudited Financial Results", "date": "31/12/2022", "year": "2022-23", "pdfUrl": "https://example.com/financial-results-q3-fy23.pdf" },
+        { "title": "Unaudited Financial Results", "date": "30/09/2022", "year": "2022-23", "pdfUrl": "https://example.com/financial-results-q2-fy23.pdf" },
+        { "title": "Unaudited Financial Results", "date": "30/06/2022", "year": "2022-23", "pdfUrl": "https://example.com/financial-results-q1-fy23.pdf" }
+      ]
+    },
+    {
+      "title": "Notice Of Board Meetings",
+      "documents": [
+        { "title": "Intimation of Board Meeting – November 04, 2025", "date": "29/10/2025", "year": "2025-26", "pdfUrl": "https://example.com/board-meeting-nov-2025.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "19/06/2025", "year": "2025-26", "pdfUrl": "https://example.com/board-meeting-jun-2025.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "23/04/2025", "year": "2025-26", "pdfUrl": "https://example.com/board-meeting-apr-2025.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "27/01/2025", "year": "2024-25", "pdfUrl": "https://example.com/board-meeting-jan-2025.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "11/11/2024", "year": "2024-25", "pdfUrl": "https://example.com/board-meeting-nov-2024.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "03/10/2024", "year": "2024-25", "pdfUrl": "https://example.com/board-meeting-oct-2024.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "30/06/2024", "year": "2024-25", "pdfUrl": "https://example.com/board-meeting-jun-2024.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "31/03/2024", "year": "2023-24", "pdfUrl": "https://example.com/board-meeting-mar-2024.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "31/12/2023", "year": "2023-24", "pdfUrl": "https://example.com/board-meeting-dec-2023.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "30/09/2023", "year": "2023-24", "pdfUrl": "https://example.com/board-meeting-sep-2023.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "30/06/2023", "year": "2023-24", "pdfUrl": "https://example.com/board-meeting-jun-2023.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "31/03/2023", "year": "2022-23", "pdfUrl": "https://example.com/board-meeting-mar-2023.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "31/12/2022", "year": "2022-23", "pdfUrl": "https://example.com/board-meeting-dec-2022.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "30/09/2022", "year": "2022-23", "pdfUrl": "https://example.com/board-meeting-sep-2022.pdf" },
+        { "title": "Intimation of Board Meeting", "date": "30/06/2022", "year": "2022-23", "pdfUrl": "https://example.com/board-meeting-jun-2022.pdf" }
+      ]
+    }
+  ]
+}
+

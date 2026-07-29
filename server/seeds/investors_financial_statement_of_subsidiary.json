@@ -1,0 +1,105 @@
+{
+  "slug": "financial-statement-of-subsidiary",
+  "title": "Financial Statement of Subsidiary",
+  "hasYearFilter": true,
+  "filterItems": ["2024-25", "2023-24", "2022-23", "2020-21", "2019-20", "2018-19", "2017-18", "2016-17", "2015-16", "2014-15"],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Refex EV Fleet Services Private Limited (Formerly O3 Mobility Private Limited)",
+      "documents": [
+        {
+          "title": "Financials of Refex EV Fleet – 2024-25",
+          "year": "2024-25",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2025/06/Signed-Refex-EV-FS-FY-2024-25.pdf"
+        },
+        {
+          "title": "Financials of Refex EV Fleet 2023-24",
+          "year": "2023-24",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Financial-Refex-EV-Fleets-2023-24.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Refex Green Mobility Limited (RGML)",
+      "documents": [
+        {
+          "title": "Financials of RGML – 2024-25",
+          "year": "2024-25",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2025/07/new.pdf"
+        },
+        {
+          "title": "Financials of RGML 2023-24",
+          "year": "2023-24",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Financials-of-RGML-2023-24.pdf"
+        },
+        {
+          "title": "Financials of RGML 2022-23",
+          "year": "2022-23",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/RGML-Financials-FY-2022-23.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Venwind Refex Power Limited",
+      "documents": [
+        {
+          "title": "Financials of VRPL – 2024-25",
+          "year": "2024-25",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2025/06/VRPL_Audit_Report_FS-FY24-25.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Venwind Refex Power Services Limited",
+      "documents": [
+        {
+          "title": "Financials of VRPSL – 2024-25",
+          "year": "2024-25",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2025/06/VRPSL_Audit_Report_FS-FY24-25.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Vituza Solar Energy Limited",
+      "documents": [
+        {
+          "title": "Financials of Vituza Solar 2020-21",
+          "year": "2020-21",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Vituza_Financials_2020-21.pdf"
+        },
+        {
+          "title": "Financials of Vituza Solar 2019-20",
+          "year": "2019-20",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Vituza_Financials_2019-20.pdf"
+        },
+        {
+          "title": "Financials of Vituza Solar 2018-19",
+          "year": "2018-19",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Vituza_Financials_2018-19.pdf"
+        },
+        {
+          "title": "Financials of Vituza Solar 2017-18",
+          "year": "2017-18",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Vituza_Solar_Financials_2017-18.pdf"
+        },
+        {
+          "title": "Financials of Vituza Solar 2016-17",
+          "year": "2016-17",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Vituza_Financials_2017.pdf"
+        },
+        {
+          "title": "Financials of Vituza Solar 2015-16",
+          "year": "2015-16",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Vituza-Solar-Annual-Report-2015-16.pdf"
+        },
+        {
+          "title": "Financials of Vituza Solar 2014-15",
+          "year": "2014-15",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Financials-of-Vituza-Solar-for-the-year-ended-31.03.2015.pdf"
+        }
+      ]
+    }
+  ]
+}
+

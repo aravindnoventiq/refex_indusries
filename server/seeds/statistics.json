@@ -1,0 +1,29 @@
+﻿[
+  {
+    "title": "Years of Legacy",
+    "value": "23+",
+    "description": "Years of Legacy",
+    "image": "https://refex.co.in/wp-content/uploads/2024/11/experience-icon-2.svg",
+    "color": "#4ade80",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "People",
+    "value": "500+",
+    "description": "People",
+    "image": "https://refex.co.in/wp-content/uploads/2024/11/team-size-01.svg",
+    "color": "#4ade80",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Pan India Presence",
+    "value": "Pan India",
+    "description": "Presence",
+    "image": "https://refex.co.in/wp-content/uploads/2025/04/location.svg",
+    "color": "#4ade80",
+    "order": 3,
+    "isActive": true
+  }
+]

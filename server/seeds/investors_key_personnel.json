@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Mr. Anil Jain",
+    "position": "Managing Director",
+    "company": "Refex Industries Limited",
+    "phone": "+91-44 – 3504 0050",
+    "displayOrder": 0
+  },
+  {
+    "name": "Mr. Dinesh Kumar Agarwal",
+    "position": "Whole-time Director & Chief Financial Officer",
+    "company": "Refex Industries Limited",
+    "phone": "+91-44 – 3504 0050",
+    "displayOrder": 1
+  },
+  {
+    "name": "Mr. Ankit Poddar",
+    "position": "Company Secretary / Compliance Officer",
+    "company": "Refex Industries Limited,",
+    "address": "2nd Floor, No.313, Refex Towers, Sterling Road,",
+    "address2": "Valluvar Kottam High Road, Nungambakkam,",
+    "address3": "Chennai – 600034, Tamil Nadu.",
+    "phone": "+91-44 – 3504 0050",
+    "email": "investor.relations@refex.co.in",
+    "displayOrder": 2
+  }
+]
+

@@ -1,0 +1,20 @@
+{
+  "slug": "ipo",
+  "title": "IPO",
+  "hasYearFilter": false,
+  "filterItems": [],
+  "showPublishDate": false,
+  "showCmsPublishDate": false,
+  "isActive": true,
+  "sections": [
+    {
+      "title": "IPO Documents",
+      "documents": [
+        {
+          "title": "Prospectus",
+          "pdfUrl": "/uploads/pdfs/ipo/prospectus-1765860928022-167004382.pdf"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "general-meeting-updates",
+  "title": "General Meeting Updates",
+  "hasYearFilter": true,
+  "filterItems": ["2025-26", "2024-25", "2023-24", "2022-23", "2021-22", "2020-21", "2019-20", "2018-19", "2017-18", "2016-17"],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "AGM Notice & Annual Report",
+      "documents": [
+        { "title": "AGM Notice & Annual Report 2025", "year": "2025-26", "link": "https://refex.co.in/wp-content/uploads/2025/06/Refex-Industries-Limited_23rd-Annual-Report-FY-25.pdf" },
+        { "title": "AGM Notice & Annual Report 2024", "year": "2024-25", "link": "https://refex.co.in/wp-content/uploads/investor-media/AGM-Notice-and-Annual-Report-2024.pdf" },
+        { "title": "AGM Notice & Annual Report 2023", "year": "2023-24", "link": "https://refex.co.in/wp-content/uploads/investor-media/Notice-Annual-Report.pdf" }
+      ]
+    },
+    {
+      "title": "Business Responsibility & Sustainability Report",
+      "documents": [
+        { "title": "Business Responsibility & Sustainability Report – FY 2024-25", "year": "2025-26", "link": "https://refex.co.in/wp-content/uploads/2025/06/Refex_Industries_Limited_BRSR.pdf" },
+        { "title": "Business Responsibility & Sustainability Report 2023-24", "year": "2023-24", "link": "https://refex.co.in/wp-content/uploads/investor-media/Business-Responsibility-Sustainability-Report-2024.pdf" },
+        { "title": "Business Responsibility & Sustainability Report", "year": "2022-23", "link": "https://refex.co.in/wp-content/uploads/investor-media/Refex_Industries_BRSR_31st_Aug.pdf" }
+      ]
+    },
+    {
+      "title": "Disclosure under SEBI (SBEB & SE) Regulations, 2021",
+      "documents": [
+        { "title": "ESOP Disclosure", "year": "2024-25", "link": "https://refex.co.in/wp-content/uploads/investor-media/ESOP-Disclosure-as-on-June-30-2024.pdf", "publishedDate": "30/06/2024" },
+        { "title": "ESOP Disclosure", "year": "2022-23", "link": "https://refex.co.in/wp-content/uploads/investor-media/ESOP-Disclosure-2022-23.pdf", "publishedDate": "31/03/2023" }
+      ]
+    },
+    {
+      "title": "Notice of Annual General Meeting",
+      "documents": [
+        { "title": "Notice Calling 23rd AGM – 2025", "year": "2024-25", "link": "https://refex.co.in/wp-content/uploads/2025/03/Refex_Industries_Limited_Notice_of_23rdAnnual_General_Meeting-FY25.pdf" },
+        { "title": "Notice Calling AGM – 2024", "year": "2024-25", "link": "https://refex.co.in/wp-content/uploads/investor-media/Notice-Calling-AGM-2024.pdf" },
+        { "title": "Notice Calling AGM – 2023", "year": "2023-24", "link": "https://refex.co.in/wp-content/uploads/investor-media/Notice-Calling-AGM-2023.pdf" },
+        { "title": "Notice Calling AGM – 2022", "year": "2022-23", "link": "https://refex.co.in/wp-content/uploads/investor-media/Notice-Calling-AGM-2022.pdf" },
+        { "title": "Notice Calling AGM – 2021", "year": "2021-22", "link": "https://refex.co.in/wp-content/uploads/investor-media/Notice_Calling_RIL_AGM_2021.pdf" },
+        { "title": "Notice Calling AGM – 2020", "year": "2020-21", "link": "https://refex.co.in/wp-content/uploads/investor-media/Notice_Calling_RIL_AGM_2020.pdf" },
+        { "title": "Notice Calling AGM – 2019", "year": "2019-20", "link": "https://refex.co.in/wp-content/uploads/investor-media/Notice_Calling_AGM_2019.pdf" },
+        { "title": "Notice Calling AGM – 2018", "year": "2018-19", "link": "https://refex.co.in/wp-content/uploads/investor-media/RILAGM%20_Notice_17-18.pdf" },
+        { "title": "Notice Calling 15th AGM 2017", "year": "2017-18", "link": "https://refex.co.in/wp-content/uploads/investor-media/Notice_AGM_2017.pdf" },
+        { "title": "Notice Calling AGM – 2016", "year": "2016-17", "link": "https://refex.co.in/wp-content/uploads/investor-media/Notice-calling-AGM-30-09-2016.pdf" }
+      ]
+    },
+    {
+      "title": "Notice of EGM",
+      "documents": [
+        { "title": "Notice of 1st EGM- FY 2024-25", "year": "2024-25", "link": "https://refex.co.in/wp-content/uploads/investor-media/RIL-EGM-Notice-24-25.pdf" },
+        { "title": "Corrigendum of Notice of 1st EGM- FY 2024-25", "year": "2024-25", "link": "https://refex.co.in/wp-content/uploads/investor-media/Corrigendum_Notice_1st_EGM-FY_2024-25.pdf" },
+        { "title": "Notice of 1st EGM- FY 2023-24", "year": "2023-24", "link": "https://refex.co.in/wp-content/uploads/investor-media/Notice-of-EGM-Final-Refex.pdf" },
+        { "title": "Notice of 2nd EGM- FY 2023-24", "year": "2022-23", "link": "https://refex.co.in/wp-content/uploads/investor-media/RIL-EGM_Notice.pdf" }
+      ]
+    },
+    {
+      "title": "PCS Certificate - Preferential Issue",
+      "documents": [
+        { "title": "PCS Certificate – Preferential Issue October 2024", "year": "2024-25", "link": "https://refex.co.in/wp-content/uploads/investor-media/PCS-Certificate-Preferential-Issue-October-2024.pdf" },
+        { "title": "PCS Certificate – Preferential Issue March 2024", "year": "2023-24", "link": "https://refex.co.in/wp-content/uploads/investor-media/RIL-SEBI-ICDR-PCS-Compliance-Certificate-Reg-163-Preferential-Issue.pdf" }
+      ]
+    },
+    {
+      "title": "Postal Ballot Notice",
+      "documents": [
+        { "title": "RIL – Postal Ballot Notice – April 2025 to May 2025 -01/FY25-26", "year": "2025-26", "link": "https://refex.co.in/wp-content/uploads/2025/03/RIL_PB_Notice_March2025.pdf" },
+        { "title": "Postal Ballot Notice – FY 2023-24", "year": "2022-23", "link": "https://refex.co.in/wp-content/uploads/investor-media/Postal-Ballot-Notice-FY-2023-24.pdf" }
+      ]
+    },
+    {
+      "title": "Proceedings of General Meeting",
+      "documents": [
+        { "title": "Proceedings of 23rd AGM – 2025", "year": "2025-26", "link": "https://refex.co.in/wp-content/uploads/2025/07/RIL_23rd_AGM_Proceedings_sd.pdf" },
+        { "title": "Proceedings of the AGM", "year": "2024-25", "link": "https://refex.co.in/wp-content/uploads/investor-media/RIL-EGM-Proceedings-26-10-2024-F.pdf", "publishedDate": "26/10/2024" },
+        { "title": "Proceedings of the AGM", "year": "2023-24", "link": "https://refex.co.in/wp-content/uploads/investor-media/REFEX-proceedings-of-EGM.pdf", "publishedDate": "27/03/2024" },
+        { "title": "Proceedings of the AGM, 2023", "year": "2023-24", "link": "https://refex.co.in/wp-content/uploads/investor-media/REFEX-Proceedings-of-AGM-2023.pdf" },
+        { "title": "Proceedings of the AGM", "year": "2023-24", "link": "https://refex.co.in/wp-content/uploads/investor-media/Proceedings-of-EGM-28.04.2023.pdf", "publishedDate": "28/04/2023" },
+        { "title": "Proceedings of the AGM, 2022", "year": "2022-23", "link": "https://refex.co.in/wp-content/uploads/investor-media/RIL_Outcome_AGM_23092022.pdf" },
+        { "title": "Proceedings of the AGM, 2021", "year": "2021-22", "link": "https://refex.co.in/wp-content/uploads/investor-media/Proceedings_of_AGM_2021.pdf" },
+        { "title": "Proceedings of the AGM, 2020", "year": "2020-21", "link": "https://refex.co.in/wp-content/uploads/investor-media/Proceedings_of_AGM_2020.pdf" },
+        { "title": "Proceedings of the AGM, 2019", "year": "2019-20", "link": "https://refex.co.in/wp-content/uploads/investor-media/Proceedings_of_AGM_2019.pdf" },
+        { "title": "Proceedings of the AGM, 2018", "year": "2018-19", "link": "https://refex.co.in/wp-content/uploads/investor-media/Proceedings_of_AGM_2018.pdf" },
+        { "title": "Proceedings of the AGM, 2017", "year": "2017-18", "link": "https://refex.co.in/wp-content/uploads/investor-media/ProceedingsofAGMRefex2017_Final.pdf" },
+        { "title": "Proceedings of the AGM, 2016", "year": "2016-17", "link": "https://refex.co.in/wp-content/uploads/investor-media/ProceedingofAGMRefexIndustriesLimited2016.pdf" }
+      ]
+    },
+    {
+      "title": "Valuation Report",
+      "documents": [
+        { "title": "Valuation report October 2024", "year": "2024-25", "link": "https://refex.co.in/wp-content/uploads/investor-media/Valuation-report-October-2024.pdf" },
+        { "title": "Valuation Report March 2024", "year": "2023-24", "link": "https://refex.co.in/wp-content/uploads/investor-media/Valuation%20_Report.pdf" }
+      ]
+    },
+    {
+      "title": "Voting Results and Scrutinizer's Report",
+      "documents": [
+        { "title": "RIL – 23rd AGM – 2025 – Voting Results & Scrutinizer Report", "year": "2025-26", "link": "https://refex.co.in/wp-content/uploads/2025/07/RIL_23rd_AGM_SR_VR_F_sd_compressed-1.pdf" },
+        { "title": "RIL- Postal Ballot – Voting Results", "year": "2025-26", "link": "https://refex.co.in/wp-content/uploads/2025/05/RIL_PB_Outcome-signed.pdf", "publishedDate": "02/05/2025" },
+        { "title": "Voting Results & Scrutinizer Report, EGM", "year": "2024-25", "link": "https://refex.co.in/wp-content/uploads/investor-media/E-voting-Result-and-Scrutinizer-Report.pdf", "publishedDate": "26/10/2024" },
+        { "title": "Voting Results & Scrutinizer Report, AGM 2024", "year": "2024-25", "link": "https://refex.co.in/wp-content/uploads/2024/08/RIL_22nd_AGM_ScrutinizersReportandVotingResults.pdf", "publishedDate": "30/08/2024" },
+        { "title": "Voting Results & Scrutinizer Report, 2nd EGM", "year": "2023-24", "link": "https://refex.co.in/wp-content/uploads/investor-media/Refex-Scrutinizer-Report-Sd.pdf" },
+        { "title": "Voting Results & Scrutinizer Report, Postal Ballot 2023-24", "year": "2023-24", "link": "https://refex.co.in/wp-content/uploads/investor-media/Voting-Results-Scrutinizer-Report-Postal-Ballot-2023-24.pdf" },
+        { "title": "Voting Results & Scrutinizer Report, AGM 2023", "year": "2023-24", "link": "https://refex.co.in/wp-content/uploads/investor-media/Voting-Results-Scrutinizer-Report-AGM-2023.pdf" },
+        { "title": "Voting Results 2022 AGM", "year": "2022-23", "link": "https://refex.co.in/wp-content/uploads/investor-media/Voting-Results-2022-AGM.pdf" },
+        { "title": "Voting Results & Scrutinizer Report,2022", "year": "2022-23", "link": "https://refex.co.in/wp-content/uploads/investor-media/Voting-Results-Scrutinizer-Report_2022.pdf" },
+        { "title": "Voting Results 2023 AGM", "year": "2022-23", "link": "https://refex.co.in/wp-content/uploads/investor-media/Voting-Results-and-Scrutinizer-Report-EGM-2023.pdf" },
+        { "title": "Voting Results & Scrutinizer Report,2021", "year": "2021-22", "link": "https://refex.co.in/wp-content/uploads/investor-media/Voting-Results-Scrutinizer-Report-2021.pdf" },
+        { "title": "Voting Results & Scrutinizer Report,2020", "year": "2020-21", "link": "https://refex.co.in/wp-content/uploads/investor-media/Voting-Results-Scrutinizers-Report-2020.pdf" }
+      ]
+    }
+  ]
+}
+

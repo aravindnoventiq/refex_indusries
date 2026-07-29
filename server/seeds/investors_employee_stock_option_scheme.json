@@ -1,0 +1,33 @@
+{
+  "slug": "employee-stock-option-scheme",
+  "title": "Employee Stock Option Scheme",
+  "hasYearFilter": false,
+  "filterItems": [],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Employee Stock Option Scheme",
+      "documents": [
+        {
+          "title": "ESOP Disclosure 2024-25",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2025/07/RIL_ESOP_Disclosure_FY24-25.pdf"
+        },
+        {
+          "title": "ESOP Disclosure 2023-24",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/ESOP-Disclosure-2023-24.pdf"
+        },
+        {
+          "title": "ESOP Disclosure 2022-23",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/ESOP-Disclosure-2022-23.pdf"
+        },
+        {
+          "title": "Refex ESOP Scheme 2021",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/2025/05/REFEX-ESOP-Scheme2021.pdf"
+        }
+      ],
+      "contents": [],
+      "audios": []
+    }
+  ]
+}
+

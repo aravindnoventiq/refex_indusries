@@ -1,0 +1,78 @@
+{
+  "slug": "investor-presentation",
+  "title": "Investor Presentation",
+  "hasYearFilter": true,
+  "filterItems": [
+    "2025-26",
+    "2024-25",
+    "2023-24"
+  ],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Investor Presentation",
+      "documents": [
+        {
+          "year": "2025-26",
+          "title": "RIL-Investor Presentation-Q2 FY26",
+          "pdfUrl": "/uploads/pdfs/investor-presentation/ril-investor-presentation-q2-fy26-1765860574333-534314987.pdf",
+          "publishedDate": "06/11/2025"
+        },
+        {
+          "year": "2025-26",
+          "title": "RIL-Investor Presentation-Q1 FY26",
+          "pdfUrl": "/uploads/pdfs/investor-presentation/ril-investor-presentation-q1-fy26-1765860574409-479987553.pdf",
+          "publishedDate": ""
+        },
+        {
+          "year": "2025-26",
+          "title": "Presentation-Q1 FY26",
+          "pdfUrl": "/uploads/pdfs/investor-presentation/presentation-q1-fy26-1765860574843-543315944.pdf",
+          "publishedDate": "13/08/2025"
+        },
+        {
+          "year": "2025-26",
+          "title": "RIL-Investor Presentation-Q4 & FY25",
+          "pdfUrl": "/uploads/pdfs/investor-presentation/ril-investor-presentation-q4-fy25-1765860575269-771281267.pdf",
+          "publishedDate": ""
+        },
+        {
+          "year": "2024-25",
+          "title": "RIL-Investor Presentation",
+          "pdfUrl": "/uploads/pdfs/investor-presentation/ril-investor-presentation-1765860575498-639073125.pdf",
+          "publishedDate": "28/02/2025"
+        },
+        {
+          "year": "2024-25",
+          "title": "Earnings presentation and Press Release",
+          "pdfUrl": "/uploads/pdfs/investor-presentation/earnings-presentation-and-press-release-1765860575940-61955978.pdf",
+          "publishedDate": "31/12/2024"
+        },
+        {
+          "year": "2024-25",
+          "title": "Earnings presentation and Press Release",
+          "pdfUrl": "/uploads/pdfs/investor-presentation/earnings-presentation-and-press-release-1765860576486-633354671.pdf",
+          "publishedDate": "30/09/2024"
+        },
+        {
+          "year": "2024-25",
+          "title": "Earnings presentation and Press Release",
+          "pdfUrl": "/uploads/pdfs/investor-presentation/earnings-presentation-and-press-release-1765860577865-598253990.pdf",
+          "publishedDate": "30/06/2024"
+        },
+        {
+          "year": "2023-24",
+          "title": "Earnings presentation and Press Release",
+          "pdfUrl": "/uploads/pdfs/investor-presentation/earnings-presentation-and-press-release-1765860579518-602482752.pdf",
+          "publishedDate": "31/03/2024"
+        },
+        {
+          "year": "2023-24",
+          "title": "Refex – Investor Presentation",
+          "pdfUrl": "/uploads/pdfs/investor-presentation/refex-investor-presentation-1765860580989-848592264.pdf",
+          "publishedDate": ""
+        }
+      ]
+    }
+  ]
+}

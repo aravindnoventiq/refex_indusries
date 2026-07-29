@@ -1,0 +1,32 @@
+{
+  "slug": "statement-of-deviation",
+  "title": "Statement of Deviation",
+  "hasYearFilter": false,
+  "filterItems": [],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Statement of Deviation",
+      "audios": [],
+      "contents": [],
+      "documents": [
+        {
+          "title": "Statement of Deviation 30/03/2024",
+          "pdfUrl": "/uploads/pdfs/statement-of-deviation/statement-of-deviation-30032024-1765865347101-644580846.pdf"
+        },
+        {
+          "title": "Statement of Deviation 30/06/2024",
+          "pdfUrl": "/uploads/pdfs/statement-of-deviation/statement-of-deviation-30062024-1765865347265-934744457.pdf"
+        },
+        {
+          "title": "Statement of Deviation 30/09/2024",
+          "pdfUrl": "/uploads/pdfs/statement-of-deviation/statement-of-deviation-30092024-1765865347401-895141087.pdf"
+        },
+        {
+          "title": "Statement of Deviation 31/12/2024",
+          "pdfUrl": "/uploads/pdfs/statement-of-deviation/statement-of-deviation-31122024-1765865347570-905951730.pdf"
+        }
+      ]
+    }
+  ]
+}

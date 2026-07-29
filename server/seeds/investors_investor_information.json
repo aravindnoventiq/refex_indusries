@@ -1,0 +1,105 @@
+{
+  "slug": "investor-information",
+  "title": "Investor Information",
+  "hasYearFilter": false,
+  "filterItems": [],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Formats for Dividend Tax Exemptions",
+      "documents": [
+        {
+          "title": "Form 10F",
+          "pdfUrl": "/uploads/pdfs/investor-information/form-10f-1765860061416-437484475.pdf"
+        },
+        {
+          "title": "Form 15G",
+          "pdfUrl": "/uploads/pdfs/investor-information/form-15g-1765860061567-709461194.pdf"
+        },
+        {
+          "title": "Form 15H",
+          "pdfUrl": "/uploads/pdfs/investor-information/form-15h-1765860061667-618285092.pdf"
+        },
+        {
+          "title": "Self Declaration Insurance Company Mutual Fund AlF",
+          "pdfUrl": "/uploads/pdfs/investor-information/self-declaration-insurance-company-mutual-fund-alf-1765860061711-140949018.pdf"
+        },
+        {
+          "title": "TRC Template",
+          "pdfUrl": "/uploads/pdfs/investor-information/trc-template-1765860061748-959525742.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Forms for PAN, KYC etc. for the Shareholders holding securities in Physical Form",
+      "documents": [
+        {
+          "title": "Form ISR1",
+          "pdfUrl": "/uploads/pdfs/investor-information/form-isr1-1765860061827-412293758.pdf"
+        },
+        {
+          "title": "Form ISR2",
+          "pdfUrl": "/uploads/pdfs/investor-information/form-isr2-1765860061879-412438745.pdf"
+        },
+        {
+          "title": "Form ISR3",
+          "pdfUrl": "/uploads/pdfs/investor-information/form-isr3-1765860061934-137849705.pdf"
+        },
+        {
+          "title": "Form ISR4",
+          "pdfUrl": "/uploads/pdfs/investor-information/form-isr4-1765860062010-938018171.pdf"
+        },
+        {
+          "title": "Form ISR5",
+          "pdfUrl": "/uploads/pdfs/investor-information/form-isr5-1765860062066-192327009.pdf"
+        },
+        {
+          "title": "Form No.SH13p",
+          "pdfUrl": "/uploads/pdfs/investor-information/form-nosh13p-1765860062104-732430158.pdf"
+        },
+        {
+          "title": "Form No.SH14p",
+          "pdfUrl": "/uploads/pdfs/investor-information/form-nosh14p-1765860062142-992824847.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Nomination for Demat Account",
+      "documents": [
+        {
+          "title": "Choice of Nomination",
+          "pdfUrl": "/uploads/pdfs/investor-information/choice-of-nomination-1765860062179-633846153.pdf"
+        },
+        {
+          "title": "Format: Providing Nomination",
+          "pdfUrl": "/uploads/pdfs/investor-information/format-providing-nomination-1765860062227-741411433.pdf"
+        },
+        {
+          "title": "Format: Opting-out Nomination",
+          "pdfUrl": "/uploads/pdfs/investor-information/format-opting-out-nomination-1765860062262-646692839.pdf"
+        }
+      ]
+    },
+    {
+      "title": "SEBI Circular",
+      "documents": [
+        {
+          "title": "IEPFA Circular",
+          "pdfUrl": "/uploads/pdfs/investor-information/iepfa-circular-1765860062314-161973022.pdf"
+        },
+        {
+          "title": "SEBI Circular dated June 10, 2024",
+          "pdfUrl": "/uploads/pdfs/investor-information/sebi-circular-dated-june-10-2024-1765860062350-208193508.pdf"
+        },
+        {
+          "title": "SEBI Circular dated Nov 17, 2023",
+          "pdfUrl": "/uploads/pdfs/investor-information/sebi-circular-dated-nov-17-2023-1765860062390-459368874.pdf"
+        },
+        {
+          "title": "SEBI Circular dated March 16, 2023",
+          "pdfUrl": "/uploads/pdfs/investor-information/sebi-circular-dated-march-16-2023-1765860062450-610293968.pdf"
+        }
+      ]
+    }
+  ]
+}

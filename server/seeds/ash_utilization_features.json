@@ -1,0 +1,59 @@
+[
+  {
+    "title": "Expertise in Managing Large-Scale Projects",
+    "description": "Proven capability to handle complex operations efficiently.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/superior-quality-2.png",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Centralized Operations",
+    "description": "Digital work orders, sensor-based diesel management, centralized data collection, and GPS fleet tracking for seamless execution.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/eco-friendly-2.png",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Customer Centricity",
+    "description": "Tailored solutions with transparent communication.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/driver.png",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "title": "Safety & Compliance",
+    "description": "Highest safety standards with full regulatory adherence.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/competitive-price-2.png",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "title": "Efficiency & Reliability",
+    "description": "Fast, reliable ash services with minimal disruption.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/money-currency.svg",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "title": "Innovation & Adaptability",
+    "description": "Adoption of new technologies and flexibility to evolving customer needs.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/cutting-edge-tech-2.png",
+    "order": 6,
+    "isActive": true
+  },
+  {
+    "title": "Environmental Responsibility",
+    "description": "Sustainable, regulation-compliant ash management practices.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/experience-2.png",
+    "order": 7,
+    "isActive": true
+  },
+  {
+    "title": "Cost-Effective Solutions",
+    "description": "Affordable services designed to meet power plant budgets.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/competitive-price-2.png",
+    "order": 8,
+    "isActive": true
+  }
+]
+

@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Quality Policy",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/1128e6028c267b8815610fa95a55bdd6.jpeg",
+    "link": "https://refex.co.in/wp-content/uploads/2024/12/Quality-Policy.pdf",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "EHS policy",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/559620381e3172f57ad556f2d25c4c5f.jpeg",
+    "link": "https://refex.co.in/wp-content/uploads/2024/12/EHS-Policy.pdf",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Sustainability Policy",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/71965c8784563959b900528cb5104401.jpeg",
+    "link": "https://refex.co.in/wp-content/uploads/2024/12/Sustainability-ESG-Policy.pdf",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "title": "Grievance Policy",
+    "image": "https://static.readdy.ai/image/d0ead66ce635a168f1e83b108be94826/1731653886eed719dcd84da082342c61.png",
+    "link": "https://refex.co.in/wp-content/uploads/2024/12/Grievance-Policy.pdf",
+    "order": 4,
+    "isActive": true
+  }
+]
+

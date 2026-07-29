@@ -1,0 +1,20 @@
+{
+  "title": "Historical Stock Quote",
+  "columnDate": "DATE",
+  "columnOpen": "OPEN",
+  "columnHigh": "HIGH",
+  "columnLow": "LOW",
+  "columnClose": "CLOSE",
+  "columnVolume": "VOLUME",
+  "columnTradeValue": "TRADE VALUE",
+  "columnTrades": "No. OF TRADES",
+  "filter1M": "1M",
+  "filter3M": "3M",
+  "filter6M": "6M",
+  "filter1Y": "1Y",
+  "defaultExchange": "BSE",
+  "recordsPerPage": 10,
+  "nonce": "44efac5c14",
+  "isActive": true
+}
+

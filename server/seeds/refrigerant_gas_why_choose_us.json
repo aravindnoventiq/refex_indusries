@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Superior Quality",
+    "description": "Adherence to the highest standards, surpassing industry expectations.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/superior-quality-2.png",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Eco-Friendly Solutions",
+    "description": "Environmentally friendly products aligning with global sustainability goals.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/eco-friendly-2.png",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "title": "Cutting-Edge Technology",
+    "description": "Advanced technology ensures the finest quality products.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/cutting-edge-tech-2.png",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "title": "Competitive Pricing",
+    "description": "Market-leading prices without compromising on quality.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/competitive-price-2.png",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "title": "Reliable Delivery",
+    "description": "Well-connected logistics ensure timely and reliable delivery.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/reliable-delivery-2.png",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "title": "Extensive Experience",
+    "description": "With two decades of experience, we have the expertise to meet your needs effectively.",
+    "icon": "https://refex.co.in/wp-content/uploads/2024/12/experience-2.png",
+    "order": 6,
+    "isActive": true
+  }
+]
+

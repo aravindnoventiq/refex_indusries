@@ -1,0 +1,38 @@
+[
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-client01.jpg",
+    "order": 0,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-client02.jpg",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-client03.jpg",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-client04.jpg",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-client05.jpg",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-client06.jpg",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "image": "https://refex.co.in/wp-content/uploads/2024/12/rgml-client07.jpg",
+    "order": 6,
+    "isActive": true
+  }
+]
+

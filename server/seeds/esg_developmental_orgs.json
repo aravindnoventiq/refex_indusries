@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Damooga Foundation",
+    "logo": "https://refex.co.in/wp-content/uploads/2025/02/images-1.png",
+    "content": "Damooga Foundation is a leading IT-enabled environmental NGO in India. Founded in 2014, it is driven by a group of young and passionate nature lovers. Damooga collaborates with individuals, corporate houses, educational and non-educational institutions, social groups and communities, NGOs, social entrepreneurs, and anyone committed to creating a positive impact on society and the environment.",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "title": "Friends of Tribals Society",
+    "logo": "https://refex.co.in/wp-content/uploads/2025/06/FTS-logo.jpg",
+    "content": "Friends of Tribals Society (FTS), established in 1989 and based in Kolkata, is a non-profit organization dedicated to uplifting underprivileged rural and tribal communities across India. Operating through 37 chapters in 25 states, its flagship initiative—the One Teacher School (OTS) or Ekal Vidyalaya—provides non-formal primary education to children aged 4 to 14. These schools focus on five key areas: functional literacy, healthcare, development education, empowerment, and value-based education (Sanskar). FTS was honored with the Gandhi Peace Prize in 2017 for its impactful grassroots work.",
+    "order": 2,
+    "isActive": true
+  }
+]
+

@@ -1,0 +1,35 @@
+[
+  {
+    "text": "Refex eVeelz sets a golden standard for airport transfers. We are happy with consistently reliable, professional drivers and impeccable service every time. For premium eco-friendly airport rides, Refex Green Mobility is our only choice.",
+    "name": "Varun Keswani",
+    "title": "Transferz",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/cropped-TransferZ-site-icon-2-1.png",
+    "order": 0,
+    "isActive": true
+  },
+  {
+    "text": "We bring in a lot of guest speakers and mentors, and this mobility service has made a world of difference. Our guests always comment on how smooth the ride is, and they appreciate not having to figure out transportation after a long flight. It makes everything easier for us and for them.",
+    "name": "Anonymous",
+    "title": "",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/user-img.jpeg",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "text": "We are happy with the employee transportation service! It has definitely improved our team's daily travel experience. Reliable, punctual, safe and comfortable",
+    "name": "Anonymous",
+    "title": "",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/user-img.jpeg",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "text": "I booked this ride for my daughter who was travelling alone. This time she was so happy because of the receiving method and behaviour of the driver. Extremely happy!",
+    "name": "Anonymous",
+    "title": "",
+    "image": "https://refex.co.in/wp-content/uploads/2025/02/user-img.jpeg",
+    "order": 3,
+    "isActive": true
+  }
+]
+

@@ -1,0 +1,75 @@
+{
+  "slug": "book-closure-of-members-register-record-date",
+  "title": "Book Closure of Members Register / Record Date",
+  "hasYearFilter": true,
+  "filterItems": ["2023-24", "2022-23", "2021-22", "2020-21", "2019-20", "2018-19", "2017-18"],
+  "isActive": true,
+  "sections": [
+    {
+      "title": "Book Closure of Members Register",
+      "documents": [
+        {
+          "title": "Record Date",
+          "publishedDate": "22/03/2024",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Record-date-22-03-2024.pdf",
+          "year": "2023-24"
+        },
+        {
+          "title": "Book Closure of Members Register",
+          "publishedDate": "02/09/2023",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Book-Closure-of-Members-Register-02.09.2023.pdf",
+          "year": "2023-24"
+        },
+        {
+          "title": "Book Closure of Members Register",
+          "publishedDate": "01/09/2022",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Book-Closure-of-Register-of-Members-01.09.2022.pdf",
+          "year": "2022-23"
+        },
+        {
+          "title": "Book Closure of Members Register",
+          "publishedDate": "02/09/2021",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Book-Closure-of-Members-Register_02.09.2021.pdf",
+          "year": "2021-22"
+        },
+        {
+          "title": "Book Closure of Members Register",
+          "publishedDate": "08/12/2020",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Book-Closure-of-Members-Register_08.12.2020.pdf",
+          "year": "2020-21"
+        },
+        {
+          "title": "Book Closure of Members Register",
+          "publishedDate": "31/08/2019",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Book-Closure-of-Members-Register_31.08.2019.pdf",
+          "year": "2019-20"
+        },
+        {
+          "title": "Book Closure of Members Register",
+          "publishedDate": "03/11/2018",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Book-Closure-of-Members-Register_03.11.2018.pdf",
+          "year": "2018-19"
+        },
+        {
+          "title": "Book Closure of Members Register",
+          "publishedDate": "03/08/2018",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Book-Closure-of-Members-Register_03.08.2018.pdf",
+          "year": "2018-19"
+        },
+        {
+          "title": "Book Closure of Members Register",
+          "publishedDate": "10/07/2018",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Book-Closure-of%20-Members-Register_10.07.2018.pdf",
+          "year": "2018-19"
+        },
+        {
+          "title": "Book Closure of Members Register",
+          "publishedDate": "07/09/2017",
+          "pdfUrl": "https://refex.co.in/wp-content/uploads/investor-media/Book-Closure-of-Members-Register_07.09.2017.pdf",
+          "year": "2017-18"
+        }
+      ]
+    }
+  ]
+}
+

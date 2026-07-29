@@ -1,0 +1,18 @@
+{
+  "title": "STOCK QUOTE",
+  "currency": "Rupees",
+  "columnCurrency": "CURRENCY",
+  "columnPrice": "PRICE",
+  "columnBid": "BID",
+  "columnOffer": "OFFER",
+  "columnChange": "CHANGE IN (%)",
+  "columnVolume": "VOLUME",
+  "columnTodayOpen": "TODAY'S OPEN",
+  "columnPreviousClose": "PREVIOUS CLOSE",
+  "columnIntradayHigh": "INTRADAY HIGH",
+  "columnIntradayLow": "INTRADAY LOW",
+  "columnWeekHigh52": "52 WEEK HIGH",
+  "columnWeekLow52": "52 WEEK LOW",
+  "footerText": "Pricing delayed by 5 minutes",
+  "isActive": true
+}

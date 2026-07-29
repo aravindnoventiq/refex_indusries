@@ -1,0 +1,185 @@
+[
+  {
+    "name": "Audit Committee",
+    "order": 1,
+    "isActive": true,
+    "members": [
+      {
+        "name": "Mr. Ramesh Dugar",
+        "designation": "Independent Director",
+        "category": "Chairman",
+        "order": 1,
+        "isActive": true
+      },
+      {
+        "name": "Mr. Dinesh Kumar Agarwal",
+        "designation": "Whole-time Director & CFO",
+        "category": "Member",
+        "order": 2,
+        "isActive": true
+      },
+      {
+        "name": "Mr. Sivaramakrishnan Vasudevan",
+        "designation": "Independent Director",
+        "category": "Member",
+        "order": 3,
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "name": "Nomination & Remuneration Committee",
+    "order": 2,
+    "isActive": true,
+    "members": [
+      {
+        "name": "Mr. Ramesh Dugar",
+        "designation": "Independent Director",
+        "category": "Chairman",
+        "order": 1,
+        "isActive": true
+      },
+      {
+        "name": "Mr. Anil Jain",
+        "designation": "Managing Director",
+        "category": "Member",
+        "order": 2,
+        "isActive": true
+      },
+      {
+        "name": "Mr. Sivaramakrishnan Vasudevan",
+        "designation": "Independent Director",
+        "category": "Member",
+        "order": 3,
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "name": "Stakeholders Relationship Committee",
+    "order": 3,
+    "isActive": true,
+    "members": [
+      {
+        "name": "Ms. Latha Venkatesh",
+        "designation": "Independent Director",
+        "category": "Chairman",
+        "order": 1,
+        "isActive": true
+      },
+      {
+        "name": "Mr. Dinesh Kumar Agarwal",
+        "designation": "Whole-time director & CFO",
+        "category": "Member",
+        "order": 2,
+        "isActive": true
+      },
+      {
+        "name": "Ms. Susmitha Siripurapu",
+        "designation": "Non-Executive Director",
+        "category": "Member",
+        "order": 3,
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "name": "Corporate Social Responsibility Committee",
+    "order": 4,
+    "isActive": true,
+    "members": [
+      {
+        "name": "Mr. Sivaramakrishnan Vasudevan",
+        "designation": "Independent Director",
+        "category": "Chairman",
+        "order": 1,
+        "isActive": true
+      },
+      {
+        "name": "Mr. Dinesh Kumar Agarwal",
+        "designation": "Whole-time director & CFO",
+        "category": "Member",
+        "order": 2,
+        "isActive": true
+      },
+      {
+        "name": "Mr. Anil Jain",
+        "designation": "Executive Director",
+        "category": "Member",
+        "order": 3,
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "name": "Risk Management Committee",
+    "order": 5,
+    "isActive": true,
+    "members": [
+      {
+        "name": "Mr. Dinesh Kumar Agarwal",
+        "designation": "Whole-time director & CFO",
+        "category": "Chairperson",
+        "order": 1,
+        "isActive": true
+      },
+      {
+        "name": "Ms. Susmitha Siripurapu",
+        "designation": "Non-Executive Director",
+        "category": "Member",
+        "order": 2,
+        "isActive": true
+      },
+      {
+        "name": "Mr. Sivaramakrishnan Vasudevan",
+        "designation": "Independent Director",
+        "category": "Member",
+        "order": 3,
+        "isActive": true
+      },
+      {
+        "name": "Ms. Harini.S",
+        "designation": "VP-Legal (Holding Co.)",
+        "category": "Member",
+        "order": 4,
+        "isActive": true
+      },
+      {
+        "name": "Mr. Sachin Navtosh Jha",
+        "designation": "Chief of Staff (Holding Co.)",
+        "category": "Member",
+        "order": 5,
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "name": "Banking & Authorization Committee",
+    "order": 6,
+    "isActive": true,
+    "members": [
+      {
+        "name": "Mr. Anil Jain",
+        "designation": "Managing Director",
+        "category": "Chairman",
+        "order": 1,
+        "isActive": true
+      },
+      {
+        "name": "Mr. Dinesh Kumar Agarwal",
+        "designation": "Whole-time director & CFO",
+        "category": "Member",
+        "order": 2,
+        "isActive": true
+      },
+      {
+        "name": "Ms. Susmitha Siripurapu",
+        "designation": "Non-Executive Director",
+        "category": "Member",
+        "order": 3,
+        "isActive": true
+      }
+    ]
+  }
+]
+
