@@ -68,7 +68,7 @@ export default function OurImpactSection() {
 
   if (loading) {
     return (
-      <section className="py-20">
+      <section className="py-10 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
@@ -81,7 +81,7 @@ export default function OurImpactSection() {
   const sortedImpacts = [...impacts].sort((a, b) => (a.order || 0) - (b.order || 0));
 
   return (
-    <section className="py-20">
+    <section className="py-10 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-bold mb-4 uppercase" style={{ fontSize: '34px', color: '#1f1f1f', lineHeight: '1.68' }}>Our Impact</h2>

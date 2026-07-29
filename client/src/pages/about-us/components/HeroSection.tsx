@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { aboutCmsApi } from '../../../services/api';
-import { gsap, SplitText, prefersReducedMotion } from '../aboutGsap';
+import { gsap, SplitText, prefersReducedMotion, isMobileViewport } from '../aboutGsap';
 import { aboutSectionContainer } from '../aboutLayout';
 
 interface AboutHero {
@@ -57,7 +57,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (loading || !rootRef.current) return;
-    if (prefersReducedMotion()) {
+    if (prefersReducedMotion() || isMobileViewport()) {
       gsap.set(rootRef.current.querySelectorAll('[data-hero-anim], [data-hero-title]'), {
         autoAlpha: 1,
         y: 0,
@@ -149,7 +149,7 @@ export default function HeroSection() {
   return (
     <div
       ref={rootRef}
-      className="relative h-[min(70vh,560px)] min-h-[320px] overflow-hidden"
+      className="relative h-[min(58vh,480px)] min-h-[280px] overflow-hidden sm:h-[min(70vh,560px)] sm:min-h-[320px]"
     >
       <div
         data-hero-bg

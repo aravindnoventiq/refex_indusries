@@ -178,7 +178,7 @@ export default function HRSection() {
     <section
       ref={sectionRef}
       id="hr"
-      className={`relative min-h-[560px] overflow-hidden sm:min-h-[620px] lg:min-h-[660px] ${esgScrollMargin}`}
+      className={`relative min-h-0 overflow-hidden sm:min-h-[620px] lg:min-h-[660px] ${esgScrollMargin}`}
       aria-labelledby="hr-section-title"
     >
       <div className="absolute inset-0 overflow-hidden">
@@ -196,7 +196,7 @@ export default function HRSection() {
         className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/20 to-transparent"
       />
 
-      <div className={`relative z-10 px-4 py-14 sm:px-6 sm:py-16 lg:py-20 ${esgContainer}`}>
+      <div className={`relative z-10 px-5 py-8 sm:px-6 sm:py-14 lg:py-20 ${esgContainer}`}>
         <EsgSectionHeader
           badgeIcon={Users}
           badgeLabel="People & Talent"

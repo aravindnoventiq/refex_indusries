@@ -46,8 +46,8 @@ export default function R404AProductPage() {
       <Header />
       <ScrollToTop />
 
-      <div className="pt-[var(--header-offset,5.25rem)] pb-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="pt-[var(--header-offset,5.25rem)] pb-10 sm:pb-16 lg:pb-20 bg-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           {/* Product Details Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
             {/* Left - Product Images */}

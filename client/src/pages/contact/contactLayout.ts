@@ -1,8 +1,8 @@
 export const CONTACT_HERO_BG = '/contact/hero-bg.png';
 
-export const contactContainer = 'mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8';
+export const contactContainer = 'mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8';
 
-export const contactSectionPad = 'py-14 sm:py-16 lg:py-20';
+export const contactSectionPad = 'py-8 sm:py-14 lg:py-20';
 
 export const contactInputClass =
   'w-full rounded-xl border border-[#dfe7da] bg-white px-4 py-3 text-sm text-[#1f1f1f] outline-none transition-colors focus:border-[#4C8C2B] focus:ring-2 focus:ring-[#4C8C2B]/15';

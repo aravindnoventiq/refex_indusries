@@ -6,7 +6,8 @@ import { ABOUT_REVEAL_STAGGER_MS } from '../useAboutReveal';
 import AboutReveal from './AboutReveal';
 import { AboutSectionShell, AboutSpinner } from './AboutSectionShell';
 
-const REFEX_LOGO = '/brand/logo-refex-header.svg';
+const LOGO_DARK = '/brand/logo-refex-header.svg';
+const LOGO_LIGHT = '/brand/logo-refex.svg';
 
 interface AboutPageSection {
   id?: number;
@@ -56,8 +57,10 @@ export default function AboutSection() {
     [section?.content],
   );
 
-  const { classes } = useDarkPageTheme();
-  const { text, surface, leadBox, highlight } = classes;
+  const { classes, theme } = useDarkPageTheme();
+  const { text, surface, surfaceStrong, leadBox, highlight } = classes;
+  const logoSrc = theme === 'light' ? LOGO_LIGHT : LOGO_DARK;
+  const logoCardClass = theme === 'light' ? surfaceStrong : surface;
 
   if (loading) {
     return (
@@ -74,18 +77,25 @@ export default function AboutSection() {
     <AboutSectionShell id="about" eyebrow="Who We Are" title={title}>
       <div className="grid gap-6 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] md:items-stretch md:gap-10 lg:gap-14">
         <AboutReveal delay={0} className="h-full">
-          <div className={`relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-lg p-6 sm:p-8 md:min-h-0 ${surface}`}>
+          <div
+            className={`relative flex h-full min-h-[200px] flex-col overflow-hidden rounded-xl p-6 sm:min-h-[220px] sm:p-8 md:min-h-0 md:rounded-lg ${logoCardClass}`}
+          >
             <div
               aria-hidden
               className="absolute left-0 top-0 h-full w-[3px] bg-[#7cd244]"
             />
-            <div aria-hidden className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#7cd244]/10 blur-3xl" />
-            <div className="flex flex-1 items-center justify-center py-4 sm:py-6">
+            <div
+              aria-hidden
+              className={`pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl ${
+                theme === 'light' ? 'bg-[#4C8C2B]/8' : 'bg-[#7cd244]/10'
+              }`}
+            />
+            <div className="flex flex-1 items-center justify-center py-3 sm:py-4">
               <img
-                src={REFEX_LOGO}
+                src={logoSrc}
                 alt="Refex Industries Limited"
                 loading="lazy"
-                className="h-auto w-full max-w-[210px] object-contain sm:max-w-[240px] md:max-w-[260px]"
+                className="h-auto w-full max-w-[200px] object-contain sm:max-w-[240px] md:max-w-[260px]"
               />
             </div>
           </div>

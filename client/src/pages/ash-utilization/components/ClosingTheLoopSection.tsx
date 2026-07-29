@@ -118,18 +118,63 @@ const LOOP_OUTCOMES = [
   },
 ];
 
-function StepArrow() {
-  const { theme } = useDarkPageTheme();
-
+function MobileLoopStepCard({ step }: { step: LoopStep }) {
   return (
-    <div
-      aria-hidden
-      className={`hidden shrink-0 items-center self-center px-0.5 lg:hidden ${
-        theme === 'dark' ? 'text-white/25' : 'text-[#484848]/35'
-      }`}
+    <article
+      data-loop-anim
+      className="relative overflow-hidden rounded-xl border shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
+      style={{ borderColor: `${step.color}88` }}
     >
-      <i className="ri-arrow-right-s-line text-2xl" />
-    </div>
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${step.image})` }}
+      />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/78 to-black/55" />
+      <div
+        aria-hidden
+        className="absolute inset-x-0 top-0 h-1"
+        style={{ backgroundColor: step.color }}
+      />
+
+      <div className="relative z-10 flex gap-4 p-4 sm:p-5">
+        <span
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[11px] font-bold text-white"
+          style={{ backgroundColor: step.color }}
+        >
+          {step.step}
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className="mb-2 flex items-center gap-2">
+            <span
+              className="flex h-8 w-8 items-center justify-center rounded-lg border bg-black/35"
+              style={{ color: step.color, borderColor: `${step.color}75` }}
+            >
+              <i className={`${step.icon} text-base text-white`} aria-hidden />
+            </span>
+            <h3 className="text-sm font-bold uppercase leading-snug tracking-[0.08em] text-white">
+              {step.title}
+            </h3>
+          </div>
+
+          {step.bullets ? (
+            <ul className="space-y-1.5 text-sm leading-snug text-white/88">
+              {step.bullets.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
+                    style={{ backgroundColor: step.color }}
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm leading-relaxed text-white/88">{step.description}</p>
+          )}
+        </div>
+      </div>
+    </article>
   );
 }
 
@@ -301,16 +346,10 @@ function ClosingTheLoopSection() {
           evacuated, transported, and utilized across multiple industrial applications.
         </p>
 
-        {/* Mobile / tablet — horizontal scroll */}
-        <div
-          data-loop-anim
-          className="scrollbar-hide flex items-stretch gap-2 overflow-x-auto pb-2 snap-x snap-mandatory lg:hidden"
-        >
-          {LOOP_STEPS.map((step, index) => (
-            <div key={step.id} className="flex shrink-0 items-stretch">
-              <LoopStepCard step={step} {...cardProps(step.id)} />
-              {index < LOOP_STEPS.length - 1 && <StepArrow />}
-            </div>
+        {/* Mobile / tablet — vertical stack with full step copy */}
+        <div data-loop-anim className="flex flex-col gap-4 lg:hidden">
+          {LOOP_STEPS.map((step) => (
+            <MobileLoopStepCard key={step.id} step={step} />
           ))}
         </div>
 
@@ -347,10 +386,10 @@ function ClosingTheLoopSection() {
                 >
                   <i className={`${outcome.icon} text-base sm:text-lg`} aria-hidden />
                 </span>
-                <h5 className={`mb-1 text-[9px] font-bold uppercase leading-tight tracking-[0.12em] sm:text-[10px] ${text.cardTitle}`}>
+                <h5 className={`mb-1 text-xs font-bold uppercase leading-tight tracking-[0.12em] sm:text-sm ${text.cardTitle}`}>
                   {outcome.title}
                 </h5>
-                <p className={`text-[10px] leading-snug sm:text-[11px] ${text.bodySm}`}>
+                <p className={`text-xs leading-snug sm:text-sm ${text.bodySm}`}>
                   {outcome.description}
                 </p>
               </div>

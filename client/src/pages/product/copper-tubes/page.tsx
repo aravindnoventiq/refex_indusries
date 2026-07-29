@@ -32,7 +32,7 @@ export default function CopperTubesPage() {
       <Header />
       
       <main className="pt-[var(--header-offset,5.25rem)] pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           {/* Product Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* Product Image */}

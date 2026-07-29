@@ -91,7 +91,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       id="esg-hero"
-      className="relative flex min-h-[520px] items-center overflow-hidden sm:min-h-[580px] lg:min-h-[650px]"
+      className="relative flex min-h-[380px] items-center overflow-hidden sm:min-h-[580px] lg:min-h-[650px]"
     >
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -106,7 +106,7 @@ export default function HeroSection() {
       </div>
 
       <div className={`relative z-10 ${esgContainer}`}>
-        <div className="flex flex-col gap-10 py-16 lg:flex-row lg:items-center lg:justify-between lg:py-20">
+        <div className="flex flex-col gap-8 py-10 sm:gap-10 sm:py-14 lg:flex-row lg:items-center lg:justify-between lg:py-20">
           <div className="max-w-3xl" data-esg-hero-anim>
             <h2 className="mb-4 text-4xl font-bold sm:text-[42px]" style={{ color: esgBrandGreen }}>
               {hero.title}

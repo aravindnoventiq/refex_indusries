@@ -6,7 +6,6 @@ import { useDarkPageTheme } from '../../../components/DarkPageThemeProvider';
 import { prefersReducedMotion } from '../../about-us/aboutGsap';
 import {
   ashContainer,
-  ashHeroTextPad,
   ashRefexGradientText,
 } from '../ashLayout';
 
@@ -197,7 +196,7 @@ function HeroContent({
       {subtitle && (
         <p
           className={`mt-4 max-w-3xl leading-relaxed text-white/85 [text-shadow:0_1px_12px_rgba(0,0,0,0.65)] sm:mt-5 ${
-            compact ? `${text.bodySm} line-clamp-4` : text.body
+            compact ? text.bodySm : text.body
           }`}
         >
           {subtitle}
@@ -402,14 +401,33 @@ function VenwindScrollVideoCollage({
         </div>
       </div>
 
-      {/* Mobile — copy above full-bleed video grid */}
+      {/* Mobile — hero video with text overlay + lazy collage strip */}
       <div className="md:hidden">
-        <div className={`${ashContainer} ${ashHeroTextPad}`}>{content}</div>
-        <div className="pb-12 sm:pb-16">
-          <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#050505]">
+        <div className="relative min-h-[calc(100svh-var(--header-offset,4.25rem))]">
+          <div className="absolute inset-0 overflow-hidden bg-[#050505]">
             <AshVideo src={videos.hero} eager />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#050505]/55 via-[#050505]/20 to-[#050505]/92"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-[min(70vh,480px)] bg-gradient-to-t from-[#050505] via-[#050505]/90 to-transparent"
+            />
           </div>
-          <div className="mt-0.5 grid grid-cols-2 gap-0.5 sm:gap-1">
+
+          <div
+            className={`relative z-10 flex min-h-[calc(100svh-var(--header-offset,4.25rem))] flex-col justify-end ${ashContainer} pb-8 pt-6`}
+          >
+            {content}
+          </div>
+        </div>
+
+        <div className={`${ashContainer} pb-10 pt-2`}>
+          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/45">
+            Operations at scale
+          </p>
+          <div className="grid grid-cols-3 gap-0.5 sm:gap-1">
             {[
               videos.topLeft,
               videos.topRight,
@@ -420,7 +438,7 @@ function VenwindScrollVideoCollage({
             ].map((src, index) => (
               <figure
                 key={`${src}-${index}`}
-                className="relative aspect-[4/3] overflow-hidden bg-[#050505]"
+                className="relative aspect-[4/3] overflow-hidden rounded-sm bg-[#050505]"
               >
                 <AshVideo src={src} />
               </figure>
@@ -491,7 +509,7 @@ function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_100%_20%,rgba(124,210,68,0.08),transparent_55%)]" />
 
       {loading ? (
-        <div className={`relative flex min-h-[420px] items-center justify-center ${ashContainer}`}>
+        <div className={`relative flex min-h-[280px] items-center justify-center sm:min-h-[420px] ${ashContainer}`}>
           <div className={`h-10 w-10 ${spinner}`} />
         </div>
       ) : (

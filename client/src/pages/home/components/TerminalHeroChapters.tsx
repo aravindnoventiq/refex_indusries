@@ -1,19 +1,27 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { HOME_HERO_CHAPTER_COUNT, HOME_HERO_ID, getHeroPinScrollPx } from '../homeMotion';
+import {
+  HOME_HERO_CHAPTER_COUNT,
+  HOME_HERO_ID,
+  getHeroPinScrollPx,
+  getHeroScrollScrub,
+  prefersReducedMotion,
+  shouldPinHomeHero,
+} from '../homeMotion';
+import { HOME_HERO_SENTINEL_ID, useHomeMobile } from '../homeMobile';
 import { homeContainer, homeVideoText } from './HomeSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
-type Chapter = {
+export type HeroChapter = {
   brand: string | null;
   lines: string[];
   support?: string;
   cta?: boolean;
 };
 
-const CHAPTERS: Chapter[] = [
+const CHAPTERS: HeroChapter[] = [
   {
     brand: 'Refex Industries Limited',
     lines: ['Where industrial progress', 'meets sustainable purpose.'],
@@ -34,9 +42,11 @@ const CHAPTERS: Chapter[] = [
 ];
 
 /**
- * Pinned headline chapters over the scroll-scrubbed hero video.
+ * Pinned scroll-scrubbed headline chapters — same GSAP experience on mobile & desktop.
+ * Reduced motion: first chapter only, no pin.
  */
 export default function TerminalHeroChapters() {
+  const isMobile = useHomeMobile();
   const rootRef = useRef<HTMLDivElement | null>(null);
   const pinRef = useRef<HTMLDivElement | null>(null);
   const chapterRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -46,12 +56,13 @@ export default function TerminalHeroChapters() {
     const pin = pinRef.current;
     if (!root || !pin) return;
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const chapters = chapterRefs.current.filter(Boolean) as HTMLDivElement[];
     if (chapters.length === 0) return;
 
-    if (reducedMotion) {
-      chapters.forEach((el, i) => gsap.set(el, { opacity: i === 0 ? 1 : 0 }));
+    if (prefersReducedMotion()) {
+      chapters.forEach((el, i) =>
+        gsap.set(el, { opacity: i === 0 ? 1 : 0, visibility: i === 0 ? 'visible' : 'hidden' }),
+      );
       return;
     }
 
@@ -65,9 +76,9 @@ export default function TerminalHeroChapters() {
           trigger: root,
           start: 'top top',
           end: () => `+=${getHeroPinScrollPx()}`,
-          pin: pin,
-          scrub: true,
-          anticipatePin: 1,
+          pin: shouldPinHomeHero() ? pin : false,
+          scrub: getHeroScrollScrub(),
+          anticipatePin: 0,
           invalidateOnRefresh: true,
         },
       });
@@ -82,30 +93,22 @@ export default function TerminalHeroChapters() {
       tl.to({}, { duration: 1 }, HOME_HERO_CHAPTER_COUNT);
     }, root);
 
-    let resizeTimer: number | undefined;
-    const onResize = () => {
-      if (resizeTimer) window.clearTimeout(resizeTimer);
-      resizeTimer = window.setTimeout(() => ScrollTrigger.refresh(), 250);
-    };
-    window.addEventListener('resize', onResize, { passive: true });
-    const t = window.setTimeout(() => ScrollTrigger.refresh(), 450);
+    const refreshTimer = window.setTimeout(() => ScrollTrigger.refresh(), 400);
 
     return () => {
-      window.clearTimeout(t);
-      if (resizeTimer) window.clearTimeout(resizeTimer);
-      window.removeEventListener('resize', onResize);
+      window.clearTimeout(refreshTimer);
       ctx.revert();
     };
-  }, []);
+  }, [isMobile]);
 
   return (
-    <div ref={rootRef} id={HOME_HERO_ID} className="relative">
+    <div ref={rootRef} id={HOME_HERO_ID} className="home-hero-chapters relative">
       <div
         ref={pinRef}
-        className="relative flex min-h-[100dvh] items-end pb-10 pt-[calc(var(--header-offset,5.25rem)+1.5rem)] sm:pb-12 sm:pt-[calc(var(--header-offset,5.25rem)+2rem)] lg:pb-14"
+        className="home-hero-pin relative flex min-h-[100svh] items-end pb-8 pt-[calc(var(--header-offset,4.25rem)+1rem)] sm:min-h-[100dvh] sm:pb-10 sm:pt-[calc(var(--header-offset,5.25rem)+1.5rem)] lg:pb-14"
       >
         <div className={`${homeContainer} relative w-full`}>
-          <div className="relative min-h-[16rem] w-full max-w-4xl sm:min-h-[18rem] lg:min-h-[20rem]">
+          <div className="home-hero-copy relative min-h-[14rem] w-full max-w-4xl sm:min-h-[16rem] lg:min-h-[20rem]">
             {CHAPTERS.map((chapter, i) => {
               const HeadlineTag = i === 0 ? 'h1' : 'p';
 
@@ -115,7 +118,7 @@ export default function TerminalHeroChapters() {
                   ref={(el) => {
                     chapterRefs.current[i] = el;
                   }}
-                  className="absolute inset-x-0 bottom-0 max-w-4xl"
+                  className="home-hero-chapter absolute inset-x-0 bottom-0 max-w-4xl"
                   style={{ opacity: i === 0 ? 1 : 0, visibility: i === 0 ? 'visible' : 'hidden' }}
                   aria-hidden={i !== 0}
                 >
@@ -123,7 +126,9 @@ export default function TerminalHeroChapters() {
                     <p className={`${homeVideoText.label} mb-3 sm:mb-4`}>{chapter.brand}</p>
                   )}
 
-                  <HeadlineTag className={`${homeVideoText.titleLg} max-w-[22ch] sm:max-w-[26ch]`}>
+                  <HeadlineTag
+                    className={`${homeVideoText.titleLg} home-mobile-hero-title max-w-[22ch] sm:max-w-[26ch]`}
+                  >
                     {chapter.lines.map((line, lineIndex) => (
                       <span
                         key={line}
@@ -141,10 +146,10 @@ export default function TerminalHeroChapters() {
                   )}
 
                   {chapter.cta && (
-                    <div className="mt-7 flex flex-wrap items-center gap-4 sm:mt-9">
+                    <div className="mt-6 flex flex-wrap items-center gap-4 sm:mt-9">
                       <a
                         href="/about-us"
-                        className="inline-flex items-center gap-2 rounded-full bg-[#7cd244] px-6 py-3 text-sm font-semibold text-[#0a0a0a] transition-all hover:gap-3 hover:bg-[#6db038] sm:px-7 sm:py-3.5"
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#7cd244] px-6 py-3 text-sm font-semibold text-[#0a0a0a] transition-all hover:gap-3 hover:bg-[#6db038] active:scale-[0.98] sm:w-auto sm:px-7 sm:py-3.5"
                       >
                         Built For What&apos;s Next
                         <i className="ri-arrow-right-line" />
@@ -153,7 +158,10 @@ export default function TerminalHeroChapters() {
                   )}
 
                   {i === 0 && (
-                    <div className="mt-10 flex items-center gap-3 text-white/45 sm:mt-12" aria-hidden="true">
+                    <div
+                      className="mt-8 flex items-center gap-3 text-white/45 sm:mt-12"
+                      aria-hidden="true"
+                    >
                       <span className="h-9 w-px bg-[#7cd144]/55" />
                       <span className="text-[10px] font-medium uppercase tracking-[0.35em] sm:text-[11px]">
                         Scroll
@@ -166,6 +174,12 @@ export default function TerminalHeroChapters() {
           </div>
         </div>
       </div>
+
+      <div
+        id={HOME_HERO_SENTINEL_ID}
+        className="pointer-events-none absolute bottom-0 h-px w-full"
+        aria-hidden="true"
+      />
     </div>
   );
 }

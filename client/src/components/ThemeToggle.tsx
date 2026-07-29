@@ -13,7 +13,11 @@ export default function ThemeToggle({ variant = 'header', className = '' }: Them
   if (variant === 'header') {
     return (
       <div
-        className={`flex items-center rounded-full border border-white/20 bg-white/[0.06] p-0.5 ${className}`}
+        className={`flex items-center rounded-full border p-0.5 transition-colors duration-300 ${
+          isDark
+            ? 'border-white/20 bg-white/[0.06]'
+            : 'border-[#dfe9d8] bg-[#f3f7ef]'
+        } ${className}`}
         role="group"
         aria-label="Site theme"
       >
@@ -40,7 +44,7 @@ export default function ThemeToggle({ variant = 'header', className = '' }: Them
           className={`flex h-8 w-8 items-center justify-center rounded-full transition-all ${
             isDark
               ? 'bg-white/15 text-white shadow-sm'
-              : 'text-white/70 hover:text-white'
+              : 'text-[#2d5016]/70 hover:text-[#2d5016]'
           }`}
         >
           <i className="ri-moon-line text-base" aria-hidden />

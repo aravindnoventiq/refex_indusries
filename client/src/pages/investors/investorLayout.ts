@@ -7,9 +7,9 @@ export const investorPageFont = { fontFamily: '"Open Sans", sans-serif' } as con
 
 export const investorMainClass = 'pt-[var(--header-offset,5.25rem)]';
 
-export const investorContainer = 'mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8';
+export const investorContainer = 'mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8';
 
-export const investorSectionPad = 'py-14 sm:py-16 lg:py-20';
+export const investorSectionPad = 'py-8 sm:py-14 lg:py-20';
 
 export const investorSectionSageClass = `${investorSectionPad} bg-[#f3f7ef] border-y border-[#dfe9d8]`;
 

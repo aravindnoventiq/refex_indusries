@@ -176,7 +176,7 @@ export default function TalentNetworkSection() {
   return (
     <section
       id="talent-network"
-      className="relative scroll-mt-[calc(var(--header-offset,5.25rem)+1rem)] overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="relative scroll-mt-[calc(var(--header-offset,5.25rem)+1rem)] overflow-hidden py-10 sm:py-16 lg:py-24"
     >
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

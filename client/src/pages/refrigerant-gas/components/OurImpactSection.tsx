@@ -167,8 +167,8 @@ export default function OurImpactSection() {
   if (loading) {
     return (
       <section className="bg-gray-100 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center py-20">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center py-10 sm:py-16 lg:py-20">
             <div className="text-center">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
               <p className="mt-4 text-gray-600">Loading impacts...</p>
@@ -187,7 +187,7 @@ export default function OurImpactSection() {
 
   return (
     <section className="bg-gray-100 py-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-bold uppercase tracking-wide" style={{ fontSize: '34px', color: '#1f1f1f' }}>
             Our Impact

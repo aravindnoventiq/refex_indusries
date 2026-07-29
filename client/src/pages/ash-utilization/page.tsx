@@ -44,7 +44,7 @@ export default function AshUtilizationPage() {
       style={{ fontFamily: '"Open Sans", sans-serif' }}
     >
       <Header />
-      <main className="pt-[var(--header-offset,5.25rem)]">
+      <main className="overflow-x-clip pt-[var(--header-offset,4.25rem)] sm:pt-[var(--header-offset,5.25rem)]">
         <HeroSection />
         <EndToEndSolutionsSection />
         <AshUtilizationGapSection />

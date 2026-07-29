@@ -3,7 +3,7 @@ import { homeCmsApi } from '../../../services/api';
 import { metaFor } from '../../../utils/businessMeta';
 import { resolveBusinessLink } from '../../../utils/businessNavLinks';
 import { prefersReducedMotion } from '../homeMotion';
-import { HomeLoading, HomeSection, homeContentText } from './HomeSection';
+import { HomeLoading, HomeSection, homeContentText, homeMobileCard, homeExpandableBody, homeRevealCard, homeMobileStack } from './HomeSection';
 
 interface Business {
   id: number;
@@ -108,7 +108,7 @@ export default function BusinessSection() {
 
   return (
     <HomeSection id="businesses" label="What We Do" afterHero>
-      <div ref={listRef} className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-8 lg:gap-10">
+      <div ref={listRef} className={`${homeMobileStack} sm:grid-cols-3 lg:gap-10`}>
         {businesses.map((business, index) => {
           const meta = metaFor(business.title);
           const pathway = PATHWAY_LABELS[index] || meta.tag;
@@ -120,9 +120,9 @@ export default function BusinessSection() {
               key={business.id}
               data-pathway
               className={
-                'group flex flex-col border-t border-white/20 pt-5 outline-none transition-[opacity,transform,border-color] duration-500 ease-out ' +
-                'hover:border-white/40 ' +
-                (revealed ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0')
+                `${homeMobileCard} group flex flex-col outline-none ${homeRevealCard(revealed)} ` +
+                'sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:border-t sm:border-white/20 sm:pt-5 ' +
+                'hover:border-white/40 sm:hover:border-white/40'
               }
               style={{ transitionDelay: revealed ? `${index * 70}ms` : '0ms' }}
               tabIndex={0}
@@ -130,18 +130,10 @@ export default function BusinessSection() {
               <span className={homeContentText.meta}>
                 {String(index + 1).padStart(2, '0')} · {pathway}
               </span>
-              <h3 className={`mt-3 ${homeContentText.cardTitle}`}>{business.title}</h3>
+              <h3 className={`mt-2 sm:mt-3 ${homeContentText.cardTitle}`}>{business.title}</h3>
 
-              <div
-                className={
-                  'grid transition-[grid-template-rows,opacity] duration-300 ease-out ' +
-                  'grid-rows-[0fr] opacity-0 ' +
-                  'group-hover:grid-rows-[1fr] group-hover:opacity-100 ' +
-                  'group-focus-within:grid-rows-[1fr] group-focus-within:opacity-100 ' +
-                  '[@media(hover:none)]:grid-rows-[1fr] [@media(hover:none)]:opacity-100'
-                }
-              >
-                <p className={`mt-3 min-h-0 overflow-hidden ${homeContentText.bodySm}`}>
+              <div className={homeExpandableBody}>
+                <p className={`mt-2 min-h-0 overflow-hidden sm:mt-3 ${homeContentText.bodySm}`}>
                   {business.description}
                 </p>
               </div>
@@ -151,7 +143,7 @@ export default function BusinessSection() {
                 {...(isExternal
                   ? { target: '_blank', rel: 'noopener noreferrer' }
                   : {})}
-                className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] transition-all hover:gap-3"
+                className="mt-3.5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] transition-all hover:gap-3 sm:mt-5"
                 style={{ color: exploreColor }}
               >
                 Explore

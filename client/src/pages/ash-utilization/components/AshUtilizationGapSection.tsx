@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { gsap, prefersReducedMotion } from '../../about-us/aboutGsap';
+import { gsap, prefersReducedMotion, shouldUseLightMotion } from '../../about-us/aboutGsap';
 import { useDarkPageTheme } from '../../../components/DarkPageThemeProvider';
 import { ashRefexGradientText } from '../ashLayout';
 import { AshSectionShell } from './AshSectionShell';
@@ -63,7 +63,7 @@ function AshUtilizationGapSection() {
   const { text, imageCard, surface, surfaceStrong } = classes;
 
   useEffect(() => {
-    if (!gridRef.current || prefersReducedMotion()) return;
+    if (!gridRef.current || prefersReducedMotion() || shouldUseLightMotion()) return;
 
     const ctx = gsap.context(() => {
       const root = gridRef.current!;

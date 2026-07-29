@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { prefersReducedMotion } from './aboutGsap';
+import { isMobileViewport, prefersReducedMotion } from '../../utils/responsive';
 
 type UseAboutRevealOptions = {
   threshold?: number;
@@ -10,10 +10,10 @@ export function useAboutReveal<T extends HTMLElement = HTMLDivElement>(
   options: UseAboutRevealOptions = {},
 ) {
   const ref = useRef<T | null>(null);
-  const [isVisible, setIsVisible] = useState(() => prefersReducedMotion());
+  const [isVisible, setIsVisible] = useState(() => prefersReducedMotion() || isMobileViewport());
 
   useEffect(() => {
-    if (prefersReducedMotion()) {
+    if (prefersReducedMotion() || isMobileViewport()) {
       setIsVisible(true);
       return;
     }

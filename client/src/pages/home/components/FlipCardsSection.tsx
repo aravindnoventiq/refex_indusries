@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { homeCmsApi } from '../../../services/api';
-import { HomeLoading, HomeSection, homeContentText } from './HomeSection';
+import { HomeLoading, HomeSection, homeContentText, homeMobileCard, homeExpandableBodyNested, homeMobileStack } from './HomeSection';
 
 interface FlipCard {
   id: number;
@@ -77,41 +77,36 @@ export default function FlipCardsSection() {
       subtitle="Where ambition meets opportunities"
       compact
     >
-      <div className="mb-6 sm:mb-8">
+      <div className="mb-5 sm:mb-8">
         <a
           href={CAREERS_URL}
-          className="inline-flex items-center gap-2 rounded-full bg-[#7cd244] px-6 py-3 text-sm font-semibold text-[#0a0a0a] transition-all hover:gap-3 hover:bg-[#6db038] sm:px-8 sm:py-3.5"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#7cd244] px-5 py-3 text-sm font-semibold text-[#0a0a0a] transition-all hover:gap-3 hover:bg-[#6db038] sm:w-auto sm:justify-start sm:px-8 sm:py-3.5"
         >
           Explore Careers at Refex Industries
           <i className="ri-arrow-right-line" />
         </a>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+      <div className={`${homeMobileStack} sm:grid-cols-2 lg:grid-cols-3 lg:gap-12`}>
         {cards.map((card, index) => (
-          <article key={card.id} className="border-l border-[#7cd144]/50 pl-5 sm:pl-6">
+          <article
+            key={card.id}
+            className={`${homeMobileCard} border-l-0 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:border-l sm:border-[#7cd144]/50 sm:pl-6`}
+          >
             <span className={homeContentText.meta}>{String(index + 1).padStart(2, '0')}</span>
-            <div className="group/title mt-2.5 outline-none" tabIndex={0}>
+            <div className="group/title mt-2 outline-none sm:mt-2.5" tabIndex={0}>
               <h3
                 className={`${homeContentText.cardTitle} cursor-default transition-colors duration-300 group-hover/title:text-[#8ee04f] group-focus-within/title:text-[#8ee04f]`}
               >
                 {card.title}
               </h3>
-              <div
-                className={
-                  'grid transition-[grid-template-rows,opacity] duration-300 ease-out ' +
-                  'grid-rows-[0fr] opacity-0 ' +
-                  'group-hover/title:grid-rows-[1fr] group-hover/title:opacity-100 ' +
-                  'group-focus-within/title:grid-rows-[1fr] group-focus-within/title:opacity-100 ' +
-                  '[@media(hover:none)]:grid-rows-[1fr] [@media(hover:none)]:opacity-100'
-                }
-              >
-                <p className={`mt-2.5 min-h-0 overflow-hidden ${homeContentText.bodySm}`}>
+              <div className={homeExpandableBodyNested}>
+                <p className={`mt-2 min-h-0 overflow-hidden sm:mt-2.5 ${homeContentText.bodySm}`}>
                   {card.description}
                 </p>
               </div>
             </div>
-            <a href={card.link} className={`mt-5 ${homeContentText.link}`}>
+            <a href={card.link} className={`mt-3.5 sm:mt-5 ${homeContentText.link}`}>
               Learn More
               <i className="ri-arrow-right-line" />
             </a>

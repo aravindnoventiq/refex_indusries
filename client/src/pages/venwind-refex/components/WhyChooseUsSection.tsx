@@ -99,9 +99,9 @@ export default function WhyChooseUsSection() {
 
   if (loading) {
     return (
-      <section className="py-20" style={{ backgroundColor: '#f3f3f3' }}>
+      <section className="py-10 sm:py-16 lg:py-20" style={{ backgroundColor: '#f3f3f3' }}>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-center py-20">
+          <div className="flex items-center justify-center py-10 sm:py-16 lg:py-20">
             <div className="text-center">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
               <p className="mt-4 text-gray-600">Loading features...</p>
@@ -117,7 +117,7 @@ export default function WhyChooseUsSection() {
   }
 
   return (
-    <section className="py-20" style={{ backgroundColor: '#f3f3f3' }}>
+    <section className="py-10 sm:py-16 lg:py-20" style={{ backgroundColor: '#f3f3f3' }}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Title */}
         <div className="text-center mb-16">

@@ -17,7 +17,7 @@ export default function HomePage() {
       <div className="site-page-dark text-[#f5f5f5]" style={{ fontFamily: '"Open Sans", sans-serif' }}>
         <Header />
         <HomeScrollVideo>
-          <main className="home-post-hero-content divide-y divide-white/[0.1]">
+          <main className="home-post-hero-content overflow-x-hidden divide-y divide-white/[0.06] sm:overflow-x-clip sm:divide-white/[0.1]">
             <TerminalHeroChapters />
             <BusinessSection />
             <AtGlanceSection />

@@ -61,7 +61,7 @@ Refex is known for superior quality, reliability, and commitment to sustainabili
   if (loading) {
     return (
       <section className="bg-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
           </div>
@@ -81,7 +81,7 @@ Refex is known for superior quality, reliability, and commitment to sustainabili
 
   return (
     <section className="bg-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left - Image */}
           <div className="relative">

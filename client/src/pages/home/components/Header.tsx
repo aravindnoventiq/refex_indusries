@@ -2,6 +2,13 @@ import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { headerCmsApi, stockApi } from '../../../services/api';
 import ThemeToggle from '../../../components/ThemeToggle';
+import { useSiteTheme } from '../../../components/SiteThemeProvider';
+import {
+  getHeaderLogoUrl,
+  getHeaderMobileLinkClass,
+  getHeaderMobileSubLinkClass,
+  getHeaderNavLinkClass,
+} from '../../../utils/siteChromeTheme';
 import { goToAboutSection } from '../../about-us/goToAboutSection';
 import { ABOUT_US_NAV_DROPDOWN } from '../../about-us/aboutNavLinks';
 import { BUSINESS_NAV_DROPDOWN } from '../../../utils/businessNavLinks';
@@ -146,6 +153,7 @@ const defaultNavItems: NavigationItem[] = [
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { theme } = useSiteTheme();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -440,15 +448,7 @@ export default function Header() {
     return item;
   });
   
-  const remoteOfficialLogo = 'https://refex.co.in/wp-content/uploads/2024/07/logo-refex.svg';
-  // Use local header SVG so "Industries Limited" stays white on the dark bar;
-  // keep CMS logo only when it's a custom upload (not the official mark).
-  const logoUrl =
-    !headerData?.logoUrl ||
-    headerData.logoUrl === remoteOfficialLogo ||
-    headerData.logoUrl.includes('logo-refex.svg')
-      ? '/brand/logo-refex-header.svg'
-      : headerData.logoUrl;
+  const logoUrl = getHeaderLogoUrl(theme, headerData?.logoUrl);
   const logoAlt = headerData?.logoAlt || "Refex Industries Limited";
   const showStockInfo = headerData?.showStockInfo !== false;
   const bsePrice = headerData?.bsePrice || "";
@@ -470,11 +470,7 @@ export default function Header() {
   const navLinkClass = (href: string, name?: string) => {
     const active = isActivePath(href);
     const isLongLabel = (name || '').length > 18;
-    return `relative flex items-center gap-1 py-1.5 font-semibold uppercase transition-colors duration-300 cursor-pointer ${
-      isLongLabel
-        ? 'max-w-[8.5rem] text-center text-[9px] leading-tight tracking-[0.08em] whitespace-normal xl:max-w-[9.5rem] xl:text-[10px]'
-        : 'text-[11px] tracking-[0.12em] lg:text-[12px]'
-    } ${active ? 'text-[#7cd244]' : 'text-white/85 hover:text-white'}`;
+    return getHeaderNavLinkClass(theme, active, isLongLabel);
   };
 
   const underlineClass = (href: string) => {
@@ -570,17 +566,17 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className={`header-dark fixed inset-x-0 top-0 z-[100] border-b border-white/10 bg-[#05070a] shadow-lg shadow-black/30 transition-all duration-500 supports-[padding:max(0px)]:pt-[max(0px,env(safe-area-inset-top))] transition-[opacity,transform] duration-700 ease-out ${
+      className={`header-dark fixed inset-x-0 top-0 z-[100] border-b transition-all duration-500 supports-[padding:max(0px)]:pt-[max(0px,env(safe-area-inset-top))] transition-[opacity,transform] duration-700 ease-out ${
         hasLaunched ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1'
       }`}
     >
       {/* Top Bar with Stock Info */}
       {showStockInfo && (bsePrice || nsePrice) && (
-        <div className="w-full border-b border-white/10 bg-[#05070a] transition-colors duration-500">
+        <div className="header-stock-bar w-full border-b transition-colors duration-500">
           <div className="mx-auto flex h-auto min-h-7 max-w-[90rem] flex-wrap items-center gap-x-4 gap-y-1 px-4 py-1 sm:px-6 md:px-8 lg:px-10 xl:px-12 text-[10px] sm:text-[11px]">
               {bsePrice && (
                 <div className="flex items-center gap-1.5">
-                  <span className="font-medium text-white/55">BSE</span>
+                  <span className="header-stock-label font-medium">BSE</span>
                   <i
                     className={`ri-arrow-${bseChangeIndicator === 'up' ? 'up' : 'down'}-line text-sm`}
                     style={{ color: bseChangeIndicator === 'up' ? '#008000' : '#dc2626' }}
@@ -595,7 +591,7 @@ export default function Header() {
               )}
               {nsePrice && (
                 <div className="flex items-center gap-1.5">
-                  <span className="font-medium text-white/55">NSE</span>
+                  <span className="header-stock-label font-medium">NSE</span>
                   <i
                     className={`ri-arrow-${nseChangeIndicator === 'up' ? 'up' : 'down'}-line text-sm`}
                     style={{ color: nseChangeIndicator === 'up' ? '#008000' : '#dc2626' }}
@@ -635,7 +631,7 @@ export default function Header() {
             <a
               href={contactButtonHref}
               style={{ transitionDelay: '240ms' }}
-              className={`relative inline-flex cursor-pointer items-center gap-1.5 overflow-hidden rounded-full border border-white/35 px-4 py-1.5 text-xs font-semibold whitespace-nowrap text-white transition-all duration-300 group hover:border-[#7cd244] hover:bg-[#7cd244] hover:text-[#0a0a0a] transition-[opacity,transform] duration-700 ease-out ${
+              className={`header-contact-btn relative inline-flex cursor-pointer items-center gap-1.5 overflow-hidden rounded-full border px-4 py-1.5 text-xs font-semibold whitespace-nowrap transition-all duration-300 group hover:border-[#7cd244] hover:bg-[#7cd244] hover:text-[#0a0a0a] transition-[opacity,transform] duration-700 ease-out ${
                 hasLaunched ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1'
               }`}
             >
@@ -653,7 +649,7 @@ export default function Header() {
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             style={{ transitionDelay: '260ms' }}
-            className={`shrink-0 rounded-lg p-2 text-white transition-colors hover:bg-white/10 lg:hidden transition-[opacity,transform] duration-700 ease-out ${hasLaunched ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1'}`}
+            className={`header-menu-btn shrink-0 rounded-lg p-2 transition-colors lg:hidden transition-[opacity,transform] duration-700 ease-out ${hasLaunched ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1'}`}
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle menu"
           >
@@ -668,11 +664,11 @@ export default function Header() {
         <div className="fixed inset-0 top-[var(--header-offset,5rem)] z-40 lg:hidden">
           <button
             type="button"
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            className="header-mobile-overlay absolute inset-0 backdrop-blur-sm"
             aria-label="Close menu"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="relative z-10 max-h-[calc(100vh-var(--header-offset,5rem))] overflow-y-auto border-t border-white/10 bg-[#05070a] shadow-2xl">
+          <div className="header-mobile-menu relative z-10 max-h-[calc(100vh-var(--header-offset,5rem))] overflow-y-auto border-t shadow-2xl">
             <nav className="flex w-full flex-col gap-1 px-4 py-5 sm:px-6 md:px-8">
             {sanitizedNavItems.map((item) => (
               <div key={item.name}>
@@ -681,11 +677,7 @@ export default function Header() {
                     href={item.href}
                     target={isExternalHref(item.href) ? '_blank' : undefined}
                     rel={isExternalHref(item.href) ? 'noopener noreferrer' : undefined}
-                    className={`flex-1 py-3 text-[15px] font-semibold uppercase tracking-wide transition-colors ${
-                      isActivePath(item.href)
-                        ? 'text-[#7cd244]'
-                        : 'text-white/90 hover:text-[#7cd244]'
-                    }`}
+                    className={`flex-1 py-3 text-[15px] font-semibold uppercase tracking-wide transition-colors ${getHeaderMobileLinkClass(theme, isActivePath(item.href))}`}
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                     }}
@@ -698,7 +690,7 @@ export default function Header() {
                         e.preventDefault();
                         setOpenDropdown(openDropdown === item.name ? null : item.name);
                       }}
-                      className="p-2 text-white/80 hover:text-[#7cd244] transition-colors"
+                      className={`p-2 transition-colors ${theme === 'dark' ? 'text-white/80 hover:text-[#7cd244]' : 'text-[#2d5016]/80 hover:text-[#7cd244]'}`}
                       aria-label="Toggle dropdown"
                     >
                       <i className={`ri-arrow-${openDropdown === item.name ? 'up' : 'down'}-s-line text-lg`}></i>
@@ -706,14 +698,14 @@ export default function Header() {
                   )}
                 </div>
                 {item.dropdown && item.dropdown.length > 0 && openDropdown === item.name && (
-                  <div className="mt-2 space-y-2 rounded-lg border border-white/10 bg-white/[0.06] py-2 pl-4">
+                  <div className="header-mobile-dropdown mt-2 space-y-2 rounded-lg border py-2 pl-4">
                     {item.dropdown.map((dropItem: any) => (
                       <div key={dropItem.name}>
                         {dropItem.hasSubmenu ? (
                           <>
                             <button
                               onClick={() => setOpenDropdown(openDropdown === 'Smart ODR' ? item.name : 'Smart ODR')}
-                              className="flex w-full cursor-pointer items-center justify-between py-1.5 text-left text-sm font-semibold text-white/85 transition-colors hover:text-[#7cd244]"
+                              className={`flex w-full cursor-pointer items-center justify-between py-1.5 text-left text-sm font-semibold transition-colors hover:text-[#7cd244] ${getHeaderMobileSubLinkClass(theme)}`}
                             >
                               {dropItem.name}
                               <i className={`ri-arrow-${openDropdown === 'Smart ODR' ? 'up' : 'down'}-s-line text-base`}></i>
@@ -725,7 +717,7 @@ export default function Header() {
                                     key={subItem.name}
                                     href={subItem.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="block cursor-pointer py-1.5 text-sm font-semibold text-white/75 transition-colors hover:text-[#7cd244]"
+                                    className={`block cursor-pointer py-1.5 text-sm font-semibold transition-colors hover:text-[#7cd244] ${getHeaderMobileSubLinkClass(theme)}`}
                                     {...(subItem.href.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}
                                   >
                                     {subItem.name}
@@ -741,7 +733,7 @@ export default function Header() {
                               handleSectionClick(e, dropItem.href);
                               setIsMobileMenuOpen(false);
                             }}
-                            className="block cursor-pointer py-1.5 text-sm font-semibold text-white/75 transition-colors hover:text-[#7cd244]"
+                            className={`block cursor-pointer py-1.5 text-sm font-semibold transition-colors hover:text-[#7cd244] ${getHeaderMobileSubLinkClass(theme)}`}
                             {...(dropItem.href.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}
                           >
                             {dropItem.name}
@@ -753,7 +745,7 @@ export default function Header() {
                 )}
               </div>
             ))}
-            <div className="mt-4 flex justify-center border-t border-white/10 pt-4">
+            <div className={`mt-4 flex justify-center border-t pt-4 ${theme === 'dark' ? 'border-white/10' : 'border-[#dfe9d8]'}`}>
               <ThemeToggle variant="header" />
             </div>
             <a

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap, animateAboutItems, prefersReducedMotion } from '../../about-us/aboutGsap';
+import { ashExpandablePanel } from '../ashMobile';
 import { AshSectionShell } from './AshSectionShell';
 
 interface Capability {
@@ -112,7 +113,7 @@ function InteractiveSolutionCard({
   return (
     <article
       data-about-anim
-      className={`group relative min-h-[420px] overflow-hidden rounded-2xl border shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-all duration-500 sm:min-h-[480px] lg:min-h-[520px] ${card.border} ${
+      className={`group relative min-h-[280px] overflow-hidden rounded-2xl border shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-all duration-500 sm:min-h-[480px] lg:min-h-[520px] ${card.border} ${
         isActive ? `${card.ring} ${card.glow}` : ''
       }`}
       onMouseEnter={onActivate}
@@ -153,7 +154,7 @@ function InteractiveSolutionCard({
       />
 
       {/* Content */}
-      <div className="preserve-dark-overlay relative z-10 flex min-h-[420px] flex-col p-5 sm:min-h-[480px] sm:p-6 lg:min-h-[520px]">
+      <div className="preserve-dark-overlay relative z-10 flex min-h-[280px] flex-col p-5 sm:min-h-[480px] sm:p-6 lg:min-h-[520px]">
         {/* Header */}
         <div className="flex items-start gap-3 sm:gap-4">
           <div
@@ -168,7 +169,7 @@ function InteractiveSolutionCard({
             <p
               className={`mt-2 text-sm leading-relaxed text-white/75 transition-all duration-500 sm:text-[0.9375rem] ${
                 showCapabilities
-                  ? 'max-h-0 overflow-hidden opacity-0'
+                  ? 'max-md:max-h-none max-md:opacity-100 max-h-0 overflow-hidden opacity-0'
                   : 'max-h-24 opacity-100 md:group-hover:max-h-0 md:group-hover:overflow-hidden md:group-hover:opacity-0'
               }`}
             >
@@ -181,10 +182,10 @@ function InteractiveSolutionCard({
 
         {/* Capabilities — revealed on hover / tap */}
         <div
-          className={`transition-all duration-500 ease-out ${
+          className={`${ashExpandablePanel} ${
             showCapabilities
               ? 'max-h-[420px] translate-y-0 opacity-100'
-              : 'max-h-0 translate-y-4 opacity-0 md:group-hover:max-h-[420px] md:group-hover:translate-y-0 md:group-hover:opacity-100'
+              : ''
           }`}
         >
           <div

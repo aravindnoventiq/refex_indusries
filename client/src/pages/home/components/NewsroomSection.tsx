@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { homeCmsApi } from '../../../services/api';
-import { HomeLoading, HomeSection, homeImageCard, homeContentText, getHomeImageUrl } from './HomeSection';
+import { HomeLoading, HomeSection, homeImageCard, homeContentText, getHomeImageUrl, homeMobileSnapRow, homeMobileSnapItem, homeImageCardMobile } from './HomeSection';
 
 interface NewsItem {
   id: number;
@@ -82,10 +82,14 @@ export default function NewsroomSection() {
         </a>
       }
     >
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+      <div className={`${homeMobileSnapRow} sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6`}>
         {news.slice(0, 6).map((item) => (
-          <a key={item.id} href={item.link} className={`${homeImageCard} flex flex-col`}>
-            <div className="relative aspect-[16/10] overflow-hidden bg-black/40">
+          <a
+            key={item.id}
+            href={item.link}
+            className={`${homeMobileSnapItem} ${homeImageCard} ${homeImageCardMobile} flex flex-col`}
+          >
+            <div className="relative aspect-[5/3] overflow-hidden bg-black/40 sm:aspect-[16/10]">
               <img
                 src={getHomeImageUrl(item.image)}
                 alt={item.title}
@@ -93,16 +97,16 @@ export default function NewsroomSection() {
                 loading="lazy"
               />
               {item.category && (
-                <span className="absolute left-3 top-3 bg-[#7cd244] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#0a0a0a]">
+                <span className="absolute left-2.5 top-2.5 bg-[#7cd244] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-[#0a0a0a] sm:left-3 sm:top-3 sm:px-2.5 sm:py-1 sm:text-[10px]">
                   {item.category}
                 </span>
               )}
             </div>
-            <div className="flex flex-1 flex-col border-t border-white/10 p-4 sm:p-5">
-              <h3 className="line-clamp-3 text-[0.95rem] font-semibold leading-snug text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.5)] transition-colors group-hover:text-[#8ee04f] sm:text-base">
+            <div className="flex flex-1 flex-col border-t border-white/10 p-3 sm:p-5">
+              <h3 className="line-clamp-2 text-[0.875rem] font-semibold leading-snug text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.5)] transition-colors group-hover:text-[#8ee04f] sm:line-clamp-3 sm:text-base">
                 {item.title}
               </h3>
-              <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#7cd244]">
+              <span className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#7cd244] sm:mt-3 sm:text-xs">
                 Read More
                 <i className="ri-arrow-right-line transition-transform duration-300 group-hover:translate-x-1" />
               </span>

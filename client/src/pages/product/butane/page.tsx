@@ -34,7 +34,7 @@ export default function ButanePage() {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-20">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 pt-[var(--header-offset,5.25rem)]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           {/* Product Image */}
           <div className="w-full">

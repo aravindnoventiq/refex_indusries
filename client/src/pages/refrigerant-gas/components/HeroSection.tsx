@@ -115,7 +115,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full pb-8">
         <div className="max-w-2xl ml-0">
           <h1 
             className="font-bold mb-4 uppercase tracking-wide" 

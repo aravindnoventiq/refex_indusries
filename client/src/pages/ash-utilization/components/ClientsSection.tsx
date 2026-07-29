@@ -284,7 +284,7 @@ function ClientsSection() {
             </h3>
 
             {/* Full-bleed marquee within padded section */}
-            <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2">
+            <div className="relative left-1/2 w-[100vw] max-w-none -translate-x-1/2 overflow-hidden sm:w-screen">
               <ClientLogoMarquee
                 logos={group.clients}
                 direction={group.direction}

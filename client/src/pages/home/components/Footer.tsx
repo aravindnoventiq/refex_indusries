@@ -117,10 +117,10 @@ const DEFAULT_FOOTER: FooterData = {
 };
 
 const headingClass =
-  'mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.5)]';
+  'footer-heading mb-3 text-xs font-semibold uppercase tracking-[0.16em] sm:mb-4 sm:text-sm sm:tracking-[0.18em]';
 const linkClass =
-  'text-sm text-white/82 transition-colors duration-200 hover:text-[#8ee04f] [text-shadow:0_1px_8px_rgba(0,0,0,0.45)]';
-const metaClass = 'text-xs leading-relaxed text-white/72 [text-shadow:0_1px_6px_rgba(0,0,0,0.4)]';
+  'footer-link inline-block py-0.5 text-sm leading-snug transition-colors duration-200';
+const metaClass = 'footer-meta text-xs leading-relaxed';
 
 function FooterNavLink({
   link,
@@ -264,7 +264,7 @@ export default function Footer() {
   }, [footerData]);
 
   return (
-    <footer className="footer-dark relative z-20 overflow-hidden border-t border-white/10 bg-[#05070a] text-white">
+    <footer className="footer-dark relative z-20 overflow-hidden border-t">
       {data.backgroundImage && (
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -276,12 +276,12 @@ export default function Footer() {
         />
       )}
 
-      <div className={`relative z-10 ${homeContainer} py-12 sm:py-14 lg:py-16`}>
-        <div className="mb-10 grid grid-cols-2 gap-8 sm:gap-10 md:grid-cols-3 lg:mb-12 lg:grid-cols-5 lg:gap-8">
+      <div className={`relative z-10 ${homeContainer} py-10 pb-[max(2.5rem,env(safe-area-inset-bottom))] sm:py-14 lg:py-16`}>
+        <div className="mb-8 grid grid-cols-1 gap-8 sm:mb-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 md:grid-cols-3 lg:mb-12 lg:grid-cols-5 lg:gap-8">
           {data.sections.map((section) => (
-            <div key={section.title} className="min-w-0">
+            <div key={section.title} className="footer-section min-w-0 border-b pb-6 last:border-b-0 sm:border-b-0 sm:pb-0">
               <h3 className={headingClass}>{section.title}</h3>
-              <ul className="space-y-2.5">
+              <ul className="space-y-2 sm:space-y-2.5">
                 {section.links.map((link) => (
                   <li key={`${section.title}-${link.name}`}>
                     <FooterNavLink link={link} onHashNavigate={handleHashNavigate} />
@@ -290,9 +290,9 @@ export default function Footer() {
               </ul>
 
               {section.subsections?.map((subsection) => (
-                <div key={subsection.title} className="mt-6 border-t border-white/10 pt-5">
+                <div key={subsection.title} className="footer-section mt-6 border-t pt-5">
                   <h3 className={headingClass}>{subsection.title}</h3>
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-2 sm:space-y-2.5">
                     {subsection.links.map((link) => (
                       <li key={`${subsection.title}-${link.name}`}>
                         <FooterNavLink link={link} onHashNavigate={handleHashNavigate} />
@@ -304,9 +304,9 @@ export default function Footer() {
             </div>
           ))}
 
-          <div className="col-span-2 min-w-0 sm:col-span-1">
+          <div className="footer-follow-card min-w-0 rounded-xl border p-5 sm:col-span-2 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 md:col-span-1 lg:col-span-1">
             <h3 className={headingClass}>Follow Us</h3>
-            <div className="mb-6 flex flex-wrap gap-2.5">
+            <div className="mb-5 flex flex-wrap gap-2.5 sm:mb-6">
               {data.socialLinks.map((social) => (
                 <a
                   key={social.platform}
@@ -314,14 +314,14 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.platform}
-                  className="flex h-9 w-9 items-center justify-center rounded-md border border-white/15 bg-white/[0.04] text-white/75 transition-colors hover:border-[#7cd144]/50 hover:bg-[#7cd144]/10 hover:text-[#7cd144]"
+                  className="footer-social flex h-9 w-9 items-center justify-center rounded-md border transition-colors"
                 >
                   <i className={`${social.icon} text-base`} />
                 </a>
               ))}
             </div>
 
-            <div className={`mb-6 space-y-1.5 ${metaClass}`}>
+            <div className={`footer-mobile-meta mb-5 space-y-2 sm:mb-6 sm:space-y-1.5 ${metaClass}`}>
               {data.contactEmail && (
                 <p className="flex items-start gap-2">
                   <i className="ri-mail-line mt-0.5 text-[#7cd144]" aria-hidden="true" />
@@ -366,8 +366,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 sm:pt-8">
-          <p className="mb-4 max-w-3xl text-[11px] leading-relaxed text-white/40">
+        <div className="footer-section border-t pt-5 sm:pt-8">
+          <p className="footer-meta-muted mb-4 max-w-3xl text-[10px] leading-relaxed sm:text-[11px]">
             City data on the contact form is sourced from{' '}
             <a
               href="https://github.com/dr5hn/countrystatecity-countries"
@@ -389,8 +389,8 @@ export default function Footer() {
             .
           </p>
 
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-            <p className={`text-sm text-white/82 [text-shadow:0_1px_8px_rgba(0,0,0,0.45)]`}>
+          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center sm:gap-6">
+            <p className="footer-link text-xs leading-relaxed sm:text-sm">
               {data.copyrightText}{' '}
               {data.copyrightLink && data.copyrightLinkText && (
                 <a

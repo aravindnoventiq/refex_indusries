@@ -37,7 +37,7 @@ export default function ScrollToTop() {
       {isVisible && (
         <button
           onClick={scrollHomeToTop}
-          className="fixed bottom-8 right-8 w-12 h-12 bg-[#7cd244] text-white rounded-lg shadow-lg hover:bg-[#6db038] transition-all duration-300 flex items-center justify-center z-50 cursor-pointer"
+          className="fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-[max(1.5rem,env(safe-area-inset-right))] z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-lg bg-[#7cd244] text-white shadow-lg transition-all duration-300 hover:bg-[#6db038] sm:bottom-8 sm:right-8 sm:h-12 sm:w-12"
           aria-label="Scroll to top"
         >
           <i className="ri-arrow-up-s-line text-2xl"></i>

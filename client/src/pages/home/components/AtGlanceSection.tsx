@@ -112,19 +112,12 @@ export default function AtGlanceSection() {
 
   return (
     <HomeSection id="glance" label="Driving Impact At Scale" title="Refex Footprint" headerAlign="center">
-      <div ref={sectionRef} className="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-6 lg:gap-12">
-        {statistics.map((stat, i) => {
+      <div ref={sectionRef} className="grid grid-cols-3 gap-3 sm:gap-6 lg:gap-12">
+        {statistics.map((stat) => {
           const parsed = parseNumericStat(stat.value);
 
           return (
-            <div
-              key={stat.id}
-              className={`text-center ${
-                i < statistics.length - 1
-                  ? 'border-b border-white/10 pb-8 sm:border-b-0 sm:border-r sm:border-white/10 sm:pb-0 sm:pr-6'
-                  : ''
-              }`}
-            >
+            <div key={stat.id} className="text-center px-0.5 sm:px-0">
               <div className={homeContentText.statValue}>
                 {parsed ? (
                   <span
@@ -139,7 +132,7 @@ export default function AtGlanceSection() {
                   stat.value
                 )}
               </div>
-              <div className={`uppercase tracking-[0.18em] text-[10px] sm:text-[11px] ${homeContentText.bodySm}`}>
+              <div className={`uppercase tracking-[0.14em] text-[9px] sm:tracking-[0.18em] sm:text-[11px] ${homeContentText.bodySm}`}>
                 {stat.description || stat.title}
               </div>
             </div>

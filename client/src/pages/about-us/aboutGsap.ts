@@ -1,14 +1,17 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
+import {
+  isMobileViewport,
+  prefersReducedMotion,
+  shouldUseLightMotion,
+} from '../../utils/responsive';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export { gsap, ScrollTrigger, SplitText };
 
-export function prefersReducedMotion() {
-  return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-}
+export { prefersReducedMotion, isMobileViewport, shouldUseLightMotion };
 
 export function refreshAboutScrollTriggers() {
   if (typeof window === 'undefined') return;
@@ -28,7 +31,7 @@ export function animateAboutItems(
   const items = container.querySelectorAll(selector);
   if (!items.length) return;
 
-  if (prefersReducedMotion()) {
+  if (shouldUseLightMotion()) {
     revealVisible(items);
     return;
   }

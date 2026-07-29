@@ -193,7 +193,7 @@ export default function GovernanceSection() {
     <section
       ref={sectionRef}
       id="governance"
-      className={`relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:min-h-[720px] ${esgScrollMargin}`}
+      className={`relative min-h-0 overflow-hidden sm:min-h-[680px] lg:min-h-[720px] ${esgScrollMargin}`}
       aria-labelledby="governance-section-title"
     >
       <div className="absolute inset-0 overflow-hidden">
@@ -206,7 +206,7 @@ export default function GovernanceSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#2d5016]/55 via-[#2d5016]/25 to-[#1a2e10]/40" />
       </div>
 
-      <div className={`relative z-10 px-4 py-14 sm:px-6 sm:py-16 lg:py-20 ${esgContainer}`}>
+      <div className={`relative z-10 px-5 py-8 sm:px-6 sm:py-14 lg:py-20 ${esgContainer}`}>
         <EsgSectionHeader
           badgeIcon={Scale}
           badgeLabel="Corporate Governance"

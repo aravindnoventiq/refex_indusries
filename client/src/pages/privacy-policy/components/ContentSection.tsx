@@ -4,7 +4,7 @@ import React from 'react';
 const ContentSection: React.FC = () => {
   return (
     <div className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="prose max-w-none">
           <ol className="ms-0 mb-0 list-unstyled space-y-6">
             <li>

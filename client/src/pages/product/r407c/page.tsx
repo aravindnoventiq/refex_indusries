@@ -43,7 +43,7 @@ export default function R407CPage() {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <div className="container mx-auto px-4 py-12 mt-24">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 pt-[var(--header-offset,5.25rem)]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Product Images */}
           <div className="space-y-4">

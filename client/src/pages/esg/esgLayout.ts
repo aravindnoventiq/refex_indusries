@@ -1,16 +1,16 @@
 /** Shared layout tokens for the ESG page */
 export const esgContainer =
-  'mx-auto w-full max-w-[90rem] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12';
+  'mx-auto w-full max-w-[90rem] px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12';
 
-export const esgSectionPad = 'py-14 sm:py-16 lg:py-20';
+export const esgSectionPad = 'py-8 sm:py-14 lg:py-20';
 
 export const esgScrollMargin = 'scroll-mt-[calc(var(--header-offset,5.25rem)+0.75rem)]';
 
 export const esgSectionTitle =
-  'text-3xl font-semibold tracking-tight text-[#1f1f1f] sm:text-[2.125rem]';
+  'text-[1.45rem] font-semibold tracking-tight text-[#1f1f1f] sm:text-[2.125rem]';
 
 export const esgSectionHeading =
-  'text-3xl font-bold uppercase tracking-[0.06em] text-[#2b2b2b] sm:text-4xl lg:text-[2.35rem]';
+  'text-[1.45rem] font-bold uppercase tracking-[0.06em] text-[#2b2b2b] sm:text-4xl lg:text-[2.35rem]';
 
 export const esgSectionSubtitle = 'text-base leading-relaxed text-[#484848]';
 
@@ -25,7 +25,7 @@ export const esgBrandGreen = '#7DC244';
 export const esgSectionDivider = 'border-t border-black/8';
 
 export const esgCardBase =
-  'overflow-hidden rounded-[1.35rem] border border-[#e3ebe0] bg-white shadow-[0_18px_50px_rgba(76,140,43,0.08)] transition-all duration-700 ease-out hover:-translate-y-1.5 hover:shadow-[0_26px_64px_rgba(76,140,43,0.14)]';
+  'overflow-hidden rounded-[1.35rem] border border-[#e3ebe0] bg-white shadow-[0_18px_50px_rgba(76,140,43,0.08)] transition-all duration-700 ease-out [@media(hover:hover)]:hover:-translate-y-1.5 [@media(hover:hover)]:hover:shadow-[0_26px_64px_rgba(76,140,43,0.14)]';
 
 export const esgBrandColors = {
   green: '#4C8C2B',

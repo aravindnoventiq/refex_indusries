@@ -3,7 +3,7 @@ const GALLERY_IMAGE = '/careers/life-as-refexian-gallery.png';
 export default function LifeAsRefexianSection() {
   return (
     <section
-      className="relative overflow-hidden border-y border-[#dfe9d8] bg-[#f3f7ef] py-16 md:py-20"
+      className="relative overflow-hidden border-y border-[#dfe9d8] bg-[#f3f7ef] py-10 sm:py-16 lg:py-20"
       aria-labelledby="life-as-refexian-title"
     >
       <div

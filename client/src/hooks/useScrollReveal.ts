@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { shouldUseLightMotion } from '../utils/responsive';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,6 +39,11 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>({
       : Array.from(container.children);
 
     if (targets.length === 0) return;
+
+    if (shouldUseLightMotion()) {
+      gsap.set(targets, { opacity: 1, y: 0, clearProps: 'transform' });
+      return;
+    }
 
     const ctx = gsap.context(() => {
       gsap.fromTo(

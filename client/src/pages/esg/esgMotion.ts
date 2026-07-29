@@ -1,17 +1,16 @@
 import { useEffect, useState, type RefObject } from 'react';
-import { prefersReducedMotion } from '../about-us/aboutGsap';
+import {
+  isCoarsePointer,
+  isMobileViewport,
+  mobileScrollStart,
+  prefersReducedMotion,
+} from '../../utils/responsive';
 
-export function isMobileViewport() {
-  return typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches;
-}
-
-export function isCoarsePointer() {
-  return typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
-}
+export { isMobileViewport, isCoarsePointer, prefersReducedMotion };
 
 /** Easier scroll-trigger start on small screens so reveals fire reliably */
 export function esgScrollStart(desktop = 'top 78%') {
-  return isMobileViewport() ? 'top 92%' : desktop;
+  return mobileScrollStart(desktop);
 }
 
 export function useCoarsePointer() {

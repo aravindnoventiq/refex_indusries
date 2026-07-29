@@ -95,7 +95,7 @@ export default function TestimonialsSection() {
 
   if (loading) {
     return (
-      <div className="py-20">
+      <div className="py-10 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
@@ -107,7 +107,7 @@ export default function TestimonialsSection() {
 
   if (sortedTestimonials.length === 0) {
     return (
-      <div className="py-20">
+      <div className="py-10 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-gray-500 py-12">
             No testimonials available.
@@ -118,7 +118,7 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <div className="py-20">
+    <div className="py-10 sm:py-16 lg:py-20">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-bold mb-4" style={{ fontSize: '34px', color: '#1f1f1f', lineHeight: '1.68' }}>

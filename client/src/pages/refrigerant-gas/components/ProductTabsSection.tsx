@@ -103,8 +103,8 @@ export default function ProductTabsSection() {
   if (loading) {
     return (
       <section className="bg-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex items-center justify-center py-20">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="flex items-center justify-center py-10 sm:py-16 lg:py-20">
             <div className="text-center">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
               <p className="mt-4 text-gray-600">Loading product tabs...</p>
@@ -124,7 +124,7 @@ export default function ProductTabsSection() {
 
   return (
     <section className="bg-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       {/* Desktop Tabs */}
         <div className="hidden md:block">
           <div className="flex justify-center gap-4 mb-12">
