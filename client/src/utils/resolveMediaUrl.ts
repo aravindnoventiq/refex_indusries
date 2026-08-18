@@ -2,6 +2,9 @@
  * Resolve CMS/media URLs for the browser.
  * Never prefix /uploads, /brand, /esg, etc. with VITE_API_URL (/api) —
  * that breaks images on UAT when the API is mounted under /api.
+ *
+ * On UAT, nginx often 404s missing /uploads files before Node can redirect.
+ * Fall back to production origin so ESG/CMS media still loads.
  */
 export function resolveMediaUrl(
   url?: string | null,
@@ -23,6 +26,14 @@ export function resolveMediaUrl(
     '/images/',
   ];
   if (staticPrefixes.some((p) => path.startsWith(p))) {
+    if (path.startsWith('/uploads/')) {
+      const configured = String(import.meta.env.VITE_UPLOADS_FALLBACK_ORIGIN || '').replace(/\/$/, '');
+      const onUat =
+        typeof window !== 'undefined' &&
+        /(^|\.)uat\.|uat\.refex\.co\.in/i.test(window.location.hostname);
+      const origin = configured || (onUat ? 'https://refex.co.in' : '');
+      if (origin) return `${origin}${path}`;
+    }
     return path;
   }
 

@@ -4,6 +4,7 @@ import { gsap, prefersReducedMotion } from '../../about-us/aboutGsap';
 import { esgContainer, esgScrollMargin, esgSectionPad } from '../esgLayout';
 import { esgScrollStart } from '../esgMotion';
 import { esgCmsApi } from '../../../services/api';
+import { getFullUrl } from '../esgUtils';
 
 const SDG_IMAGE = '/esg/sdg-global-goals.png?v=2';
 
@@ -21,7 +22,7 @@ export default function SustainableDevelopmentGoalsIntroSection() {
     esgCmsApi
       .getSdgSection()
       .then((data) => {
-        if (data?.image) setImageSrc(data.image);
+        if (data?.image) setImageSrc(getFullUrl(data.image) || data.image);
         if (data?.content) {
           const parts = String(data.content)
             .split(/\n\s*\n/)
