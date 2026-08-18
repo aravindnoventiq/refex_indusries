@@ -743,22 +743,18 @@ if (fs.existsSync(clientBuildPath) && fs.existsSync(distIndexPath)) {
 const PORT = process.env.APP_PORT || 3052;
 const HOST = process.env.APP_HOST || "0.0.0.0";
 
+// Schema changes: run `npm run db:migrate` (explicit CMS SQL). Do not alter on boot —
+// production dumps hit MySQL "Too many keys" when Sequelize tries sync({ alter: true }).
 sequelize
-  .sync({ alter: true })
+  .authenticate()
   .then(() => {
-    console.log("Database synced successfully");
+    console.log("Database connected successfully");
     startServer();
   })
   .catch((err) => {
-    console.error("Error syncing database:", err.message);
-    // If it's a "too many keys" error, continue anyway since tables likely exist
-    if (err.code === 'ER_TOO_MANY_KEYS' || err.original?.code === 'ER_TOO_MANY_KEYS' || err.message?.includes('Too many keys')) {
-      console.warn("Warning: Some table alterations failed due to too many keys. Continuing with existing table structure...");
-      console.warn("Note: You may need to run the migration script manually: node scripts/add_board_member_fields.js");
-    } else {
-      // For other errors, still try to start the server
-      console.warn("Warning: Database sync had errors, but starting server anyway...");
-    }
+    console.error("Error connecting to database:", err.message);
+    console.warn("Warning: Starting server without a working DB connection...");
+    console.warn("Fix MySQL, then run: npm run db:migrate");
     startServer();
   });
 
