@@ -381,6 +381,22 @@ header.header-dark .header-mobile-dropdown {
   background-color: var(--site-footer-card-bg) !important;
 }
 
+header.header-dark .header-dropdown {
+  background-color: var(--site-header-menu-bg) !important;
+  border-color: var(--site-header-border) !important;
+  color: var(--site-header-contact-text) !important;
+  box-shadow: var(--site-header-shadow) !important;
+}
+
+header.header-dark .header-dropdown-link {
+  color: var(--site-header-contact-text) !important;
+}
+
+header.header-dark .header-dropdown-link:hover {
+  color: #7cd244 !important;
+  background-color: var(--site-header-icon-hover-bg) !important;
+}
+
 header.header-dark [class*='border-white'] {
   border-color: var(--site-header-border) !important;
 }

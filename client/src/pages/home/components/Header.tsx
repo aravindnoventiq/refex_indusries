@@ -500,23 +500,23 @@ export default function Header() {
               <i className="ri-arrow-down-s-line text-sm text-[#7cd244] transition-transform duration-300 group-hover:rotate-180" />
               <span className={underlineClass(item.href)} />
             </a>
-            <div className="absolute left-0 top-full z-50 mt-3 w-60 origin-top scale-95 rounded-xl border border-white/20 bg-white/95 opacity-0 shadow-2xl backdrop-blur-md invisible transition-all duration-200 group-hover:visible group-hover:scale-100 group-hover:opacity-100 group-focus-within:visible group-focus-within:scale-100 group-focus-within:opacity-100">
+            <div className="header-dropdown absolute left-0 top-full z-50 mt-3 w-64 origin-top scale-95 rounded-xl border py-2 opacity-0 shadow-2xl backdrop-blur-md invisible transition-all duration-200 group-hover:visible group-hover:scale-100 group-hover:opacity-100 group-focus-within:visible group-focus-within:scale-100 group-focus-within:opacity-100">
               {item.dropdown!.map((dropItem) => {
                 if (dropItem.hasSubmenu && dropItem.submenu) {
                   return (
                     <div key={dropItem.name} className="relative group/submenu">
-                      <div className="flex items-center justify-between px-5 py-3 font-semibold text-gray-900 transition-colors cursor-pointer hover:bg-gray-50 hover:text-[#7cd244]">
+                      <div className="header-dropdown-link flex cursor-pointer items-center justify-between px-5 py-3 text-sm font-semibold transition-colors">
                         {dropItem.name}
                         <i className="ri-arrow-right-s-line"></i>
                       </div>
-                      <div className="absolute left-full top-0 ml-1 w-64 origin-top-left scale-95 rounded-xl border border-gray-100 bg-white opacity-0 shadow-xl invisible transition-all duration-200 group-hover/submenu:visible group-hover/submenu:scale-100 group-hover/submenu:opacity-100">
+                      <div className="header-dropdown absolute left-full top-0 z-50 ml-1.5 w-64 origin-top-left scale-95 rounded-xl border py-2 opacity-0 shadow-2xl invisible transition-all duration-200 group-hover/submenu:visible group-hover/submenu:scale-100 group-hover/submenu:opacity-100">
                         {dropItem.submenu.map((subItem) => (
                           <a
                             key={subItem.name}
                             href={subItem.href}
                             target={subItem.href.startsWith('http') ? '_blank' : undefined}
                             rel={subItem.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                            className="block px-5 py-3 font-semibold text-gray-900 transition-colors cursor-pointer hover:bg-gray-50 hover:text-[#7cd244]"
+                            className="header-dropdown-link block cursor-pointer px-5 py-3 text-sm font-semibold transition-colors"
                           >
                             {subItem.name}
                           </a>
@@ -536,7 +536,7 @@ export default function Header() {
                         handleSectionClick(e, dropItem.href);
                       }
                     }}
-                    className="block px-5 py-3 font-semibold text-gray-900 transition-colors cursor-pointer hover:bg-gray-50 hover:text-[#7cd244]"
+                    className="header-dropdown-link block cursor-pointer px-5 py-3 text-sm font-semibold transition-colors"
                   >
                     {dropItem.name}
                   </a>
