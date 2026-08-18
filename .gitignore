@@ -53,4 +53,11 @@ Desktop.ini
 
 # Optional local tooling
 .cursor/
+.tools/
 *.local
+
+# Local DB dumps / one-off check scripts (not for deploy)
+*.sql
+client/scripts/check-*.cjs
+client/scripts/compare-*.cjs
+server/scripts/start_local_mysql.ps1
