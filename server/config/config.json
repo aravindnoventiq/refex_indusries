@@ -19,6 +19,18 @@
                  "port":  3306,
                  "dialect":  "mysql"
              },
+    "uat":  {
+                "username":  "root",
+                "password":  "rootpassword",
+                "database":  "industries",
+                "host":  "127.0.0.1",
+                "port":  3306,
+                "dialect":  "mysql",
+                "logging":  false,
+                "define":  {
+                               "underscored":  true
+                           }
+            },
     "production":  {
                        "username":  "root",
                        "password":  "MysqlREfex098756oihkjvr6t8oijl",

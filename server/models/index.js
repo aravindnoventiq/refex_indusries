@@ -5,8 +5,18 @@ const path = require("path");
 const Sequelize = require("sequelize");
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || "development";
-const config = require(__dirname + "/../config/config.json")[env];
+const allConfig = require(__dirname + "/../config/config.json");
+const config = allConfig[env];
 const db = {};
+
+if (!config) {
+  const available = Object.keys(allConfig).join(", ");
+  throw new Error(
+    `No database config for NODE_ENV="${env}". ` +
+      `Add a "${env}" block in server/config/config.json. ` +
+      `Available: ${available}`,
+  );
+}
 
 let sequelize;
 if (config.use_env_variable) {
@@ -16,7 +26,7 @@ if (config.use_env_variable) {
     config.database,
     config.username,
     config.password,
-    config
+    config,
   );
 }
 

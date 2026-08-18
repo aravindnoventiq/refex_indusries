@@ -12,8 +12,10 @@
  *
  * Usage:
  *   cd server
+ *   npm run db:migrate:uat
  *   NODE_ENV=production npm run db:migrate
  *   NODE_ENV=development npm run db:migrate
+ *   node scripts/migrate_db.js --env=uat
  *   node scripts/migrate_db.js --env=production
  */
 
