@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { resolveMediaUrl } from '../../../utils/resolveMediaUrl';
 
 /**
  * Shared home typography — Terminal-style hierarchy over the scroll video.
@@ -92,10 +93,7 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || '';
 
 /** Resolve CMS / upload image paths for home sections */
 export function getHomeImageUrl(url?: string): string {
-  if (!url) return '';
-  if (url.startsWith('http://') || url.startsWith('https://')) return url;
-  if (url.startsWith('/')) return `${API_BASE_URL}${url}`;
-  return `${API_BASE_URL}/${url}`;
+  return resolveMediaUrl(url, API_BASE_URL);
 }
 
 /** Dark glass tile for image media over the scroll video */

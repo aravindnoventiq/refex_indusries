@@ -571,6 +571,10 @@ const uploadsPath = path.join(__dirname, "./uploads");
 if (!fs.existsSync(uploadsPath)) {
   fs.mkdirSync(uploadsPath, { recursive: true });
 }
+// Old UAT builds prefixed media with VITE_API_URL=/api → /api/uploads/...
+app.use("/api/uploads", (req, res) => {
+  return res.redirect(301, `/uploads${req.url}`);
+});
 app.use("/uploads", express.static(uploadsPath, { fallthrough: true }));
 // UAT often misses CMS files that still exist on production — fall back so images load.
 const UPLOADS_FALLBACK_ORIGIN =
