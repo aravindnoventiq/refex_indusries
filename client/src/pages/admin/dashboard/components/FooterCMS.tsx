@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { footerCmsApi } from '../../../../services/api';
-import { ABOUT_US_NAV_DROPDOWN } from '../../../about-us/aboutNavLinks';
+import { FOOTER_ABOUT_US_LINKS } from '../../../about-us/aboutNavLinks';
 import { BUSINESS_NAV_DROPDOWN } from '../../../../utils/businessNavLinks';
 import { getFooterInvestorLinks } from '../../../../utils/footerLinks';
 
@@ -53,7 +53,7 @@ function getDefaultFooterData(): FooterData {
     sections: [
       {
         title: 'About Us',
-        links: ABOUT_US_NAV_DROPDOWN,
+        links: FOOTER_ABOUT_US_LINKS,
       },
       {
         title: 'Business',

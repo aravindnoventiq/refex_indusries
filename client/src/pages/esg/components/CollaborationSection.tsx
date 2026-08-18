@@ -250,7 +250,7 @@ export default function CollaborationSection() {
       }
 
       const activeOrgs = (orgsData || [])
-        .filter((org) => org.isActive)
+        .filter((org) => org.isActive !== false)
         .sort((a, b) => (a.order || 0) - (b.order || 0));
 
       setOrgs(activeOrgs.length > 0 ? activeOrgs : FALLBACK_ORGS);

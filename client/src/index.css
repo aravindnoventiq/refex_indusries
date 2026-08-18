@@ -431,10 +431,6 @@ footer.footer-dark .footer-section {
   border-color: var(--site-footer-border) !important;
 }
 
-footer.footer-dark .footer-follow-card {
-  border-color: var(--site-footer-border) !important;
-  background-color: var(--site-footer-card-bg) !important;
-}
 
 footer.footer-dark [class*='border-white'] {
   border-color: var(--site-footer-border) !important;

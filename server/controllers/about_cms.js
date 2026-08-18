@@ -225,7 +225,7 @@ exports.leadership = buildCrud(
   (b) => ({
     name: b.name,
     position: b.position,
-    category: b.category,
+    category: b.category || "Leadership Team",
     description: b.description,
     achievementsJson: JSON.stringify(b.achievements || []),
     experience: b.experience,
@@ -235,7 +235,7 @@ exports.leadership = buildCrud(
     linkedin: b.linkedin,
     biography: b.biography,
     directorshipDetails: b.directorshipDetails,
-    order: b.order || 0,
+    order: Number.isFinite(Number(b.order)) ? Number(b.order) : 0,
     isActive: b.isActive !== false,
   }),
   (row) => ({ ...row, achievements: safeParse(row.achievementsJson, []) })

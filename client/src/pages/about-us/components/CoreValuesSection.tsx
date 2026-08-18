@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { aboutCmsApi } from '../../../services/api';
 import { getPlaceholderImage } from '../../../utils/placeholder';
+import { resolveMediaUrl } from '../../../utils/resolveMediaUrl';
 import { FALLBACK_VALUES } from '../aboutFallbacks';
 import { useDarkPageTheme } from '../../../components/DarkPageThemeProvider';
 import { ABOUT_REVEAL_STAGGER_MS } from '../useAboutReveal';
@@ -70,7 +71,7 @@ export default function CoreValuesSection() {
 
             <div className="relative aspect-[4/3] shrink-0 overflow-hidden">
               <img
-                src={value.image}
+                src={resolveMediaUrl(value.image)}
                 alt={value.title}
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"

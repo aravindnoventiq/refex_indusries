@@ -1,18 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { refrigerantGasCmsApi } from '../../../services/api';
-
-const API_BASE_URL = import.meta.env.VITE_API_URL || "";
-
-const getFullUrl = (url?: string): string | undefined => {
-  if (!url) return undefined;
-  if (url.startsWith('http://') || url.startsWith('https://')) {
-    return url;
-  }
-  if (url.startsWith('/')) {
-    return `${API_BASE_URL}${url}`;
-  }
-  return `${API_BASE_URL}/${url}`;
-};
+import { resolveMediaUrl } from '../../../utils/resolveMediaUrl';
 
 interface Client {
   id: number;
@@ -143,7 +131,7 @@ export default function ClientsSection() {
     return null;
   }
 
-  const clientImages = clients.map(c => c.image);
+  const clientImages = clients.map((c) => resolveMediaUrl(c.image));
 
   return (
     <section className="py-10 sm:py-16 lg:py-20" style={{ backgroundColor: '#f3f3f3' }}>
@@ -167,7 +155,7 @@ export default function ClientsSection() {
                 className="flex-shrink-0 w-48 h-24 flex items-center justify-center bg-white rounded-lg shadow-sm p-4"
               >
                 <img
-                  src={getFullUrl(clientImage)}
+                  src={clientImage}
                   alt={`Client ${index + 1}`}
                   className="max-w-full max-h-full object-contain"
                   onError={(e) => {

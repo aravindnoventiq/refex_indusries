@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { footerCmsApi } from '../../../services/api';
 import { scrollToPageSection } from '../../about-us/goToAboutSection';
-import { ABOUT_US_NAV_DROPDOWN } from '../../about-us/aboutNavLinks';
+import { FOOTER_ABOUT_US_LINKS } from '../../about-us/aboutNavLinks';
 import { BUSINESS_NAV_DROPDOWN } from '../../../utils/businessNavLinks';
 import {
   FOOTER_SUSTAINABILITY_LINKS,
@@ -14,6 +14,7 @@ import {
   parseFooterHref,
   resolveFooterLinkHref,
 } from '../../../utils/footerLinks';
+import { resolveMediaUrl } from '../../../utils/resolveMediaUrl';
 import { homeContainer } from './HomeSection';
 
 interface FooterLink {
@@ -64,7 +65,7 @@ const DEFAULT_FOOTER: FooterData = {
   sections: [
     {
       title: 'About Us',
-      links: ABOUT_US_NAV_DROPDOWN,
+      links: FOOTER_ABOUT_US_LINKS,
     },
     {
       title: 'Business',
@@ -121,6 +122,13 @@ const headingClass =
 const linkClass =
   'footer-link inline-block py-0.5 text-sm leading-snug transition-colors duration-200';
 const metaClass = 'footer-meta text-xs leading-relaxed';
+
+/** CMS often stores "c 2025" or mojibake for © — always render a real copyright mark. */
+function normalizeCopyrightText(raw?: string | null): string {
+  const year = new Date().getFullYear();
+  const match = String(raw || '').match(/(20\d{2})/);
+  return `© ${match ? match[1] : year}`;
+}
 
 function FooterNavLink({
   link,
@@ -207,16 +215,47 @@ export default function Footer() {
     const sections = (src.sections?.length ? src.sections : DEFAULT_FOOTER.sections!).map(
       (section) => {
         if (section.title === 'About Us') {
-          return { ...section, links: ABOUT_US_NAV_DROPDOWN.map(normalizeFooterLink) };
+          const cmsLinks = (section.links || [])
+            .map(normalizeFooterLink)
+            .filter((link) => link.name.trim());
+          const links =
+            cmsLinks.length > 0
+              ? cmsLinks
+              : FOOTER_ABOUT_US_LINKS.map(normalizeFooterLink);
+          const hasDiversity = links.some((link) => /diversity/i.test(link.name));
+          if (!hasDiversity) {
+            links.push(
+              normalizeFooterLink({
+                name: 'Diversity & Inclusion',
+                href: 'https://www.refex.group/diversity-inclusion/',
+              }),
+            );
+          }
+          return { ...section, links };
         }
         if (section.title === 'Business') {
-          return { ...section, links: [...BUSINESS_NAV_DROPDOWN].map(normalizeFooterLink) };
+          const cmsLinks = (section.links || [])
+            .map(normalizeFooterLink)
+            .filter((link) => link.name.trim());
+          return {
+            ...section,
+            links:
+              cmsLinks.length > 0
+                ? cmsLinks
+                : [...BUSINESS_NAV_DROPDOWN].map(normalizeFooterLink),
+          };
         }
         if (isInvestorsFooterSection(section.title)) {
+          const cmsLinks = (section.links || [])
+            .map(normalizeFooterLink)
+            .filter((link) => link.name.trim());
           return {
             ...section,
             title: 'Investors',
-            links: getFooterInvestorLinks().map(normalizeFooterLink),
+            links:
+              cmsLinks.length > 0
+                ? cmsLinks
+                : getFooterInvestorLinks().map(normalizeFooterLink),
           };
         }
         if (section.title === 'Sustainability') {
@@ -244,21 +283,21 @@ export default function Footer() {
             : link,
       ),
       contactEmail: src.contactEmail || DEFAULT_FOOTER.contactEmail!,
-      cin: src.cin || DEFAULT_FOOTER.cin!,
-      nseScripCode: src.nseScripCode || DEFAULT_FOOTER.nseScripCode!,
-      bseScripSymbol: src.bseScripSymbol || DEFAULT_FOOTER.bseScripSymbol!,
-      isin: src.isin || DEFAULT_FOOTER.isin!,
+      cin: (src.cin || DEFAULT_FOOTER.cin!).trim(),
+      nseScripCode: (src.nseScripCode || DEFAULT_FOOTER.nseScripCode!).trim(),
+      bseScripSymbol: (src.bseScripSymbol || DEFAULT_FOOTER.bseScripSymbol!).trim(),
+      isin: (src.isin || DEFAULT_FOOTER.isin!).trim(),
       complaintsTitle: src.complaintsTitle || DEFAULT_FOOTER.complaintsTitle!,
       complaintsPhone: src.complaintsPhone || DEFAULT_FOOTER.complaintsPhone!,
       complaintsPhoneUrl: src.complaintsPhoneUrl || DEFAULT_FOOTER.complaintsPhoneUrl!,
       complaintsEmail: src.complaintsEmail || DEFAULT_FOOTER.complaintsEmail!,
-      copyrightText: src.copyrightText || DEFAULT_FOOTER.copyrightText!,
+      copyrightText: normalizeCopyrightText(src.copyrightText),
       copyrightLink: src.copyrightLink || DEFAULT_FOOTER.copyrightLink!,
       copyrightLinkText: src.copyrightLinkText || DEFAULT_FOOTER.copyrightLinkText!,
       bottomLinks: (src.bottomLinks?.length ? src.bottomLinks : DEFAULT_FOOTER.bottomLinks!).map(
         normalizeFooterLink,
       ),
-      backgroundImage: src.backgroundImage || null,
+      backgroundImage: src.backgroundImage ? resolveMediaUrl(src.backgroundImage) : null,
       backgroundImageOpacity: src.backgroundImageOpacity ?? 0.08,
     };
   }, [footerData]);
@@ -277,7 +316,7 @@ export default function Footer() {
       )}
 
       <div className={`relative z-10 ${homeContainer} py-10 pb-[max(2.5rem,env(safe-area-inset-bottom))] sm:py-14 lg:py-16`}>
-        <div className="mb-8 grid grid-cols-1 gap-8 sm:mb-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 md:grid-cols-3 lg:mb-12 lg:grid-cols-5 lg:gap-8">
+        <div className="mb-8 grid grid-cols-1 gap-8 sm:mb-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 md:grid-cols-3 lg:mb-12 lg:grid-cols-[repeat(4,minmax(0,1fr))_minmax(13.5rem,1.2fr)] lg:gap-8">
           {data.sections.map((section) => (
             <div key={section.title} className="footer-section min-w-0 border-b pb-6 last:border-b-0 sm:border-b-0 sm:pb-0">
               <h3 className={headingClass}>{section.title}</h3>
@@ -304,9 +343,9 @@ export default function Footer() {
             </div>
           ))}
 
-          <div className="footer-follow-card min-w-0 rounded-xl border p-5 sm:col-span-2 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 md:col-span-1 lg:col-span-1">
+          <div className="footer-section min-w-0 sm:col-span-2 md:col-span-1 lg:col-span-1">
             <h3 className={headingClass}>Follow Us</h3>
-            <div className="mb-5 flex flex-wrap gap-2.5 sm:mb-6">
+            <div className="mb-5 flex flex-nowrap gap-2 sm:mb-6">
               {data.socialLinks.map((social) => (
                 <a
                   key={social.platform}
@@ -314,9 +353,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.platform}
-                  className="footer-social flex h-9 w-9 items-center justify-center rounded-md border transition-colors"
+                  className="footer-social flex h-8 w-8 shrink-0 items-center justify-center rounded-md border transition-colors sm:h-9 sm:w-9"
                 >
-                  <i className={`${social.icon} text-base`} />
+                  <i className={`${social.icon} text-sm sm:text-base`} />
                 </a>
               ))}
             </div>

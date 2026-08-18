@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { aboutCmsApi } from '../../../services/api';
+import { resolveMediaUrl } from '../../../utils/resolveMediaUrl';
 import { FALLBACK_BOARD_MEMBERS, enrichBoardMembers } from '../aboutFallbacks';
 import { useDarkPageTheme } from '../../../components/DarkPageThemeProvider';
 import { ABOUT_REVEAL_STAGGER_MS } from '../useAboutReveal';
@@ -102,10 +103,7 @@ function BoardMembersSection() {
 
   const members = (boardMembers.length > 0 ? boardMembers : FALLBACK_BOARD_MEMBERS).map((m) => ({
     ...m,
-    image:
-      m.image && m.image.startsWith('/')
-        ? `https://refex.co.in${m.image}`
-        : m.image,
+    image: resolveMediaUrl(m.image),
   }));
 
   const modalNode =
@@ -137,7 +135,7 @@ function BoardMembersSection() {
             <div className="relative shrink-0 md:h-full md:min-h-0">
               <div className="aspect-[5/4] max-h-[36vh] w-full overflow-hidden sm:max-h-[40vh] md:aspect-auto md:h-full md:max-h-none">
                 <img
-                  src={selectedMember.image}
+                  src={resolveMediaUrl(selectedMember.image)}
                   alt=""
                   className="h-full w-full object-cover object-top"
                   onError={(e) =>
@@ -251,7 +249,7 @@ function BoardMembersSection() {
                 <div className={`flex h-full w-full flex-col ${imageCard}`}>
                   <div className="relative aspect-[3/3.6] w-full shrink-0 overflow-hidden">
                     <img
-                      src={member.image}
+                      src={resolveMediaUrl(member.image)}
                       alt={member.name}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ashUtilizationCmsApi } from '../../../services/api';
+import { resolveMediaUrl } from '../../../utils/resolveMediaUrl';
 import { useDarkPageTheme } from '../../../components/DarkPageThemeProvider';
 import { AshSectionShell, AboutSpinner } from './AshSectionShell';
 import { gsap, animateAboutItems, prefersReducedMotion } from '../../about-us/aboutGsap';
@@ -224,17 +225,17 @@ function ClientsSection() {
   const thermalClients = clients
     .filter((c) => c.category === 'thermal')
     .sort((a, b) => (a.order || 0) - (b.order || 0))
-    .map((c) => c.image);
+    .map((c) => resolveMediaUrl(c.image));
 
   const cementClients = clients
     .filter((c) => c.category === 'cement')
     .sort((a, b) => (a.order || 0) - (b.order || 0))
-    .map((c) => c.image);
+    .map((c) => resolveMediaUrl(c.image));
 
   const concessionairesClients = clients
     .filter((c) => c.category === 'concessionaires')
     .sort((a, b) => (a.order || 0) - (b.order || 0))
-    .map((c) => c.image);
+    .map((c) => resolveMediaUrl(c.image));
 
   useEffect(() => {
     if (loading || !sectionRef.current) return;

@@ -29,3 +29,33 @@ export function resolveMediaUrl(
   const base = (apiBaseUrl || '').replace(/\/$/, '');
   return `${base}${path}`;
 }
+
+/**
+ * Normalize an upload API response path for storage in CMS.
+ * Always persist site-relative paths (e.g. /uploads/...), never /api/uploads/...
+ */
+export function normalizeCmsUploadPath(
+  imageUrl?: string | null,
+  apiBaseUrl: string = import.meta.env.VITE_API_URL || '',
+): string {
+  if (!imageUrl) return '';
+  if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://') || imageUrl.startsWith('data:')) {
+    try {
+      const parsed = new URL(imageUrl);
+      if (parsed.pathname.startsWith('/uploads/') || parsed.pathname.startsWith('/api/uploads/')) {
+        return parsed.pathname.replace(/^\/api(?=\/uploads\/)/, '');
+      }
+    } catch {
+      /* keep original */
+    }
+    return imageUrl;
+  }
+
+  let path = imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`;
+  const base = (apiBaseUrl || '').replace(/\/$/, '');
+  if (base && path.startsWith(base)) {
+    path = path.slice(base.length) || '/';
+  }
+  path = path.replace(/^\/api(?=\/uploads\/)/, '');
+  return path;
+}

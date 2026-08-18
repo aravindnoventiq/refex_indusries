@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { aboutCmsApi } from '../../../../services/api';
+import { normalizeCmsUploadPath } from '../../../../utils/resolveMediaUrl';
 
 interface ValueItem {
   id?: number;
@@ -190,11 +191,7 @@ export default function CoreValuesSectionCMS() {
 
       const data = await response.json();
       if (data.success && data.imageUrl) {
-        const fullImageUrl = data.imageUrl.startsWith('http') 
-          ? data.imageUrl 
-          : `${apiBaseUrl}${data.imageUrl}`;
-        
-        setImageUrl(fullImageUrl);
+        setImageUrl(normalizeCmsUploadPath(data.imageUrl, apiBaseUrl));
         setSuccess('Image uploaded successfully');
       }
     } catch (err: any) {

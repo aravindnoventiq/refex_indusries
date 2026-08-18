@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { aboutCmsApi } from '../../../../services/api';
+import { normalizeCmsUploadPath } from '../../../../utils/resolveMediaUrl';
 
 interface LeadershipMember {
   id?: number;
@@ -54,11 +55,10 @@ export default function LeadershipTeamSectionCMS() {
 
       const data = await response.json();
       if (data.success && data.imageUrl) {
-        const fullImageUrl = data.imageUrl.startsWith('http') 
-          ? data.imageUrl 
-          : `${apiBaseUrl}${data.imageUrl}`;
-        
-        setEditingMember({ ...editingMember, image: fullImageUrl });
+        setEditingMember({
+          ...editingMember,
+          image: normalizeCmsUploadPath(data.imageUrl, apiBaseUrl),
+        });
         setSuccess('Image uploaded successfully');
       }
     } catch (err: any) {

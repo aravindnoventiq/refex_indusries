@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { greenMobilityCmsApi } from '../../../services/api';
+import { resolveMediaUrl } from '../../../utils/resolveMediaUrl';
 
 interface Client {
   id: number;
@@ -114,7 +115,7 @@ export default function ClientsSection() {
   }
 
   const sortedClients = [...clients].sort((a, b) => (a.order || 0) - (b.order || 0));
-  const clientImages = sortedClients.map(c => c.image);
+  const clientImages = sortedClients.map((c) => resolveMediaUrl(c.image));
 
   if (clientImages.length === 0) {
     return (

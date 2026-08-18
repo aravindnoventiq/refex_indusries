@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { aboutCmsApi } from '../../../services/api';
+import { resolveMediaUrl } from '../../../utils/resolveMediaUrl';
 import { FALLBACK_LEADERSHIP } from '../aboutFallbacks';
 import { useDarkPageTheme } from '../../../components/DarkPageThemeProvider';
 import { ABOUT_REVEAL_STAGGER_MS } from '../useAboutReveal';
@@ -32,6 +33,7 @@ function LeadershipTeamSection() {
           .filter((item: Leader) => !/gagan\s+bihari\s+pattnaik/i.test(item.name))
           .sort((a: Leader, b: Leader) => (a.order || 0) - (b.order || 0));
 
+        // CMS is source of truth when any active leaders exist
         setLeaders(activeLeaders.length > 0 ? activeLeaders : FALLBACK_LEADERSHIP);
       } catch {
         setLeaders(FALLBACK_LEADERSHIP);
@@ -83,7 +85,7 @@ function LeadershipTeamSection() {
             <div className={`flex h-full w-full flex-col ${imageCard}`}>
               <div className="relative aspect-[3/3.5] w-full shrink-0 overflow-hidden">
                 <img
-                  src={leader.image}
+                  src={resolveMediaUrl(leader.image)}
                   alt={leader.name}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -132,7 +134,7 @@ function LeadershipTeamSection() {
             <div className="grid max-h-[90vh] overflow-y-auto md:grid-cols-[240px_1fr] lg:grid-cols-[280px_1fr]">
               <div className="relative min-h-[220px] bg-black/30 md:min-h-full">
                 <img
-                  src={selectedLeader.image}
+                  src={resolveMediaUrl(selectedLeader.image)}
                   alt={selectedLeader.name}
                   className="h-full w-full object-cover object-top"
                   onError={(e) => {
