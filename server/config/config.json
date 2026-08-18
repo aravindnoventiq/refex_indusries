@@ -33,9 +33,9 @@
             },
     "production":  {
                        "username":  "root",
-                       "password":  "MysqlREfex098756oihkjvr6t8oijl",
+                       "password":  "rootpassword",
                        "database":  "industries",
-                       "host":  "127.0.0.1",
+                       "host":  "mysql",
                        "port":  3306,
                        "dialect":  "mysql",
                        "logging":  false,

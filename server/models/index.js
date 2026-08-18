@@ -6,10 +6,10 @@ const Sequelize = require("sequelize");
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || "development";
 const allConfig = require(__dirname + "/../config/config.json");
-const config = allConfig[env];
+const baseConfig = allConfig[env];
 const db = {};
 
-if (!config) {
+if (!baseConfig) {
   const available = Object.keys(allConfig).join(", ");
   throw new Error(
     `No database config for NODE_ENV="${env}". ` +
@@ -17,6 +17,20 @@ if (!config) {
       `Available: ${available}`,
   );
 }
+
+// Docker/UAT overrides (DB_HOST=mysql, etc.) take precedence over config.json
+const config = {
+  ...baseConfig,
+  host: process.env.DB_HOST || baseConfig.host,
+  port: process.env.DB_PORT
+    ? Number(process.env.DB_PORT)
+    : baseConfig.port,
+  username:
+    process.env.DB_USER || process.env.DB_USERNAME || baseConfig.username,
+  password: process.env.DB_PASSWORD || baseConfig.password,
+  database:
+    process.env.DB_NAME || process.env.DB_DATABASE || baseConfig.database,
+};
 
 let sequelize;
 if (config.use_env_variable) {
