@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import Header from '../../home/components/Header';
 import Footer from '../../home/components/Footer';
 
-export default function R290Page() {
+import withProductCms from '../withProductCms';
+
+function R290Page() {
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
   useEffect(() => {
@@ -135,3 +137,5 @@ export default function R290Page() {
     </div>
   );
 }
+
+export default withProductCms('r290', R290Page);

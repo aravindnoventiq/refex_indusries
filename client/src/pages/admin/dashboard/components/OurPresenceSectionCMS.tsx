@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
 import { aboutCmsApi } from '../../../../services/api';
+import {
+  PRESENCE_VERTICAL_OPTIONS,
+  REFEX_STATE_PRESENCE,
+  type StatePresence,
+} from '../../../about-us/data/indiaPresenceData';
 
 interface AboutPresence {
   id?: number;
@@ -7,6 +12,7 @@ interface AboutPresence {
   subtitle?: string;
   mapImage?: string;
   presenceTextImage?: string;
+  states?: StatePresence[];
   isActive: boolean;
 }
 
@@ -78,7 +84,17 @@ export default function OurPresenceSectionCMS() {
       setLoading(true);
       setError('');
       const data = await aboutCmsApi.getPresence();
-      setPresence(data || null);
+      setPresence({
+        ...(data || {
+          title: 'Driving Impact Across India',
+          subtitle: 'Spanning Across the Nation',
+          isActive: true,
+        }),
+        states:
+          Array.isArray(data?.states) && data.states.length > 0
+            ? data.states
+            : REFEX_STATE_PRESENCE,
+      });
     } catch (err: any) {
       setError(err.message || 'Failed to load presence section');
       // Fallback to default data
@@ -87,6 +103,7 @@ export default function OurPresenceSectionCMS() {
         subtitle: 'Spanning Across the Nation',
         mapImage: 'https://refex.co.in/wp-content/uploads/2025/06/mobile-map02.jpg',
         presenceTextImage: 'https://refex.co.in/wp-content/uploads/2025/08/presence-text-new04.png',
+        states: REFEX_STATE_PRESENCE,
         isActive: true,
       });
     } finally {
@@ -267,6 +284,54 @@ export default function OurPresenceSectionCMS() {
                 No image uploaded yet. Please upload an image above.
               </div>
             )}
+          </div>
+
+          <div>
+            <label className="mb-2 block text-sm font-medium text-gray-700">Map states & verticals</label>
+            <p className="mb-3 text-xs text-gray-500">
+              Tick the businesses present in each state. This drives the interactive India map.
+            </p>
+            <div className="max-h-[420px] space-y-2 overflow-y-auto rounded-lg border border-gray-200 p-3">
+              {(presence.states || REFEX_STATE_PRESENCE).map((state, index) => (
+                <div key={state.id} className="rounded-md border border-gray-100 p-3">
+                  <div className="mb-2 flex items-center justify-between gap-3">
+                    <input
+                      type="text"
+                      value={state.name}
+                      onChange={(e) => {
+                        const states = [...(presence.states || [])];
+                        states[index] = { ...state, name: e.target.value };
+                        setPresence({ ...presence, states });
+                      }}
+                      className="w-full rounded border border-gray-300 px-2 py-1 text-sm font-semibold"
+                    />
+                    <span className="shrink-0 text-xs text-gray-400">{state.id}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    {PRESENCE_VERTICAL_OPTIONS.map((vertical) => {
+                      const checked = state.verticals.includes(vertical);
+                      return (
+                        <label key={vertical} className="flex items-center gap-1.5 text-xs text-gray-700">
+                          <input
+                            type="checkbox"
+                            checked={checked}
+                            onChange={() => {
+                              const states = [...(presence.states || [])];
+                              const verticals = checked
+                                ? state.verticals.filter((item) => item !== vertical)
+                                : [...state.verticals, vertical];
+                              states[index] = { ...state, verticals };
+                              setPresence({ ...presence, states });
+                            }}
+                          />
+                          {vertical}
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="flex items-center">

@@ -70,6 +70,9 @@ const ContactCMSPage = lazy(() => import('../pages/admin/dashboard/contact-cms/p
 const InvestorsCMSPage = lazy(() => import('../pages/admin/dashboard/investors-cms/page'));
 const HeaderCMSPage = lazy(() => import('../pages/admin/dashboard/header-cms/page'));
 const FooterCMSPage = lazy(() => import('../pages/admin/dashboard/footer-cms/page'));
+const CareersCMSPage = lazy(() => import('../pages/admin/dashboard/careers-cms/page'));
+const ProductsCMSPage = lazy(() => import('../pages/admin/dashboard/products-cms/page'));
+const LegalCMSPage = lazy(() => import('../pages/admin/dashboard/legal-cms/page'));
 const PrivacyPolicyPage = lazy(() => import('../pages/privacy-policy/page'));
 const TermsOfUsePage = lazy(() => import('../pages/terms-of-use/page'));
 const NotFoundPage = lazy(() => import('../pages/NotFound'));
@@ -404,6 +407,30 @@ const routes: RouteObject[] = [
     element: (
       <ProtectedRoute>
         <FooterCMSPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/admin/dashboard/careers-cms',
+    element: (
+      <ProtectedRoute>
+        <CareersCMSPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/admin/dashboard/products-cms',
+    element: (
+      <ProtectedRoute>
+        <ProductsCMSPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/admin/dashboard/legal-cms',
+    element: (
+      <ProtectedRoute>
+        <LegalCMSPage />
       </ProtectedRoute>
     ),
   },

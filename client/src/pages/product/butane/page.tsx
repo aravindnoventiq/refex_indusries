@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import Header from '../../home/components/Header';
 import Footer from '../../home/components/Footer';
 
-export default function ButanePage() {
+import withProductCms from '../withProductCms';
+
+function ButanePage() {
   const [isPackagingOpen, setIsPackagingOpen] = useState(false);
 
   useEffect(() => {
@@ -112,3 +114,5 @@ export default function ButanePage() {
     </div>
   );
 }
+
+export default withProductCms('butane', ButanePage);

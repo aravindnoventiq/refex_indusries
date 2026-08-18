@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import Header from '../../home/components/Header';
 import Footer from '../../home/components/Footer';
 
-export default function R407CPage() {
+import withProductCms from '../withProductCms';
+
+function R407CPage() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
@@ -218,3 +220,5 @@ export default function R407CPage() {
     </div>
   );
 }
+
+export default withProductCms('r407c', R407CPage);

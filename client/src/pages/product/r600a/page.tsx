@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import Header from '../../home/components/Header';
 import Footer from '../../home/components/Footer';
 
-export default function R600APage() {
+import withProductCms from '../withProductCms';
+
+function R600APage() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
@@ -143,3 +145,5 @@ export default function R600APage() {
     </div>
   );
 }
+
+export default withProductCms('r600a', R600APage);

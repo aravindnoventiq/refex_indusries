@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import Header from '../../home/components/Header';
 import Footer from '../../home/components/Footer';
 
-export default function HydrocarbonPage() {
+import withProductCms from '../withProductCms';
+
+function HydrocarbonPage() {
   const [isPackagingOpen, setIsPackagingOpen] = useState(false);
 
   useEffect(() => {
@@ -128,3 +130,5 @@ export default function HydrocarbonPage() {
     </div>
   );
 }
+
+export default withProductCms('hydrocarbon', HydrocarbonPage);

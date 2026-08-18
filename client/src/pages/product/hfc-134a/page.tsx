@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Header from '../../home/components/Header';
 import Footer from '../../home/components/Footer';
 
+import withProductCms from '../withProductCms';
+
 const HFC134APage = () => {
   const [mainImage, setMainImage] = useState('https://refex.co.in/wp-content/uploads/2024/12/HFC.jpg');
   const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
@@ -220,4 +222,4 @@ const HFC134APage = () => {
   );
 };
 
-export default HFC134APage;
+export default withProductCms('hfc-134a', HFC134APage);

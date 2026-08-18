@@ -256,7 +256,14 @@ exports.saveAboutPageSection = buildSingleUpsert(
 // About Presence
 exports.getPresence = asyncHandler(async (req, res) => {
   const presence = await AboutPresence.findOne({ order: [["id", "DESC"]] });
-  return status.responseStatus(res, 200, "OK", presence);
+  if (!presence) return status.responseStatus(res, 200, "OK", presence);
+  const data = presence.toJSON();
+  try {
+    data.states = data.statesJson ? JSON.parse(data.statesJson) : [];
+  } catch {
+    data.states = [];
+  }
+  return status.responseStatus(res, 200, "OK", data);
 });
 
 exports.savePresence = buildSingleUpsert(
@@ -266,9 +273,18 @@ exports.savePresence = buildSingleUpsert(
     subtitle: b.subtitle,
     mapImage: b.mapImage,
     presenceTextImage: b.presenceTextImage,
+    statesJson: Array.isArray(b.states) ? JSON.stringify(b.states) : (b.statesJson || null),
     isActive: b.isActive !== false,
   }),
-  undefined
+  (row) => {
+    let states = [];
+    try {
+      states = row.statesJson ? JSON.parse(row.statesJson) : [];
+    } catch {
+      states = [];
+    }
+    return { ...row, states };
+  }
 );
 
 // Committees CRUD

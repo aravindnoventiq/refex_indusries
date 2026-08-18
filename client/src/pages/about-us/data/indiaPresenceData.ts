@@ -30,7 +30,7 @@ export const REFEX_BUSINESS_VERTICALS: BusinessVertical[] = [
     shortLabel: 'Mobility',
     description: 'Technology-enabled electric fleets and cleaner corporate transportation solutions.',
     accent: '#7cd244',
-    states: 7,
+    states: 5,
   },
   {
     id: 'renewable',
@@ -97,13 +97,13 @@ export const REFEX_STATE_PRESENCE: StatePresence[] = [
     id: 'IN-UP',
     name: 'Uttar Pradesh',
     summary: 'North India operations',
-    verticals: ['Ash & Coal Handling', 'Green Mobility'],
+    verticals: ['Ash & Coal Handling'],
   },
   {
     id: 'IN-WB',
     name: 'West Bengal',
     summary: 'Eastern region presence',
-    verticals: ['Ash & Coal Handling', 'Green Mobility'],
+    verticals: ['Ash & Coal Handling'],
   },
   {
     id: 'IN-AP',
@@ -137,7 +137,7 @@ export const REFEX_STATE_PRESENCE: StatePresence[] = [
   },
   {
     id: 'IN-DL',
-    name: 'Delhi',
+    name: 'New Delhi',
     summary: 'National capital region',
     verticals: ['Green Mobility'],
   },
@@ -145,7 +145,7 @@ export const REFEX_STATE_PRESENCE: StatePresence[] = [
     id: 'IN-HR',
     name: 'Haryana',
     summary: 'NCR extended operations',
-    verticals: ['Green Mobility', 'Ash & Coal Handling'],
+    verticals: ['Ash & Coal Handling'],
   },
   {
     id: 'IN-PB',
@@ -175,6 +175,27 @@ export const REFEX_STATE_PRESENCE: StatePresence[] = [
   ...state,
   verticals: filterVerticals(state.verticals),
 }));
+
+export const PRESENCE_VERTICAL_OPTIONS = [
+  'Ash & Coal Handling',
+  'Green Mobility',
+  'Renewable Energy',
+] as const;
+
+export function normalizePresenceStates(states?: StatePresence[] | null): StatePresence[] {
+  if (!Array.isArray(states) || states.length === 0) return REFEX_STATE_PRESENCE;
+  return states.map((state) => ({
+    ...state,
+    verticals: filterVerticals(state.verticals || []),
+  }));
+}
+
+export function withVerticalCounts(states: StatePresence[]): BusinessVertical[] {
+  return REFEX_BUSINESS_VERTICALS.map((vertical) => ({
+    ...vertical,
+    states: states.filter((state) => state.verticals.includes(vertical.name)).length,
+  }));
+}
 
 export const PRESENCE_BY_STATE_ID = Object.fromEntries(
   REFEX_STATE_PRESENCE.map((state) => [state.id, state]),

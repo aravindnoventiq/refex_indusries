@@ -53,7 +53,7 @@ export default function ESGPage() {
       <Header />
       <main>
         {/* Act 1 — Intro & strategy */}
-        <EsgTopSection />
+        {/* <EsgTopSection /> */}
         <SustainabilityPillarsSection />
         <SustainabilityVision2035Section />
 

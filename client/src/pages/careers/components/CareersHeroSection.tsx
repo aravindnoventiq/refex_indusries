@@ -5,6 +5,8 @@ interface CareersHeroSectionProps {
   eyebrow?: string;
   title: string;
   subtitle: React.ReactNode;
+  backgroundImage?: string;
+  ctaText?: string;
   showCta?: boolean;
   as?: 'h1' | 'h2';
 }
@@ -14,6 +16,8 @@ export default function CareersHeroSection({
   eyebrow,
   title,
   subtitle,
+  backgroundImage,
+  ctaText = 'Join Our Talent Community',
   showCta = false,
   as: HeadingTag = 'h2',
 }: CareersHeroSectionProps) {
@@ -28,7 +32,7 @@ export default function CareersHeroSection({
     >
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${HERO_BG})` }}
+        style={{ backgroundImage: `url(${backgroundImage || HERO_BG})` }}
         aria-hidden
       />
       <div
@@ -57,7 +61,7 @@ export default function CareersHeroSection({
             onClick={scrollToForm}
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#2d5016] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(45,80,22,0.35)] transition-all hover:bg-[#234015] hover:gap-3 sm:px-10 sm:text-base"
           >
-            Join Our Talent Community
+            {ctaText}
             <i className="ri-arrow-down-line text-lg" aria-hidden />
           </button>
         ) : null}

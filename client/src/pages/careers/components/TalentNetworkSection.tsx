@@ -58,7 +58,19 @@ function FieldLabel({
   );
 }
 
-export default function TalentNetworkSection() {
+export default function TalentNetworkSection({
+  eyebrow = 'Join Our Talent Network',
+  title = 'Stay connected with opportunities.',
+  backgroundImage = SECTION_BG,
+  formTitle = 'Share Your Information',
+  formSubtitle = 'Help us get to know you better.',
+}: {
+  eyebrow?: string;
+  title?: string;
+  backgroundImage?: string;
+  formTitle?: string;
+  formSubtitle?: string;
+}) {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const { validateEmail } = useEmailValidation({ required: true });
   const [resumeFile, setResumeFile] = useState<File | null>(null);
@@ -180,7 +192,7 @@ export default function TalentNetworkSection() {
     >
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${SECTION_BG})` }}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
         aria-hidden
       />
       <div
@@ -193,12 +205,11 @@ export default function TalentNetworkSection() {
           <div className="lg:pt-4">
             <div className="mb-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#4C8C2B] sm:text-sm">
               <Users className="h-4 w-4" strokeWidth={2} aria-hidden />
-              Join Our Talent Network
+              {eyebrow}
             </div>
 
             <h2 className="font-serif text-3xl leading-tight text-[#1f1f1f] sm:text-4xl lg:text-[2.75rem]">
-              Stay connected with{' '}
-              <span className="text-[#2d5016]">opportunities.</span>
+              {title}
             </h2>
 
             {/* <p className="mt-5 max-w-xl text-base leading-relaxed text-[#484848] sm:text-[17px]">
@@ -221,8 +232,8 @@ export default function TalentNetworkSection() {
                 <FileText className="h-5 w-5" strokeWidth={2} aria-hidden />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[#1f1f1f]">Share Your Information</h3>
-                <p className="mt-1 text-sm text-[#666]">Help us get to know you better.</p>
+                <h3 className="text-lg font-semibold text-[#1f1f1f]">{formTitle}</h3>
+                <p className="mt-1 text-sm text-[#666]">{formSubtitle}</p>
               </div>
             </div>
 

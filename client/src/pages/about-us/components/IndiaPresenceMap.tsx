@@ -1,9 +1,8 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { INDIA_SVG_MAP } from '@vishalvoid/react-india-map';
 import {
-  PRESENCE_BY_STATE_ID,
-  PRESENCE_STATE_IDS,
   REFEX_BUSINESS_VERTICALS,
+  REFEX_STATE_PRESENCE,
   type StatePresence,
 } from '../data/indiaPresenceData';
 import { useDarkPageTheme } from '../../../components/DarkPageThemeProvider';
@@ -20,8 +19,8 @@ function getVerticalChip(name: string) {
   };
 }
 
-function getVerticalColors(stateId: string): string[] {
-  const presence = PRESENCE_BY_STATE_ID[stateId];
+function getVerticalColors(stateId: string, presenceById: Record<string, StatePresence>): string[] {
+  const presence = presenceById[stateId];
   if (!presence) return [];
   return presence.verticals.map((name) => getVerticalChip(name).accent);
 }
@@ -81,7 +80,11 @@ function createGradient(
   return gradient;
 }
 
-function ensureStateGradients(svg: SVGSVGElement) {
+function ensureStateGradients(
+  svg: SVGSVGElement,
+  presenceIds: Set<string>,
+  presenceById: Record<string, StatePresence>,
+) {
   const NS = 'http://www.w3.org/2000/svg';
   let defs = svg.querySelector('defs');
   if (!defs) {
@@ -89,8 +92,8 @@ function ensureStateGradients(svg: SVGSVGElement) {
     svg.insertBefore(defs, svg.firstChild);
   }
 
-  PRESENCE_STATE_IDS.forEach((stateId) => {
-    const colors = getVerticalColors(stateId);
+  presenceIds.forEach((stateId) => {
+    const colors = getVerticalColors(stateId, presenceById);
     if (!colors.length) return;
 
     defs!.appendChild(createGradient(document, gradientIdForState(stateId), colors, 0.72));
@@ -163,7 +166,18 @@ function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
 }
 
-export default function IndiaPresenceMap({ fillHeight = false }: { fillHeight?: boolean }) {
+export default function IndiaPresenceMap({
+  fillHeight = false,
+  states = REFEX_STATE_PRESENCE,
+}: {
+  fillHeight?: boolean;
+  states?: StatePresence[];
+}) {
+  const presenceById = useMemo(
+    () => Object.fromEntries(states.map((state) => [state.id, state])) as Record<string, StatePresence>,
+    [states],
+  );
+  const presenceIds = useMemo(() => new Set(states.map((state) => state.id)), [states]);
   const { theme, classes } = useDarkPageTheme();
   const { text, panel } = classes;
   const mapColors = MAP_COLORS[theme];
@@ -183,7 +197,7 @@ export default function IndiaPresenceMap({ fillHeight = false }: { fillHeight?: 
   pinnedIdRef.current = pinnedId;
 
   const showPopup = useCallback((stateId: string, clientX: number, clientY: number) => {
-    const presence = PRESENCE_BY_STATE_ID[stateId];
+    const presence = presenceById[stateId];
     if (!presence) {
       setPopup(null);
       return;
@@ -196,7 +210,7 @@ export default function IndiaPresenceMap({ fillHeight = false }: { fillHeight?: 
     const y = clamp(clientY + 18, margin, window.innerHeight - popupHeight - margin);
 
     setPopup({ presence, x, y });
-  }, []);
+  }, [presenceById]);
 
   showPopupRef.current = showPopup;
 
@@ -240,12 +254,12 @@ export default function IndiaPresenceMap({ fillHeight = false }: { fillHeight?: 
       svg.style.maxWidth = '100%';
     }
 
-    ensureStateGradients(svg);
+    ensureStateGradients(svg, presenceIds, presenceById);
 
     const onEnter = (event: Event) => {
       const path = event.currentTarget as SVGPathElement;
       const stateId = path.getAttribute('id') ?? '';
-      const hasPresence = PRESENCE_STATE_IDS.has(stateId);
+      const hasPresence = presenceIds.has(stateId);
 
       applyHoverStyle(path, stateId, hasPresence, mapColorsRef.current);
 
@@ -278,7 +292,7 @@ export default function IndiaPresenceMap({ fillHeight = false }: { fillHeight?: 
       event.preventDefault();
       const path = event.currentTarget as SVGPathElement;
       const stateId = path.getAttribute('id') ?? '';
-      const presence = PRESENCE_BY_STATE_ID[stateId];
+      const presence = presenceById[stateId];
 
       if (!presence) return;
 
@@ -311,7 +325,7 @@ export default function IndiaPresenceMap({ fillHeight = false }: { fillHeight?: 
       const stateId = path.getAttribute('id') ?? '';
       applyBaseStyle(path, stateId, mapColorsRef.current);
       path.style.transition = 'fill 0.22s ease, stroke 0.22s ease, stroke-width 0.22s ease, filter 0.22s ease';
-      path.style.cursor = PRESENCE_STATE_IDS.has(stateId) ? 'pointer' : 'default';
+      path.style.cursor = presenceIds.has(stateId) ? 'pointer' : 'default';
       path.style.pointerEvents = 'all';
 
       path.addEventListener('mouseenter', onEnter);
@@ -329,13 +343,13 @@ export default function IndiaPresenceMap({ fillHeight = false }: { fillHeight?: 
       pathsRef.current = [];
       root.innerHTML = '';
     };
-  }, [fillHeight, theme]);
+  }, [fillHeight, theme, presenceById, presenceIds]);
 
   useEffect(() => {
     pathsRef.current.forEach((path) => {
       const id = path.getAttribute('id') ?? '';
       const pinned = pinnedIdRef.current === id;
-      if (pinned && PRESENCE_STATE_IDS.has(id)) {
+      if (pinned && presenceIds.has(id)) {
         applyHoverStyle(path, id, true, mapColors);
       } else {
         applyBaseStyle(path, id, mapColors);
@@ -347,7 +361,7 @@ export default function IndiaPresenceMap({ fillHeight = false }: { fillHeight?: 
     const onMove = (event: MouseEvent) => {
       mouseRef.current = { x: event.clientX, y: event.clientY };
       if (pinnedIdRef.current || !hoveredId) return;
-      if (PRESENCE_BY_STATE_ID[hoveredId]) {
+      if (presenceById[hoveredId]) {
         showPopupRef.current(hoveredId, event.clientX, event.clientY);
       }
     };

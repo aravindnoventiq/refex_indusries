@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import { aboutCmsApi } from '../../../services/api';
-import { REFEX_BUSINESS_VERTICALS } from '../data/indiaPresenceData';
+import {
+  normalizePresenceStates,
+  withVerticalCounts,
+  type StatePresence,
+} from '../data/indiaPresenceData';
 import { useDarkPageTheme } from '../../../components/DarkPageThemeProvider';
-import { ABOUT_REVEAL_STAGGER_MS } from '../useAboutReveal';
 import AboutReveal from './AboutReveal';
 import { AboutSectionShell, AboutSpinner } from './AboutSectionShell';
 import IndiaPresenceMap from './IndiaPresenceMap';
@@ -13,6 +16,7 @@ interface AboutPresence {
   subtitle?: string;
   mapImage?: string;
   presenceTextImage?: string;
+  states?: StatePresence[];
   isActive: boolean;
 }
 
@@ -54,7 +58,7 @@ function OurPresenceSection() {
 
   if (loading) {
     return (
-      <div id="our presence">
+      <div id="our-presence">
         <AboutSpinner />
       </div>
     );
@@ -62,12 +66,13 @@ function OurPresenceSection() {
 
   const display = presence || {
     title: 'Driving Impact Across India',
-    // subtitle: 'Operational footprint across energy, mobility, and renewables',
   };
+  const mapStates = normalizePresenceStates(presence?.states);
+  const verticals = withVerticalCounts(mapStates);
 
   return (
     <AboutSectionShell
-      id="our presence"
+      id="our-presence"
       eyebrow="our presence"
       title={display.title}
       // subtitle={display.subtitle}
@@ -80,15 +85,15 @@ function OurPresenceSection() {
           </div>
 
           <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:items-stretch lg:gap-5">
-            <div className="flex min-h-[240px] w-full items-stretch sm:min-h-[280px] lg:h-full lg:min-h-0">
-              <IndiaPresenceMap fillHeight />
+            <div className="flex min-h-[280px] w-full items-stretch sm:min-h-[360px] lg:min-h-[420px]">
+              <IndiaPresenceMap fillHeight states={mapStates} />
             </div>
 
             <aside className="flex min-h-0 flex-col">
               <p className={`mb-3 lg:hidden ${text.label}`}>Business verticals</p>
 
               <div className="flex flex-1 flex-col justify-center gap-2.5">
-                {REFEX_BUSINESS_VERTICALS.map((vertical, index) => {
+                {verticals.map((vertical, index) => {
                   const isActive = activeVertical === vertical.id;
                   return (
                     <article

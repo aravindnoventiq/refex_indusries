@@ -3,7 +3,9 @@ import Header from '../../home/components/Header';
 import Footer from '../../home/components/Footer';
 import ScrollToTop from '../../home/components/ScrollToTop';
 
-export default function R22ProductPage() {
+import withProductCms from '../withProductCms';
+
+function R22ProductPage() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
@@ -216,3 +218,5 @@ export default function R22ProductPage() {
     </>
   );
 }
+
+export default withProductCms('r22', R22ProductPage);

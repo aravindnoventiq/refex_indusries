@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { siteMainClass, sitePageFont, sitePageLightClass } from '../../utils/siteLayout';
 import Header from '../home/components/Header';
 import Footer from '../home/components/Footer';
@@ -7,10 +7,18 @@ import CareersHeroSection from './components/CareersHeroSection';
 import LifeAsRefexianSection from './components/LifeAsRefexianSection';
 import WhyChooseRefexSection from './components/WhyChooseRefexSection';
 import TalentNetworkSection from './components/TalentNetworkSection';
+import { careersCmsApi } from '../../services/api';
+import { FALLBACK_CAREERS_PAGE, mergeCareersPage, type CareersPageContent } from './careersFallbacks';
 
 export default function CareersPage() {
+  const [content, setContent] = useState<CareersPageContent>(FALLBACK_CAREERS_PAGE);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    careersCmsApi
+      .get()
+      .then((data) => setContent(mergeCareersPage(data)))
+      .catch(() => setContent(FALLBACK_CAREERS_PAGE));
   }, []);
 
   return (
@@ -20,14 +28,33 @@ export default function CareersPage() {
         <CareersHeroSection
           id="careers-hero-title"
           as="h1"
-          eyebrow="Careers"
-          title="Ready to Make Your Mark?"
-          subtitle="Build a meaningful career with a purpose-driven organization shaping a cleaner, greener tomorrow across India."
+          eyebrow={content.heroEyebrow}
+          title={content.heroTitle}
+          subtitle={content.heroSubtitle}
+          backgroundImage={content.heroBackground}
+          ctaText={content.heroCtaText}
           showCta
         />
-        <LifeAsRefexianSection />
-        <WhyChooseRefexSection />
-        <TalentNetworkSection />
+        <LifeAsRefexianSection
+          eyebrow={content.lifeEyebrow}
+          title={content.lifeTitle}
+          subtitle={content.lifeSubtitle}
+          image={content.lifeImage}
+        />
+        <WhyChooseRefexSection
+          title={content.whyTitle}
+          subtitle={content.whySubtitle}
+          backgroundImage={content.whyBackground}
+          cards={content.whyCards}
+          values={content.whyValues}
+        />
+        <TalentNetworkSection
+          eyebrow={content.talentEyebrow}
+          title={content.talentTitle}
+          backgroundImage={content.talentBackground}
+          formTitle={content.formTitle}
+          formSubtitle={content.formSubtitle}
+        />
       </main>
       <Footer />
       <ScrollToTop />

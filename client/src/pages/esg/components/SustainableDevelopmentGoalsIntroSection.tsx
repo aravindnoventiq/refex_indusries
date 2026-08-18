@@ -1,10 +1,11 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Globe2 } from 'lucide-react';
 import { gsap, prefersReducedMotion } from '../../about-us/aboutGsap';
 import { esgContainer, esgScrollMargin, esgSectionPad } from '../esgLayout';
 import { esgScrollStart } from '../esgMotion';
+import { esgCmsApi } from '../../../services/api';
 
-const SDG_IMAGE = '/esg/sdg-global-goals.png';
+const SDG_IMAGE = '/esg/sdg-global-goals.png?v=2';
 
 const SDG_PARAGRAPHS = [
   'Meaningful progress is achieved when economic growth, environmental responsibility, and social impact advance together. Our sustainability journey is guided by the United Nations Sustainable Development Goals (SDGs), creating value not only for our stakeholders but also for the communities and ecosystems that support our growth.',
@@ -13,6 +14,24 @@ const SDG_PARAGRAPHS = [
 
 export default function SustainableDevelopmentGoalsIntroSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const [imageSrc, setImageSrc] = useState(SDG_IMAGE);
+  const [paragraphs, setParagraphs] = useState(SDG_PARAGRAPHS);
+
+  useEffect(() => {
+    esgCmsApi
+      .getSdgSection()
+      .then((data) => {
+        if (data?.image) setImageSrc(data.image);
+        if (data?.content) {
+          const parts = String(data.content)
+            .split(/\n\s*\n/)
+            .map((part: string) => part.trim())
+            .filter(Boolean);
+          if (parts.length) setParagraphs(parts);
+        }
+      })
+      .catch(() => undefined);
+  }, []);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
@@ -103,7 +122,7 @@ export default function SustainableDevelopmentGoalsIntroSection() {
             </p>
 
             <div className="mt-6 space-y-4 sm:mt-8">
-              {SDG_PARAGRAPHS.map((paragraph) => (
+              {paragraphs.map((paragraph) => (
                 <p
                   key={paragraph.slice(0, 48)}
                   data-sdg-paragraph
@@ -127,7 +146,7 @@ export default function SustainableDevelopmentGoalsIntroSection() {
             className="relative overflow-hidden rounded-[1.35rem] border border-[#e3ebe0] bg-white p-4 shadow-[0_18px_50px_rgba(0,0,0,0.08)] sm:p-5"
           >
             <img
-              src={SDG_IMAGE}
+              src={imageSrc}
               alt="The Global Goals for Sustainable Development — 17 United Nations SDGs"
               loading="lazy"
               className="h-auto w-full object-contain"

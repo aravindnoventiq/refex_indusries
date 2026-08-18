@@ -946,6 +946,37 @@ export const footerCmsApi = {
   }),
 };
 
+export const careersCmsApi = {
+  get: () => apiRequest<any>('/api/cms/careers'),
+  save: (page: any) => apiRequest('/api/cms/careers', {
+    method: 'PUT',
+    body: JSON.stringify(page),
+  }),
+};
+
+export const legalCmsApi = {
+  list: () => apiRequest<any[]>('/api/cms/legal'),
+  getBySlug: (slug: string) => apiRequest<any>(`/api/cms/legal/${slug}`),
+  save: (slug: string, page: any) => apiRequest(`/api/cms/legal/${slug}`, {
+    method: 'PUT',
+    body: JSON.stringify(page),
+  }),
+};
+
+export const productsCmsApi = {
+  getHero: () => apiRequest<any>('/api/cms/products/hero'),
+  saveHero: (hero: any) => apiRequest('/api/cms/products/hero', {
+    method: 'PUT',
+    body: JSON.stringify(hero),
+  }),
+  listPages: () => apiRequest<any[]>('/api/cms/products/pages'),
+  getPage: (slug: string) => apiRequest<any>(`/api/cms/products/pages/${slug}`),
+  savePage: (slug: string, page: any) => apiRequest(`/api/cms/products/pages/${slug}`, {
+    method: 'PUT',
+    body: JSON.stringify(page),
+  }),
+};
+
 // Stock Price API
 export const stockApi = {
   getStockPrice: () => apiRequest<any>('/api/stock'),

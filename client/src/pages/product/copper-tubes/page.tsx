@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import Header from '../../home/components/Header';
 import Footer from '../../home/components/Footer';
 
-export default function CopperTubesPage() {
+import withProductCms from '../withProductCms';
+
+function CopperTubesPage() {
   const [isPackagingOpen, setIsPackagingOpen] = useState(false);
 
   useEffect(() => {
@@ -170,3 +172,5 @@ export default function CopperTubesPage() {
     </div>
   );
 }
+
+export default withProductCms('copper-tubes', CopperTubesPage);

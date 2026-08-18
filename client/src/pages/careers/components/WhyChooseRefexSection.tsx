@@ -111,7 +111,49 @@ function WhyChooseCardItem({ title, description, icon: Icon }: WhyChooseCard) {
   );
 }
 
-export default function WhyChooseRefexSection() {
+const ICON_MAP: Record<string, LucideIcon> = {
+  Award,
+  Handshake,
+  Heart,
+  Leaf,
+  Lightbulb,
+  Shield,
+  Sprout,
+  Star,
+  Target,
+  TrendingUp,
+  Users,
+};
+
+const VALUE_ICONS: LucideIcon[] = [Leaf, Shield, Lightbulb, Handshake, Star];
+
+export default function WhyChooseRefexSection({
+  title = 'Why Choose Refex',
+  subtitle = 'Discover a workplace where purpose, growth, and innovation come together to build a cleaner, stronger, and more sustainable future.',
+  backgroundImage = SECTION_BG,
+  cards,
+  values,
+}: {
+  title?: string;
+  subtitle?: string;
+  backgroundImage?: string;
+  cards?: { title: string; description: string; icon: string }[];
+  values?: string[];
+}) {
+  const displayCards =
+    cards && cards.length > 0
+      ? cards.map((card) => ({
+          title: card.title,
+          description: card.description,
+          icon: ICON_MAP[card.icon] || Target,
+        }))
+      : WHY_CHOOSE_CARDS;
+
+  const displayValues =
+    values && values.length > 0
+      ? values.map((label, index) => ({ label, icon: VALUE_ICONS[index % VALUE_ICONS.length] }))
+      : CORE_VALUES;
+
   return (
     <section
       className="relative overflow-hidden bg-white"
@@ -119,7 +161,7 @@ export default function WhyChooseRefexSection() {
     >
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 top-[42%] bg-cover bg-bottom bg-no-repeat sm:top-[38%]"
-        style={{ backgroundImage: `url(${SECTION_BG})` }}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
         aria-hidden
       />
       <div
@@ -133,25 +175,32 @@ export default function WhyChooseRefexSection() {
             id="why-choose-refex-title"
             className="font-serif text-3xl font-medium text-[#1f1f1f] sm:text-4xl lg:text-[2.75rem]"
           >
-            Why Choose <span className="font-semibold text-[#2d5016]">Refex</span>
+            {title.includes('Refex') ? (
+              <>
+                {title.split('Refex')[0]}
+                <span className="font-semibold text-[#2d5016]">Refex</span>
+                {title.split('Refex').slice(1).join('Refex')}
+              </>
+            ) : (
+              title
+            )}
           </h2>
           <div className="mt-4 flex justify-center" aria-hidden>
             <Leaf className="h-5 w-5 text-[#4C8C2B]" strokeWidth={1.75} />
           </div>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[#666] sm:text-base">
-            Discover a workplace where purpose, growth, and innovation come together to build a
-            cleaner, stronger, and more sustainable future.
+            {subtitle}
           </p>
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:gap-6">
-          {WHY_CHOOSE_CARDS.map((card) => (
+          {displayCards.map((card) => (
             <WhyChooseCardItem key={card.title} {...card} />
           ))}
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 border-t border-[#d9e8d2]/80 pt-8 sm:mt-12 sm:gap-x-6">
-          {CORE_VALUES.map((value, index) => {
+          {displayValues.map((value, index) => {
             const ValueIcon = value.icon;
             return (
               <div key={value.label} className="flex items-center gap-4">
@@ -159,7 +208,7 @@ export default function WhyChooseRefexSection() {
                   <ValueIcon className="h-4 w-4 text-[#4C8C2B]" strokeWidth={1.75} aria-hidden />
                   {value.label}
                 </div>
-                {index < CORE_VALUES.length - 1 ? (
+                {index < displayValues.length - 1 ? (
                   <span className="hidden h-4 w-px bg-[#c8d9bf] sm:block" aria-hidden />
                 ) : null}
               </div>

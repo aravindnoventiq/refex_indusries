@@ -106,6 +106,8 @@ app.use("/api/cms/contact", require("./routes/contact_cms"));
 app.use("/api/cms/header", require("./routes/header_cms"));
 app.use("/api/cms/footer", require("./routes/footer_cms"));
 app.use("/api/cms/investors", require("./routes/investors_cms"));
+app.use("/api/cms/careers", require("./routes/careers_cms"));
+app.use("/api/cms/legal", require("./routes/legal_cms"));
 app.use("/api/stock", require("./routes/stock"));
 app.use("/api/geo", require("./routes/geo"));
 app.use("/api", require("./routes/contact"));
