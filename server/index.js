@@ -568,7 +568,18 @@ app.post('/api/upload/audio', uploadAudio, (req, res) => {
 
 // Serve uploaded files
 const uploadsPath = path.join(__dirname, "./uploads");
-app.use("/uploads", express.static(uploadsPath));
+if (!fs.existsSync(uploadsPath)) {
+  fs.mkdirSync(uploadsPath, { recursive: true });
+}
+app.use("/uploads", express.static(uploadsPath, { fallthrough: true }));
+// UAT often misses CMS files that still exist on production — fall back so images load.
+const UPLOADS_FALLBACK_ORIGIN =
+  process.env.UPLOADS_FALLBACK_ORIGIN || "https://refex.co.in";
+app.use("/uploads", (req, res, next) => {
+  if (req.method !== "GET" && req.method !== "HEAD") return next();
+  const target = `${UPLOADS_FALLBACK_ORIGIN}/uploads${req.url}`;
+  return res.redirect(302, target);
+});
 app.use(express.static(uploadsPath));
 
 // Serve WordPress content files (wp-content/uploads)

@@ -5,6 +5,7 @@ import ThemeToggle from '../../../components/ThemeToggle';
 import { useSiteTheme } from '../../../components/SiteThemeProvider';
 import {
   getHeaderLogoUrl,
+  getBrandHeaderLogoUrl,
   getHeaderMobileLinkClass,
   getHeaderMobileSubLinkClass,
   getHeaderNavLinkClass,
@@ -617,6 +618,12 @@ export default function Header() {
               src={logoUrl}
               alt={logoAlt}
               className="h-8 w-auto object-contain transition-all duration-300 group-hover:opacity-90 lg:h-9"
+              onError={(e) => {
+                const img = e.currentTarget;
+                const fallback = getBrandHeaderLogoUrl(theme);
+                if (img.src.endsWith(fallback)) return;
+                img.src = fallback;
+              }}
             />
           </a>
 

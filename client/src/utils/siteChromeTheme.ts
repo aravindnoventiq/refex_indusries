@@ -1,17 +1,26 @@
 import type { SiteTheme } from './darkPageTheme';
 
+const BRAND_LOGO_LIGHT = '/brand/logo-refex.svg';
+const BRAND_LOGO_DARK = '/brand/logo-refex-header.svg';
+const REMOTE_OFFICIAL_LOGO = 'https://refex.co.in/wp-content/uploads/2024/07/logo-refex.svg';
+
+function isUsableCmsLogo(url: string): boolean {
+  // Prefer local brand assets over missing CMS upload files (common on UAT).
+  if (url.includes('/uploads/')) return false;
+  if (url === REMOTE_OFFICIAL_LOGO) return false;
+  if (url.includes('logo-refex.svg') || url.includes('logo-refex-header.svg')) return false;
+  return true;
+}
+
 /** Logo for header bar — white mark on dark, green mark on light. */
 export function getHeaderLogoUrl(theme: SiteTheme, cmsLogoUrl?: string | null): string {
-  const remoteOfficialLogo = 'https://refex.co.in/wp-content/uploads/2024/07/logo-refex.svg';
-  const useBrandLogo =
-    !cmsLogoUrl ||
-    cmsLogoUrl === remoteOfficialLogo ||
-    cmsLogoUrl.includes('logo-refex.svg') ||
-    cmsLogoUrl.includes('logo-refex-header.svg');
+  const brand = theme === 'dark' ? BRAND_LOGO_DARK : BRAND_LOGO_LIGHT;
+  if (!cmsLogoUrl || !isUsableCmsLogo(cmsLogoUrl)) return brand;
+  return cmsLogoUrl;
+}
 
-  if (!useBrandLogo) return cmsLogoUrl;
-
-  return theme === 'dark' ? '/brand/logo-refex-header.svg' : '/brand/logo-refex.svg';
+export function getBrandHeaderLogoUrl(theme: SiteTheme): string {
+  return theme === 'dark' ? BRAND_LOGO_DARK : BRAND_LOGO_LIGHT;
 }
 
 export function getHeaderNavLinkClass(theme: SiteTheme, active: boolean, isLongLabel: boolean) {

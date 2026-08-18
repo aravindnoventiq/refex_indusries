@@ -9,6 +9,7 @@
     "dev": "nodemon index.js",
     "db:migrate": "node scripts/migrate_db.js",
     "db:migrate:uat": "NODE_ENV=uat node scripts/migrate_db.js",
+    "sync:uploads": "node scripts/sync_uploads_from_remote.js",
     "stock": "node stock.js",
     "stockBse": "node stockBse.js",
     "cron:start": "node cronJobs.js",
