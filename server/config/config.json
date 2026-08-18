@@ -23,7 +23,7 @@
                 "username":  "root",
                 "password":  "rootpassword",
                 "database":  "industries",
-                "host":  "127.0.0.1",
+                "host":  "mysql",
                 "port":  3306,
                 "dialect":  "mysql",
                 "logging":  false,
