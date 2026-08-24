@@ -27,7 +27,7 @@ const ADMIN_USERS = [
     lastName: "Srinivasan",
     email: "aravind.srinivasan@refex.co.in",
     password: "Vasan@2026",
-    mobileNumber: "9999999998",
+    mobileNumber: "9962479687",
     userType: "Admin",
   },
   {
