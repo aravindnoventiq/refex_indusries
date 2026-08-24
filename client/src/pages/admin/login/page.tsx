@@ -59,14 +59,6 @@ export default function AdminLoginPage() {
             <p className="text-gray-600">Sign in to access the admin dashboard</p>
           </div>
 
-          {/* Default Credentials Hint 
-          <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <p className="text-xs font-semibold text-blue-800 mb-2">Default Credentials:</p>
-            <p className="text-xs text-blue-700">Email: <span className="font-mono">admin@refex.com</span></p>
-            <p className="text-xs text-blue-700">Password: <span className="font-mono">admin123</span></p>
-          </div>
-          */ }
-
           {/* Error Message */}
           {error && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">

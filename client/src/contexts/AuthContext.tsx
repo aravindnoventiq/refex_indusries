@@ -73,28 +73,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           throw backendError;
         }
         
-        // Basic local authentication (fallback for development)
-        const ADMIN_EMAIL = 'admin@refex.com';
-        const ADMIN_PASSWORD = 'admin123';
-
-        if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-          const mockUser: User = {
-            id: '1',
-            email: ADMIN_EMAIL,
-            first_name: 'Admin',
-            last_name: 'User',
-            role: 'SuperAdmin',
-            user_type: 'Admin',
-          };
-          const mockToken = 'mock_token_' + Date.now();
-
-          setToken(mockToken);
-          setUser(mockUser);
-          localStorage.setItem('auth_token', mockToken);
-          localStorage.setItem('auth_user', JSON.stringify(mockUser));
-        } else {
-          throw new Error('Invalid email or password');
-        }
+        // No client-side credential fallback — auth must go through the API.
+        throw new Error(backendError.message || 'Invalid email or password');
       }
     } catch (error) {
       throw error;
