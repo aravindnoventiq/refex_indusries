@@ -450,13 +450,13 @@ export default function InvestorRecordingTranscriptsCMS() {
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">Recording & Transcripts CMS</h2>
             <p className="text-sm text-gray-500 mt-1 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+              <span className="w-2 h-2 rounded-full bg-[#7cd244]/100"></span>
               Manage audio recordings and transcript documents
             </p>
           </div>
           <button
             onClick={handleSave}
-            className="group relative px-8 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 overflow-hidden"
+            className="group relative px-8 py-3 bg-[#7cd244] text-white rounded-xl hover:bg-[#6db038] transition-all shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
             <i className="ri-save-line text-lg"></i>
@@ -484,7 +484,7 @@ export default function InvestorRecordingTranscriptsCMS() {
         {/* General Settings */}
         <div className="lg:col-span-2 bg-gray-50/50 rounded-3xl p-8 border border-gray-100 shadow-inner">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-white text-blue-600 flex items-center justify-center shadow-sm">
+            <div className="w-10 h-10 rounded-xl bg-white text-[#4f8f2a] flex items-center justify-center shadow-sm">
               <i className="ri-settings-4-line text-xl"></i>
             </div>
             <h3 className="text-lg font-bold text-gray-900">General Settings</h3>
@@ -494,48 +494,48 @@ export default function InvestorRecordingTranscriptsCMS() {
               <label className="block text-sm font-bold text-gray-700 mb-2">Page Title *</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition-all"
+                className="w-full border-gray-300 rounded-xl shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244] py-3 px-4 transition-all"
                 value={pageContent.title}
                 onChange={(e) => setPageContent({ ...pageContent, title: e.target.value })}
                 placeholder="Recording & Transcripts"
               />
             </div>
-            <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm group hover:border-blue-200 transition-all">
+            <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm group hover:border-[#7cd244]/40 transition-all">
               <input
                 type="checkbox"
                 id="hasYearFilter"
                 checked={pageContent.hasYearFilter}
                 onChange={(e) => setPageContent({ ...pageContent, hasYearFilter: e.target.checked })}
-                className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-5 w-5 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="hasYearFilter" className="text-sm font-bold text-gray-700 cursor-pointer select-none group-hover:text-blue-600 transition-colors">Enable Year Filter</label>
+              <label htmlFor="hasYearFilter" className="text-sm font-bold text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] transition-colors">Enable Year Filter</label>
             </div>
-            <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm group hover:border-blue-200 transition-all">
+            <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm group hover:border-[#7cd244]/40 transition-all">
               <input
                 type="checkbox"
                 id="isActive"
                 checked={pageContent.isActive}
                 onChange={(e) => setPageContent({ ...pageContent, isActive: e.target.checked })}
-                className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-5 w-5 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="isActive" className="text-sm font-bold text-gray-700 cursor-pointer select-none group-hover:text-blue-600 transition-colors">Page Active</label>
+              <label htmlFor="isActive" className="text-sm font-bold text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] transition-colors">Page Active</label>
             </div>
           </div>
         </div>
 
         {/* Filter Management */}
         <div className={`transition-all duration-500 ${pageContent.hasYearFilter ? 'opacity-100 translate-y-0' : 'opacity-50 translate-y-4 pointer-events-none grayscale'}`}>
-          <div className="h-full bg-blue-50/50 rounded-3xl p-8 border border-blue-100 shadow-inner flex flex-col">
+          <div className="h-full bg-[#7cd244]/10/50 rounded-3xl p-8 border border-blue-100 shadow-inner flex flex-col">
             <div className="flex justify-between items-center mb-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white text-blue-600 flex items-center justify-center shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-white text-[#4f8f2a] flex items-center justify-center shadow-sm">
                   <i className="ri-filter-3-line text-xl"></i>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">Years</h3>
               </div>
               <button
                 onClick={handleAddFilterItem}
-                className="w-10 h-10 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all shadow-md flex items-center justify-center active:scale-90"
+                className="w-10 h-10 bg-[#7cd244] text-white rounded-xl hover:bg-[#6db038] transition-all shadow-md flex items-center justify-center active:scale-90"
                 title="Add Filter Year"
               >
                 <i className="ri-add-line text-xl font-bold"></i>
@@ -544,13 +544,13 @@ export default function InvestorRecordingTranscriptsCMS() {
 
             <div className="flex-1 space-y-2 max-h-[220px] overflow-y-auto custom-scrollbar pr-2">
               {(pageContent.filterItems || []).length === 0 ? (
-                <div className="h-20 flex items-center justify-center text-gray-400 text-xs font-medium border-2 border-dashed border-blue-200 rounded-2xl italic">No years added</div>
+                <div className="h-20 flex items-center justify-center text-gray-400 text-xs font-medium border-2 border-dashed border-[#7cd244]/40 rounded-2xl italic">No years added</div>
               ) : (
                 (pageContent.filterItems || []).map((item, index) => (
                   <div key={index} className="group flex items-center justify-between p-3 bg-white rounded-xl border border-blue-50 shadow-sm hover:border-blue-300 transition-all">
                     <span className="text-sm font-bold text-gray-700">FY {item}</span>
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
-                      <button onClick={() => handleEditFilterItem(index)} className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg"><i className="ri-pencil-line"></i></button>
+                      <button onClick={() => handleEditFilterItem(index)} className="p-1.5 text-[#4f8f2a] hover:bg-[#7cd244]/10 rounded-lg"><i className="ri-pencil-line"></i></button>
                       <button onClick={() => handleDeleteFilterItem(index)} className="p-1.5 text-red-600 hover:bg-red-50 rounded-lg"><i className="ri-delete-bin-line"></i></button>
                     </div>
                   </div>
@@ -565,12 +565,12 @@ export default function InvestorRecordingTranscriptsCMS() {
       <div className="space-y-6 mb-12">
         <div className="flex justify-between items-center mb-2 px-2">
           <div className="flex items-center gap-2">
-            <i className="ri-mic-2-line text-blue-600 font-bold"></i>
+            <i className="ri-mic-2-line text-[#4f8f2a] font-bold"></i>
             <h3 className="text-xl font-extrabold text-gray-900 tracking-tight lowercase first-letter:uppercase">Recordings & Transcripts</h3>
           </div>
           <button
             onClick={handleAddAudio}
-            className="group px-6 py-2.5 bg-white text-blue-600 border-2 border-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition-all shadow-sm hover:shadow-blue-100 flex items-center gap-2 font-bold active:scale-95"
+            className="group px-6 py-2.5 bg-white text-[#4f8f2a] border-2 border-blue-600 rounded-xl hover:bg-[#7cd244] hover:text-white transition-all shadow-sm hover:shadow-blue-100 flex items-center gap-2 font-bold active:scale-95"
           >
             <i className="ri-add-circle-fill text-xl"></i>
             <span>ADD NEW RECORDING</span>
@@ -590,7 +590,7 @@ export default function InvestorRecordingTranscriptsCMS() {
             {pageContent.audios.map((audio, audioIndex) => {
               const isEditing = editingAudio?.audioIndex === audioIndex;
               return (
-                <div key={audioIndex} className={`group/doc rounded-2xl border transition-all duration-300 ${isEditing ? 'border-blue-400 ring-4 ring-blue-50 bg-blue-50/30 overflow-hidden' : 'border-gray-100 hover:border-gray-200 bg-white hover:bg-gray-50/30 shadow-none'}`}>
+                <div key={audioIndex} className={`group/doc rounded-2xl border transition-all duration-300 ${isEditing ? 'border-blue-400 ring-4 ring-blue-50 bg-[#7cd244]/10/30 overflow-hidden' : 'border-gray-100 hover:border-gray-200 bg-white hover:bg-gray-50/30 shadow-none'}`}>
                   {!isEditing ? (
                     <div className="flex items-center justify-between p-5">
                       <div className="flex items-center gap-5 flex-1 min-w-0">
@@ -601,7 +601,7 @@ export default function InvestorRecordingTranscriptsCMS() {
                           <h5 className="text-base font-black text-gray-900 tracking-tight uppercase">{audio.name}</h5>
                           <div className="flex items-center gap-4 mt-2">
                             {audio.year && (
-                              <span className="flex items-center gap-1.5 text-[10px] font-black bg-blue-50 text-blue-600 px-3 py-1 rounded-lg border border-blue-100 uppercase tracking-widest">
+                              <span className="flex items-center gap-1.5 text-[10px] font-black bg-[#7cd244]/10 text-[#4f8f2a] px-3 py-1 rounded-lg border border-blue-100 uppercase tracking-widest">
                                 <i className="ri-hashtag text-blue-400"></i> FY {audio.year}
                               </span>
                             )}
@@ -617,7 +617,7 @@ export default function InvestorRecordingTranscriptsCMS() {
                       <div className="flex gap-2 ml-4">
                         <button
                           onClick={() => handleEditAudio(audioIndex)}
-                          className="p-2.5 text-blue-600 hover:bg-blue-50 rounded-xl transition-all border border-blue-50 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+                          className="p-2.5 text-[#4f8f2a] hover:bg-[#7cd244]/10 rounded-xl transition-all border border-blue-50 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
                           title="Edit"
                         >
                           <i className="ri-edit-2-line text-lg"></i>
@@ -634,7 +634,7 @@ export default function InvestorRecordingTranscriptsCMS() {
                   ) : (
                     /* Inline Edit Mode */
                     <div className="animate-in slide-in-from-left-2 duration-300 bg-white p-8">
-                      <div className="flex items-center gap-2 mb-8 text-blue-600 border-b border-blue-50 pb-4">
+                      <div className="flex items-center gap-2 mb-8 text-[#4f8f2a] border-b border-blue-50 pb-4">
                         <i className="ri-edit-circle-line text-xl font-bold"></i>
                         <h5 className="text-lg font-black uppercase tracking-tight">Editing Recording</h5>
                       </div>
@@ -642,7 +642,7 @@ export default function InvestorRecordingTranscriptsCMS() {
                       <div className="mt-10 flex gap-4 pt-8 border-t border-gray-100">
                         <button
                           onClick={handleSaveAudio}
-                          className="px-10 py-4 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 transition-all font-black text-[10px] tracking-widest uppercase shadow-xl shadow-blue-100 flex items-center gap-2 active:scale-95"
+                          className="px-10 py-4 bg-[#7cd244] text-white rounded-2xl hover:bg-[#6db038] transition-all font-black text-[10px] tracking-widest uppercase shadow-xl shadow-blue-100 flex items-center gap-2 active:scale-95"
                         >
                           <i className="ri-checkbox-circle-line bg-white/20 p-1 rounded-lg"></i> SAVE UPDATES
                         </button>
@@ -667,12 +667,12 @@ export default function InvestorRecordingTranscriptsCMS() {
         <div className="flex justify-center pb-20">
           <button
             onClick={handleAddAudio}
-            className="group relative px-12 py-6 bg-white border-2 border-gray-100 rounded-[2rem] hover:border-blue-500 transition-all duration-500 shadow-xl hover:shadow-blue-200/50 flex flex-col items-center gap-2 active:scale-95"
+            className="group relative px-12 py-6 bg-white border-2 border-gray-100 rounded-[2rem] hover:border-[#7cd244] transition-all duration-500 shadow-xl hover:shadow-blue-200/50 flex flex-col items-center gap-2 active:scale-95"
           >
-            <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-inner">
+            <div className="w-16 h-16 bg-[#7cd244]/10 text-[#4f8f2a] rounded-2xl flex items-center justify-center group-hover:bg-[#7cd244] group-hover:text-white transition-all duration-500 shadow-inner">
               <i className="ri-add-line text-3xl font-bold"></i>
             </div>
-            <span className="text-[10px] font-black text-gray-400 group-hover:text-blue-600 uppercase tracking-[0.3em] transition-colors">Add New Recording</span>
+            <span className="text-[10px] font-black text-gray-400 group-hover:text-[#4f8f2a] uppercase tracking-[0.3em] transition-colors">Add New Recording</span>
           </button>
         </div>
       )}
@@ -711,7 +711,7 @@ export default function InvestorRecordingTranscriptsCMS() {
               </button>
               <button
                 onClick={handleSaveAudio}
-                className="px-10 py-4 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 transition-all font-black text-[10px] tracking-widest uppercase shadow-xl shadow-blue-200 active:scale-95"
+                className="px-10 py-4 bg-[#7cd244] text-white rounded-2xl hover:bg-[#6db038] transition-all font-black text-[10px] tracking-widest uppercase shadow-xl shadow-blue-200 active:scale-95"
               >
                 Add Recording
               </button>
@@ -728,11 +728,11 @@ export default function InvestorRecordingTranscriptsCMS() {
               {editingFilterIndex >= 0 ? 'Edit Year' : 'Add New Year'}
             </h4>
             <div className="mb-8">
-              <label className="block text-[10px] font-black text-blue-600 uppercase tracking-widest mb-2 ml-1">Financial Year</label>
+              <label className="block text-[10px] font-black text-[#4f8f2a] uppercase tracking-widest mb-2 ml-1">Financial Year</label>
               <input
                 autoFocus
                 type="text"
-                className="w-full bg-gray-50 border-2 border-gray-100 rounded-2xl py-4 px-5 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all placeholder:text-gray-300 shadow-inner"
+                className="w-full bg-gray-50 border-2 border-gray-100 rounded-2xl py-4 px-5 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all placeholder:text-gray-300 shadow-inner"
                 value={editingFilterItem}
                 onChange={(e) => setEditingFilterItem(e.target.value)}
                 placeholder="2024-25"
@@ -744,7 +744,7 @@ export default function InvestorRecordingTranscriptsCMS() {
             <div className="flex flex-col gap-2">
               <button
                 onClick={handleSaveFilterItem}
-                className="w-full py-4 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 font-black tracking-widest shadow-lg hover:shadow-blue-200 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                className="w-full py-4 bg-[#7cd244] text-white rounded-2xl hover:bg-[#6db038] font-black tracking-widest shadow-lg hover:shadow-blue-200 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
               >
                 {editingFilterIndex >= 0 ? 'UPDATE YEAR' : 'SAVE NEW YEAR'}
               </button>
@@ -769,13 +769,13 @@ export default function InvestorRecordingTranscriptsCMS() {
       <div className="space-y-8 animate-in fade-in duration-500">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="md:col-span-2 group">
-            <label className="block text-[10px] font-black text-blue-600 uppercase tracking-[0.2rem] mb-2 ml-1 group-focus-within:text-blue-700 transition-colors">
+            <label className="block text-[10px] font-black text-[#4f8f2a] uppercase tracking-[0.2rem] mb-2 ml-1 group-focus-within:text-[#3f7220] transition-colors">
               Recording Name *
             </label>
             <div className="relative">
               <input
                 type="text"
-                className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl shadow-none focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 py-4 px-5 font-bold text-gray-800 transition-all placeholder:text-gray-300"
+                className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl shadow-none focus:bg-white focus:border-[#7cd244] focus:ring-4 focus:ring-[#7cd244]/5 py-4 px-5 font-bold text-gray-800 transition-all placeholder:text-gray-300"
                 value={audio.name}
                 onChange={(e) => setEditingAudio({ ...editingAudio, audio: { ...audio, name: e.target.value } })}
                 placeholder="e.g., Earnings Conference Call – Q2 FY 26"
@@ -787,12 +787,12 @@ export default function InvestorRecordingTranscriptsCMS() {
           </div>
 
           <div className="group">
-            <label className="block text-[10px] font-black text-gray-400 uppercase tracking-[0.2rem] mb-2 ml-1 group-focus-within:text-blue-600 transition-colors">
+            <label className="block text-[10px] font-black text-gray-400 uppercase tracking-[0.2rem] mb-2 ml-1 group-focus-within:text-[#4f8f2a] transition-colors">
               Financial Year {pageContent.hasYearFilter ? '*' : ''}
             </label>
             <div className="relative">
               <select
-                className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl shadow-none focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 py-3.5 px-5 font-bold text-gray-800 transition-all appearance-none cursor-pointer"
+                className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl shadow-none focus:bg-white focus:border-[#7cd244] focus:ring-4 focus:ring-[#7cd244]/5 py-3.5 px-5 font-bold text-gray-800 transition-all appearance-none cursor-pointer"
                 value={audio.year}
                 onChange={(e) => setEditingAudio({ ...editingAudio, audio: { ...audio, year: e.target.value } })}
               >
@@ -809,9 +809,9 @@ export default function InvestorRecordingTranscriptsCMS() {
         </div>
 
         {/* Audio File Section */}
-        <div className="bg-blue-50/30 rounded-[2rem] p-8 border-2 border-dashed border-blue-100 group-focus-within:border-blue-200 transition-all">
+        <div className="bg-[#7cd244]/10/30 rounded-[2rem] p-8 border-2 border-dashed border-blue-100 group-focus-within:border-[#7cd244]/40 transition-all">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-white text-blue-600 flex items-center justify-center shadow-sm border border-gray-100">
+            <div className="w-10 h-10 rounded-xl bg-white text-[#4f8f2a] flex items-center justify-center shadow-sm border border-gray-100">
               <i className="ri-headphone-line text-xl"></i>
             </div>
             <div>
@@ -826,7 +826,7 @@ export default function InvestorRecordingTranscriptsCMS() {
             <div className="relative group">
               <input
                 type="text"
-                className="w-full bg-white border-2 border-gray-100 rounded-2xl py-4 px-5 pr-12 font-bold text-blue-600 focus:border-blue-500 focus:ring-0 transition-all placeholder:text-gray-300 shadow-sm"
+                className="w-full bg-white border-2 border-gray-100 rounded-2xl py-4 px-5 pr-12 font-bold text-[#4f8f2a] focus:border-[#7cd244] focus:ring-0 transition-all placeholder:text-gray-300 shadow-sm"
                 value={audio.audioUrl}
                 onChange={(e) => setEditingAudio({ ...editingAudio, audio: { ...audio, audioUrl: e.target.value } })}
                 placeholder="https://example.com/audio.mp3"
@@ -855,8 +855,8 @@ export default function InvestorRecordingTranscriptsCMS() {
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                 disabled={uploadingAudio}
               />
-              <div className={`border-2 border-dashed rounded-2xl py-4 px-10 flex items-center justify-center gap-3 transition-all ${uploadingAudio ? 'bg-blue-50 border-blue-400' : 'bg-white border-gray-200 hover:border-blue-400 hover:bg-blue-50/50'}`}>
-                <i className={`${uploadingAudio ? 'ri-loader-4-line animate-spin' : 'ri-upload-2-line'} text-xl ${uploadingAudio ? 'text-blue-600' : 'text-gray-400'}`}></i>
+              <div className={`border-2 border-dashed rounded-2xl py-4 px-10 flex items-center justify-center gap-3 transition-all ${uploadingAudio ? 'bg-[#7cd244]/10 border-blue-400' : 'bg-white border-gray-200 hover:border-blue-400 hover:bg-[#7cd244]/10/50'}`}>
+                <i className={`${uploadingAudio ? 'ri-loader-4-line animate-spin' : 'ri-upload-2-line'} text-xl ${uploadingAudio ? 'text-[#4f8f2a]' : 'text-gray-400'}`}></i>
                 <span className="text-xs font-black uppercase tracking-widest text-gray-500">
                   {uploadingAudio ? 'Processing Audio...' : 'Upload mp3 File'}
                 </span>
@@ -866,7 +866,7 @@ export default function InvestorRecordingTranscriptsCMS() {
         </div>
 
         {/* Transcript PDF Section */}
-        <div className="bg-gray-50/80 rounded-[2rem] p-8 border-2 border-dashed border-gray-200 group-focus-within:border-blue-200 transition-all">
+        <div className="bg-gray-50/80 rounded-[2rem] p-8 border-2 border-dashed border-gray-200 group-focus-within:border-[#7cd244]/40 transition-all">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-white text-red-600 flex items-center justify-center shadow-sm border border-gray-100">
@@ -883,7 +883,7 @@ export default function InvestorRecordingTranscriptsCMS() {
             <button
               onClick={() => setIsManualPdfUrl(!isManualPdfUrl)}
               className={`px-4 py-2 rounded-xl text-[10px] font-black tracking-widest uppercase transition-all flex items-center gap-2 border-2 ${isManualPdfUrl
-                ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-100'
+                ? 'bg-[#7cd244] text-white border-blue-600 shadow-md shadow-blue-100'
                 : 'bg-white text-gray-400 border-gray-100 hover:border-gray-300'
                 }`}
             >
@@ -898,7 +898,7 @@ export default function InvestorRecordingTranscriptsCMS() {
                 <div className="relative group">
                   <input
                     type="text"
-                    className="w-full bg-white border-2 border-gray-100 rounded-2xl py-4 px-5 pr-12 font-bold text-blue-600 focus:border-blue-500 focus:ring-0 transition-all placeholder:text-gray-300 shadow-sm"
+                    className="w-full bg-white border-2 border-gray-100 rounded-2xl py-4 px-5 pr-12 font-bold text-[#4f8f2a] focus:border-[#7cd244] focus:ring-0 transition-all placeholder:text-gray-300 shadow-sm"
                     value={pdfUrlInput}
                     onChange={(e) => handlePdfUrlChange(e.target.value)}
                     placeholder="https://example.com/transcript.pdf"
@@ -914,16 +914,16 @@ export default function InvestorRecordingTranscriptsCMS() {
                 </div>
                 {downloadingPdf && (
                   <div className="flex items-center gap-3 px-2 animate-pulse mt-2">
-                    <div className="flex-1 h-1 bg-blue-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-600 w-1/2 rounded-full animate-progress-indeterminate"></div>
+                    <div className="flex-1 h-1 bg-[#7cd244]/20 rounded-full overflow-hidden">
+                      <div className="h-full bg-[#7cd244] w-1/2 rounded-full animate-progress-indeterminate"></div>
                     </div>
-                    <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest">Processing URL...</span>
+                    <span className="text-[10px] font-black text-[#4f8f2a] uppercase tracking-widest">Processing URL...</span>
                   </div>
                 )}
                 {!downloadingPdf && audio.pdfUrl && (
-                  <div className="flex items-center gap-2 px-3 py-2 bg-blue-50 rounded-xl border border-blue-100/50 w-fit mt-2 animate-in fade-in zoom-in duration-300">
+                  <div className="flex items-center gap-2 px-3 py-2 bg-[#7cd244]/10 rounded-xl border border-blue-100/50 w-fit mt-2 animate-in fade-in zoom-in duration-300">
                     <i className="ri-checkbox-circle-fill text-blue-500"></i>
-                    <span className="text-[10px] font-bold text-blue-700 truncate max-w-[400px]">Active Transcript: {audio.pdfUrl}</span>
+                    <span className="text-[10px] font-bold text-[#3f7220] truncate max-w-[400px]">Active Transcript: {audio.pdfUrl}</span>
                   </div>
                 )}
               </div>
@@ -936,23 +936,23 @@ export default function InvestorRecordingTranscriptsCMS() {
                   className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                   disabled={uploadingPdf || downloadingPdf}
                 />
-                <div className={`absolute inset-0 border-2 border-dashed rounded-2xl flex items-center justify-center gap-4 transition-all ${uploadingPdf ? 'bg-blue-50/50 border-blue-400' : 'bg-white border-gray-200 group-hover:border-blue-400 group-hover:bg-blue-50/30'
+                <div className={`absolute inset-0 border-2 border-dashed rounded-2xl flex items-center justify-center gap-4 transition-all ${uploadingPdf ? 'bg-[#7cd244]/10/50 border-blue-400' : 'bg-white border-gray-200 group-hover:border-blue-400 group-hover:bg-[#7cd244]/10/30'
                   }`}>
                   {uploadingPdf ? (
                     <div className="flex items-center gap-3">
                       <div className="animate-bounce">
-                        <i className="ri-upload-2-fill text-2xl text-blue-600"></i>
+                        <i className="ri-upload-2-fill text-2xl text-[#4f8f2a]"></i>
                       </div>
-                      <span className="text-xs font-black text-blue-600 uppercase tracking-widest">Uploading Transcript...</span>
+                      <span className="text-xs font-black text-[#4f8f2a] uppercase tracking-widest">Uploading Transcript...</span>
                     </div>
                   ) : (
                     <>
-                      <div className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center group-hover:bg-blue-100 transition-all">
-                        <i className="ri-file-upload-line text-xl text-gray-400 group-hover:text-blue-600"></i>
+                      <div className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center group-hover:bg-[#7cd244]/20 transition-all">
+                        <i className="ri-file-upload-line text-xl text-gray-400 group-hover:text-[#4f8f2a]"></i>
                       </div>
                       <p className="text-xs font-black text-gray-500 uppercase tracking-widest">
                         {audio.pdfUrl ? (
-                          <span className="text-blue-600 flex items-center gap-2 italic">
+                          <span className="text-[#4f8f2a] flex items-center gap-2 italic">
                             <i className="ri-file-check-line text-lg"></i> Check File
                           </span>
                         ) : (

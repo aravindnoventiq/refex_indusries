@@ -183,7 +183,7 @@ export default function GreenMobilityClientsSectionCMS() {
         <h2 className="text-2xl font-bold text-gray-900">Clients Management</h2>
         <button
           onClick={handleAdd}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add Client
@@ -219,7 +219,7 @@ export default function GreenMobilityClientsSectionCMS() {
                   accept="image/*"
                   onChange={handleImageUpload}
                   disabled={uploadingImage}
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 />
                 {uploadingImage && (
                   <div className="flex items-center text-sm text-gray-600">
@@ -251,7 +251,7 @@ export default function GreenMobilityClientsSectionCMS() {
                 type="number"
                 value={editingClient.order}
                 onChange={(e) => setEditingClient({ ...editingClient, order: parseInt(e.target.value) || 0 })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
               />
             </div>
 
@@ -261,7 +261,7 @@ export default function GreenMobilityClientsSectionCMS() {
                 id="isActive"
                 checked={editingClient.isActive}
                 onChange={(e) => setEditingClient({ ...editingClient, isActive: e.target.checked })}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
               />
               <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -272,7 +272,7 @@ export default function GreenMobilityClientsSectionCMS() {
           <div className="flex gap-3 mt-6">
             <button
               onClick={handleSave}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
             >
               Save
             </button>
@@ -359,7 +359,7 @@ export default function GreenMobilityClientsSectionCMS() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <button
                         onClick={() => handleEdit(client)}
-                        className="text-blue-600 hover:text-blue-900 mr-4"
+                        className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                       >
                         <i className="ri-edit-line"></i> Edit
                       </button>

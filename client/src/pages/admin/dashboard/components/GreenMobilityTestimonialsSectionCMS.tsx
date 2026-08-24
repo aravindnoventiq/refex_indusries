@@ -193,7 +193,7 @@ export default function GreenMobilityTestimonialsSectionCMS() {
         <h2 className="text-2xl font-bold text-gray-900">Testimonials Management</h2>
         <button
           onClick={handleAdd}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add Testimonial
@@ -226,7 +226,7 @@ export default function GreenMobilityTestimonialsSectionCMS() {
               <textarea
                 value={editingTestimonial.text}
                 onChange={(e) => setEditingTestimonial({ ...editingTestimonial, text: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 rows={5}
                 placeholder="Enter the testimonial text..."
                 required
@@ -241,7 +241,7 @@ export default function GreenMobilityTestimonialsSectionCMS() {
                 type="text"
                 value={editingTestimonial.name}
                 onChange={(e) => setEditingTestimonial({ ...editingTestimonial, name: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 placeholder="e.g., Varun Keswani"
                 required
               />
@@ -255,7 +255,7 @@ export default function GreenMobilityTestimonialsSectionCMS() {
                 type="text"
                 value={editingTestimonial.title || ''}
                 onChange={(e) => setEditingTestimonial({ ...editingTestimonial, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 placeholder="e.g., Transferz (optional)"
               />
             </div>
@@ -270,7 +270,7 @@ export default function GreenMobilityTestimonialsSectionCMS() {
                   accept="image/*"
                   onChange={handleImageUpload}
                   disabled={uploadingImage}
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 />
                 {uploadingImage && (
                   <div className="flex items-center text-sm text-gray-600">
@@ -302,7 +302,7 @@ export default function GreenMobilityTestimonialsSectionCMS() {
                 type="number"
                 value={editingTestimonial.order}
                 onChange={(e) => setEditingTestimonial({ ...editingTestimonial, order: parseInt(e.target.value) || 0 })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
               />
             </div>
 
@@ -312,7 +312,7 @@ export default function GreenMobilityTestimonialsSectionCMS() {
                 id="isActive"
                 checked={editingTestimonial.isActive}
                 onChange={(e) => setEditingTestimonial({ ...editingTestimonial, isActive: e.target.checked })}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
               />
               <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -323,7 +323,7 @@ export default function GreenMobilityTestimonialsSectionCMS() {
           <div className="flex gap-3 mt-6">
             <button
               onClick={handleSave}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
             >
               Save
             </button>
@@ -430,7 +430,7 @@ export default function GreenMobilityTestimonialsSectionCMS() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <button
                         onClick={() => handleEdit(testimonial)}
-                        className="text-blue-600 hover:text-blue-900 mr-4"
+                        className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                       >
                         <i className="ri-edit-line"></i> Edit
                       </button>

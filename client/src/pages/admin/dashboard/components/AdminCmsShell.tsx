@@ -6,9 +6,15 @@ type AdminCmsShellProps = {
   title: string;
   subtitle: string;
   children: ReactNode;
+  showBack?: boolean;
 };
 
-export default function AdminCmsShell({ title, subtitle, children }: AdminCmsShellProps) {
+export default function AdminCmsShell({
+  title,
+  subtitle,
+  children,
+  showBack = true,
+}: AdminCmsShellProps) {
   const { logout } = useAuth();
   const navigate = useNavigate();
 
@@ -18,27 +24,35 @@ export default function AdminCmsShell({ title, subtitle, children }: AdminCmsShe
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="border-b border-gray-200 bg-white shadow-sm">
+    <div
+      className="min-h-screen bg-[#f4f6f3] text-[#1f1f1f]"
+      style={{ fontFamily: '"Open Sans", sans-serif' }}
+    >
+      <header className="border-b border-[#d9e2d4] bg-white/95 backdrop-blur-sm">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4">
-            <button
-              type="button"
-              onClick={() => navigate('/admin/dashboard')}
-              className="text-gray-600 hover:text-gray-900"
-              aria-label="Back to dashboard"
-            >
-              <i className="ri-arrow-left-line text-xl" />
-            </button>
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
-              <p className="text-sm text-gray-600">{subtitle}</p>
+          <div className="flex min-w-0 items-center gap-4">
+            {showBack && (
+              <button
+                type="button"
+                onClick={() => navigate('/admin/dashboard')}
+                className="rounded-lg p-1.5 text-[#4a5544] transition-colors hover:bg-[#7cd244]/15 hover:text-[#1f1f1f]"
+                aria-label="Back to dashboard"
+              >
+                <i className="ri-arrow-left-line text-xl" />
+              </button>
+            )}
+            <div className="min-w-0">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7cd244]">
+                Refex CMS
+              </p>
+              <h1 className="truncate text-xl font-bold text-[#1f1f1f] sm:text-2xl">{title}</h1>
+              <p className="truncate text-sm text-[#5c6658]">{subtitle}</p>
             </div>
           </div>
           <button
             type="button"
             onClick={handleLogout}
-            className="rounded-lg bg-red-600 px-4 py-2 text-white transition-colors hover:bg-red-700"
+            className="shrink-0 rounded-lg border border-[#d9e2d4] bg-white px-4 py-2 text-sm font-medium text-[#4a5544] transition-colors hover:border-[#7cd244] hover:text-[#1f1f1f]"
           >
             Logout
           </button>

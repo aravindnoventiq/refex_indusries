@@ -248,7 +248,7 @@ export default function FlipCardsSectionCMS() {
             setBackImageUrlFromUpload(false);
             setShowForm(true);
           }}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add New Card
@@ -286,7 +286,7 @@ export default function FlipCardsSectionCMS() {
                   name="title"
                   defaultValue={editingCard?.title || ''}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   placeholder="e.g., Sustainability & ESG"
                 />
               </div>
@@ -300,7 +300,7 @@ export default function FlipCardsSectionCMS() {
                   defaultValue={editingCard?.description || ''}
                   required
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   placeholder="Enter card description"
                 />
               </div>
@@ -315,7 +315,7 @@ export default function FlipCardsSectionCMS() {
                     accept="image/*"
                     onChange={(e) => handleImageUpload(e, 'front')}
                     disabled={uploadingFrontImage}
-                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   />
                   {uploadingFrontImage && (
                     <div className="flex items-center text-sm text-gray-600">
@@ -362,7 +362,7 @@ export default function FlipCardsSectionCMS() {
                     accept="image/*"
                     onChange={(e) => handleImageUpload(e, 'back')}
                     disabled={uploadingBackImage}
-                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   />
                   {uploadingBackImage && (
                     <div className="flex items-center text-sm text-gray-600">
@@ -408,7 +408,7 @@ export default function FlipCardsSectionCMS() {
                   name="link"
                   defaultValue={editingCard?.link || ''}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   placeholder="e.g., /esg/ or https://example.com"
                 />
                 <p className="text-xs text-gray-500 mt-1">Relative URL (e.g., /esg/) or absolute URL (e.g., https://...)</p>
@@ -423,7 +423,7 @@ export default function FlipCardsSectionCMS() {
                   name="order"
                   defaultValue={editingCard?.order || 0}
                   min="0"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                 />
                 <p className="text-xs text-gray-500 mt-1">Lower numbers appear first</p>
               </div>
@@ -433,7 +433,7 @@ export default function FlipCardsSectionCMS() {
                   type="checkbox"
                   name="isActive"
                   defaultChecked={editingCard?.isActive !== false}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label className="ml-2 text-sm text-gray-700">Active (show on website)</label>
               </div>
@@ -441,7 +441,7 @@ export default function FlipCardsSectionCMS() {
               <div className="flex gap-3 pt-4">
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="flex-1 px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                 >
                   {editingCard ? 'Update Card' : 'Create Card'}
                 </button>
@@ -532,7 +532,7 @@ export default function FlipCardsSectionCMS() {
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="text-sm text-blue-600 truncate max-w-xs">{card.link}</div>
+                      <div className="text-sm text-[#4f8f2a] truncate max-w-xs">{card.link}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className="px-2 py-1 text-xs font-semibold text-gray-700 bg-gray-100 rounded">
@@ -553,7 +553,7 @@ export default function FlipCardsSectionCMS() {
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <button
                         onClick={() => handleEdit(card)}
-                        className="text-blue-600 hover:text-blue-900 mr-4"
+                        className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                       >
                         <i className="ri-edit-line"></i> Edit
                       </button>

@@ -401,7 +401,7 @@ export default function HeaderCMS() {
                   accept="image/*"
                   onChange={handleImageUpload}
                   disabled={uploadingImage}
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                 />
                 {uploadingImage && (
                   <div className="flex items-center text-sm text-gray-600">
@@ -441,7 +441,7 @@ export default function HeaderCMS() {
               <input
                 type="text"
                 id="logoAlt"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={headerData.logoAlt || ''}
                 onChange={(e) => setHeaderData({ ...headerData, logoAlt: e.target.value })}
               />
@@ -457,7 +457,7 @@ export default function HeaderCMS() {
               <input
                 type="checkbox"
                 id="showStockInfo"
-                className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+                className="h-4 w-4 text-[#4f8f2a] border-gray-300 rounded"
                 checked={headerData.showStockInfo}
                 onChange={(e) => setHeaderData({ ...headerData, showStockInfo: e.target.checked })}
               />
@@ -473,7 +473,7 @@ export default function HeaderCMS() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Price</label>
                     <input
                       type="text"
-                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                       value={headerData.bsePrice || ''}
                       onChange={(e) => setHeaderData({ ...headerData, bsePrice: e.target.value })}
                     />
@@ -482,7 +482,7 @@ export default function HeaderCMS() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Change</label>
                     <input
                       type="text"
-                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                       value={headerData.bseChange || ''}
                       onChange={(e) => setHeaderData({ ...headerData, bseChange: e.target.value })}
                     />
@@ -490,7 +490,7 @@ export default function HeaderCMS() {
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Indicator</label>
                     <select
-                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                       value={headerData.bseChangeIndicator || 'down'}
                       onChange={(e) => setHeaderData({ ...headerData, bseChangeIndicator: e.target.value as 'up' | 'down' })}
                     >
@@ -505,7 +505,7 @@ export default function HeaderCMS() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Price</label>
                     <input
                       type="text"
-                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                       value={headerData.nsePrice || ''}
                       onChange={(e) => setHeaderData({ ...headerData, nsePrice: e.target.value })}
                     />
@@ -514,7 +514,7 @@ export default function HeaderCMS() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Change</label>
                     <input
                       type="text"
-                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                       value={headerData.nseChange || ''}
                       onChange={(e) => setHeaderData({ ...headerData, nseChange: e.target.value })}
                     />
@@ -522,7 +522,7 @@ export default function HeaderCMS() {
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Indicator</label>
                     <select
-                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                       value={headerData.nseChangeIndicator || 'down'}
                       onChange={(e) => setHeaderData({ ...headerData, nseChangeIndicator: e.target.value as 'up' | 'down' })}
                     >
@@ -573,7 +573,7 @@ export default function HeaderCMS() {
                         <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                         <input
                           type="text"
-                          className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                          className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                           value={item.name}
                           onChange={(e) => updateNavigationItem(navIndex, { ...item, name: e.target.value })}
                         />
@@ -582,7 +582,7 @@ export default function HeaderCMS() {
                         <label className="block text-sm font-medium text-gray-700 mb-2">Href</label>
                         <input
                           type="text"
-                          className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                          className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                           value={item.href}
                           onChange={(e) => updateNavigationItem(navIndex, { ...item, href: e.target.value })}
                         />
@@ -595,7 +595,7 @@ export default function HeaderCMS() {
                         <button
                           type="button"
                           onClick={() => addDropdownItem(navIndex)}
-                          className="px-3 py-1 bg-blue-600 text-white rounded text-xs hover:bg-blue-700"
+                          className="px-3 py-1 bg-[#7cd244] text-white rounded text-xs hover:bg-[#6db038]"
                         >
                           <i className="ri-add-line mr-1"></i> Add Dropdown
                         </button>
@@ -606,7 +606,7 @@ export default function HeaderCMS() {
                             <input
                               type="text"
                               placeholder="Name"
-                              className="w-full border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm"
+                              className="w-full border-gray-300 rounded shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244] text-sm"
                               value={dropItem.name}
                               onChange={(e) => updateDropdownItem(navIndex, dropIndex, { ...dropItem, name: e.target.value })}
                             />
@@ -614,7 +614,7 @@ export default function HeaderCMS() {
                               <input
                                 type="text"
                                 placeholder="Href"
-                                className="flex-1 border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm"
+                                className="flex-1 border-gray-300 rounded shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244] text-sm"
                                 value={dropItem.href}
                                 onChange={(e) => updateDropdownItem(navIndex, dropIndex, { ...dropItem, href: e.target.value })}
                               />
@@ -645,14 +645,14 @@ export default function HeaderCMS() {
                                   <input
                                     type="text"
                                     placeholder="Name"
-                                    className="flex-1 border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm"
+                                    className="flex-1 border-gray-300 rounded shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244] text-sm"
                                     value={subItem.name}
                                     onChange={(e) => updateSubmenuItem(navIndex, dropIndex, subIndex, { ...subItem, name: e.target.value })}
                                   />
                                   <input
                                     type="text"
                                     placeholder="Href"
-                                    className="flex-1 border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm"
+                                    className="flex-1 border-gray-300 rounded shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244] text-sm"
                                     value={subItem.href}
                                     onChange={(e) => updateSubmenuItem(navIndex, dropIndex, subIndex, { ...subItem, href: e.target.value })}
                                   />
@@ -692,7 +692,7 @@ export default function HeaderCMS() {
                                   setHeaderData({ ...headerData, navigationItems: updated });
                                 }
                               }}
-                              className="text-xs text-blue-600 hover:text-blue-700"
+                              className="text-xs text-[#4f8f2a] hover:text-[#3f7220]"
                             >
                               Add Submenu
                             </button>
@@ -728,7 +728,7 @@ export default function HeaderCMS() {
               <input
                 type="text"
                 id="contactButtonText"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={headerData.contactButtonText}
                 onChange={(e) => setHeaderData({ ...headerData, contactButtonText: e.target.value })}
               />
@@ -740,7 +740,7 @@ export default function HeaderCMS() {
               <input
                 type="text"
                 id="contactButtonHref"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={headerData.contactButtonHref}
                 onChange={(e) => setHeaderData({ ...headerData, contactButtonHref: e.target.value })}
               />
@@ -753,7 +753,7 @@ export default function HeaderCMS() {
           <input
             type="checkbox"
             id="isActive"
-            className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+            className="h-4 w-4 text-[#4f8f2a] border-gray-300 rounded"
             checked={headerData.isActive}
             onChange={(e) => setHeaderData({ ...headerData, isActive: e.target.checked })}
           />
@@ -766,7 +766,7 @@ export default function HeaderCMS() {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Header Data
           </button>

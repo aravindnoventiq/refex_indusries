@@ -172,7 +172,7 @@ export default function MissionVisionSectionCMS() {
             setMissionImageUrl(vm?.missionImage || '');
             setShowForm(true);
           }}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-edit-line mr-2"></i>
           {vm ? 'Edit Vision & Mission' : 'Create Vision & Mission'}
@@ -263,7 +263,7 @@ export default function MissionVisionSectionCMS() {
                         name="visionTitle"
                         required
                         defaultValue={vm?.visionTitle || ''}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                       />
                     </div>
                     <div>
@@ -274,7 +274,7 @@ export default function MissionVisionSectionCMS() {
                         name="visionDescription"
                         rows={4}
                         defaultValue={vm?.visionDescription || ''}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                       />
                     </div>
                     <div>
@@ -287,7 +287,7 @@ export default function MissionVisionSectionCMS() {
                           accept="image/*"
                           onChange={(e) => handleImageUpload(e, 'vision')}
                           disabled={uploadingVisionImage}
-                          className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                         />
                         {uploadingVisionImage && (
                           <div className="flex items-center text-sm text-gray-600">
@@ -338,7 +338,7 @@ export default function MissionVisionSectionCMS() {
                         name="missionTitle"
                         required
                         defaultValue={vm?.missionTitle || ''}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                       />
                     </div>
                     <div>
@@ -349,7 +349,7 @@ export default function MissionVisionSectionCMS() {
                         name="missionPoints"
                         rows={4}
                         defaultValue={vm?.missionPoints ? vm.missionPoints.join('\n') : ''}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                         placeholder="Enter mission points, one per line"
                       />
                       <p className="text-xs text-gray-500 mt-1">Each line will be a separate mission point</p>
@@ -364,7 +364,7 @@ export default function MissionVisionSectionCMS() {
                           accept="image/*"
                           onChange={(e) => handleImageUpload(e, 'mission')}
                           disabled={uploadingMissionImage}
-                          className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                         />
                         {uploadingMissionImage && (
                           <div className="flex items-center text-sm text-gray-600">
@@ -409,7 +409,7 @@ export default function MissionVisionSectionCMS() {
                     type="checkbox"
                     name="isActive"
                     defaultChecked={vm?.isActive !== false}
-                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                    className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                   />
                   <label className="ml-2 text-sm font-medium text-gray-700">
                     Active
@@ -419,7 +419,7 @@ export default function MissionVisionSectionCMS() {
                 <div className="flex gap-3 pt-4">
                   <button
                     type="submit"
-                    className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="flex-1 px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                   >
                     Save Vision & Mission Section
                   </button>

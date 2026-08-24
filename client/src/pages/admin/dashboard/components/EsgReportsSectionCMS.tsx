@@ -310,7 +310,7 @@ export default function EsgReportsSectionCMS() {
           </button>
           <button
             onClick={handleAddReport}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             <i className="ri-add-line mr-2"></i>
             Add Report
@@ -344,7 +344,7 @@ export default function EsgReportsSectionCMS() {
                 type="text"
                 value={header.title}
                 onChange={(e) => setHeader({ ...header, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 placeholder="e.g., REPORTS"
                 required
               />
@@ -356,7 +356,7 @@ export default function EsgReportsSectionCMS() {
                 id="headerIsActive"
                 checked={header.isActive}
                 onChange={(e) => setHeader({ ...header, isActive: e.target.checked })}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
               />
               <label htmlFor="headerIsActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -367,7 +367,7 @@ export default function EsgReportsSectionCMS() {
           <div className="flex gap-3 mt-6">
             <button
               onClick={handleSaveHeader}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
             >
               Save Header
             </button>
@@ -400,7 +400,7 @@ export default function EsgReportsSectionCMS() {
                 type="text"
                 value={editingReport.title}
                 onChange={(e) => setEditingReport({ ...editingReport, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 placeholder="e.g., Sustainability Report"
                 required
               />
@@ -424,7 +424,7 @@ export default function EsgReportsSectionCMS() {
                   className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                     uploadingImage
                       ? 'bg-gray-400 text-white cursor-not-allowed'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
                   }`}
                 >
                   {uploadingImage ? 'Uploading...' : 'Upload Image'}
@@ -488,7 +488,7 @@ export default function EsgReportsSectionCMS() {
                 type="number"
                 value={editingReport.order}
                 onChange={(e) => setEditingReport({ ...editingReport, order: parseInt(e.target.value) || 0 })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
               />
             </div>
 
@@ -498,7 +498,7 @@ export default function EsgReportsSectionCMS() {
                 id="isActive"
                 checked={editingReport.isActive}
                 onChange={(e) => setEditingReport({ ...editingReport, isActive: e.target.checked })}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
               />
               <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -509,7 +509,7 @@ export default function EsgReportsSectionCMS() {
           <div className="flex gap-3 mt-6">
             <button
               onClick={handleSaveReport}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
             >
               Save
             </button>
@@ -609,7 +609,7 @@ export default function EsgReportsSectionCMS() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <button
                         onClick={() => handleEditReport(report)}
-                        className="text-blue-600 hover:text-blue-900 mr-4"
+                        className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                       >
                         <i className="ri-edit-line"></i> Edit
                       </button>

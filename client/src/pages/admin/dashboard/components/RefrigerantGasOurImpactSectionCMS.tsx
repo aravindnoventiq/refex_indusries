@@ -191,7 +191,7 @@ export default function RefrigerantGasOurImpactSectionCMS() {
         <h2 className="text-2xl font-bold text-gray-900">Our Impact - Stats Management</h2>
         <button
           onClick={handleAdd}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add Impact
@@ -225,7 +225,7 @@ export default function RefrigerantGasOurImpactSectionCMS() {
                 type="text"
                 value={editingImpact.title}
                 onChange={(e) => setEditingImpact({ ...editingImpact, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 placeholder="e.g., 450 +, Delhi & Mumbai, Tamil Nadu"
                 required
               />
@@ -238,7 +238,7 @@ export default function RefrigerantGasOurImpactSectionCMS() {
               <textarea
                 value={editingImpact.description || ''}
                 onChange={(e) => setEditingImpact({ ...editingImpact, description: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 placeholder="e.g., Dealers and Distributions, Warehouses, Refilling Facility"
                 rows={3}
               />
@@ -263,7 +263,7 @@ export default function RefrigerantGasOurImpactSectionCMS() {
                   className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                     uploadingImage
                       ? 'bg-gray-400 text-white cursor-not-allowed'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
                   }`}
                 >
                   {uploadingImage ? 'Uploading...' : 'Upload Icon'}
@@ -296,7 +296,7 @@ export default function RefrigerantGasOurImpactSectionCMS() {
                 type="number"
                 value={editingImpact.order}
                 onChange={(e) => setEditingImpact({ ...editingImpact, order: parseInt(e.target.value) || 0 })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
               />
             </div>
 
@@ -306,7 +306,7 @@ export default function RefrigerantGasOurImpactSectionCMS() {
                 id="isActive"
                 checked={editingImpact.isActive}
                 onChange={(e) => setEditingImpact({ ...editingImpact, isActive: e.target.checked })}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
               />
               <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -317,7 +317,7 @@ export default function RefrigerantGasOurImpactSectionCMS() {
           <div className="flex gap-3 mt-6">
             <button
               onClick={handleSave}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
             >
               Save
             </button>
@@ -416,7 +416,7 @@ export default function RefrigerantGasOurImpactSectionCMS() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <button
                         onClick={() => handleEdit(impact)}
-                        className="text-blue-600 hover:text-blue-900 mr-4"
+                        className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                       >
                         <i className="ri-edit-line"></i> Edit
                       </button>

@@ -185,7 +185,7 @@ Known for our reliable, and high-quality services, we employ advanced technologi
               type="text"
               value={section.title}
               onChange={(e) => setSection({ ...section, title: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
               placeholder="e.g., Who we are"
               required
             />
@@ -198,7 +198,7 @@ Known for our reliable, and high-quality services, we employ advanced technologi
             <textarea
               value={section.content}
               onChange={(e) => setSection({ ...section, content: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
               placeholder="Enter content paragraphs (separate paragraphs with double line breaks)"
               rows={8}
               required
@@ -245,7 +245,7 @@ Known for our reliable, and high-quality services, we employ advanced technologi
                         accept="image/*"
                         onChange={(e) => handleSlideImageUpload(e, index)}
                         disabled={uploadingSlide === index}
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="flex-1 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                       />
                       {uploadingSlide === index && (
                         <div className="flex items-center text-sm text-gray-600">
@@ -282,7 +282,7 @@ Known for our reliable, and high-quality services, we employ advanced technologi
               id="isActive"
               checked={section.isActive}
               onChange={(e) => setSection({ ...section, isActive: e.target.checked })}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
             />
             <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
               Active
@@ -292,7 +292,7 @@ Known for our reliable, and high-quality services, we employ advanced technologi
           <div className="flex gap-3">
             <button
               type="submit"
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
             >
               Save Changes
             </button>

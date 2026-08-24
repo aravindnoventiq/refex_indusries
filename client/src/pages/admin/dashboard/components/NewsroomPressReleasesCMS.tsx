@@ -237,7 +237,7 @@ export default function NewsroomPressReleasesCMS() {
         <h2 className="text-2xl font-bold text-gray-900">Press Releases</h2>
         <button
           onClick={handleAddRelease}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add Press Release
@@ -271,7 +271,7 @@ export default function NewsroomPressReleasesCMS() {
                 type="text"
                 value={editingRelease.title}
                 onChange={(e) => setEditingRelease({ ...editingRelease, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Press Release Title"
               />
             </div>
@@ -284,7 +284,7 @@ export default function NewsroomPressReleasesCMS() {
                   type="text"
                   value={editingRelease.date}
                   onChange={(e) => setEditingRelease({ ...editingRelease, date: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                   placeholder="November 11, 2025"
                 />
               </div>
@@ -296,7 +296,7 @@ export default function NewsroomPressReleasesCMS() {
                   type="text"
                   value={editingRelease.source}
                   onChange={(e) => setEditingRelease({ ...editingRelease, source: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                   placeholder="ET NOW"
                 />
               </div>
@@ -311,7 +311,7 @@ export default function NewsroomPressReleasesCMS() {
                   accept="image/*"
                   onChange={handleImageUpload}
                   disabled={uploadingImage}
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                 />
                 {uploadingImage && (
                   <div className="flex items-center text-sm text-gray-600">
@@ -357,7 +357,7 @@ export default function NewsroomPressReleasesCMS() {
                 type="text"
                 value={editingRelease.link}
                 onChange={(e) => setEditingRelease({ ...editingRelease, link: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="https://example.com/article"
               />
             </div>
@@ -370,7 +370,7 @@ export default function NewsroomPressReleasesCMS() {
                   type="number"
                   value={editingRelease.order}
                   onChange={(e) => setEditingRelease({ ...editingRelease, order: parseInt(e.target.value) || 0 })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 />
               </div>
               <div className="flex items-center pt-8">
@@ -379,7 +379,7 @@ export default function NewsroomPressReleasesCMS() {
                   id="isVideo"
                   checked={editingRelease.isVideo || false}
                   onChange={(e) => setEditingRelease({ ...editingRelease, isVideo: e.target.checked })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label htmlFor="isVideo" className="ml-2 text-sm text-gray-700">
                   Is Video
@@ -391,7 +391,7 @@ export default function NewsroomPressReleasesCMS() {
                   id="isActive"
                   checked={editingRelease.isActive}
                   onChange={(e) => setEditingRelease({ ...editingRelease, isActive: e.target.checked })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
                   Active
@@ -401,7 +401,7 @@ export default function NewsroomPressReleasesCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveRelease}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 {editingRelease.id ? 'Update Release' : 'Create Release'}
               </button>
@@ -469,7 +469,7 @@ export default function NewsroomPressReleasesCMS() {
                         <span className={`px-2 py-1 text-xs rounded ${release.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
                           {release.isActive ? 'Active' : 'Inactive'}
                         </span>
-                        <span className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">
+                        <span className="px-2 py-1 text-xs bg-[#7cd244]/20 text-[#3f7220] rounded">
                           Order: {release.order}
                         </span>
                       </div>
@@ -477,7 +477,7 @@ export default function NewsroomPressReleasesCMS() {
                     <div className="flex gap-2 ml-4">
                       <button
                         onClick={() => handleEditRelease(release)}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
+                        className="px-3 py-1 bg-[#7cd244]/20 text-[#3f7220] rounded hover:bg-blue-200 transition-colors"
                       >
                         <i className="ri-edit-line"></i>
                       </button>

@@ -63,7 +63,6 @@ const AboutCMSPage = lazy(() => import('../pages/admin/dashboard/about-cms/page'
 const AshUtilizationCMSPage = lazy(() => import('../pages/admin/dashboard/ash-utilization-cms/page'));
 const GreenMobilityCMSPage = lazy(() => import('../pages/admin/dashboard/green-mobility-cms/page'));
 const VenwindRefexCMSPage = lazy(() => import('../pages/admin/dashboard/venwind-refex-cms/page'));
-const RefrigerantGasCMSPage = lazy(() => import('../pages/admin/dashboard/refrigerant-gas-cms/page'));
 const EsgCMSPage = lazy(() => import('../pages/admin/dashboard/esg-cms/page'));
 const NewsroomCMSPage = lazy(() => import('../pages/admin/dashboard/newsroom-cms/page'));
 const ContactCMSPage = lazy(() => import('../pages/admin/dashboard/contact-cms/page'));
@@ -351,14 +350,6 @@ const routes: RouteObject[] = [
     element: (
       <ProtectedRoute>
         <VenwindRefexCMSPage />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: '/admin/dashboard/refrigerant-gas-cms',
-    element: (
-      <ProtectedRoute>
-        <RefrigerantGasCMSPage />
       </ProtectedRoute>
     ),
   },

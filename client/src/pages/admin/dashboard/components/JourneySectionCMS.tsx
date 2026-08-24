@@ -142,7 +142,7 @@ export default function JourneySectionCMS() {
               type="text"
               value={journey.title || ''}
               onChange={(e) => setJourney({ ...journey, title: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
               placeholder="e.g., Our Journey"
             />
           </div>
@@ -154,7 +154,7 @@ export default function JourneySectionCMS() {
             <textarea
               value={journey.summary || ''}
               onChange={(e) => setJourney({ ...journey, summary: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
               placeholder="Optional summary text"
               rows={3}
             />
@@ -170,7 +170,7 @@ export default function JourneySectionCMS() {
                 accept="image/*"
                 onChange={handleImageUpload}
                 disabled={uploadingImage}
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
               />
               {uploadingImage && (
                 <div className="flex items-center text-sm text-gray-600">
@@ -226,7 +226,7 @@ export default function JourneySectionCMS() {
                   // Invalid JSON, keep as is
                 }
               }}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 font-mono text-sm"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244] font-mono text-sm"
               placeholder='["https://example.com/image1.jpg", "https://example.com/image2.jpg"]'
               rows={4}
             />
@@ -241,7 +241,7 @@ export default function JourneySectionCMS() {
               id="isActive"
               checked={journey.isActive}
               onChange={(e) => setJourney({ ...journey, isActive: e.target.checked })}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
             />
             <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
               Active
@@ -251,7 +251,7 @@ export default function JourneySectionCMS() {
           <div className="flex gap-3">
             <button
               type="submit"
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
             >
               Save Changes
             </button>

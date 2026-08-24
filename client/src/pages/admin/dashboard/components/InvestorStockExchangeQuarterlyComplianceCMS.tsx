@@ -446,12 +446,12 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
         <div className="md:col-span-2 group">
-          <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">
+          <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">
             Document Title *
           </label>
           <input
             type="text"
-            className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none"
+            className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none"
             value={doc.title}
             onChange={(e) => {
               if (editingDocument && editingDocument.document) {
@@ -467,12 +467,12 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
 
         {pageContent.showCmsPublishDate && (
           <div className="group">
-            <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">
+            <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">
               Published Date
             </label>
             <input
               type="text"
-              className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none"
+              className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none"
               value={doc.date}
               onChange={(e) => {
                 if (editingDocument && editingDocument.document) {
@@ -489,11 +489,11 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
 
         {pageContent.hasYearFilter && (
           <div className="group">
-            <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">
+            <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">
               Year *
             </label>
             <select
-              className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none appearance-none"
+              className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none appearance-none"
               value={doc.year}
               onChange={(e) => {
                 if (editingDocument && editingDocument.document) {
@@ -517,7 +517,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
         <div className="md:col-span-2 space-y-4">
           <div className="flex justify-between items-center bg-gray-50/50 p-4 rounded-2xl border border-gray-100">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-white text-blue-600 flex items-center justify-center shadow-sm">
+              <div className="w-10 h-10 rounded-2xl bg-white text-[#4f8f2a] flex items-center justify-center shadow-sm">
                 <i className={isManualPdfUrl ? "ri-link" : "ri-upload-cloud-2-line"}></i>
               </div>
               <span className="text-sm font-black text-gray-700 uppercase tracking-tight">PDF Document *</span>
@@ -527,7 +527,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
               <button
                 type="button"
                 onClick={() => setIsManualPdfUrl(!isManualPdfUrl)}
-                className={`relative inline-flex h-6 w-12 flex-shrink-0 cursor-pointer rounded-full border-4 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${isManualPdfUrl ? 'bg-blue-600' : 'bg-gray-200'}`}
+                className={`relative inline-flex h-6 w-12 flex-shrink-0 cursor-pointer rounded-full border-4 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${isManualPdfUrl ? 'bg-[#7cd244]' : 'bg-gray-200'}`}
               >
                 <span className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-xl ring-0 transition duration-200 ease-in-out ${isManualPdfUrl ? 'translate-x-6' : 'translate-x-0'}`} />
               </button>
@@ -538,18 +538,18 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
             <div className="relative group animate-in slide-in-from-top-2 duration-300">
               <input
                 type="text"
-                className={`w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-12 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none ${downloadingPdf ? 'opacity-50' : ''}`}
+                className={`w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-12 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none ${downloadingPdf ? 'opacity-50' : ''}`}
                 value={pdfUrlInput}
                 onChange={(e) => handlePdfUrlChange(e.target.value)}
                 placeholder="https://example.com/report.pdf"
                 disabled={downloadingPdf}
               />
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-600 transition-colors">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#4f8f2a] transition-colors">
                 <i className="ri-global-line text-xl"></i>
               </div>
               {downloadingPdf && (
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 animate-spin">
-                  <i className="ri-loader-4-line text-blue-600 text-xl"></i>
+                  <i className="ri-loader-4-line text-[#4f8f2a] text-xl"></i>
                 </div>
               )}
             </div>
@@ -565,16 +565,16 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
               />
               <label
                 htmlFor="pdf-upload-standard"
-                className={`flex flex-col items-center justify-center p-10 border-2 border-dashed rounded-[2rem] transition-all cursor-pointer group ${uploadingPdf ? 'bg-gray-50 border-gray-200 opacity-70' : 'bg-blue-50/20 border-blue-100 hover:border-blue-500 hover:bg-blue-50/50'}`}
+                className={`flex flex-col items-center justify-center p-10 border-2 border-dashed rounded-[2rem] transition-all cursor-pointer group ${uploadingPdf ? 'bg-gray-50 border-gray-200 opacity-70' : 'bg-[#7cd244]/10/20 border-blue-100 hover:border-[#7cd244] hover:bg-[#7cd244]/10/50'}`}
               >
                 {uploadingPdf ? (
                   <div className="flex flex-col items-center gap-4">
                     <div className="animate-spin w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full" />
-                    <span className="text-sm font-black text-blue-600 tracking-widest animate-pulse">UPLOADING...</span>
+                    <span className="text-sm font-black text-[#4f8f2a] tracking-widest animate-pulse">UPLOADING...</span>
                   </div>
                 ) : (
                   <>
-                    <div className="w-16 h-16 bg-white text-blue-600 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-500/10 mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-white text-[#4f8f2a] rounded-3xl flex items-center justify-center shadow-lg shadow-blue-500/10 mb-4 group-hover:scale-110 transition-transform duration-300">
                       <i className="ri-upload-cloud-2-line text-3xl"></i>
                     </div>
                     <div className="text-center">
@@ -589,7 +589,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
 
           {doc.pdfUrl && (
             <div className="flex items-center gap-4 p-5 bg-[#1F2937] rounded-3xl border border-gray-800 overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300 group/badge relative">
-              <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover/badge:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-0 bg-[#7cd244]/5 opacity-0 group-hover/badge:opacity-100 transition-opacity"></div>
               <div className="w-12 h-12 bg-red-500 text-white rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-500/20 z-10">
                 <i className="ri-file-pdf-fill text-2xl"></i>
               </div>
@@ -619,13 +619,13 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">Stock Exchange Quarterly Compliance Page CMS</h2>
             <p className="text-sm text-gray-400 mt-1 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+              <span className="w-2 h-2 rounded-full bg-[#7cd244]/100"></span>
               Manage sections and documents for the Stock Exchange Quarterly Compliance page
             </p>
           </div>
           <button
             onClick={handleSave}
-            className="group relative px-8 py-3 bg-[#2563EB] text-white rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200 flex items-center gap-2"
+            className="group relative px-8 py-3 bg-[#2563EB] text-white rounded-xl hover:bg-[#6db038] transition-all shadow-lg hover:shadow-blue-200 flex items-center gap-2"
           >
             <i className="ri-check-line text-lg"></i>
             <span className="font-bold tracking-wide">SAVE ALL CHANGES</span>
@@ -651,17 +651,17 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-10">
         <div className="lg:col-span-8 bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-sm">
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-2xl bg-[#7cd244]/10 text-[#4f8f2a] flex items-center justify-center">
               <i className="ri-settings-3-line text-xl"></i>
             </div>
             <h3 className="text-xl font-black text-gray-900 tracking-tight">General Settings</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
             <div className="md:col-span-2 group">
-              <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">Page Title *</label>
+              <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">Page Title *</label>
               <input
                 type="text"
-                className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none"
+                className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] focus:ring-4 focus:ring-[#7cd244]/5 transition-all outline-none"
                 value={pageContent.title}
                 onChange={(e) => setPageContent({ ...pageContent, title: e.target.value })}
                 placeholder="Stock Exchange Quarterly Compliance"
@@ -673,9 +673,9 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                 id="hasYearFilter"
                 checked={pageContent.hasYearFilter}
                 onChange={(e) => setPageContent({ ...pageContent, hasYearFilter: e.target.checked })}
-                className="h-6 w-6 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-6 w-6 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="hasYearFilter" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-blue-600 flex-1">Enable Year Filter</label>
+              <label htmlFor="hasYearFilter" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] flex-1">Enable Year Filter</label>
             </div>
             <div className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl border-2 border-transparent hover:border-blue-100 transition-all cursor-pointer group">
               <input
@@ -683,9 +683,9 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                 id="showCmsPublishDate"
                 checked={pageContent.showCmsPublishDate}
                 onChange={(e) => setPageContent({ ...pageContent, showCmsPublishDate: e.target.checked })}
-                className="h-6 w-6 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-6 w-6 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="showCmsPublishDate" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-blue-600 flex-1">CMS Published Date</label>
+              <label htmlFor="showCmsPublishDate" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] flex-1">CMS Published Date</label>
             </div>
             <div className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl border-2 border-transparent hover:border-blue-100 transition-all cursor-pointer group">
               <input
@@ -693,9 +693,9 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                 id="showPublishDate"
                 checked={pageContent.showPublishDate}
                 onChange={(e) => setPageContent({ ...pageContent, showPublishDate: e.target.checked })}
-                className="h-6 w-6 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-6 w-6 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="showPublishDate" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-blue-600 flex-1">Public Website Dates</label>
+              <label htmlFor="showPublishDate" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] flex-1">Public Website Dates</label>
             </div>
             <div className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl border-2 border-transparent hover:border-blue-100 transition-all cursor-pointer group">
               <input
@@ -703,9 +703,9 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                 id="isActive"
                 checked={pageContent.isActive}
                 onChange={(e) => setPageContent({ ...pageContent, isActive: e.target.checked })}
-                className="h-6 w-6 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-6 w-6 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="isActive" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-blue-600 flex-1">Page Active</label>
+              <label htmlFor="isActive" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] flex-1">Page Active</label>
             </div>
           </div>
         </div>
@@ -714,7 +714,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
         <div className={`lg:col-span-4 transition-all duration-500 ${pageContent.hasYearFilter ? 'opacity-100 translate-y-0' : 'opacity-50 translate-y-4 pointer-events-none grayscale'}`}>
           <div className="h-full bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-sm flex flex-col relative group/years">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-2xl bg-[#7cd244]/10 text-[#4f8f2a] flex items-center justify-center">
                 <i className="ri-calendar-event-line text-xl"></i>
               </div>
               <h3 className="text-xl font-black text-gray-900 tracking-tight">Years</h3>
@@ -722,23 +722,23 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
 
             <button
               onClick={handleAddFilterItem}
-              className="absolute top-8 right-8 w-10 h-10 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 flex items-center justify-center group/add active:scale-95 z-20"
+              className="absolute top-8 right-8 w-10 h-10 bg-[#7cd244] text-white rounded-xl hover:bg-[#6db038] transition-all shadow-lg shadow-blue-200 flex items-center justify-center group/add active:scale-95 z-20"
               title="Add Filter Year"
             >
               <i className="ri-add-line text-2xl font-bold transition-transform group-hover/add:rotate-90"></i>
             </button>
 
             {showFilterItemForm && (
-              <div className="mb-6 p-5 bg-blue-50/50 rounded-2xl border-2 border-blue-100 shadow-sm animate-in zoom-in-95 duration-300">
+              <div className="mb-6 p-5 bg-[#7cd244]/10/50 rounded-2xl border-2 border-blue-100 shadow-sm animate-in zoom-in-95 duration-300">
                 <input
                   type="text"
-                  className="w-full bg-white border-2 border-gray-100 rounded-xl py-3 px-4 font-bold text-gray-800 focus:border-blue-500 transition-all outline-none mb-4"
+                  className="w-full bg-white border-2 border-gray-100 rounded-xl py-3 px-4 font-bold text-gray-800 focus:border-[#7cd244] transition-all outline-none mb-4"
                   value={editingFilterItem}
                   onChange={(e) => setEditingFilterItem(e.target.value)}
                   placeholder="e.g., 2025-26"
                 />
                 <div className="flex gap-2">
-                  <button onClick={handleSaveFilterItem} className="flex-1 py-2.5 bg-blue-600 text-white rounded-xl font-black text-[10px] tracking-widest uppercase hover:bg-blue-700 shadow-md shadow-blue-100">SAVE</button>
+                  <button onClick={handleSaveFilterItem} className="flex-1 py-2.5 bg-[#7cd244] text-white rounded-xl font-black text-[10px] tracking-widest uppercase hover:bg-[#6db038] shadow-md shadow-blue-100">SAVE</button>
                   <button onClick={() => { setShowFilterItemForm(false); setEditingFilterItem(''); setEditingFilterIndex(-1); }} className="flex-1 py-2.5 bg-white text-gray-500 rounded-xl font-black text-[10px] tracking-widest uppercase hover:bg-gray-50 border border-gray-100">CANCEL</button>
                 </div>
               </div>
@@ -752,10 +752,10 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                 </div>
               ) : (
                 (pageContent.filterItems || []).map((item, index) => (
-                  <div key={index} className="group flex items-center justify-between p-4 bg-white rounded-2xl border border-gray-50 hover:border-blue-200 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+                  <div key={index} className="group flex items-center justify-between p-4 bg-white rounded-2xl border border-gray-50 hover:border-[#7cd244]/40 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
                     <span className="font-black text-gray-700 tracking-tight text-sm">FY {item}</span>
                     <div className="flex gap-2 translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
-                      <button onClick={() => handleEditFilterItem(index)} className="w-8 h-8 flex items-center justify-center text-blue-600 hover:bg-blue-50 rounded-lg transition-colors border border-blue-50"><i className="ri-pencil-line"></i></button>
+                      <button onClick={() => handleEditFilterItem(index)} className="w-8 h-8 flex items-center justify-center text-[#4f8f2a] hover:bg-[#7cd244]/10 rounded-lg transition-colors border border-blue-50"><i className="ri-pencil-line"></i></button>
                       <button onClick={() => handleDeleteFilterItem(index)} className="w-8 h-8 flex items-center justify-center text-red-600 hover:bg-red-50 rounded-lg transition-colors border border-red-50"><i className="ri-delete-bin-line"></i></button>
                     </div>
                   </div>
@@ -770,7 +770,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
       <div className="space-y-8">
         <div className="flex justify-between items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-[#7cd244]/10 text-[#4f8f2a] flex items-center justify-center">
               <i className="ri-list-settings-line text-xl"></i>
             </div>
             <div>
@@ -780,7 +780,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
           </div>
           <button
             onClick={handleAddSection}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-bold shadow-md flex items-center gap-2 active:scale-95"
+            className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-all font-bold shadow-md flex items-center gap-2 active:scale-95"
           >
             <i className="ri-add-line"></i> Add New Section
           </button>
@@ -802,7 +802,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                 <div className="p-8 border-b border-gray-50 bg-gray-50/30 group-hover/section:bg-white transition-colors">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-white text-blue-600 flex items-center justify-center shadow-sm border border-gray-100 group-hover/section:scale-110 transition-transform">
+                      <div className="w-12 h-12 rounded-2xl bg-white text-[#4f8f2a] flex items-center justify-center shadow-sm border border-gray-100 group-hover/section:scale-110 transition-transform">
                         <i className="ri-folder-open-line text-xl"></i>
                       </div>
                       <div>
@@ -813,13 +813,13 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                     <div className="flex gap-2">
                       <button
                         onClick={() => handleAddDocument(sectionIndex)}
-                        className="flex items-center gap-2 px-5 py-2.5 bg-blue-50 text-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition-all font-black text-[10px] uppercase tracking-widest border border-blue-100/50"
+                        className="flex items-center gap-2 px-5 py-2.5 bg-[#7cd244]/10 text-[#4f8f2a] rounded-xl hover:bg-[#7cd244] hover:text-white transition-all font-black text-[10px] uppercase tracking-widest border border-blue-100/50"
                       >
                         <i className="ri-add-line text-sm"></i> ADD ASSET
                       </button>
                       <button
                         onClick={() => handleEditSection(section, sectionIndex)}
-                        className="p-2.5 bg-white text-gray-400 hover:text-blue-600 rounded-xl border border-gray-100 hover:border-blue-200 transition-all shadow-sm"
+                        className="p-2.5 bg-white text-gray-400 hover:text-[#4f8f2a] rounded-xl border border-gray-100 hover:border-[#7cd244]/40 transition-all shadow-sm"
                       >
                         <i className="ri-pencil-line text-lg"></i>
                       </button>
@@ -840,14 +840,14 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                           <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest">Section Title</label>
                           <input
                             type="text"
-                            className="w-full bg-gray-50 border-2 border-gray-50 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none"
+                            className="w-full bg-gray-50 border-2 border-gray-50 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none"
                             value={editingSection.title}
                             onChange={(e) => setEditingSection({ ...editingSection, title: e.target.value })}
                             placeholder="e.g., SEBI Compliances"
                           />
                         </div>
                         <div className="flex gap-2">
-                          <button onClick={handleSaveSection} className="flex-1 py-4 bg-blue-600 text-white rounded-2xl font-black text-[10px] tracking-widest uppercase hover:bg-blue-700 shadow-lg shadow-blue-100">SAVE SECTION</button>
+                          <button onClick={handleSaveSection} className="flex-1 py-4 bg-[#7cd244] text-white rounded-2xl font-black text-[10px] tracking-widest uppercase hover:bg-[#6db038] shadow-lg shadow-blue-100">SAVE SECTION</button>
                           <button onClick={() => { setEditingSection(null); setEditingSectionIndex(-1); }} className="px-8 py-4 bg-white text-gray-500 rounded-2xl font-black text-[10px] tracking-widest uppercase hover:bg-gray-50 border border-gray-100">CANCEL</button>
                         </div>
                       </div>
@@ -865,7 +865,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                   ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {section.documents.map((doc, docIndex) => (
-                        <div key={docIndex} className={`relative flex flex-col p-6 rounded-[2rem] border-2 transition-all duration-500 group/card ${editingDocument?.sectionIndex === sectionIndex && editingDocument?.documentIndex === docIndex ? 'bg-blue-50/30 border-blue-500 shadow-2xl scale-[0.98]' : 'bg-gray-50/50 border-transparent hover:bg-white hover:border-blue-100 hover:shadow-xl hover:shadow-blue-500/5'}`}>
+                        <div key={docIndex} className={`relative flex flex-col p-6 rounded-[2rem] border-2 transition-all duration-500 group/card ${editingDocument?.sectionIndex === sectionIndex && editingDocument?.documentIndex === docIndex ? 'bg-[#7cd244]/10/30 border-[#7cd244] shadow-2xl scale-[0.98]' : 'bg-gray-50/50 border-transparent hover:bg-white hover:border-blue-100 hover:shadow-xl hover:shadow-blue-500/5'}`}>
                           <div className="flex justify-between items-start mb-4">
                             <div className="flex items-center gap-3">
                               <div className="w-10 h-10 bg-red-500 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-red-500/20">
@@ -880,7 +880,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                               </div>
                             </div>
                             <div className="flex gap-1 translate-x-2 opacity-0 group-hover/card:translate-x-0 group-hover/card:opacity-100 transition-all duration-300">
-                              <button onClick={() => handleEditDocument(sectionIndex, docIndex)} className="p-2 bg-white text-blue-600 hover:bg-blue-600 hover:text-white rounded-xl border border-blue-50 shadow-sm transition-all"><i className="ri-pencil-line"></i></button>
+                              <button onClick={() => handleEditDocument(sectionIndex, docIndex)} className="p-2 bg-white text-[#4f8f2a] hover:bg-[#7cd244] hover:text-white rounded-xl border border-blue-50 shadow-sm transition-all"><i className="ri-pencil-line"></i></button>
                               <button onClick={() => handleDeleteDocument(sectionIndex, docIndex)} className="p-2 bg-white text-red-600 hover:bg-red-600 hover:text-white rounded-xl border border-red-50 shadow-sm transition-all"><i className="ri-delete-bin-line"></i></button>
                             </div>
                           </div>
@@ -889,9 +889,9 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
 
                           <div className="mt-auto pt-4 border-t border-gray-100/50 flex flex-wrap gap-3">
                             {doc.year && (
-                              <div className="flex items-center gap-1.5 px-3 py-1 bg-blue-50 rounded-full">
-                                <i className="ri-calendar-line text-[10px] text-blue-600"></i>
-                                <span className="text-[10px] font-black text-blue-700 uppercase tracking-tight">FY {doc.year}</span>
+                              <div className="flex items-center gap-1.5 px-3 py-1 bg-[#7cd244]/10 rounded-full">
+                                <i className="ri-calendar-line text-[10px] text-[#4f8f2a]"></i>
+                                <span className="text-[10px] font-black text-[#3f7220] uppercase tracking-tight">FY {doc.year}</span>
                               </div>
                             )}
                             {doc.date && (
@@ -904,10 +904,10 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
 
                           {/* Inline Document Edit Form */}
                           {editingDocument && editingDocument.sectionIndex === sectionIndex && editingDocument.documentIndex === docIndex && (
-                            <div className="mt-6 p-6 bg-white rounded-3xl border-2 border-blue-500 shadow-2xl animate-in zoom-in-95 duration-300">
+                            <div className="mt-6 p-6 bg-white rounded-3xl border-2 border-[#7cd244] shadow-2xl animate-in zoom-in-95 duration-300">
                               {renderDocumentFields()}
                               <div className="flex gap-2 mt-8 pt-6 border-t border-gray-50">
-                                <button onClick={handleSaveDocument} className="flex-1 py-4 bg-blue-600 text-white rounded-2xl font-black text-[10px] tracking-widest uppercase hover:bg-blue-700 shadow-lg shadow-blue-100">UPDATE ASSET</button>
+                                <button onClick={handleSaveDocument} className="flex-1 py-4 bg-[#7cd244] text-white rounded-2xl font-black text-[10px] tracking-widest uppercase hover:bg-[#6db038] shadow-lg shadow-blue-100">UPDATE ASSET</button>
                                 <button onClick={() => { setShowDocumentForm(false); setEditingDocument(null); }} className="px-8 py-4 bg-white text-gray-500 rounded-2xl font-black text-[10px] tracking-widest uppercase hover:bg-gray-50 border border-gray-100">CANCEL</button>
                               </div>
                             </div>
@@ -926,7 +926,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
         {editingSection && editingSectionIndex < 0 && (
           <div className="fixed inset-0 bg-[#0F172A]/80 backdrop-blur-md z-[100] flex items-center justify-center p-6 animate-in fade-in duration-300">
             <div className="bg-white w-full max-w-2xl rounded-[3rem] shadow-2xl shadow-blue-500/20 overflow-hidden animate-in zoom-in-95 duration-300">
-              <div className="bg-blue-600 p-8 flex justify-between items-center">
+              <div className="bg-[#7cd244] p-8 flex justify-between items-center">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 bg-white/20 rounded-3xl flex items-center justify-center backdrop-blur-xl border border-white/20">
                     <i className="ri-folder-add-line text-white text-2xl"></i>
@@ -943,10 +943,10 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
               <div className="p-10">
                 <div className="space-y-6">
                   <div className="group">
-                    <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">Section Title *</label>
+                    <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">Section Title *</label>
                     <input
                       type="text"
-                      className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-5 px-8 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none"
+                      className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-5 px-8 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none"
                       value={editingSection.title}
                       onChange={(e) => setEditingSection({ ...editingSection, title: e.target.value })}
                       placeholder="e.g., SEBI Compliances"
@@ -954,7 +954,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                     />
                   </div>
                   <div className="flex gap-4 pt-4">
-                    <button onClick={handleSaveSection} className="flex-1 py-5 bg-blue-600 text-white rounded-[1.5rem] font-black text-[11px] tracking-widest uppercase hover:bg-blue-700 shadow-xl shadow-blue-100 transition-all active:scale-95">CREATE SECTION</button>
+                    <button onClick={handleSaveSection} className="flex-1 py-5 bg-[#7cd244] text-white rounded-[1.5rem] font-black text-[11px] tracking-widest uppercase hover:bg-[#6db038] shadow-xl shadow-blue-100 transition-all active:scale-95">CREATE SECTION</button>
                     <button onClick={() => { setEditingSection(null); setEditingSectionIndex(-1); }} className="px-10 py-5 bg-gray-50 text-gray-400 rounded-[1.5rem] font-black text-[11px] tracking-widest uppercase hover:bg-gray-100 transition-all border border-gray-100">CANCEL</button>
                   </div>
                 </div>
@@ -975,7 +975,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                   <div>
                     <div className="flex items-center gap-3">
                       <h3 className="text-white text-2xl font-black tracking-tight">Register New Asset</h3>
-                      <span className="px-3 py-1 bg-blue-500/20 rounded-full border border-blue-500/30 text-[8px] font-black text-blue-400 uppercase tracking-widest">
+                      <span className="px-3 py-1 bg-[#7cd244]/100/20 rounded-full border border-[#7cd244]/30 text-[8px] font-black text-blue-400 uppercase tracking-widest">
                         Section: {pageContent.sections[editingDocument?.sectionIndex || 0]?.title}
                       </span>
                     </div>
@@ -993,7 +993,7 @@ export default function InvestorStockExchangeQuarterlyComplianceCMS() {
                 </div>
 
                 <div className="flex gap-4 mt-10 pt-8 border-t border-gray-50">
-                  <button onClick={handleSaveDocument} className="flex-1 py-5 bg-blue-600 text-white rounded-[1.5rem] font-black text-[11px] tracking-widest uppercase hover:bg-blue-700 shadow-xl shadow-blue-100 transition-all active:scale-95">REGISTER ASSET</button>
+                  <button onClick={handleSaveDocument} className="flex-1 py-5 bg-[#7cd244] text-white rounded-[1.5rem] font-black text-[11px] tracking-widest uppercase hover:bg-[#6db038] shadow-xl shadow-blue-100 transition-all active:scale-95">REGISTER ASSET</button>
                   <button onClick={() => { setShowDocumentForm(false); setEditingDocument(null); }} className="px-10 py-5 bg-white text-gray-400 rounded-[1.5rem] font-black text-[11px] tracking-widest uppercase hover:bg-gray-50 border border-gray-100 transition-all">CANCEL</button>
                 </div>
               </div>

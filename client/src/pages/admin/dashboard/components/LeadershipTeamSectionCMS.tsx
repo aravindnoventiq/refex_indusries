@@ -195,7 +195,7 @@ export default function LeadershipTeamSectionCMS() {
         <h2 className="text-2xl font-bold text-gray-900">Leadership Team Management</h2>
         <button
           onClick={handleAdd}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add Member
@@ -229,7 +229,7 @@ export default function LeadershipTeamSectionCMS() {
                 type="text"
                 value={editingMember.name}
                 onChange={(e) => setEditingMember({ ...editingMember, name: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 placeholder="e.g., John Doe"
               />
             </div>
@@ -242,7 +242,7 @@ export default function LeadershipTeamSectionCMS() {
                 type="text"
                 value={editingMember.position}
                 onChange={(e) => setEditingMember({ ...editingMember, position: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 placeholder="e.g., Group CHRO"
               />
             </div>
@@ -257,7 +257,7 @@ export default function LeadershipTeamSectionCMS() {
                   accept="image/*"
                   onChange={handleImageUpload}
                   disabled={uploadingImage}
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 />
                 {uploadingImage && (
                   <div className="flex items-center text-sm text-gray-600">
@@ -304,7 +304,7 @@ export default function LeadershipTeamSectionCMS() {
                 type="url"
                 value={editingMember.linkedin || ''}
                 onChange={(e) => setEditingMember({ ...editingMember, linkedin: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                 placeholder="https://www.linkedin.com/in/username"
               />
               <p className="mt-1 text-xs text-gray-500">Optional: LinkedIn profile URL</p>
@@ -318,7 +318,7 @@ export default function LeadershipTeamSectionCMS() {
                 value={editingMember.biography || ''}
                 onChange={(e) => setEditingMember({ ...editingMember, biography: e.target.value })}
                 rows={6}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-y"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244] resize-y"
                 placeholder="Enter the biography text. Use line breaks to separate paragraphs."
               />
               <p className="mt-1 text-xs text-gray-500">Optional: Biography content</p>
@@ -332,7 +332,7 @@ export default function LeadershipTeamSectionCMS() {
                 type="number"
                 value={editingMember.order}
                 onChange={(e) => setEditingMember({ ...editingMember, order: parseInt(e.target.value) || 0 })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
               />
             </div>
 
@@ -342,7 +342,7 @@ export default function LeadershipTeamSectionCMS() {
                 id="isActive"
                 checked={editingMember.isActive}
                 onChange={(e) => setEditingMember({ ...editingMember, isActive: e.target.checked })}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
               />
               <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -353,7 +353,7 @@ export default function LeadershipTeamSectionCMS() {
           <div className="flex gap-3 mt-6">
             <button
               onClick={handleSave}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
             >
               Save
             </button>
@@ -435,7 +435,7 @@ export default function LeadershipTeamSectionCMS() {
                     <td className="px-6 py-4 text-sm">
                       <div className="flex flex-wrap gap-1">
                         {member.linkedin && (
-                          <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs" title="LinkedIn">
+                          <span className="px-2 py-1 bg-[#7cd244]/20 text-[#3f7220] rounded text-xs" title="LinkedIn">
                             <i className="ri-linkedin-fill mr-1"></i>LinkedIn
                           </span>
                         )}
@@ -472,7 +472,7 @@ export default function LeadershipTeamSectionCMS() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <button
                         onClick={() => handleEdit(member)}
-                        className="text-blue-600 hover:text-blue-900 mr-4"
+                        className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                       >
                         <i className="ri-edit-line"></i> Edit
                       </button>

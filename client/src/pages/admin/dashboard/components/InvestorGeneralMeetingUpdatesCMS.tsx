@@ -410,13 +410,13 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">General Meeting Updates CMS</h2>
             <p className="text-sm text-gray-500 mt-1 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+              <span className="w-2 h-2 rounded-full bg-[#7cd244]/100"></span>
               Manage sections and documents for general meeting updates
             </p>
           </div>
           <button
             onClick={handleSave}
-            className="group relative px-8 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 overflow-hidden"
+            className="group relative px-8 py-3 bg-[#7cd244] text-white rounded-xl hover:bg-[#6db038] transition-all shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
             <i className="ri-save-line text-lg"></i>
@@ -444,7 +444,7 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
         {/* General Settings */}
         <div className="lg:col-span-2 bg-gray-50/50 rounded-3xl p-8 border border-gray-100 shadow-inner">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-white text-blue-600 flex items-center justify-center shadow-sm">
+            <div className="w-10 h-10 rounded-xl bg-white text-[#4f8f2a] flex items-center justify-center shadow-sm">
               <i className="ri-settings-4-line text-xl"></i>
             </div>
             <h3 className="text-lg font-bold text-gray-900">General Settings</h3>
@@ -454,68 +454,68 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
               <label className="block text-sm font-bold text-gray-700 mb-2">Page Title *</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition-all"
+                className="w-full border-gray-300 rounded-xl shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244] py-3 px-4 transition-all"
                 value={pageContent.title}
                 onChange={(e) => setPageContent({ ...pageContent, title: e.target.value })}
                 placeholder="General Meeting Updates"
               />
             </div>
-            <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm group hover:border-blue-200 transition-all">
+            <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm group hover:border-[#7cd244]/40 transition-all">
               <input
                 type="checkbox"
                 id="hasYearFilter"
                 checked={pageContent.hasYearFilter}
                 onChange={(e) => setPageContent({ ...pageContent, hasYearFilter: e.target.checked })}
-                className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-5 w-5 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="hasYearFilter" className="text-sm font-bold text-gray-700 cursor-pointer select-none group-hover:text-blue-600 transition-colors">Enable Year Filter</label>
+              <label htmlFor="hasYearFilter" className="text-sm font-bold text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] transition-colors">Enable Year Filter</label>
             </div>
-            <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm group hover:border-blue-200 transition-all">
+            <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm group hover:border-[#7cd244]/40 transition-all">
               <input
                 type="checkbox"
                 id="showCmsPublishDate"
                 checked={pageContent.showCmsPublishDate}
                 onChange={(e) => setPageContent({ ...pageContent, showCmsPublishDate: e.target.checked })}
-                className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-5 w-5 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="showCmsPublishDate" className="text-sm font-bold text-gray-700 cursor-pointer select-none group-hover:text-blue-600 transition-colors">CMS Published Date</label>
+              <label htmlFor="showCmsPublishDate" className="text-sm font-bold text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] transition-colors">CMS Published Date</label>
             </div>
-            <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm group hover:border-blue-200 transition-all">
+            <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm group hover:border-[#7cd244]/40 transition-all">
               <input
                 type="checkbox"
                 id="showPublishDate"
                 checked={pageContent.showPublishDate}
                 onChange={(e) => setPageContent({ ...pageContent, showPublishDate: e.target.checked })}
-                className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-5 w-5 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="showPublishDate" className="text-sm font-bold text-gray-700 cursor-pointer select-none group-hover:text-blue-600 transition-colors">Public Website Dates</label>
+              <label htmlFor="showPublishDate" className="text-sm font-bold text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] transition-colors">Public Website Dates</label>
             </div>
-            <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm group hover:border-blue-200 transition-all">
+            <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm group hover:border-[#7cd244]/40 transition-all">
               <input
                 type="checkbox"
                 id="isActive"
                 checked={pageContent.isActive}
                 onChange={(e) => setPageContent({ ...pageContent, isActive: e.target.checked })}
-                className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-5 w-5 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="isActive" className="text-sm font-bold text-gray-700 cursor-pointer select-none group-hover:text-blue-600 transition-colors">Page Active</label>
+              <label htmlFor="isActive" className="text-sm font-bold text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] transition-colors">Page Active</label>
             </div>
           </div>
         </div>
 
         {/* Filter Management */}
         <div className={`transition-all duration-500 ${pageContent.hasYearFilter ? 'opacity-100 translate-y-0' : 'opacity-50 translate-y-4 pointer-events-none grayscale'}`}>
-          <div className="h-full bg-blue-50/50 rounded-3xl p-8 border border-blue-100 shadow-inner flex flex-col">
+          <div className="h-full bg-[#7cd244]/10/50 rounded-3xl p-8 border border-blue-100 shadow-inner flex flex-col">
             <div className="flex justify-between items-center mb-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white text-blue-600 flex items-center justify-center shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-white text-[#4f8f2a] flex items-center justify-center shadow-sm">
                   <i className="ri-filter-3-line text-xl"></i>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">Years</h3>
               </div>
               <button
                 onClick={handleAddFilterItem}
-                className="w-10 h-10 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all shadow-md flex items-center justify-center active:scale-90"
+                className="w-10 h-10 bg-[#7cd244] text-white rounded-xl hover:bg-[#6db038] transition-all shadow-md flex items-center justify-center active:scale-90"
                 title="Add Filter Year"
               >
                 <i className="ri-add-line text-xl font-bold"></i>
@@ -524,13 +524,13 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
 
             <div className="flex-1 space-y-2 max-h-[220px] overflow-y-auto custom-scrollbar pr-2">
               {(pageContent.filterItems || []).length === 0 ? (
-                <div className="h-20 flex items-center justify-center text-gray-400 text-xs font-medium border-2 border-dashed border-blue-200 rounded-2xl italic">No years added</div>
+                <div className="h-20 flex items-center justify-center text-gray-400 text-xs font-medium border-2 border-dashed border-[#7cd244]/40 rounded-2xl italic">No years added</div>
               ) : (
                 (pageContent.filterItems || []).map((item, index) => (
                   <div key={index} className="group flex items-center justify-between p-3 bg-white rounded-xl border border-blue-50 shadow-sm hover:border-blue-300 transition-all">
                     <span className="text-sm font-bold text-gray-700">FY {item}</span>
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
-                      <button onClick={() => handleEditFilterItem(index)} className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg"><i className="ri-pencil-line"></i></button>
+                      <button onClick={() => handleEditFilterItem(index)} className="p-1.5 text-[#4f8f2a] hover:bg-[#7cd244]/10 rounded-lg"><i className="ri-pencil-line"></i></button>
                       <button onClick={() => handleDeleteFilterItem(index)} className="p-1.5 text-red-600 hover:bg-red-50 rounded-lg"><i className="ri-delete-bin-line"></i></button>
                     </div>
                   </div>
@@ -556,11 +556,11 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
             {/* Section Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 relative z-10">
               <div className="flex-1 group">
-                <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">Section Title</label>
+                <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">Section Title</label>
                 <div className="flex items-center gap-3">
                   <input
                     type="text"
-                    className="flex-1 bg-transparent border-b-2 border-gray-100 py-2 text-2xl font-black text-gray-900 focus:border-blue-500 transition-all outline-none uppercase tracking-tighter italic"
+                    className="flex-1 bg-transparent border-b-2 border-gray-100 py-2 text-2xl font-black text-gray-900 focus:border-[#7cd244] transition-all outline-none uppercase tracking-tighter italic"
                     value={section.title}
                     onChange={(e) => {
                       const newSections = [...pageContent.sections];
@@ -569,7 +569,7 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
                     }}
                     placeholder="ENTER SECTION NAME"
                   />
-                  <div className="w-10 h-10 rounded-xl bg-gray-50 text-gray-300 flex items-center justify-center border border-gray-100 group-focus-within:bg-blue-50 group-focus-within:text-blue-500 group-focus-within:border-blue-100 transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-gray-50 text-gray-300 flex items-center justify-center border border-gray-100 group-focus-within:bg-[#7cd244]/10 group-focus-within:text-blue-500 group-focus-within:border-blue-100 transition-all">
                     <i className="ri-pencil-fill"></i>
                   </div>
                 </div>
@@ -595,7 +595,7 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
                 section.documents.map((doc, docIndex) => {
                   const isEditing = editingDocument?.sectionIndex === sectionIndex && editingDocument?.documentIndex === docIndex;
                   return (
-                    <div key={docIndex} className={`group/doc rounded-2xl border transition-all duration-300 ${isEditing ? 'border-blue-400 ring-4 ring-blue-50 bg-blue-50/30 overflow-hidden' : 'border-gray-100 hover:border-gray-200 bg-white hover:bg-gray-50/30'}`}>
+                    <div key={docIndex} className={`group/doc rounded-2xl border transition-all duration-300 ${isEditing ? 'border-blue-400 ring-4 ring-blue-50 bg-[#7cd244]/10/30 overflow-hidden' : 'border-gray-100 hover:border-gray-200 bg-white hover:bg-gray-50/30'}`}>
                       {!isEditing ? (
                         <div className="flex items-center justify-between p-5">
                           <div className="flex items-center gap-5 flex-1 min-w-0">
@@ -603,10 +603,10 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
                               <i className="ri-file-pdf-2-fill text-3xl"></i>
                             </div>
                             <div className="min-w-0">
-                              <h5 className="text-base font-black text-gray-900 tracking-tight group-hover/doc:text-blue-600 transition-colors uppercase">{doc.title}</h5>
+                              <h5 className="text-base font-black text-gray-900 tracking-tight group-hover/doc:text-[#4f8f2a] transition-colors uppercase">{doc.title}</h5>
                               <div className="flex items-center gap-4 mt-2">
                                 {doc.year && (
-                                  <span className="flex items-center gap-1.5 text-[10px] font-black bg-blue-50 text-blue-600 px-3 py-1 rounded-lg border border-blue-100 uppercase tracking-widest">
+                                  <span className="flex items-center gap-1.5 text-[10px] font-black bg-[#7cd244]/10 text-[#4f8f2a] px-3 py-1 rounded-lg border border-blue-100 uppercase tracking-widest">
                                     <i className="ri-hashtag text-blue-400"></i> FY {doc.year}
                                   </span>
                                 )}
@@ -624,7 +624,7 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
                           <div className="flex gap-2 ml-4">
                             <button
                               onClick={() => handleEditDocument(sectionIndex, docIndex)}
-                              className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors border border-transparent hover:border-blue-200"
+                              className="p-2 text-[#4f8f2a] hover:bg-[#7cd244]/10 rounded-lg transition-colors border border-transparent hover:border-[#7cd244]/40"
                               title="Edit"
                             >
                               <i className="ri-edit-line text-xl"></i>
@@ -641,15 +641,15 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
                       ) : (
                         /* Inline Edit State */
                         <div className="p-6 bg-white animate-in slide-in-from-left-2 duration-200">
-                          <div className="flex items-center gap-2 mb-6 text-blue-600 border-b border-blue-50 pb-4">
+                          <div className="flex items-center gap-2 mb-6 text-[#4f8f2a] border-b border-blue-50 pb-4">
                             <i className="ri-edit-box-line text-xl font-bold"></i>
-                            <h5 className="text-md font-bold uppercase tracking-wider text-blue-800">Editing Document</h5>
+                            <h5 className="text-md font-bold uppercase tracking-wider text-[#3f7220]">Editing Document</h5>
                           </div>
                           {renderDocumentFields()}
                           <div className="mt-8 flex gap-3 pt-6 border-t border-gray-100">
                             <button
                               onClick={handleSaveDocument}
-                              className="px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-bold shadow-md hover:shadow-lg scale-95 hover:scale-100 flex items-center gap-2"
+                              className="px-6 py-2.5 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-all font-bold shadow-md hover:shadow-lg scale-95 hover:scale-100 flex items-center gap-2"
                             >
                               <i className="ri-check-line text-lg"></i> Done Editing
                             </button>
@@ -675,12 +675,12 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
       <div className="flex justify-center pb-20">
         <button
           onClick={handleAddSection}
-          className="group relative px-12 py-6 bg-white border-2 border-gray-100 rounded-[2rem] hover:border-blue-500 transition-all duration-500 shadow-xl hover:shadow-blue-200/50 flex flex-col items-center gap-2 active:scale-95"
+          className="group relative px-12 py-6 bg-white border-2 border-gray-100 rounded-[2rem] hover:border-[#7cd244] transition-all duration-500 shadow-xl hover:shadow-blue-200/50 flex flex-col items-center gap-2 active:scale-95"
         >
-          <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-inner">
+          <div className="w-16 h-16 bg-[#7cd244]/10 text-[#4f8f2a] rounded-2xl flex items-center justify-center group-hover:bg-[#7cd244] group-hover:text-white transition-all duration-500 shadow-inner">
             <i className="ri-add-line text-3xl font-bold"></i>
           </div>
-          <span className="text-[10px] font-black text-gray-400 group-hover:text-blue-600 uppercase tracking-[0.3em] transition-colors">Add New Section</span>
+          <span className="text-[10px] font-black text-gray-400 group-hover:text-[#4f8f2a] uppercase tracking-[0.3em] transition-colors">Add New Section</span>
         </button>
       </div>
 
@@ -718,7 +718,7 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
               </button>
               <button
                 onClick={handleSaveDocument}
-                className="px-10 py-3.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200 font-black tracking-wide flex items-center gap-2 active:scale-95"
+                className="px-10 py-3.5 bg-[#7cd244] text-white rounded-xl hover:bg-[#6db038] transition-all shadow-lg hover:shadow-blue-200 font-black tracking-wide flex items-center gap-2 active:scale-95"
               >
                 <i className="ri-add-line text-lg"></i>
                 ADD DOCUMENT
@@ -733,7 +733,7 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
         <div className="fixed inset-0 bg-[#0f172a]/40 flex items-center justify-center z-[110] p-4 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md p-8 animate-in zoom-in duration-200 border border-gray-100">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shadow-sm border border-blue-100/50">
+              <div className="w-12 h-12 rounded-2xl bg-[#7cd244]/10 text-[#4f8f2a] flex items-center justify-center shadow-sm border border-blue-100/50">
                 <i className="ri-calendar-line text-2xl"></i>
               </div>
               <div>
@@ -743,11 +743,11 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
             </div>
 
             <div className="space-y-1 mb-8">
-              <label className="text-[10px] font-black text-blue-600 uppercase tracking-[0.2em] ml-1">Financial Year Format</label>
+              <label className="text-[10px] font-black text-[#4f8f2a] uppercase tracking-[0.2em] ml-1">Financial Year Format</label>
               <input
                 type="text"
                 autoFocus
-                className="w-full border-2 border-gray-100 rounded-2xl px-5 py-4 focus:border-blue-500 focus:ring-0 text-lg font-bold text-gray-800 transition-all placeholder:text-gray-300"
+                className="w-full border-2 border-gray-100 rounded-2xl px-5 py-4 focus:border-[#7cd244] focus:ring-0 text-lg font-bold text-gray-800 transition-all placeholder:text-gray-300"
                 value={editingFilterItem}
                 onChange={(e) => setEditingFilterItem(e.target.value)}
                 placeholder="2024-25"
@@ -759,7 +759,7 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
             <div className="flex flex-col gap-2">
               <button
                 onClick={handleSaveFilterItem}
-                className="w-full py-4 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 font-black tracking-widest shadow-lg hover:shadow-blue-200 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                className="w-full py-4 bg-[#7cd244] text-white rounded-2xl hover:bg-[#6db038] font-black tracking-widest shadow-lg hover:shadow-blue-200 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
               >
                 {editingFilterIndex >= 0 ? 'UPDATE YEAR' : 'SAVE NEW YEAR'}
               </button>
@@ -784,13 +784,13 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
       <div className="space-y-8 animate-in fade-in duration-500">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="md:col-span-2 group">
-            <label className="block text-[10px] font-black text-blue-600 uppercase tracking-[0.2rem] mb-2 ml-1 group-focus-within:text-blue-700 transition-colors">
+            <label className="block text-[10px] font-black text-[#4f8f2a] uppercase tracking-[0.2rem] mb-2 ml-1 group-focus-within:text-[#3f7220] transition-colors">
               Document Title *
             </label>
             <div className="relative">
               <input
                 type="text"
-                className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl shadow-none focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 py-4 px-5 font-bold text-gray-800 transition-all placeholder:text-gray-300"
+                className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl shadow-none focus:bg-white focus:border-[#7cd244] focus:ring-4 focus:ring-[#7cd244]/5 py-4 px-5 font-bold text-gray-800 transition-all placeholder:text-gray-300"
                 value={doc.title}
                 onChange={(e) => setEditingDocument({ ...editingDocument, document: { ...doc, title: e.target.value } })}
                 placeholder="e.g., AGM Notice & Annual Report 2024-25"
@@ -803,13 +803,13 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
 
           {pageContent.showCmsPublishDate && (
             <div className="group">
-              <label className="block text-[10px] font-black text-gray-400 uppercase tracking-[0.2rem] mb-2 ml-1 group-focus-within:text-blue-600 transition-colors">
+              <label className="block text-[10px] font-black text-gray-400 uppercase tracking-[0.2rem] mb-2 ml-1 group-focus-within:text-[#4f8f2a] transition-colors">
                 Published Date
               </label>
               <div className="relative">
                 <input
                   type="text"
-                  className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl shadow-none focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 py-3.5 px-5 font-bold text-gray-800 transition-all placeholder:text-gray-300"
+                  className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl shadow-none focus:bg-white focus:border-[#7cd244] focus:ring-4 focus:ring-[#7cd244]/5 py-3.5 px-5 font-bold text-gray-800 transition-all placeholder:text-gray-300"
                   value={doc.date}
                   onChange={(e) => setEditingDocument({ ...editingDocument, document: { ...doc, date: e.target.value } })}
                   placeholder="DD/MM/YYYY"
@@ -823,12 +823,12 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
 
           {pageContent.hasYearFilter && (
             <div className="group">
-              <label className="block text-[10px] font-black text-gray-400 uppercase tracking-[0.2rem] mb-2 ml-1 group-focus-within:text-blue-600 transition-colors">
+              <label className="block text-[10px] font-black text-gray-400 uppercase tracking-[0.2rem] mb-2 ml-1 group-focus-within:text-[#4f8f2a] transition-colors">
                 Financial Year *
               </label>
               <div className="relative">
                 <select
-                  className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl shadow-none focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 py-3.5 px-5 font-bold text-gray-800 transition-all appearance-none cursor-pointer"
+                  className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl shadow-none focus:bg-white focus:border-[#7cd244] focus:ring-4 focus:ring-[#7cd244]/5 py-3.5 px-5 font-bold text-gray-800 transition-all appearance-none cursor-pointer"
                   value={doc.year}
                   onChange={(e) => setEditingDocument({ ...editingDocument, document: { ...doc, year: e.target.value } })}
                 >
@@ -845,10 +845,10 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
           )}
         </div>
 
-        <div className="bg-gray-50/80 rounded-[2rem] p-8 border-2 border-dashed border-gray-200 group-focus-within:border-blue-200 transition-all">
+        <div className="bg-gray-50/80 rounded-[2rem] p-8 border-2 border-dashed border-gray-200 group-focus-within:border-[#7cd244]/40 transition-all">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white text-blue-600 flex items-center justify-center shadow-sm border border-gray-100">
+              <div className="w-10 h-10 rounded-xl bg-white text-[#4f8f2a] flex items-center justify-center shadow-sm border border-gray-100">
                 <i className="ri-file-pdf-2-line text-xl"></i>
               </div>
               <div>
@@ -862,7 +862,7 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
             <button
               onClick={() => setIsManualPdfUrl(!isManualPdfUrl)}
               className={`px-4 py-2 rounded-xl text-[10px] font-black tracking-widest uppercase transition-all flex items-center gap-2 border-2 ${isManualPdfUrl
-                ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-100'
+                ? 'bg-[#7cd244] text-white border-blue-600 shadow-md shadow-blue-100'
                 : 'bg-white text-gray-400 border-gray-100 hover:border-gray-300'
                 }`}
             >
@@ -877,7 +877,7 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
                 <div className="relative group">
                   <input
                     type="text"
-                    className="w-full bg-white border-2 border-gray-100 rounded-2xl py-4 px-5 pr-12 font-bold text-blue-600 focus:border-blue-500 focus:ring-0 transition-all placeholder:text-gray-300 shadow-sm"
+                    className="w-full bg-white border-2 border-gray-100 rounded-2xl py-4 px-5 pr-12 font-bold text-[#4f8f2a] focus:border-[#7cd244] focus:ring-0 transition-all placeholder:text-gray-300 shadow-sm"
                     value={pdfUrlInput}
                     onChange={(e) => handlePdfUrlChange(e.target.value)}
                     placeholder="https://example.com/document.pdf"
@@ -893,16 +893,16 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
                 </div>
                 {downloadingPdf && (
                   <div className="flex items-center gap-3 px-2 animate-pulse mt-2">
-                    <div className="flex-1 h-1 bg-blue-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-600 w-1/2 rounded-full animate-progress-indeterminate"></div>
+                    <div className="flex-1 h-1 bg-[#7cd244]/20 rounded-full overflow-hidden">
+                      <div className="h-full bg-[#7cd244] w-1/2 rounded-full animate-progress-indeterminate"></div>
                     </div>
-                    <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest">Processing URL...</span>
+                    <span className="text-[10px] font-black text-[#4f8f2a] uppercase tracking-widest">Processing URL...</span>
                   </div>
                 )}
                 {!downloadingPdf && doc.pdfUrl && (
-                  <div className="flex items-center gap-2 px-3 py-2 bg-blue-50 rounded-xl border border-blue-100/50 w-fit mt-2 animate-in fade-in zoom-in duration-300">
+                  <div className="flex items-center gap-2 px-3 py-2 bg-[#7cd244]/10 rounded-xl border border-blue-100/50 w-fit mt-2 animate-in fade-in zoom-in duration-300">
                     <i className="ri-checkbox-circle-fill text-blue-500"></i>
-                    <span className="text-[10px] font-bold text-blue-700 truncate max-w-[400px]">Active URL: {doc.pdfUrl}</span>
+                    <span className="text-[10px] font-bold text-[#3f7220] truncate max-w-[400px]">Active URL: {doc.pdfUrl}</span>
                   </div>
                 )}
               </div>
@@ -915,23 +915,23 @@ export default function InvestorGeneralMeetingUpdatesCMS() {
                   className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                   disabled={uploadingPdf || downloadingPdf}
                 />
-                <div className={`absolute inset-0 border-2 border-dashed rounded-2xl flex flex-col items-center justify-center transition-all ${uploadingPdf ? 'bg-blue-50/50 border-blue-400' : 'bg-white border-gray-200 group-hover:border-blue-400 group-hover:bg-blue-50/30'
+                <div className={`absolute inset-0 border-2 border-dashed rounded-2xl flex flex-col items-center justify-center transition-all ${uploadingPdf ? 'bg-[#7cd244]/10/50 border-blue-400' : 'bg-white border-gray-200 group-hover:border-blue-400 group-hover:bg-[#7cd244]/10/30'
                   }`}>
                   {uploadingPdf ? (
                     <div className="flex flex-col items-center gap-3">
                       <div className="animate-bounce">
-                        <i className="ri-upload-2-fill text-3xl text-blue-600"></i>
+                        <i className="ri-upload-2-fill text-3xl text-[#4f8f2a]"></i>
                       </div>
-                      <span className="text-xs font-black text-blue-600 uppercase tracking-widest">Uploading PDF...</span>
+                      <span className="text-xs font-black text-[#4f8f2a] uppercase tracking-widest">Uploading PDF...</span>
                     </div>
                   ) : (
                     <>
-                      <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-blue-100 transition-all">
-                        <i className="ri-file-upload-line text-2xl text-gray-400 group-hover:text-blue-600"></i>
+                      <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#7cd244]/20 transition-all">
+                        <i className="ri-file-upload-line text-2xl text-gray-400 group-hover:text-[#4f8f2a]"></i>
                       </div>
                       <p className="text-xs font-bold text-gray-500">
                         {doc.pdfUrl ? (
-                          <span className="text-blue-600 flex items-center gap-1 italic">
+                          <span className="text-[#4f8f2a] flex items-center gap-1 italic">
                             <i className="ri-file-check-line text-lg"></i>
                             {doc.pdfUrl.split('/').pop()}
                           </span>

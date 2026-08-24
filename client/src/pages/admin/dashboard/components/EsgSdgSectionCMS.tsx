@@ -165,7 +165,7 @@ We're so proud to be a member of UNGC and to be working with partners around the
             type="text"
             value={section.title}
             onChange={(e) => setSection({ ...section, title: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
             placeholder="SUSTAINABLE DEVELOPMENT GOALS"
           />
           <p className="mt-1 text-sm text-gray-500">
@@ -181,7 +181,7 @@ We're so proud to be a member of UNGC and to be working with partners around the
             value={section.content || ''}
             onChange={(e) => setSection({ ...section, content: e.target.value })}
             rows={8}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
             placeholder="Enter section content..."
           />
           <p className="mt-1 text-sm text-gray-500">
@@ -207,7 +207,7 @@ We're so proud to be a member of UNGC and to be working with partners around the
               className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                 uploadingImage
                   ? 'bg-gray-400 text-white cursor-not-allowed'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
+                  : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
               }`}
             >
               {uploadingImage ? 'Uploading...' : 'Upload Image'}
@@ -237,7 +237,7 @@ We're so proud to be a member of UNGC and to be working with partners around the
             id="isActive"
             checked={section.isActive}
             onChange={(e) => setSection({ ...section, isActive: e.target.checked })}
-            className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
           />
           <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
             Active (show on website)
@@ -247,7 +247,7 @@ We're so proud to be a member of UNGC and to be working with partners around the
         <div className="flex gap-4">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Section
           </button>

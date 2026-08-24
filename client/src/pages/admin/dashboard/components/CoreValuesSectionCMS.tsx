@@ -217,7 +217,7 @@ export default function CoreValuesSectionCMS() {
             setImageUrl('');
             setShowForm(true);
           }}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add New Value
@@ -254,7 +254,7 @@ export default function CoreValuesSectionCMS() {
                     name="letter"
                     maxLength={1}
                     defaultValue={editingValue?.letter || ''}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                     placeholder="P"
                   />
                 </div>
@@ -268,7 +268,7 @@ export default function CoreValuesSectionCMS() {
                     name="title"
                     required
                     defaultValue={editingValue?.title || ''}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                   />
                 </div>
 
@@ -281,7 +281,7 @@ export default function CoreValuesSectionCMS() {
                     required
                     rows={3}
                     defaultValue={editingValue?.description || ''}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                   />
                 </div>
 
@@ -295,7 +295,7 @@ export default function CoreValuesSectionCMS() {
                       accept="image/*"
                       onChange={handleImageUpload}
                       disabled={uploadingImage}
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                     />
                     {uploadingImage && (
                       <div className="flex items-center text-sm text-gray-600">
@@ -342,7 +342,7 @@ export default function CoreValuesSectionCMS() {
                     type="number"
                     name="order"
                     defaultValue={editingValue?.order || 0}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                   />
                 </div>
 
@@ -351,7 +351,7 @@ export default function CoreValuesSectionCMS() {
                     type="checkbox"
                     name="isActive"
                     defaultChecked={editingValue?.isActive !== false}
-                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                    className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                   />
                   <label className="ml-2 text-sm font-medium text-gray-700">
                     Active
@@ -361,7 +361,7 @@ export default function CoreValuesSectionCMS() {
                 <div className="flex gap-3 pt-4">
                   <button
                     type="submit"
-                    className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="flex-1 px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                   >
                     {editingValue ? 'Update Value' : 'Create Value'}
                   </button>
@@ -452,7 +452,7 @@ export default function CoreValuesSectionCMS() {
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <button
                       onClick={() => handleEdit(value)}
-                      className="text-blue-600 hover:text-blue-900 mr-4"
+                      className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                     >
                       Edit
                     </button>

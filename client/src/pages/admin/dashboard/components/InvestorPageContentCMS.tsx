@@ -784,7 +784,7 @@ export default function InvestorPageContentCMS() {
               <h3 className="text-lg font-semibold text-gray-900">Pages</h3>
               <button
                 onClick={() => setShowNewPageForm(true)}
-                className="px-3 py-1 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-3 py-1 bg-[#7cd244] text-white text-sm rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 <i className="ri-add-line mr-1"></i>
                 New
@@ -796,7 +796,7 @@ export default function InvestorPageContentCMS() {
               <div className="mb-4 p-3 bg-white rounded border border-gray-300">
                 <input
                   type="text"
-                  className="w-full mb-2 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm"
+                  className="w-full mb-2 border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244] text-sm"
                   value={newPageTitle}
                   onChange={(e) => setNewPageTitle(e.target.value)}
                   placeholder="Page title"
@@ -809,7 +809,7 @@ export default function InvestorPageContentCMS() {
                 <div className="flex gap-2">
                   <button
                     onClick={handleCreatePage}
-                    className="flex-1 px-3 py-1 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700"
+                    className="flex-1 px-3 py-1 bg-[#7cd244] text-white text-sm rounded-lg hover:bg-[#6db038]"
                   >
                     Create
                   </button>
@@ -836,7 +836,7 @@ export default function InvestorPageContentCMS() {
                   <div
                     key={page.id || page.slug}
                     className={`p-3 rounded-lg cursor-pointer transition-colors ${selectedPage?.id === page.id || selectedPage?.slug === page.slug
-                      ? 'bg-blue-100 border-2 border-blue-500'
+                      ? 'bg-[#7cd244]/20 border-2 border-[#7cd244]'
                       : 'bg-white border border-gray-200 hover:bg-gray-50'
                       }`}
                     onClick={() => setSelectedPage(page)}
@@ -879,7 +879,7 @@ export default function InvestorPageContentCMS() {
                     </label>
                     <input
                       type="text"
-                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                      className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                       value={pageContent.title}
                       onChange={(e) => setPageContent({ ...pageContent, title: e.target.value })}
                       placeholder="Page Title"
@@ -902,7 +902,7 @@ export default function InvestorPageContentCMS() {
                       id="hasYearFilter"
                       checked={pageContent.hasYearFilter}
                       onChange={(e) => setPageContent({ ...pageContent, hasYearFilter: e.target.checked })}
-                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
                     />
                     <label htmlFor="hasYearFilter" className="ml-2 block text-sm text-gray-900">
                       Enable Year Filter
@@ -914,7 +914,7 @@ export default function InvestorPageContentCMS() {
                       id="isActive"
                       checked={pageContent.isActive}
                       onChange={(e) => setPageContent({ ...pageContent, isActive: e.target.checked })}
-                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
                     />
                     <label htmlFor="isActive" className="ml-2 block text-sm text-gray-900">
                       Active
@@ -926,7 +926,7 @@ export default function InvestorPageContentCMS() {
                       id="showCmsPublishDate"
                       checked={pageContent.showCmsPublishDate}
                       onChange={(e) => setPageContent({ ...pageContent, showCmsPublishDate: e.target.checked })}
-                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
                     />
                     <label htmlFor="showCmsPublishDate" className="ml-2 block text-sm text-gray-900">
                       Show Published Date field in CMS
@@ -938,7 +938,7 @@ export default function InvestorPageContentCMS() {
                       id="showPublishDate"
                       checked={pageContent.showPublishDate}
                       onChange={(e) => setPageContent({ ...pageContent, showPublishDate: e.target.checked })}
-                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
                     />
                     <label htmlFor="showPublishDate" className="ml-2 block text-sm text-gray-900">
                       Show Publish Dates on Website
@@ -957,7 +957,7 @@ export default function InvestorPageContentCMS() {
                     </div>
                     <button
                       onClick={handleAddFilterItem}
-                      className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                     >
                       <i className="ri-add-line mr-2"></i>
                       Add Filter Item
@@ -972,14 +972,14 @@ export default function InvestorPageContentCMS() {
                       <div className="flex gap-3">
                         <input
                           type="text"
-                          className="flex-1 border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                          className="flex-1 border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                           value={editingFilterItem}
                           onChange={(e) => setEditingFilterItem(e.target.value)}
                           placeholder="e.g., 2025-26"
                         />
                         <button
                           onClick={handleSaveFilterItem}
-                          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                         >
                           Save
                         </button>
@@ -1006,7 +1006,7 @@ export default function InvestorPageContentCMS() {
                           <div className="flex gap-2">
                             <button
                               onClick={() => handleEditFilterItem(index)}
-                              className="text-blue-600 hover:text-blue-800 text-sm"
+                              className="text-[#4f8f2a] hover:text-[#3f7220] text-sm"
                             >
                               Edit
                             </button>
@@ -1034,7 +1034,7 @@ export default function InvestorPageContentCMS() {
                   <h3 className="text-lg font-semibold text-gray-900">Sections</h3>
                   <button
                     onClick={handleAddSection}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                   >
                     <i className="ri-add-line mr-2"></i>
                     Add Section
@@ -1053,7 +1053,7 @@ export default function InvestorPageContentCMS() {
                         </label>
                         <input
                           type="text"
-                          className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                          className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                           value={editingSection.title}
                           onChange={(e) => setEditingSection({ ...editingSection, title: e.target.value })}
                           placeholder="e.g., Financial Results"
@@ -1062,7 +1062,7 @@ export default function InvestorPageContentCMS() {
                       <div className="flex gap-3">
                         <button
                           onClick={handleSaveSection}
-                          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                         >
                           Save Section
                         </button>
@@ -1094,7 +1094,7 @@ export default function InvestorPageContentCMS() {
                           <div className="flex gap-2">
                             <button
                               onClick={() => handleEditSection(section, sectionIndex)}
-                              className="text-blue-600 hover:text-blue-800 text-sm"
+                              className="text-[#4f8f2a] hover:text-[#3f7220] text-sm"
                             >
                               Edit
                             </button>
@@ -1112,7 +1112,7 @@ export default function InvestorPageContentCMS() {
                             <span className="text-sm text-gray-600">Documents ({section.documents.length})</span>
                             <button
                               onClick={() => handleAddDocument(sectionIndex)}
-                              className="text-sm text-blue-600 hover:text-blue-800"
+                              className="text-sm text-[#4f8f2a] hover:text-[#3f7220]"
                             >
                               + Add Document
                             </button>
@@ -1132,7 +1132,7 @@ export default function InvestorPageContentCMS() {
                                   <div className="flex gap-2">
                                     <button
                                       onClick={() => handleEditDocument(sectionIndex, docIndex)}
-                                      className="text-blue-600 hover:text-blue-800 text-xs"
+                                      className="text-[#4f8f2a] hover:text-[#3f7220] text-xs"
                                     >
                                       Edit
                                     </button>
@@ -1154,7 +1154,7 @@ export default function InvestorPageContentCMS() {
                             <span className="text-sm text-gray-600">Content ({section.contents?.length || 0})</span>
                             <button
                               onClick={() => handleAddContent(sectionIndex)}
-                              className="text-sm text-blue-600 hover:text-blue-800"
+                              className="text-sm text-[#4f8f2a] hover:text-[#3f7220]"
                             >
                               + Add Content
                             </button>
@@ -1174,7 +1174,7 @@ export default function InvestorPageContentCMS() {
                                   <div className="flex gap-2">
                                     <button
                                       onClick={() => handleEditContent(sectionIndex, contentIndex)}
-                                      className="text-blue-600 hover:text-blue-800 text-xs"
+                                      className="text-[#4f8f2a] hover:text-[#3f7220] text-xs"
                                     >
                                       Edit
                                     </button>
@@ -1196,7 +1196,7 @@ export default function InvestorPageContentCMS() {
                             <span className="text-sm text-gray-600">Audio ({section.audios?.length || 0})</span>
                             <button
                               onClick={() => handleAddAudio(sectionIndex)}
-                              className="text-sm text-blue-600 hover:text-blue-800"
+                              className="text-sm text-[#4f8f2a] hover:text-[#3f7220]"
                             >
                               + Add Audio
                             </button>
@@ -1210,7 +1210,7 @@ export default function InvestorPageContentCMS() {
                                   <div className="flex-1">
                                     <p className="text-sm font-medium text-gray-900">{audio.name}</p>
                                     {audio.year && (
-                                      <p className="text-xs text-blue-600 mt-1">Year: {audio.year}</p>
+                                      <p className="text-xs text-[#4f8f2a] mt-1">Year: {audio.year}</p>
                                     )}
                                     {audio.audioUrl && (
                                       <p className="text-xs text-gray-500 mt-1">Audio: {audio.audioUrl.substring(0, 50)}...</p>
@@ -1219,7 +1219,7 @@ export default function InvestorPageContentCMS() {
                                   <div className="flex gap-2">
                                     <button
                                       onClick={() => handleEditAudio(sectionIndex, audioIndex)}
-                                      className="text-blue-600 hover:text-blue-800 text-xs"
+                                      className="text-[#4f8f2a] hover:text-[#3f7220] text-xs"
                                     >
                                       Edit
                                     </button>
@@ -1254,7 +1254,7 @@ export default function InvestorPageContentCMS() {
                       </label>
                       <input
                         type="text"
-                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                         value={editingAudio.audio.name}
                         onChange={(e) => setEditingAudio({
                           ...editingAudio,
@@ -1269,7 +1269,7 @@ export default function InvestorPageContentCMS() {
                       </label>
                       <input
                         type="text"
-                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                         value={editingAudio.audio.year || ''}
                         onChange={(e) => setEditingAudio({
                           ...editingAudio,
@@ -1290,10 +1290,10 @@ export default function InvestorPageContentCMS() {
                         accept="audio/*,.mp3,.wav,.m4a,.ogg,.aac"
                         onChange={handleAudioFileUpload}
                         disabled={uploadingAudio}
-                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                       />
                       {uploadingAudio && (
-                        <p className="text-sm text-blue-600 mt-1">Uploading audio file...</p>
+                        <p className="text-sm text-[#4f8f2a] mt-1">Uploading audio file...</p>
                       )}
                       {editingAudio.audio.audioUrl && (
                         <p className="text-xs text-gray-500 mt-1">
@@ -1307,7 +1307,7 @@ export default function InvestorPageContentCMS() {
                       </label>
                       <input
                         type="text"
-                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                         value={editingAudio.audio.audioUrl}
                         onChange={(e) => setEditingAudio({
                           ...editingAudio,
@@ -1348,7 +1348,7 @@ export default function InvestorPageContentCMS() {
                     <div className="flex gap-3">
                       <button
                         onClick={handleSaveAudio}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                        className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                       >
                         Save Audio
                       </button>
@@ -1380,7 +1380,7 @@ export default function InvestorPageContentCMS() {
                       </label>
                       <input
                         type="text"
-                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                         value={editingContent.content.title}
                         onChange={(e) => setEditingContent({
                           ...editingContent,
@@ -1395,7 +1395,7 @@ export default function InvestorPageContentCMS() {
                       </label>
                       <input
                         type="text"
-                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                         value={editingContent.content.subtitle}
                         onChange={(e) => setEditingContent({
                           ...editingContent,
@@ -1410,7 +1410,7 @@ export default function InvestorPageContentCMS() {
                       </label>
                       <textarea
                         rows={6}
-                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                         value={editingContent.content.content}
                         onChange={(e) => setEditingContent({
                           ...editingContent,
@@ -1422,7 +1422,7 @@ export default function InvestorPageContentCMS() {
                     <div className="flex gap-3">
                       <button
                         onClick={handleSaveContent}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                        className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                       >
                         Save Content
                       </button>
@@ -1454,7 +1454,7 @@ export default function InvestorPageContentCMS() {
                       </label>
                       <input
                         type="text"
-                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                         value={editingDocument.document.title}
                         onChange={(e) => setEditingDocument({
                           ...editingDocument,
@@ -1470,7 +1470,7 @@ export default function InvestorPageContentCMS() {
                         </label>
                         <input
                           type="text"
-                          className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                          className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                           value={editingDocument.document.date}
                           onChange={(e) => setEditingDocument({
                             ...editingDocument,
@@ -1487,7 +1487,7 @@ export default function InvestorPageContentCMS() {
                         </label>
                         <input
                           type="text"
-                          className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                          className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                           value={editingDocument.document.year}
                           onChange={(e) => setEditingDocument({
                             ...editingDocument,
@@ -1507,7 +1507,7 @@ export default function InvestorPageContentCMS() {
                           <button
                             type="button"
                             onClick={() => setIsManualPdfUrl(!isManualPdfUrl)}
-                            className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${isManualPdfUrl ? 'bg-blue-600' : 'bg-gray-200'
+                            className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#7cd244] focus:ring-offset-2 ${isManualPdfUrl ? 'bg-[#7cd244]' : 'bg-gray-200'
                               }`}
                           >
                             <span
@@ -1521,7 +1521,7 @@ export default function InvestorPageContentCMS() {
                       {isManualPdfUrl ? (
                         <input
                           type="text"
-                          className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                          className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                           value={editingDocument.document.pdfUrl}
                           onChange={(e) => setEditingDocument({
                             ...editingDocument,
@@ -1559,7 +1559,7 @@ export default function InvestorPageContentCMS() {
                     <div className="md:col-span-2 flex gap-3">
                       <button
                         onClick={handleSaveDocument}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                        className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                       >
                         Save Document
                       </button>
@@ -1582,7 +1582,7 @@ export default function InvestorPageContentCMS() {
               <div className="mt-6 flex justify-end">
                 <button
                   onClick={handleSave}
-                  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                 >
                   Save All Changes
                 </button>

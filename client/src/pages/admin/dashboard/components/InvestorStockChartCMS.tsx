@@ -138,7 +138,7 @@ export default function InvestorStockChartCMS() {
     <div className="bg-white rounded-lg shadow p-6">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Stock Chart Section</h2>
       
-      <div className="mb-4 p-4 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg">
+      <div className="mb-4 p-4 bg-[#7cd244]/10 border border-[#7cd244]/40 text-[#3f7220] rounded-lg">
         <p className="font-semibold">Note:</p>
         <p className="text-sm mt-1">Chart data is fetched automatically from the APIs. You can customize the section title, filter labels, and default settings here.</p>
       </div>
@@ -164,7 +164,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Title *</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.title}
                 onChange={(e) => setStockChart({ ...stockChart, title: e.target.value })}
                 placeholder="STOCK CHART"
@@ -173,7 +173,7 @@ export default function InvestorStockChartCMS() {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Default Exchange</label>
               <select
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.defaultExchange || 'BSE'}
                 onChange={(e) => setStockChart({ ...stockChart, defaultExchange: e.target.value })}
               >
@@ -184,7 +184,7 @@ export default function InvestorStockChartCMS() {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Default Chart Type</label>
               <select
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.defaultChartType || 'line'}
                 onChange={(e) => setStockChart({ ...stockChart, defaultChartType: e.target.value })}
               >
@@ -196,7 +196,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Default Filter</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.defaultFilter || 'Today'}
                 onChange={(e) => setStockChart({ ...stockChart, defaultFilter: e.target.value })}
                 placeholder="Today"
@@ -206,7 +206,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">API Nonce</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.nonce || ''}
                 onChange={(e) => setStockChart({ ...stockChart, nonce: e.target.value })}
                 placeholder="44efac5c14"
@@ -224,7 +224,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Today</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.filterToday || 'Today'}
                 onChange={(e) => setStockChart({ ...stockChart, filterToday: e.target.value })}
               />
@@ -233,7 +233,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">5 Days</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.filter5Days || '5 Days'}
                 onChange={(e) => setStockChart({ ...stockChart, filter5Days: e.target.value })}
               />
@@ -242,7 +242,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">1 Month</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.filter1Month || '1 Month'}
                 onChange={(e) => setStockChart({ ...stockChart, filter1Month: e.target.value })}
               />
@@ -251,7 +251,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">3 Months</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.filter3Months || '3 Months'}
                 onChange={(e) => setStockChart({ ...stockChart, filter3Months: e.target.value })}
               />
@@ -260,7 +260,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">6 Months</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.filter6Months || '6 Months'}
                 onChange={(e) => setStockChart({ ...stockChart, filter6Months: e.target.value })}
               />
@@ -269,7 +269,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">1 Year</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.filter1Year || '1 Year'}
                 onChange={(e) => setStockChart({ ...stockChart, filter1Year: e.target.value })}
               />
@@ -278,7 +278,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">3 Years</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.filter3Years || '3 Years'}
                 onChange={(e) => setStockChart({ ...stockChart, filter3Years: e.target.value })}
               />
@@ -287,7 +287,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">YTD</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.filterYTD || 'YTD'}
                 onChange={(e) => setStockChart({ ...stockChart, filterYTD: e.target.value })}
               />
@@ -296,7 +296,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">MAX</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.filterMAX || 'MAX'}
                 onChange={(e) => setStockChart({ ...stockChart, filterMAX: e.target.value })}
               />
@@ -305,7 +305,7 @@ export default function InvestorStockChartCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Custom</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockChart.filterCustom || 'Custom'}
                 onChange={(e) => setStockChart({ ...stockChart, filterCustom: e.target.value })}
               />
@@ -318,7 +318,7 @@ export default function InvestorStockChartCMS() {
           <input
             type="checkbox"
             id="isActive"
-            className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+            className="h-4 w-4 text-[#4f8f2a] border-gray-300 rounded"
             checked={stockChart.isActive}
             onChange={(e) => setStockChart({ ...stockChart, isActive: e.target.checked })}
           />
@@ -330,7 +330,7 @@ export default function InvestorStockChartCMS() {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Stock Chart Settings
           </button>

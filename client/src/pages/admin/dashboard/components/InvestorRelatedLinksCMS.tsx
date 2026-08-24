@@ -284,7 +284,7 @@ export default function InvestorRelatedLinksCMS() {
             onClick={() => setActiveSubTab('section')}
             className={`py-4 px-1 border-b-2 font-medium text-sm ${
               activeSubTab === 'section'
-                ? 'border-blue-500 text-blue-600'
+                ? 'border-[#7cd244] text-[#4f8f2a]'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
           >
@@ -294,7 +294,7 @@ export default function InvestorRelatedLinksCMS() {
             onClick={() => setActiveSubTab('links')}
             className={`py-4 px-1 border-b-2 font-medium text-sm ${
               activeSubTab === 'links'
-                ? 'border-blue-500 text-blue-600'
+                ? 'border-[#7cd244] text-[#4f8f2a]'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
           >
@@ -304,7 +304,7 @@ export default function InvestorRelatedLinksCMS() {
             onClick={() => setActiveSubTab('personnel')}
             className={`py-4 px-1 border-b-2 font-medium text-sm ${
               activeSubTab === 'personnel'
-                ? 'border-blue-500 text-blue-600'
+                ? 'border-[#7cd244] text-[#4f8f2a]'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
           >
@@ -334,7 +334,7 @@ export default function InvestorRelatedLinksCMS() {
             </label>
             <input
               type="text"
-              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
               value={section.title}
               onChange={(e) => setSection({ ...section, title: e.target.value })}
               placeholder="Related Links"
@@ -346,7 +346,7 @@ export default function InvestorRelatedLinksCMS() {
               id="sectionActive"
               checked={section.isActive}
               onChange={(e) => setSection({ ...section, isActive: e.target.checked })}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
             />
             <label htmlFor="sectionActive" className="ml-2 block text-sm text-gray-900">
               Active
@@ -354,7 +354,7 @@ export default function InvestorRelatedLinksCMS() {
           </div>
           <button
             onClick={handleSaveSection}
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Section Settings
           </button>
@@ -368,7 +368,7 @@ export default function InvestorRelatedLinksCMS() {
             <h3 className="text-lg font-semibold text-gray-900">Related Links</h3>
             <button
               onClick={handleAddLink}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
             >
               <i className="ri-add-line mr-2"></i>
               Add Link
@@ -388,7 +388,7 @@ export default function InvestorRelatedLinksCMS() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                     value={editingLink.name}
                     onChange={(e) => {
                       const name = e.target.value;
@@ -412,7 +412,7 @@ export default function InvestorRelatedLinksCMS() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                     value={editingLink.href}
                     onChange={(e) => setEditingLink({ ...editingLink, href: e.target.value })}
                     placeholder="/investors/key-managerial-personnel/"
@@ -421,7 +421,7 @@ export default function InvestorRelatedLinksCMS() {
                     <button
                       type="button"
                       onClick={() => setEditingLink({ ...editingLink, href: generateInvestorPageUrl(editingLink.name) })}
-                      className="mt-1 text-xs text-blue-600 hover:text-blue-800 underline"
+                      className="mt-1 text-xs text-[#4f8f2a] hover:text-[#3f7220] underline"
                     >
                       Generate URL from name
                     </button>
@@ -433,7 +433,7 @@ export default function InvestorRelatedLinksCMS() {
                   </label>
                   <input
                     type="number"
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                     value={editingLink.displayOrder}
                     onChange={(e) => setEditingLink({ ...editingLink, displayOrder: parseInt(e.target.value) || 0 })}
                   />
@@ -444,7 +444,7 @@ export default function InvestorRelatedLinksCMS() {
                     id="linkActive"
                     checked={editingLink.isActive}
                     onChange={(e) => setEditingLink({ ...editingLink, isActive: e.target.checked })}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
                   />
                   <label htmlFor="linkActive" className="ml-2 block text-sm text-gray-900">
                     Active
@@ -453,7 +453,7 @@ export default function InvestorRelatedLinksCMS() {
                 <div className="flex gap-3">
                   <button
                     onClick={handleSaveLink}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                   >
                     Save
                   </button>
@@ -535,7 +535,7 @@ export default function InvestorRelatedLinksCMS() {
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                             <button
                               onClick={() => handleEditLink(link)}
-                              className="text-blue-600 hover:text-blue-900 mr-4"
+                              className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                             >
                               Edit
                             </button>
@@ -563,7 +563,7 @@ export default function InvestorRelatedLinksCMS() {
             <h3 className="text-lg font-semibold text-gray-900">Key Personnel</h3>
             <button
               onClick={handleAddPersonnel}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
             >
               <i className="ri-add-line mr-2"></i>
               Add Personnel
@@ -583,7 +583,7 @@ export default function InvestorRelatedLinksCMS() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                     value={editingPersonnel.name}
                     onChange={(e) => setEditingPersonnel({ ...editingPersonnel, name: e.target.value })}
                     placeholder="e.g., Mr. Anil Jain"
@@ -595,7 +595,7 @@ export default function InvestorRelatedLinksCMS() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                     value={editingPersonnel.position || ''}
                     onChange={(e) => setEditingPersonnel({ ...editingPersonnel, position: e.target.value })}
                     placeholder="e.g., Managing Director"
@@ -607,7 +607,7 @@ export default function InvestorRelatedLinksCMS() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                     value={editingPersonnel.company || ''}
                     onChange={(e) => setEditingPersonnel({ ...editingPersonnel, company: e.target.value })}
                     placeholder="e.g., Refex Industries Limited"
@@ -619,7 +619,7 @@ export default function InvestorRelatedLinksCMS() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                     value={editingPersonnel.phone || ''}
                     onChange={(e) => setEditingPersonnel({ ...editingPersonnel, phone: e.target.value })}
                     placeholder="e.g., +91-44 – 3504 0050"
@@ -631,7 +631,7 @@ export default function InvestorRelatedLinksCMS() {
                   </label>
                   <input
                     type="email"
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                     value={editingPersonnel.email || ''}
                     onChange={(e) => setEditingPersonnel({ ...editingPersonnel, email: e.target.value })}
                     placeholder="e.g., investor.relations@refex.co.in"
@@ -643,7 +643,7 @@ export default function InvestorRelatedLinksCMS() {
                   </label>
                   <input
                     type="number"
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                     value={editingPersonnel.displayOrder}
                     onChange={(e) => setEditingPersonnel({ ...editingPersonnel, displayOrder: parseInt(e.target.value) || 0 })}
                   />
@@ -654,7 +654,7 @@ export default function InvestorRelatedLinksCMS() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                     value={editingPersonnel.address || ''}
                     onChange={(e) => setEditingPersonnel({ ...editingPersonnel, address: e.target.value })}
                     placeholder="e.g., 2nd Floor, No.313, Refex Towers, Sterling Road,"
@@ -666,7 +666,7 @@ export default function InvestorRelatedLinksCMS() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                     value={editingPersonnel.address2 || ''}
                     onChange={(e) => setEditingPersonnel({ ...editingPersonnel, address2: e.target.value })}
                     placeholder="e.g., Valluvar Kottam High Road, Nungambakkam,"
@@ -678,7 +678,7 @@ export default function InvestorRelatedLinksCMS() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                     value={editingPersonnel.address3 || ''}
                     onChange={(e) => setEditingPersonnel({ ...editingPersonnel, address3: e.target.value })}
                     placeholder="e.g., Chennai – 600034, Tamil Nadu."
@@ -690,7 +690,7 @@ export default function InvestorRelatedLinksCMS() {
                     id="personnelActive"
                     checked={editingPersonnel.isActive}
                     onChange={(e) => setEditingPersonnel({ ...editingPersonnel, isActive: e.target.checked })}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
                   />
                   <label htmlFor="personnelActive" className="ml-2 block text-sm text-gray-900">
                     Active
@@ -699,7 +699,7 @@ export default function InvestorRelatedLinksCMS() {
                 <div className="md:col-span-2 flex gap-3">
                   <button
                     onClick={handleSavePersonnel}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                   >
                     Save
                   </button>
@@ -789,7 +789,7 @@ export default function InvestorRelatedLinksCMS() {
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                           <button
                             onClick={() => handleEditPersonnel(person)}
-                            className="text-blue-600 hover:text-blue-900 mr-4"
+                            className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                           >
                             Edit
                           </button>

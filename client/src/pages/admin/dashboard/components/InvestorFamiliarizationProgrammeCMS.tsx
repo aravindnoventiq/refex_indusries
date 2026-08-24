@@ -438,12 +438,12 @@ export default function InvestorFamiliarizationProgrammeCMS() {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
         <div className="md:col-span-2 group">
-          <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">
+          <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">
             Document Title *
           </label>
           <input
             type="text"
-            className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none"
+            className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none"
             value={doc.title}
             onChange={(e) => {
               if (editingDocument && editingDocument.document) {
@@ -459,12 +459,12 @@ export default function InvestorFamiliarizationProgrammeCMS() {
 
         {pageContent.showCmsPublishDate && (
           <div className="group">
-            <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">
+            <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">
               Published Date
             </label>
             <input
               type="text"
-              className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none"
+              className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none"
               value={doc.date}
               onChange={(e) => {
                 if (editingDocument && editingDocument.document) {
@@ -481,11 +481,11 @@ export default function InvestorFamiliarizationProgrammeCMS() {
 
         {pageContent.hasYearFilter && (
           <div className="group">
-            <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">
+            <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">
               Year *
             </label>
             <select
-              className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none appearance-none"
+              className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none appearance-none"
               value={doc.year}
               onChange={(e) => {
                 if (editingDocument && editingDocument.document) {
@@ -509,7 +509,7 @@ export default function InvestorFamiliarizationProgrammeCMS() {
         <div className="md:col-span-2 space-y-4">
           <div className="flex justify-between items-center bg-gray-50/50 p-4 rounded-2xl border border-gray-100">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-white text-blue-600 flex items-center justify-center shadow-sm">
+              <div className="w-10 h-10 rounded-2xl bg-white text-[#4f8f2a] flex items-center justify-center shadow-sm">
                 <i className={isManualPdfUrl ? "ri-link" : "ri-upload-cloud-2-line"}></i>
               </div>
               <span className="text-sm font-black text-gray-700 uppercase tracking-tight">PDF Document *</span>
@@ -519,7 +519,7 @@ export default function InvestorFamiliarizationProgrammeCMS() {
               <button
                 type="button"
                 onClick={() => setIsManualPdfUrl(!isManualPdfUrl)}
-                className={`relative inline-flex h-6 w-12 flex-shrink-0 cursor-pointer rounded-full border-4 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${isManualPdfUrl ? 'bg-blue-600' : 'bg-gray-200'}`}
+                className={`relative inline-flex h-6 w-12 flex-shrink-0 cursor-pointer rounded-full border-4 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${isManualPdfUrl ? 'bg-[#7cd244]' : 'bg-gray-200'}`}
               >
                 <span className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-xl ring-0 transition duration-200 ease-in-out ${isManualPdfUrl ? 'translate-x-6' : 'translate-x-0'}`} />
               </button>
@@ -530,18 +530,18 @@ export default function InvestorFamiliarizationProgrammeCMS() {
             <div className="relative group animate-in slide-in-from-top-2 duration-300">
               <input
                 type="text"
-                className={`w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-12 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none ${downloadingPdf ? 'opacity-50' : ''}`}
+                className={`w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-12 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none ${downloadingPdf ? 'opacity-50' : ''}`}
                 value={pdfUrlInput}
                 onChange={(e) => handlePdfUrlChange(e.target.value)}
                 placeholder="https://example.com/report.pdf"
                 disabled={downloadingPdf}
               />
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-600 transition-colors">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#4f8f2a] transition-colors">
                 <i className="ri-global-line text-xl"></i>
               </div>
               {downloadingPdf && (
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 animate-spin">
-                  <i className="ri-loader-4-line text-blue-600 text-xl"></i>
+                  <i className="ri-loader-4-line text-[#4f8f2a] text-xl"></i>
                 </div>
               )}
             </div>
@@ -557,16 +557,16 @@ export default function InvestorFamiliarizationProgrammeCMS() {
               />
               <label
                 htmlFor="pdf-upload-standard"
-                className={`flex flex-col items-center justify-center p-10 border-2 border-dashed rounded-[2rem] transition-all cursor-pointer group ${uploadingPdf ? 'bg-gray-50 border-gray-200 opacity-70' : 'bg-blue-50/20 border-blue-100 hover:border-blue-500 hover:bg-blue-50/50'}`}
+                className={`flex flex-col items-center justify-center p-10 border-2 border-dashed rounded-[2rem] transition-all cursor-pointer group ${uploadingPdf ? 'bg-gray-50 border-gray-200 opacity-70' : 'bg-[#7cd244]/10/20 border-blue-100 hover:border-[#7cd244] hover:bg-[#7cd244]/10/50'}`}
               >
                 {uploadingPdf ? (
                   <div className="flex flex-col items-center gap-4">
                     <div className="animate-spin w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full" />
-                    <span className="text-sm font-black text-blue-600 tracking-widest animate-pulse">UPLOADING...</span>
+                    <span className="text-sm font-black text-[#4f8f2a] tracking-widest animate-pulse">UPLOADING...</span>
                   </div>
                 ) : (
                   <>
-                    <div className="w-16 h-16 bg-white text-blue-600 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-500/10 mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-white text-[#4f8f2a] rounded-3xl flex items-center justify-center shadow-lg shadow-blue-500/10 mb-4 group-hover:scale-110 transition-transform duration-300">
                       <i className="ri-upload-cloud-2-line text-3xl"></i>
                     </div>
                     <div className="text-center">
@@ -581,7 +581,7 @@ export default function InvestorFamiliarizationProgrammeCMS() {
 
           {doc.pdfUrl && (
             <div className="flex items-center gap-4 p-5 bg-[#1F2937] rounded-3xl border border-gray-800 overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300 group/badge relative">
-              <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover/badge:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-0 bg-[#7cd244]/5 opacity-0 group-hover/badge:opacity-100 transition-opacity"></div>
               <div className="w-12 h-12 bg-red-500 text-white rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-500/20 z-10">
                 <i className="ri-file-pdf-fill text-2xl"></i>
               </div>
@@ -611,13 +611,13 @@ export default function InvestorFamiliarizationProgrammeCMS() {
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">Familiarization Programme Page CMS</h2>
             <p className="text-sm text-gray-400 mt-1 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+              <span className="w-2 h-2 rounded-full bg-[#7cd244]/100"></span>
               Manage sections and documents for the Familiarization Programme page
             </p>
           </div>
           <button
             onClick={handleSave}
-            className="group relative px-8 py-3 bg-[#2563EB] text-white rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200 flex items-center gap-2"
+            className="group relative px-8 py-3 bg-[#2563EB] text-white rounded-xl hover:bg-[#6db038] transition-all shadow-lg hover:shadow-blue-200 flex items-center gap-2"
           >
             <i className="ri-check-line text-lg"></i>
             <span className="font-bold tracking-wide">SAVE ALL CHANGES</span>
@@ -643,17 +643,17 @@ export default function InvestorFamiliarizationProgrammeCMS() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-10">
         <div className="lg:col-span-8 bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-sm">
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-2xl bg-[#7cd244]/10 text-[#4f8f2a] flex items-center justify-center">
               <i className="ri-settings-3-line text-xl"></i>
             </div>
             <h3 className="text-xl font-black text-gray-900 tracking-tight">General Settings</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
             <div className="md:col-span-2 group">
-              <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">Page Title *</label>
+              <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">Page Title *</label>
               <input
                 type="text"
-                className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none"
+                className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] focus:ring-4 focus:ring-[#7cd244]/5 transition-all outline-none"
                 value={pageContent.title}
                 onChange={(e) => setPageContent({ ...pageContent, title: e.target.value })}
                 placeholder="Familiarization Programme for Independent Directors"
@@ -665,9 +665,9 @@ export default function InvestorFamiliarizationProgrammeCMS() {
                 id="hasYearFilter"
                 checked={pageContent.hasYearFilter}
                 onChange={(e) => setPageContent({ ...pageContent, hasYearFilter: e.target.checked })}
-                className="h-6 w-6 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-6 w-6 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="hasYearFilter" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-blue-600 flex-1">Enable Year Filter</label>
+              <label htmlFor="hasYearFilter" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] flex-1">Enable Year Filter</label>
             </div>
             <div className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl border-2 border-transparent hover:border-blue-100 transition-all cursor-pointer group">
               <input
@@ -675,9 +675,9 @@ export default function InvestorFamiliarizationProgrammeCMS() {
                 id="showCmsPublishDate"
                 checked={pageContent.showCmsPublishDate}
                 onChange={(e) => setPageContent({ ...pageContent, showCmsPublishDate: e.target.checked })}
-                className="h-6 w-6 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-6 w-6 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="showCmsPublishDate" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-blue-600 flex-1">CMS Published Date</label>
+              <label htmlFor="showCmsPublishDate" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] flex-1">CMS Published Date</label>
             </div>
             <div className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl border-2 border-transparent hover:border-blue-100 transition-all cursor-pointer group">
               <input
@@ -685,9 +685,9 @@ export default function InvestorFamiliarizationProgrammeCMS() {
                 id="showPublishDate"
                 checked={pageContent.showPublishDate}
                 onChange={(e) => setPageContent({ ...pageContent, showPublishDate: e.target.checked })}
-                className="h-6 w-6 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-6 w-6 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="showPublishDate" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-blue-600 flex-1">Public Website Dates</label>
+              <label htmlFor="showPublishDate" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] flex-1">Public Website Dates</label>
             </div>
             <div className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl border-2 border-transparent hover:border-blue-100 transition-all cursor-pointer group">
               <input
@@ -695,9 +695,9 @@ export default function InvestorFamiliarizationProgrammeCMS() {
                 id="isActive"
                 checked={pageContent.isActive}
                 onChange={(e) => setPageContent({ ...pageContent, isActive: e.target.checked })}
-                className="h-6 w-6 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-6 w-6 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="isActive" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-blue-600 flex-1">Page Active</label>
+              <label htmlFor="isActive" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] flex-1">Page Active</label>
             </div>
           </div>
         </div>
@@ -706,7 +706,7 @@ export default function InvestorFamiliarizationProgrammeCMS() {
         <div className={`lg:col-span-4 transition-all duration-500 ${pageContent.hasYearFilter ? 'opacity-100 translate-y-0' : 'opacity-50 translate-y-4 pointer-events-none grayscale'}`}>
           <div className="h-full bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-sm flex flex-col relative group/years">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-2xl bg-[#7cd244]/10 text-[#4f8f2a] flex items-center justify-center">
                 <i className="ri-calendar-event-line text-xl"></i>
               </div>
               <h3 className="text-xl font-black text-gray-900 tracking-tight">Years</h3>
@@ -714,23 +714,23 @@ export default function InvestorFamiliarizationProgrammeCMS() {
 
             <button
               onClick={handleAddFilterItem}
-              className="absolute top-8 right-8 w-10 h-10 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 flex items-center justify-center group/add active:scale-95 z-20"
+              className="absolute top-8 right-8 w-10 h-10 bg-[#7cd244] text-white rounded-xl hover:bg-[#6db038] transition-all shadow-lg shadow-blue-200 flex items-center justify-center group/add active:scale-95 z-20"
               title="Add Filter Year"
             >
               <i className="ri-add-line text-2xl font-bold transition-transform group-hover/add:rotate-90"></i>
             </button>
 
             {showFilterItemForm && (
-              <div className="mb-6 p-5 bg-blue-50/50 rounded-2xl border-2 border-blue-100 shadow-sm animate-in zoom-in-95 duration-300">
+              <div className="mb-6 p-5 bg-[#7cd244]/10/50 rounded-2xl border-2 border-blue-100 shadow-sm animate-in zoom-in-95 duration-300">
                 <input
                   type="text"
-                  className="w-full bg-white border-2 border-gray-100 rounded-xl py-3 px-4 font-bold text-gray-800 focus:border-blue-500 transition-all outline-none mb-4"
+                  className="w-full bg-white border-2 border-gray-100 rounded-xl py-3 px-4 font-bold text-gray-800 focus:border-[#7cd244] transition-all outline-none mb-4"
                   value={editingFilterItem}
                   onChange={(e) => setEditingFilterItem(e.target.value)}
                   placeholder="e.g., 2025-26"
                 />
                 <div className="flex gap-2">
-                  <button onClick={handleSaveFilterItem} className="flex-1 py-2.5 bg-blue-600 text-white rounded-xl font-black text-[10px] tracking-widest uppercase hover:bg-blue-700 shadow-md shadow-blue-100">SAVE</button>
+                  <button onClick={handleSaveFilterItem} className="flex-1 py-2.5 bg-[#7cd244] text-white rounded-xl font-black text-[10px] tracking-widest uppercase hover:bg-[#6db038] shadow-md shadow-blue-100">SAVE</button>
                   <button onClick={() => { setShowFilterItemForm(false); setEditingFilterItem(''); setEditingFilterIndex(-1); }} className="flex-1 py-2.5 bg-white text-gray-500 rounded-xl font-black text-[10px] tracking-widest uppercase hover:bg-gray-50 border border-gray-100">CANCEL</button>
                 </div>
               </div>
@@ -744,10 +744,10 @@ export default function InvestorFamiliarizationProgrammeCMS() {
                 </div>
               ) : (
                 (pageContent.filterItems || []).map((item, index) => (
-                  <div key={index} className="group flex items-center justify-between p-4 bg-white rounded-2xl border border-gray-50 hover:border-blue-200 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+                  <div key={index} className="group flex items-center justify-between p-4 bg-white rounded-2xl border border-gray-50 hover:border-[#7cd244]/40 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
                     <span className="font-black text-gray-700 tracking-tight text-sm">FY {item}</span>
                     <div className="flex gap-2 translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
-                      <button onClick={() => handleEditFilterItem(index)} className="w-8 h-8 flex items-center justify-center text-blue-600 hover:bg-blue-50 rounded-lg transition-colors border border-blue-50"><i className="ri-pencil-line"></i></button>
+                      <button onClick={() => handleEditFilterItem(index)} className="w-8 h-8 flex items-center justify-center text-[#4f8f2a] hover:bg-[#7cd244]/10 rounded-lg transition-colors border border-blue-50"><i className="ri-pencil-line"></i></button>
                       <button onClick={() => handleDeleteFilterItem(index)} className="w-8 h-8 flex items-center justify-center text-red-600 hover:bg-red-50 rounded-lg transition-colors border border-red-50"><i className="ri-delete-bin-line"></i></button>
                     </div>
                   </div>
@@ -762,7 +762,7 @@ export default function InvestorFamiliarizationProgrammeCMS() {
       <div className="space-y-8">
         <div className="flex justify-between items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-[#7cd244]/10 text-[#4f8f2a] flex items-center justify-center">
               <i className="ri-list-settings-line text-xl"></i>
             </div>
             <div>
@@ -772,7 +772,7 @@ export default function InvestorFamiliarizationProgrammeCMS() {
           </div>
           <button
             onClick={handleAddSection}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-bold shadow-md flex items-center gap-2 active:scale-95"
+            className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-all font-bold shadow-md flex items-center gap-2 active:scale-95"
           >
             <i className="ri-add-line"></i> Add New Section
           </button>
@@ -793,19 +793,19 @@ export default function InvestorFamiliarizationProgrammeCMS() {
               <div key={sectionIndex} className="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden group/section flex flex-col">
                 <div className="p-6 border-b border-gray-50 bg-gray-50/30 flex justify-between items-center group-hover/section:bg-gray-50/50 transition-colors">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-2xl bg-white shadow-sm flex items-center justify-center text-blue-600 font-black">
+                    <div className="w-10 h-10 rounded-2xl bg-white shadow-sm flex items-center justify-center text-[#4f8f2a] font-black">
                       {sectionIndex + 1}
                     </div>
                     {editingSectionIndex === sectionIndex ? (
                       <div className="flex items-center gap-2">
                         <input
                           type="text"
-                          className="bg-white border-2 border-blue-500 rounded-xl px-4 py-2 font-black text-gray-900 outline-none shadow-lg shadow-blue-500/10"
+                          className="bg-white border-2 border-[#7cd244] rounded-xl px-4 py-2 font-black text-gray-900 outline-none shadow-lg shadow-blue-500/10"
                           value={editingSection?.title || ''}
                           onChange={(e) => setEditingSection(editingSection ? { ...editingSection, title: e.target.value } : null)}
                           autoFocus
                         />
-                        <button onClick={handleSaveSection} className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"><i className="ri-check-line"></i></button>
+                        <button onClick={handleSaveSection} className="p-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038]"><i className="ri-check-line"></i></button>
                         <button onClick={() => { setEditingSection(null); setEditingSectionIndex(-1); }} className="p-2 bg-white text-gray-400 rounded-lg hover:bg-gray-100 border border-gray-200"><i className="ri-close-line"></i></button>
                       </div>
                     ) : (
@@ -815,11 +815,11 @@ export default function InvestorFamiliarizationProgrammeCMS() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleAddDocument(sectionIndex)}
-                      className="px-4 py-2 bg-white text-blue-600 border border-blue-100 rounded-xl hover:bg-blue-50 transition-all font-black text-[10px] tracking-widest uppercase shadow-sm flex items-center gap-2"
+                      className="px-4 py-2 bg-white text-[#4f8f2a] border border-blue-100 rounded-xl hover:bg-[#7cd244]/10 transition-all font-black text-[10px] tracking-widest uppercase shadow-sm flex items-center gap-2"
                     >
                       <i className="ri-add-line text-sm"></i> ADD DOCUMENT
                     </button>
-                    <button onClick={() => handleEditSection(section, sectionIndex)} className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all"><i className="ri-pencil-line text-lg"></i></button>
+                    <button onClick={() => handleEditSection(section, sectionIndex)} className="p-2 text-gray-400 hover:text-[#4f8f2a] hover:bg-[#7cd244]/10 rounded-xl transition-all"><i className="ri-pencil-line text-lg"></i></button>
                     <button onClick={() => handleDeleteSection(sectionIndex)} className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all"><i className="ri-delete-bin-line text-lg"></i></button>
                   </div>
                 </div>
@@ -833,7 +833,7 @@ export default function InvestorFamiliarizationProgrammeCMS() {
                   ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4">
                       {section.documents.map((doc, docIndex) => (
-                        <div key={docIndex} className="group/card relative bg-white rounded-3xl p-5 border border-gray-100 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300">
+                        <div key={docIndex} className="group/card relative bg-white rounded-3xl p-5 border border-gray-100 hover:border-[#7cd244] hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300">
                           <div className="flex items-start justify-between gap-4">
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-2 mb-2">
@@ -841,10 +841,10 @@ export default function InvestorFamiliarizationProgrammeCMS() {
                                   <i className="ri-file-pdf-fill text-lg"></i>
                                 </div>
                                 {doc.year && (
-                                  <span className="px-2 py-0.5 bg-blue-50 text-blue-600 rounded-md text-[10px] font-black tracking-tighter uppercase">FY {doc.year}</span>
+                                  <span className="px-2 py-0.5 bg-[#7cd244]/10 text-[#4f8f2a] rounded-md text-[10px] font-black tracking-tighter uppercase">FY {doc.year}</span>
                                 )}
                               </div>
-                              <h5 className="font-bold text-gray-900 leading-tight mb-3 line-clamp-2 min-h-[2.5rem] group-hover/card:text-blue-600 transition-colors">{doc.title}</h5>
+                              <h5 className="font-bold text-gray-900 leading-tight mb-3 line-clamp-2 min-h-[2.5rem] group-hover/card:text-[#4f8f2a] transition-colors">{doc.title}</h5>
                               <div className="flex items-center gap-3">
                                 {pageContent.showPublishDate && doc.date && (
                                   <div className="flex items-center gap-1.5 text-gray-400">
@@ -863,7 +863,7 @@ export default function InvestorFamiliarizationProgrammeCMS() {
                               </div>
                             </div>
                             <div className="flex flex-col gap-1 -mr-2">
-                              <button onClick={() => handleEditDocument(sectionIndex, docIndex)} className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all"><i className="ri-pencil-line"></i></button>
+                              <button onClick={() => handleEditDocument(sectionIndex, docIndex)} className="p-2 text-gray-400 hover:text-[#4f8f2a] hover:bg-[#7cd244]/10 rounded-xl transition-all"><i className="ri-pencil-line"></i></button>
                               <button onClick={() => handleDeleteDocument(sectionIndex, docIndex)} className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all"><i className="ri-delete-bin-line"></i></button>
                             </div>
                           </div>
@@ -884,7 +884,7 @@ export default function InvestorFamiliarizationProgrammeCMS() {
               <div className="p-8 sm:p-12">
                 <div className="flex items-center justify-between mb-12">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-3xl bg-blue-600 text-white flex items-center justify-center shadow-xl shadow-blue-500/20">
+                    <div className="w-14 h-14 rounded-3xl bg-[#7cd244] text-white flex items-center justify-center shadow-xl shadow-blue-500/20">
                       <i className="ri-file-add-line text-3xl"></i>
                     </div>
                     <div>
@@ -909,7 +909,7 @@ export default function InvestorFamiliarizationProgrammeCMS() {
                 <div className="mt-12 pt-8 border-t border-gray-100 flex gap-4">
                   <button
                     onClick={handleSaveDocument}
-                    className="flex-1 py-4 bg-blue-600 text-white rounded-[2rem] font-black tracking-widest uppercase hover:bg-blue-700 shadow-xl shadow-blue-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                    className="flex-1 py-4 bg-[#7cd244] text-white rounded-[2rem] font-black tracking-widest uppercase hover:bg-[#6db038] shadow-xl shadow-blue-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
                   >
                     <i className="ri-check-line text-xl"></i>
                     SAVE DOCUMENT ASSET
@@ -932,7 +932,7 @@ export default function InvestorFamiliarizationProgrammeCMS() {
           onClick={handleSave}
           className="group flex items-center gap-3 bg-gray-900 text-white p-2 pr-6 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
         >
-          <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
+          <div className="w-12 h-12 bg-[#7cd244] rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
             <i className="ri-save-3-line text-xl"></i>
           </div>
           <span className="font-black text-xs tracking-widest uppercase">Quick Save</span>

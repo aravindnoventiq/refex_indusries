@@ -203,7 +203,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
       <div className="mb-6">
         <button
           onClick={handleAddPersonnel}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add Personnel
@@ -223,7 +223,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
               </label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={editingPersonnel.name}
                 onChange={(e) => setEditingPersonnel({ ...editingPersonnel, name: e.target.value })}
                 placeholder="e.g., Mr. Anil Jain"
@@ -235,7 +235,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
               </label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={editingPersonnel.position || ''}
                 onChange={(e) => setEditingPersonnel({ ...editingPersonnel, position: e.target.value })}
                 placeholder="e.g., Managing Director"
@@ -247,7 +247,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
               </label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={editingPersonnel.company || ''}
                 onChange={(e) => setEditingPersonnel({ ...editingPersonnel, company: e.target.value })}
                 placeholder="e.g., Refex Industries Limited"
@@ -259,7 +259,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
               </label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={editingPersonnel.address || ''}
                 onChange={(e) => setEditingPersonnel({ ...editingPersonnel, address: e.target.value })}
                 placeholder="e.g., 2nd Floor, No.313, Refex Towers"
@@ -271,7 +271,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
               </label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={editingPersonnel.address2 || ''}
                 onChange={(e) => setEditingPersonnel({ ...editingPersonnel, address2: e.target.value })}
                 placeholder="e.g., Sterling Road, Valluvar Kottam High Road"
@@ -283,7 +283,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
               </label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={editingPersonnel.address3 || ''}
                 onChange={(e) => setEditingPersonnel({ ...editingPersonnel, address3: e.target.value })}
                 placeholder="e.g., Chennai – 600034, Tamil Nadu."
@@ -295,7 +295,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
               </label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={editingPersonnel.phone || ''}
                 onChange={(e) => setEditingPersonnel({ ...editingPersonnel, phone: e.target.value })}
                 placeholder="e.g., +91-44 – 3504 0050"
@@ -307,7 +307,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
               </label>
               <input
                 type="email"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={editingPersonnel.email || ''}
                 onChange={(e) => setEditingPersonnel({ ...editingPersonnel, email: e.target.value })}
                 placeholder="e.g., investor.relations@refex.co.in"
@@ -319,7 +319,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
               </label>
               <input
                 type="number"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={editingPersonnel.displayOrder}
                 onChange={(e) => setEditingPersonnel({ ...editingPersonnel, displayOrder: parseInt(e.target.value) || 0 })}
                 min="0"
@@ -331,7 +331,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
                 id="isActive"
                 checked={editingPersonnel.isActive}
                 onChange={(e) => setEditingPersonnel({ ...editingPersonnel, isActive: e.target.checked })}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
               />
               <label htmlFor="isActive" className="ml-2 block text-sm text-gray-900">
                 Active
@@ -340,7 +340,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
             <div className="md:col-span-2 flex gap-3">
               <button
                 onClick={handleSavePersonnel}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 Save Personnel
               </button>
@@ -404,7 +404,7 @@ export default function InvestorKeyManagerialPersonnelCMS() {
                   <button
                     onClick={() => handleMoveUp(index)}
                     disabled={index === 0}
-                    className={`p-2 rounded ${index === 0 ? 'text-gray-300 cursor-not-allowed' : 'text-blue-600 hover:bg-blue-50'}`}
+                    className={`p-2 rounded ${index === 0 ? 'text-gray-300 cursor-not-allowed' : 'text-[#4f8f2a] hover:bg-[#7cd244]/10'}`}
                     title="Move Up"
                   >
                     <i className="ri-arrow-up-line"></i>
@@ -412,14 +412,14 @@ export default function InvestorKeyManagerialPersonnelCMS() {
                   <button
                     onClick={() => handleMoveDown(index)}
                     disabled={index === personnel.length - 1}
-                    className={`p-2 rounded ${index === personnel.length - 1 ? 'text-gray-300 cursor-not-allowed' : 'text-blue-600 hover:bg-blue-50'}`}
+                    className={`p-2 rounded ${index === personnel.length - 1 ? 'text-gray-300 cursor-not-allowed' : 'text-[#4f8f2a] hover:bg-[#7cd244]/10'}`}
                     title="Move Down"
                   >
                     <i className="ri-arrow-down-line"></i>
                   </button>
                   <button
                     onClick={() => handleEditPersonnel(person)}
-                    className="p-2 text-blue-600 hover:bg-blue-50 rounded"
+                    className="p-2 text-[#4f8f2a] hover:bg-[#7cd244]/10 rounded"
                     title="Edit"
                   >
                     <i className="ri-edit-line"></i>

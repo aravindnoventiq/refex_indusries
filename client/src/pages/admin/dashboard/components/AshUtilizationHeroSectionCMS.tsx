@@ -182,7 +182,7 @@ export default function AshUtilizationHeroSectionCMS() {
               type="text"
               value={hero.title}
               onChange={(e) => setHero({ ...hero, title: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
               placeholder="e.g., ASH UTILIZATION AND COAL HANDLING"
               required
             />
@@ -196,7 +196,7 @@ export default function AshUtilizationHeroSectionCMS() {
               type="text"
               value={hero.subtitle || ''}
               onChange={(e) => setHero({ ...hero, subtitle: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
               placeholder="e.g., One-stop solution for all your Ash and Coal Requirements"
             />
           </div>
@@ -238,7 +238,7 @@ export default function AshUtilizationHeroSectionCMS() {
                         accept="image/*"
                         onChange={(e) => handleSlideImageUpload(e, index)}
                         disabled={uploadingSlide === index}
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="flex-1 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                       />
                       {uploadingSlide === index && (
                         <div className="flex items-center text-sm text-gray-600">
@@ -275,7 +275,7 @@ export default function AshUtilizationHeroSectionCMS() {
               id="isActive"
               checked={hero.isActive}
               onChange={(e) => setHero({ ...hero, isActive: e.target.checked })}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
             />
             <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
               Active
@@ -285,7 +285,7 @@ export default function AshUtilizationHeroSectionCMS() {
           <div className="flex gap-3">
             <button
               type="submit"
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
             >
               Save Changes
             </button>

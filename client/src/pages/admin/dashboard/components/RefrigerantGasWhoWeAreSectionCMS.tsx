@@ -160,7 +160,7 @@ Refex is known for superior quality, reliability, and commitment to sustainabili
             type="text"
             value={section.title}
             onChange={(e) => setSection({ ...section, title: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
             placeholder="e.g., Who we are"
             required
           />
@@ -173,7 +173,7 @@ Refex is known for superior quality, reliability, and commitment to sustainabili
           <textarea
             value={section.content || ''}
             onChange={(e) => setSection({ ...section, content: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
             rows={10}
             placeholder="Enter content text (paragraphs separated by line breaks)..."
           />
@@ -198,7 +198,7 @@ Refex is known for superior quality, reliability, and commitment to sustainabili
               className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                 uploadingImage
                   ? 'bg-gray-400 text-white cursor-not-allowed'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
+                  : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
               }`}
             >
               {uploadingImage ? 'Uploading...' : 'Upload Image'}
@@ -229,7 +229,7 @@ Refex is known for superior quality, reliability, and commitment to sustainabili
             id="isActive"
             checked={section.isActive}
             onChange={(e) => setSection({ ...section, isActive: e.target.checked })}
-            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
           />
           <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
             Active
@@ -239,7 +239,7 @@ Refex is known for superior quality, reliability, and commitment to sustainabili
         <div className="flex gap-3">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Changes
           </button>

@@ -261,7 +261,7 @@ export default function EsgAwardsSectionCMS() {
           </button>
           <button
             onClick={handleAddAward}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             <i className="ri-add-line mr-2"></i>
             Add Award
@@ -294,7 +294,7 @@ export default function EsgAwardsSectionCMS() {
                 type="text"
                 value={header.title}
                 onChange={(e) => setHeader({ ...header, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Awards & Accolades"
               />
             </div>
@@ -304,7 +304,7 @@ export default function EsgAwardsSectionCMS() {
                 id="headerActive"
                 checked={header.isActive}
                 onChange={(e) => setHeader({ ...header, isActive: e.target.checked })}
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
               />
               <label htmlFor="headerActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -313,7 +313,7 @@ export default function EsgAwardsSectionCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveHeader}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 Save Header
               </button>
@@ -343,7 +343,7 @@ export default function EsgAwardsSectionCMS() {
                 type="text"
                 value={editingAward.title}
                 onChange={(e) => setEditingAward({ ...editingAward, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Award Title"
               />
             </div>
@@ -365,7 +365,7 @@ export default function EsgAwardsSectionCMS() {
                   className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                     uploadingImage
                       ? 'bg-gray-400 text-white cursor-not-allowed'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
                   }`}
                 >
                   {uploadingImage ? 'Uploading...' : 'Upload Image'}
@@ -396,7 +396,7 @@ export default function EsgAwardsSectionCMS() {
                   type="number"
                   value={editingAward.order}
                   onChange={(e) => setEditingAward({ ...editingAward, order: parseInt(e.target.value) || 0 })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 />
               </div>
               <div className="flex items-center pt-8">
@@ -405,7 +405,7 @@ export default function EsgAwardsSectionCMS() {
                   id="awardActive"
                   checked={editingAward.isActive}
                   onChange={(e) => setEditingAward({ ...editingAward, isActive: e.target.checked })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label htmlFor="awardActive" className="ml-2 text-sm text-gray-700">
                   Active
@@ -415,7 +415,7 @@ export default function EsgAwardsSectionCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveAward}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 {editingAward.id ? 'Update Award' : 'Create Award'}
               </button>
@@ -466,7 +466,7 @@ export default function EsgAwardsSectionCMS() {
                         <span className={`px-2 py-1 text-xs rounded ${award.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
                           {award.isActive ? 'Active' : 'Inactive'}
                         </span>
-                        <span className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">
+                        <span className="px-2 py-1 text-xs bg-[#7cd244]/20 text-[#3f7220] rounded">
                           Order: {award.order}
                         </span>
                       </div>
@@ -474,7 +474,7 @@ export default function EsgAwardsSectionCMS() {
                     <div className="flex gap-2 ml-4">
                       <button
                         onClick={() => handleEditAward(award)}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
+                        className="px-3 py-1 bg-[#7cd244]/20 text-[#3f7220] rounded hover:bg-blue-200 transition-colors"
                       >
                         <i className="ri-edit-line"></i>
                       </button>

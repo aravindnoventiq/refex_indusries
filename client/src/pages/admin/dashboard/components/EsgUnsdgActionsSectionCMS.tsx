@@ -305,7 +305,7 @@ export default function EsgUnsdgActionsSectionCMS() {
           </button>
           <button
             onClick={handleAddAction}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             <i className="ri-add-line mr-2"></i>
             Add SDG Action
@@ -338,7 +338,7 @@ export default function EsgUnsdgActionsSectionCMS() {
                 type="text"
                 value={header.title}
                 onChange={(e) => setHeader({ ...header, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Driving Impact Through UN SDGs"
               />
             </div>
@@ -348,7 +348,7 @@ export default function EsgUnsdgActionsSectionCMS() {
                 id="headerActive"
                 checked={header.isActive}
                 onChange={(e) => setHeader({ ...header, isActive: e.target.checked })}
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
               />
               <label htmlFor="headerActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -357,7 +357,7 @@ export default function EsgUnsdgActionsSectionCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveHeader}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 Save Header
               </button>
@@ -387,7 +387,7 @@ export default function EsgUnsdgActionsSectionCMS() {
                 type="text"
                 value={editingAction.title}
                 onChange={(e) => setEditingAction({ ...editingAction, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Good Health and Well-being"
               />
             </div>
@@ -409,7 +409,7 @@ export default function EsgUnsdgActionsSectionCMS() {
                   className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                     uploadingImage
                       ? 'bg-gray-400 text-white cursor-not-allowed'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
                   }`}
                 >
                   {uploadingImage ? 'Uploading...' : 'Upload Icon'}
@@ -442,7 +442,7 @@ export default function EsgUnsdgActionsSectionCMS() {
                       type="text"
                       value={point}
                       onChange={(e) => handlePointChange(index, e.target.value)}
-                      className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                       placeholder={`Point ${index + 1}`}
                     />
                     {editingAction.points.length > 1 && (
@@ -474,7 +474,7 @@ export default function EsgUnsdgActionsSectionCMS() {
                 type="text"
                 value={editingAction.video || ''}
                 onChange={(e) => setEditingAction({ ...editingAction, video: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="https://www.youtube.com/embed/VIDEO_ID"
               />
               <p className="mt-1 text-sm text-gray-500">
@@ -490,7 +490,7 @@ export default function EsgUnsdgActionsSectionCMS() {
                   type="number"
                   value={editingAction.order}
                   onChange={(e) => setEditingAction({ ...editingAction, order: parseInt(e.target.value) || 0 })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 />
               </div>
               <div className="flex items-center pt-8">
@@ -499,7 +499,7 @@ export default function EsgUnsdgActionsSectionCMS() {
                   id="actionActive"
                   checked={editingAction.isActive}
                   onChange={(e) => setEditingAction({ ...editingAction, isActive: e.target.checked })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label htmlFor="actionActive" className="ml-2 text-sm text-gray-700">
                   Active
@@ -509,7 +509,7 @@ export default function EsgUnsdgActionsSectionCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveAction}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 {editingAction.id ? 'Update SDG Action' : 'Create SDG Action'}
               </button>
@@ -561,7 +561,7 @@ export default function EsgUnsdgActionsSectionCMS() {
                         <span className={`px-2 py-1 text-xs rounded ${action.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
                           {action.isActive ? 'Active' : 'Inactive'}
                         </span>
-                        <span className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">
+                        <span className="px-2 py-1 text-xs bg-[#7cd244]/20 text-[#3f7220] rounded">
                           Order: {action.order}
                         </span>
                       </div>
@@ -575,7 +575,7 @@ export default function EsgUnsdgActionsSectionCMS() {
                     <div className="flex gap-2 ml-4">
                       <button
                         onClick={() => handleEditAction(action)}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
+                        className="px-3 py-1 bg-[#7cd244]/20 text-[#3f7220] rounded hover:bg-blue-200 transition-colors"
                       >
                         <i className="ri-edit-line"></i>
                       </button>

@@ -137,7 +137,7 @@ export default function InvestorStockQuoteCMS() {
     <div className="bg-white rounded-lg shadow p-6">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Stock Quote Section</h2>
       
-      <div className="mb-4 p-4 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg">
+      <div className="mb-4 p-4 bg-[#7cd244]/10 border border-[#7cd244]/40 text-[#3f7220] rounded-lg">
         <p className="font-semibold">Note:</p>
         <p className="text-sm mt-1">Stock values are fetched automatically from the API. You can only customize the column labels and section settings here.</p>
       </div>
@@ -163,7 +163,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Title *</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.title}
                 onChange={(e) => setStockQuote({ ...stockQuote, title: e.target.value })}
                 placeholder="STOCK QUOTE"
@@ -173,7 +173,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Currency</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.currency}
                 onChange={(e) => setStockQuote({ ...stockQuote, currency: e.target.value })}
                 placeholder="Rupees"
@@ -190,7 +190,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Currency Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.columnCurrency || 'CURRENCY'}
                 onChange={(e) => setStockQuote({ ...stockQuote, columnCurrency: e.target.value })}
                 placeholder="CURRENCY"
@@ -200,7 +200,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Price Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.columnPrice || 'PRICE'}
                 onChange={(e) => setStockQuote({ ...stockQuote, columnPrice: e.target.value })}
                 placeholder="PRICE"
@@ -210,7 +210,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Bid Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.columnBid || 'BID'}
                 onChange={(e) => setStockQuote({ ...stockQuote, columnBid: e.target.value })}
                 placeholder="BID"
@@ -220,7 +220,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Offer Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.columnOffer || 'OFFER'}
                 onChange={(e) => setStockQuote({ ...stockQuote, columnOffer: e.target.value })}
                 placeholder="OFFER"
@@ -230,7 +230,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Change Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.columnChange || 'CHANGE IN (%)'}
                 onChange={(e) => setStockQuote({ ...stockQuote, columnChange: e.target.value })}
                 placeholder="CHANGE IN (%)"
@@ -240,7 +240,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Volume Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.columnVolume || 'VOLUME'}
                 onChange={(e) => setStockQuote({ ...stockQuote, columnVolume: e.target.value })}
                 placeholder="VOLUME"
@@ -257,7 +257,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Today's Open Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.columnTodayOpen || "TODAY'S OPEN"}
                 onChange={(e) => setStockQuote({ ...stockQuote, columnTodayOpen: e.target.value })}
                 placeholder="TODAY'S OPEN"
@@ -267,7 +267,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Previous Close Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.columnPreviousClose || 'PREVIOUS CLOSE'}
                 onChange={(e) => setStockQuote({ ...stockQuote, columnPreviousClose: e.target.value })}
                 placeholder="PREVIOUS CLOSE"
@@ -277,7 +277,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Intraday High Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.columnIntradayHigh || 'INTRADAY HIGH'}
                 onChange={(e) => setStockQuote({ ...stockQuote, columnIntradayHigh: e.target.value })}
                 placeholder="INTRADAY HIGH"
@@ -287,7 +287,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Intraday Low Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.columnIntradayLow || 'INTRADAY LOW'}
                 onChange={(e) => setStockQuote({ ...stockQuote, columnIntradayLow: e.target.value })}
                 placeholder="INTRADAY LOW"
@@ -297,7 +297,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">52 Week High Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.columnWeekHigh52 || '52 WEEK HIGH'}
                 onChange={(e) => setStockQuote({ ...stockQuote, columnWeekHigh52: e.target.value })}
                 placeholder="52 WEEK HIGH"
@@ -307,7 +307,7 @@ export default function InvestorStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">52 Week Low Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={stockQuote.columnWeekLow52 || '52 WEEK LOW'}
                 onChange={(e) => setStockQuote({ ...stockQuote, columnWeekLow52: e.target.value })}
                 placeholder="52 WEEK LOW"
@@ -323,7 +323,7 @@ export default function InvestorStockQuoteCMS() {
             <label className="block text-sm font-medium text-gray-700 mb-2">Footer Text</label>
             <input
               type="text"
-              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
               value={stockQuote.footerText || ''}
               onChange={(e) => setStockQuote({ ...stockQuote, footerText: e.target.value })}
               placeholder="Pricing delayed by 5 minutes"
@@ -336,7 +336,7 @@ export default function InvestorStockQuoteCMS() {
           <input
             type="checkbox"
             id="isActive"
-            className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+            className="h-4 w-4 text-[#4f8f2a] border-gray-300 rounded"
             checked={stockQuote.isActive}
             onChange={(e) => setStockQuote({ ...stockQuote, isActive: e.target.checked })}
           />
@@ -348,7 +348,7 @@ export default function InvestorStockQuoteCMS() {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Stock Quote Settings
           </button>

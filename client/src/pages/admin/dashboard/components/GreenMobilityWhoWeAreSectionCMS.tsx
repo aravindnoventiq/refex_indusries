@@ -192,7 +192,7 @@ Enhance your journey with us and step into a future where sustainability meets i
             type="text"
             value={section.title}
             onChange={(e) => setSection({ ...section, title: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
             placeholder="e.g., Who we are"
             required
           />
@@ -205,7 +205,7 @@ Enhance your journey with us and step into a future where sustainability meets i
           <textarea
             value={section.content}
             onChange={(e) => setSection({ ...section, content: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
             placeholder="Enter content (use double line breaks for paragraphs)..."
             rows={10}
             required
@@ -221,7 +221,7 @@ Enhance your journey with us and step into a future where sustainability meets i
             <button
               type="button"
               onClick={handleAddSlide}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+              className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors text-sm"
             >
               <i className="ri-add-line mr-2"></i>
               Add Slide
@@ -253,7 +253,7 @@ Enhance your journey with us and step into a future where sustainability meets i
                       accept="image/*"
                       onChange={(e) => handleSlideImageUpload(e, index)}
                       disabled={uploadingSlide === index}
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
                     />
                     {uploadingSlide === index && (
                       <div className="flex items-center text-sm text-gray-600">
@@ -292,7 +292,7 @@ Enhance your journey with us and step into a future where sustainability meets i
             id="isActive"
             checked={section.isActive}
             onChange={(e) => setSection({ ...section, isActive: e.target.checked })}
-            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
           />
           <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
             Active
@@ -302,7 +302,7 @@ Enhance your journey with us and step into a future where sustainability meets i
         <div className="flex gap-3">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Changes
           </button>

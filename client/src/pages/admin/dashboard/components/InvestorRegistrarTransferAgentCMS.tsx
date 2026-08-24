@@ -195,7 +195,7 @@ export default function InvestorRegistrarTransferAgentCMS() {
             </label>
             <input
               type="text"
-              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
               value={data.name}
               onChange={(e) => setData({ ...data, name: e.target.value })}
               placeholder="e.g., Mr. R. D. Ramasamy, Director - M/s CAMEO CORPORATE SERVICES LIMITED"
@@ -207,7 +207,7 @@ export default function InvestorRegistrarTransferAgentCMS() {
             </label>
             <input
               type="text"
-              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
               value={data.iconUrl || ''}
               onChange={(e) => setData({ ...data, iconUrl: e.target.value })}
               placeholder="https://example.com/icon.png"
@@ -219,7 +219,7 @@ export default function InvestorRegistrarTransferAgentCMS() {
             </label>
             <input
               type="text"
-              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
               value={data.address || ''}
               onChange={(e) => setData({ ...data, address: e.target.value })}
               placeholder="e.g., Subramanian Building,"
@@ -231,7 +231,7 @@ export default function InvestorRegistrarTransferAgentCMS() {
             </label>
             <input
               type="text"
-              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
               value={data.address2 || ''}
               onChange={(e) => setData({ ...data, address2: e.target.value })}
               placeholder="e.g., No.1, Club House Road,"
@@ -243,7 +243,7 @@ export default function InvestorRegistrarTransferAgentCMS() {
             </label>
             <input
               type="text"
-              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
               value={data.address3 || ''}
               onChange={(e) => setData({ ...data, address3: e.target.value })}
               placeholder="e.g., Chennai- 600002, Tamil Nadu."
@@ -255,7 +255,7 @@ export default function InvestorRegistrarTransferAgentCMS() {
             </label>
             <input
               type="text"
-              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
               value={data.phone || ''}
               onChange={(e) => setData({ ...data, phone: e.target.value })}
               placeholder="e.g., 044-28460390"
@@ -267,7 +267,7 @@ export default function InvestorRegistrarTransferAgentCMS() {
             </label>
             <input
               type="email"
-              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
               value={data.email || ''}
               onChange={(e) => setData({ ...data, email: e.target.value })}
               placeholder="e.g., investor@cameoindia.com"
@@ -279,7 +279,7 @@ export default function InvestorRegistrarTransferAgentCMS() {
               id="isActive"
               checked={data.isActive}
               onChange={(e) => setData({ ...data, isActive: e.target.checked })}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
             />
             <label htmlFor="isActive" className="ml-2 block text-sm text-gray-900">
               Active
@@ -292,7 +292,7 @@ export default function InvestorRegistrarTransferAgentCMS() {
       <div className="mt-6 flex justify-end">
         <button
           onClick={handleSave}
-          className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           Save Changes
         </button>

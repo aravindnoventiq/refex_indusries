@@ -96,7 +96,7 @@ Together, our businesses drive impactful, scalable solutions aligned with a clea
         </div>
         <button
           onClick={() => setShowForm(true)}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-edit-line mr-2"></i>
           {section ? 'Edit About Section' : 'Create About Section'}
@@ -166,7 +166,7 @@ Together, our businesses drive impactful, scalable solutions aligned with a clea
                     name="title"
                     required
                     defaultValue={section?.title || ''}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                   />
                 </div>
 
@@ -179,7 +179,7 @@ Together, our businesses drive impactful, scalable solutions aligned with a clea
                     required
                     rows={12}
                     defaultValue={section?.content || ''}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                     placeholder="Enter content here. Use double line breaks to separate paragraphs."
                   />
                   <p className="text-xs text-gray-500 mt-1">
@@ -192,7 +192,7 @@ Together, our businesses drive impactful, scalable solutions aligned with a clea
                     type="checkbox"
                     name="isActive"
                     defaultChecked={section?.isActive !== false}
-                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                    className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                   />
                   <label className="ml-2 text-sm font-medium text-gray-700">
                     Active
@@ -202,7 +202,7 @@ Together, our businesses drive impactful, scalable solutions aligned with a clea
                 <div className="flex gap-3 pt-4">
                   <button
                     type="submit"
-                    className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="flex-1 px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                   >
                     Save About Section
                   </button>

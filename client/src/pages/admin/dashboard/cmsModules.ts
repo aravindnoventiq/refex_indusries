@@ -3,114 +3,114 @@ export type CmsModule = {
   href: string;
   description: string;
   icon: string;
-  hover: string;
+  group: 'site' | 'business' | 'investors' | 'global';
 };
 
+export const CMS_MODULE_GROUPS: { id: CmsModule['group']; label: string; description: string }[] = [
+  { id: 'site', label: 'Site', description: 'Global chrome and legal pages' },
+  { id: 'business', label: 'Business', description: 'Core brand and business pages' },
+  { id: 'investors', label: 'Investors', description: 'Investor relations content' },
+  { id: 'global', label: 'Global', description: 'News, careers, and contact' },
+];
+
 export const CMS_MODULES: CmsModule[] = [
-  {
-    name: 'Home',
-    href: '/admin/dashboard/home-cms',
-    description: 'Hero, about, business, news, and awards',
-    icon: 'ri-home-4-line text-blue-600',
-    hover: 'hover:border-blue-500 hover:bg-blue-50',
-  },
-  {
-    name: 'About Us',
-    href: '/admin/dashboard/about-cms',
-    description: 'Leadership, journey, presence map, and values',
-    icon: 'ri-building-line text-green-600',
-    hover: 'hover:border-green-500 hover:bg-green-50',
-  },
-  {
-    name: 'ESG',
-    href: '/admin/dashboard/esg-cms',
-    description: 'Sustainability content, SDGs, policies, and reports',
-    icon: 'ri-leaf-line text-emerald-600',
-    hover: 'hover:border-emerald-500 hover:bg-emerald-50',
-  },
-  {
-    name: 'Careers',
-    href: '/admin/dashboard/careers-cms',
-    description: 'Hero, culture, why Refex, and talent network',
-    icon: 'ri-briefcase-line text-rose-600',
-    hover: 'hover:border-rose-500 hover:bg-rose-50',
-  },
-  {
-    name: 'Newsroom',
-    href: '/admin/dashboard/newsroom-cms',
-    description: 'News, events, and press releases',
-    icon: 'ri-newspaper-line text-orange-600',
-    hover: 'hover:border-orange-500 hover:bg-orange-50',
-  },
-  {
-    name: 'Contact',
-    href: '/admin/dashboard/contact-cms',
-    description: 'Hero, office addresses, and form copy',
-    icon: 'ri-mail-line text-indigo-600',
-    hover: 'hover:border-indigo-500 hover:bg-indigo-50',
-  },
-  {
-    name: 'Investors',
-    href: '/admin/dashboard/investors-cms',
-    description: 'Reports, disclosures, and investor pages',
-    icon: 'ri-line-chart-line text-amber-600',
-    hover: 'hover:border-amber-500 hover:bg-amber-50',
-  },
-  {
-    name: 'Ash Utilization',
-    href: '/admin/dashboard/ash-utilization-cms',
-    description: 'Ash handling page sections',
-    icon: 'ri-fire-line text-yellow-600',
-    hover: 'hover:border-yellow-500 hover:bg-yellow-50',
-  },
-  {
-    name: 'Green Mobility',
-    href: '/admin/dashboard/green-mobility-cms',
-    description: 'Mobility page sections and services',
-    icon: 'ri-car-line text-lime-600',
-    hover: 'hover:border-lime-500 hover:bg-lime-50',
-  },
-  {
-    name: 'Venwind Refex',
-    href: '/admin/dashboard/venwind-refex-cms',
-    description: 'Renewable energy page content',
-    icon: 'ri-windy-line text-teal-600',
-    hover: 'hover:border-teal-500 hover:bg-teal-50',
-  },
-  {
-    name: 'Refrigerant Gas',
-    href: '/admin/dashboard/refrigerant-gas-cms',
-    description: 'Gas products, impact, and clients',
-    icon: 'ri-flask-line text-sky-600',
-    hover: 'hover:border-sky-500 hover:bg-sky-50',
-  },
-  {
-    name: 'Products',
-    href: '/admin/dashboard/products-cms',
-    description: 'Product landing hero and related copy',
-    icon: 'ri-box-3-line text-purple-600',
-    hover: 'hover:border-purple-500 hover:bg-purple-50',
-  },
   {
     name: 'Header',
     href: '/admin/dashboard/header-cms',
     description: 'Logo, navigation, and stock ticker',
-    icon: 'ri-menu-line text-cyan-600',
-    hover: 'hover:border-cyan-500 hover:bg-cyan-50',
+    icon: 'ri-menu-line',
+    group: 'site',
   },
   {
     name: 'Footer',
     href: '/admin/dashboard/footer-cms',
     description: 'Footer links and contact information',
-    icon: 'ri-layout-bottom-line text-slate-600',
-    hover: 'hover:border-slate-500 hover:bg-slate-50',
+    icon: 'ri-layout-bottom-line',
+    group: 'site',
   },
   {
     name: 'Legal Pages',
     href: '/admin/dashboard/legal-cms',
     description: 'Privacy policy and terms of use',
-    icon: 'ri-file-shield-line text-gray-700',
-    hover: 'hover:border-gray-500 hover:bg-gray-50',
+    icon: 'ri-file-shield-line',
+    group: 'site',
+  },
+  {
+    name: 'Home',
+    href: '/admin/dashboard/home-cms',
+    description: 'Business, glance, flip cards, news, and awards',
+    icon: 'ri-home-4-line',
+    group: 'business',
+  },
+  {
+    name: 'About Us',
+    href: '/admin/dashboard/about-cms',
+    description: 'Leadership, journey, presence map, and values',
+    icon: 'ri-building-line',
+    group: 'business',
+  },
+  {
+    name: 'ESG',
+    href: '/admin/dashboard/esg-cms',
+    description: 'Policies, reports, SDGs, awards, and governance',
+    icon: 'ri-leaf-line',
+    group: 'business',
+  },
+  {
+    name: 'Ash Utilization',
+    href: '/admin/dashboard/ash-utilization-cms',
+    description: 'Hero and clients sections',
+    icon: 'ri-fire-line',
+    group: 'business',
+  },
+  {
+    name: 'Green Mobility',
+    href: '/admin/dashboard/green-mobility-cms',
+    description: 'Mobility page sections and services',
+    icon: 'ri-car-line',
+    group: 'business',
+  },
+  {
+    name: 'Venwind Refex',
+    href: '/admin/dashboard/venwind-refex-cms',
+    description: 'Renewable energy page content',
+    icon: 'ri-windy-line',
+    group: 'business',
+  },
+  {
+    name: 'Products',
+    href: '/admin/dashboard/products-cms',
+    description: 'Individual product page content',
+    icon: 'ri-box-3-line',
+    group: 'business',
+  },
+  {
+    name: 'Investors',
+    href: '/admin/dashboard/investors-cms',
+    description: 'Reports, disclosures, and investor pages',
+    icon: 'ri-line-chart-line',
+    group: 'investors',
+  },
+  {
+    name: 'Careers',
+    href: '/admin/dashboard/careers-cms',
+    description: 'Hero, culture, why Refex, and talent network',
+    icon: 'ri-briefcase-line',
+    group: 'global',
+  },
+  {
+    name: 'Newsroom',
+    href: '/admin/dashboard/newsroom-cms',
+    description: 'News, events, and press releases',
+    icon: 'ri-newspaper-line',
+    group: 'global',
+  },
+  {
+    name: 'Contact',
+    href: '/admin/dashboard/contact-cms',
+    description: 'Hero, office addresses, and form copy',
+    icon: 'ri-mail-line',
+    group: 'global',
   },
 ];
 
@@ -145,4 +145,3 @@ export const SITE_PAGES: { path: string; name: string; cms: string }[] = [
   { path: '/product/butane', name: 'Butane', cms: '/admin/dashboard/products-cms' },
   { path: '/product/copper-tubes', name: 'Copper Tubes', cms: '/admin/dashboard/products-cms' },
 ];
-

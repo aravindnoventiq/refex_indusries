@@ -224,7 +224,7 @@ export default function AtGlanceSectionCMS() {
             setImageUrlFromUpload(false);
             setShowForm(true);
           }}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add New Statistic
@@ -262,7 +262,7 @@ export default function AtGlanceSectionCMS() {
                   name="title"
                   defaultValue={editingStatistic?.title || ''}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   placeholder="e.g., Years of Legacy"
                 />
               </div>
@@ -276,7 +276,7 @@ export default function AtGlanceSectionCMS() {
                   name="value"
                   defaultValue={editingStatistic?.value || ''}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   placeholder="e.g., 23+ or Pan India"
                 />
                 <p className="text-xs text-gray-500 mt-1">Can be a number with + (e.g., 23+) or text (e.g., Pan India)</p>
@@ -291,7 +291,7 @@ export default function AtGlanceSectionCMS() {
                   name="description"
                   defaultValue={editingStatistic?.description || ''}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   placeholder="e.g., Years of Legacy or People"
                 />
               </div>
@@ -306,7 +306,7 @@ export default function AtGlanceSectionCMS() {
                     accept="image/*"
                     onChange={handleImageUpload}
                     disabled={uploadingImage}
-                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   />
                   {uploadingImage && (
                     <div className="flex items-center text-sm text-gray-600">
@@ -358,7 +358,7 @@ export default function AtGlanceSectionCMS() {
                     type="text"
                     name="color"
                     defaultValue={editingStatistic?.color || '#4ade80'}
-                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                     placeholder="#4ade80"
                   />
                 </div>
@@ -374,7 +374,7 @@ export default function AtGlanceSectionCMS() {
                   name="order"
                   defaultValue={editingStatistic?.order || 0}
                   min="0"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                 />
                 <p className="text-xs text-gray-500 mt-1">Lower numbers appear first</p>
               </div>
@@ -384,7 +384,7 @@ export default function AtGlanceSectionCMS() {
                   type="checkbox"
                   name="isActive"
                   defaultChecked={editingStatistic?.isActive !== false}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label className="ml-2 text-sm text-gray-700">Active (show on website)</label>
               </div>
@@ -392,7 +392,7 @@ export default function AtGlanceSectionCMS() {
               <div className="flex gap-3 pt-4">
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="flex-1 px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                 >
                   {editingStatistic ? 'Update Statistic' : 'Create Statistic'}
                 </button>
@@ -490,7 +490,7 @@ export default function AtGlanceSectionCMS() {
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <button
                         onClick={() => handleEdit(statistic)}
-                        className="text-blue-600 hover:text-blue-900 mr-4"
+                        className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                       >
                         <i className="ri-edit-line"></i> Edit
                       </button>

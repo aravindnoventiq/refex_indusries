@@ -171,7 +171,7 @@ export default function ContactHeroSectionCMS() {
           <input
             type="text"
             id="title"
-            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
             value={hero.title}
             onChange={(e) => setHero({ ...hero, title: e.target.value })}
             required
@@ -185,7 +185,7 @@ export default function ContactHeroSectionCMS() {
           <textarea
             id="description"
             rows={4}
-            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
             value={hero.description || ''}
             onChange={(e) => setHero({ ...hero, description: e.target.value })}
           ></textarea>
@@ -201,7 +201,7 @@ export default function ContactHeroSectionCMS() {
               accept="image/*"
               onChange={handleImageUpload}
               disabled={uploadingImage}
-              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
             />
             {uploadingImage && (
               <div className="flex items-center text-sm text-gray-600">
@@ -237,7 +237,7 @@ export default function ContactHeroSectionCMS() {
           <input
             type="checkbox"
             id="isActive"
-            className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+            className="h-4 w-4 text-[#4f8f2a] border-gray-300 rounded"
             checked={hero.isActive}
             onChange={(e) => setHero({ ...hero, isActive: e.target.checked })}
           />
@@ -249,7 +249,7 @@ export default function ContactHeroSectionCMS() {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Hero Section
           </button>

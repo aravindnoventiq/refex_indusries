@@ -119,7 +119,7 @@ export default function ContactFormCMS() {
           <input
             type="text"
             id="title"
-            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
             value={form.title}
             onChange={(e) => setForm({ ...form, title: e.target.value })}
             required
@@ -133,7 +133,7 @@ export default function ContactFormCMS() {
           <input
             type="text"
             id="subtitle"
-            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
             value={form.subtitle || ''}
             onChange={(e) => setForm({ ...form, subtitle: e.target.value })}
             placeholder="Have Questions? We're happy to help!"
@@ -147,7 +147,7 @@ export default function ContactFormCMS() {
           <textarea
             id="mapEmbedUrl"
             rows={3}
-            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
             value={form.mapEmbedUrl || ''}
             onChange={(e) => setForm({ ...form, mapEmbedUrl: e.target.value })}
             placeholder={DEFAULT_REFEX_TOWERS_MAP_EMBED_URL}
@@ -164,7 +164,7 @@ export default function ContactFormCMS() {
           <input
             type="text"
             id="formEndpointUrl"
-            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
             value={form.formEndpointUrl}
             onChange={(e) => setForm({ ...form, formEndpointUrl: e.target.value })}
             placeholder="https://readdy.ai/api/form/..."
@@ -180,7 +180,7 @@ export default function ContactFormCMS() {
           <input
             type="text"
             id="successMessage"
-            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
             value={form.successMessage || ''}
             onChange={(e) => setForm({ ...form, successMessage: e.target.value })}
             placeholder="Thank you! Your message has been sent successfully."
@@ -194,7 +194,7 @@ export default function ContactFormCMS() {
           <input
             type="text"
             id="errorMessage"
-            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
             value={form.errorMessage || ''}
             onChange={(e) => setForm({ ...form, errorMessage: e.target.value })}
             placeholder="Sorry, there was an error sending your message. Please try again."
@@ -205,7 +205,7 @@ export default function ContactFormCMS() {
           <input
             type="checkbox"
             id="isActive"
-            className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+            className="h-4 w-4 text-[#4f8f2a] border-gray-300 rounded"
             checked={form.isActive}
             onChange={(e) => setForm({ ...form, isActive: e.target.checked })}
           />
@@ -217,7 +217,7 @@ export default function ContactFormCMS() {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Contact Form
           </button>

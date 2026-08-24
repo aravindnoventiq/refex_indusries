@@ -241,7 +241,7 @@ export default function NewsroomEventsCMS() {
         <h2 className="text-2xl font-bold text-gray-900">Events</h2>
         <button
           onClick={handleAddEvent}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add Event
@@ -275,7 +275,7 @@ export default function NewsroomEventsCMS() {
                 type="text"
                 value={editingEvent.title}
                 onChange={(e) => setEditingEvent({ ...editingEvent, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Event Title"
               />
             </div>
@@ -288,7 +288,7 @@ export default function NewsroomEventsCMS() {
                   type="text"
                   value={editingEvent.date}
                   onChange={(e) => setEditingEvent({ ...editingEvent, date: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                   placeholder="January 25, 2023"
                 />
               </div>
@@ -300,7 +300,7 @@ export default function NewsroomEventsCMS() {
                   type="text"
                   value={editingEvent.source}
                   onChange={(e) => setEditingEvent({ ...editingEvent, source: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                   placeholder="Times of India"
                 />
               </div>
@@ -313,7 +313,7 @@ export default function NewsroomEventsCMS() {
                 type="text"
                 value={editingEvent.category}
                 onChange={(e) => setEditingEvent({ ...editingEvent, category: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Frisbee Tournament"
               />
             </div>
@@ -327,7 +327,7 @@ export default function NewsroomEventsCMS() {
                   accept="image/*"
                   onChange={handleImageUpload}
                   disabled={uploadingImage}
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                 />
                 {uploadingImage && (
                   <div className="flex items-center text-sm text-gray-600">
@@ -373,7 +373,7 @@ export default function NewsroomEventsCMS() {
                 type="text"
                 value={editingEvent.link}
                 onChange={(e) => setEditingEvent({ ...editingEvent, link: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="https://example.com/article"
               />
             </div>
@@ -386,7 +386,7 @@ export default function NewsroomEventsCMS() {
                   type="number"
                   value={editingEvent.order}
                   onChange={(e) => setEditingEvent({ ...editingEvent, order: parseInt(e.target.value) || 0 })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 />
               </div>
               <div className="flex items-center pt-8">
@@ -395,7 +395,7 @@ export default function NewsroomEventsCMS() {
                   id="isActive"
                   checked={editingEvent.isActive}
                   onChange={(e) => setEditingEvent({ ...editingEvent, isActive: e.target.checked })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
                   Active
@@ -405,7 +405,7 @@ export default function NewsroomEventsCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveEvent}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 {editingEvent.id ? 'Update Event' : 'Create Event'}
               </button>
@@ -471,7 +471,7 @@ export default function NewsroomEventsCMS() {
                         <span className={`px-2 py-1 text-xs rounded ${event.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
                           {event.isActive ? 'Active' : 'Inactive'}
                         </span>
-                        <span className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">
+                        <span className="px-2 py-1 text-xs bg-[#7cd244]/20 text-[#3f7220] rounded">
                           Order: {event.order}
                         </span>
                       </div>
@@ -479,7 +479,7 @@ export default function NewsroomEventsCMS() {
                     <div className="flex gap-2 ml-4">
                       <button
                         onClick={() => handleEditEvent(event)}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
+                        className="px-3 py-1 bg-[#7cd244]/20 text-[#3f7220] rounded hover:bg-blue-200 transition-colors"
                       >
                         <i className="ri-edit-line"></i>
                       </button>

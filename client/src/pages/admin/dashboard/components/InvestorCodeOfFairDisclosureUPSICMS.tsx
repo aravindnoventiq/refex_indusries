@@ -325,12 +325,12 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
         <div className="md:col-span-2 group">
-          <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">
+          <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">
             Document Title *
           </label>
           <input
             type="text"
-            className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none"
+            className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none"
             value={doc.title}
             onChange={(e) => {
               if (editingDocument && editingDocument.document) {
@@ -346,12 +346,12 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
 
         {pageContent.showCmsPublishDate && (
           <div className="group">
-            <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">
+            <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">
               Published Date
             </label>
             <input
               type="text"
-              className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none"
+              className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none"
               value={doc.date}
               onChange={(e) => {
                 if (editingDocument && editingDocument.document) {
@@ -369,7 +369,7 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
         <div className="md:col-span-2 space-y-4">
           <div className="flex justify-between items-center bg-gray-50/50 p-4 rounded-2xl border border-gray-100">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-white text-blue-600 flex items-center justify-center shadow-sm">
+              <div className="w-10 h-10 rounded-2xl bg-white text-[#4f8f2a] flex items-center justify-center shadow-sm">
                 <i className={isManualPdfUrl ? "ri-link" : "ri-upload-cloud-2-line"}></i>
               </div>
               <span className="text-sm font-black text-gray-700 uppercase tracking-tight">PDF Document *</span>
@@ -379,7 +379,7 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
               <button
                 type="button"
                 onClick={() => setIsManualPdfUrl(!isManualPdfUrl)}
-                className={`relative inline-flex h-6 w-12 flex-shrink-0 cursor-pointer rounded-full border-4 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${isManualPdfUrl ? 'bg-blue-600' : 'bg-gray-200'}`}
+                className={`relative inline-flex h-6 w-12 flex-shrink-0 cursor-pointer rounded-full border-4 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${isManualPdfUrl ? 'bg-[#7cd244]' : 'bg-gray-200'}`}
               >
                 <span className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-xl ring-0 transition duration-200 ease-in-out ${isManualPdfUrl ? 'translate-x-6' : 'translate-x-0'}`} />
               </button>
@@ -390,18 +390,18 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
             <div className="relative group animate-in slide-in-from-top-2 duration-300">
               <input
                 type="text"
-                className={`w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-12 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none ${downloadingPdf ? 'opacity-50' : ''}`}
+                className={`w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-12 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none ${downloadingPdf ? 'opacity-50' : ''}`}
                 value={pdfUrlInput}
                 onChange={(e) => handlePdfUrlChange(e.target.value)}
                 placeholder="https://example.com/report.pdf"
                 disabled={downloadingPdf}
               />
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-600 transition-colors">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#4f8f2a] transition-colors">
                 <i className="ri-global-line text-xl"></i>
               </div>
               {downloadingPdf && (
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 animate-spin">
-                  <i className="ri-loader-4-line text-blue-600 text-xl"></i>
+                  <i className="ri-loader-4-line text-[#4f8f2a] text-xl"></i>
                 </div>
               )}
             </div>
@@ -417,16 +417,16 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
               />
               <label
                 htmlFor="pdf-upload-standard-inv-code"
-                className={`flex flex-col items-center justify-center p-10 border-2 border-dashed rounded-[2rem] transition-all cursor-pointer group ${uploadingPdf ? 'bg-gray-50 border-gray-200 opacity-70' : 'bg-blue-50/20 border-blue-100 hover:border-blue-500 hover:bg-blue-50/50'}`}
+                className={`flex flex-col items-center justify-center p-10 border-2 border-dashed rounded-[2rem] transition-all cursor-pointer group ${uploadingPdf ? 'bg-gray-50 border-gray-200 opacity-70' : 'bg-[#7cd244]/10/20 border-blue-100 hover:border-[#7cd244] hover:bg-[#7cd244]/10/50'}`}
               >
                 {uploadingPdf ? (
                   <div className="flex flex-col items-center gap-4">
                     <div className="animate-spin w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full" />
-                    <span className="text-sm font-black text-blue-600 tracking-widest animate-pulse">UPLOADING...</span>
+                    <span className="text-sm font-black text-[#4f8f2a] tracking-widest animate-pulse">UPLOADING...</span>
                   </div>
                 ) : (
                   <>
-                    <div className="w-16 h-16 bg-white text-blue-600 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-500/10 mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-white text-[#4f8f2a] rounded-3xl flex items-center justify-center shadow-lg shadow-blue-500/10 mb-4 group-hover:scale-110 transition-transform duration-300">
                       <i className="ri-upload-cloud-2-line text-3xl"></i>
                     </div>
                     <div className="text-center">
@@ -441,7 +441,7 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
 
           {doc.pdfUrl && (
             <div className="flex items-center gap-4 p-5 bg-[#1F2937] rounded-3xl border border-gray-800 overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300 group/badge relative">
-              <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover/badge:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-0 bg-[#7cd244]/5 opacity-0 group-hover/badge:opacity-100 transition-opacity"></div>
               <div className="w-12 h-12 bg-red-50 text-white rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm border border-red-500/50 z-10">
                 <i className="ri-file-pdf-fill text-2xl"></i>
               </div>
@@ -474,13 +474,13 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">Code of Fair Disclosure CMS</h2>
             <p className="text-sm text-gray-400 mt-1 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+              <span className="w-2 h-2 rounded-full bg-[#7cd244]/100"></span>
               Manage documents and display settings for Code of Fair Disclosure & UPSI
             </p>
           </div>
           <button
             onClick={handleSave}
-            className="group relative px-8 py-3 bg-[#2563EB] text-white rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200 flex items-center gap-2"
+            className="group relative px-8 py-3 bg-[#2563EB] text-white rounded-xl hover:bg-[#6db038] transition-all shadow-lg hover:shadow-blue-200 flex items-center gap-2"
           >
             <i className="ri-check-line text-lg"></i>
             <span className="font-bold tracking-wide">SAVE ALL CHANGES</span>
@@ -509,17 +509,17 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-10">
         <div className="lg:col-span-8 bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-sm">
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-2xl bg-[#7cd244]/10 text-[#4f8f2a] flex items-center justify-center">
               <i className="ri-settings-3-line text-xl"></i>
             </div>
             <h3 className="text-xl font-black text-gray-900 tracking-tight">General Settings</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
             <div className="md:col-span-2 group">
-              <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">Page Title *</label>
+              <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">Page Title *</label>
               <input
                 type="text"
-                className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-blue-500 transition-all outline-none"
+                className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-4 px-6 font-bold text-gray-800 focus:bg-white focus:border-[#7cd244] transition-all outline-none"
                 value={pageContent.title}
                 onChange={(e) => setPageContent({ ...pageContent, title: e.target.value })}
                 placeholder="Code of Fair Disclosure & UPSI"
@@ -531,9 +531,9 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
                 id="showCmsPublishDate"
                 checked={pageContent.showCmsPublishDate}
                 onChange={(e) => setPageContent({ ...pageContent, showCmsPublishDate: e.target.checked })}
-                className="h-6 w-6 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-6 w-6 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="showCmsPublishDate" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-blue-600 flex-1">CMS Published Date</label>
+              <label htmlFor="showCmsPublishDate" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] flex-1">CMS Published Date</label>
             </div>
             <div className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl border-2 border-transparent hover:border-blue-100 transition-all cursor-pointer group">
               <input
@@ -541,9 +541,9 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
                 id="showPublishDate"
                 checked={pageContent.showPublishDate}
                 onChange={(e) => setPageContent({ ...pageContent, showPublishDate: e.target.checked })}
-                className="h-6 w-6 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-6 w-6 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="showPublishDate" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-blue-600 flex-1">Public Website Dates</label>
+              <label htmlFor="showPublishDate" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] flex-1">Public Website Dates</label>
             </div>
             <div className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl border-2 border-transparent hover:border-blue-100 transition-all cursor-pointer group md:col-span-2">
               <input
@@ -551,9 +551,9 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
                 id="isActive"
                 checked={pageContent.isActive}
                 onChange={(e) => setPageContent({ ...pageContent, isActive: e.target.checked })}
-                className="h-6 w-6 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-lg cursor-pointer"
+                className="h-6 w-6 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded-lg cursor-pointer"
               />
-              <label htmlFor="isActive" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-blue-600 flex-1">Page Active</label>
+              <label htmlFor="isActive" className="text-sm font-black text-gray-700 cursor-pointer select-none group-hover:text-[#4f8f2a] flex-1">Page Active</label>
             </div>
           </div>
         </div>
@@ -577,11 +577,11 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
             {/* Section Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 relative z-10">
               <div className="flex-1 group">
-                <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-blue-600 transition-colors">Category Title</label>
+                <label className="block text-[10px] font-black text-gray-400 mb-2 ml-1 uppercase tracking-widest group-focus-within:text-[#4f8f2a] transition-colors">Category Title</label>
                 <div className="flex items-center gap-3">
                   <input
                     type="text"
-                    className="flex-1 bg-transparent border-b-2 border-gray-100 py-2 text-2xl font-black text-gray-900 focus:border-blue-500 transition-all outline-none uppercase tracking-tighter italic"
+                    className="flex-1 bg-transparent border-b-2 border-gray-100 py-2 text-2xl font-black text-gray-900 focus:border-[#7cd244] transition-all outline-none uppercase tracking-tighter italic"
                     value={section.title}
                     onChange={(e) => {
                       const newSections = [...pageContent.sections];
@@ -590,7 +590,7 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
                     }}
                     placeholder="ENTER CATEGORY NAME"
                   />
-                  <div className="w-10 h-10 rounded-xl bg-gray-50 text-gray-300 flex items-center justify-center border border-gray-100 group-focus-within:bg-blue-50 group-focus-within:text-blue-500 group-focus-within:border-blue-100 transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-gray-50 text-gray-300 flex items-center justify-center border border-gray-100 group-focus-within:bg-[#7cd244]/10 group-focus-within:text-blue-500 group-focus-within:border-blue-100 transition-all">
                     <i className="ri-pencil-fill"></i>
                   </div>
                 </div>
@@ -616,7 +616,7 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
                 section.documents.map((doc, docIndex) => {
                   const isEditing = editingDocument?.sectionIndex === sectionIndex && editingDocument?.documentIndex === docIndex;
                   return (
-                    <div key={docIndex} className={`group/doc rounded-2xl border transition-all duration-300 ${isEditing ? 'border-blue-400 ring-4 ring-blue-50 bg-blue-50/30 overflow-hidden' : 'border-gray-100 hover:border-gray-200 bg-white hover:bg-gray-50/30'}`}>
+                    <div key={docIndex} className={`group/doc rounded-2xl border transition-all duration-300 ${isEditing ? 'border-blue-400 ring-4 ring-blue-50 bg-[#7cd244]/10/30 overflow-hidden' : 'border-gray-100 hover:border-gray-200 bg-white hover:bg-gray-50/30'}`}>
                       {!isEditing ? (
                         <div className="flex items-center justify-between p-5">
                           <div className="flex items-center gap-5 flex-1 min-w-0">
@@ -624,7 +624,7 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
                               <i className="ri-file-pdf-2-fill text-3xl"></i>
                             </div>
                             <div className="min-w-0">
-                              <h5 className="text-base font-black text-gray-900 tracking-tight group-hover/doc:text-blue-600 transition-colors uppercase">{doc.title}</h5>
+                              <h5 className="text-base font-black text-gray-900 tracking-tight group-hover/doc:text-[#4f8f2a] transition-colors uppercase">{doc.title}</h5>
                               <div className="flex items-center gap-4 mt-2">
                                 {pageContent.showPublishDate && doc.date && (
                                   <span className="flex items-center gap-1.5 text-[10px] font-black bg-gray-50 text-gray-500 px-3 py-1 rounded-lg border border-gray-100 uppercase tracking-widest">
@@ -640,7 +640,7 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
                           <div className="flex gap-2 ml-6">
                             <button
                               onClick={() => handleEditDocument(sectionIndex, docIndex)}
-                              className="w-10 h-10 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white rounded-xl transition-all border border-blue-50 bg-white shadow-sm"
+                              className="w-10 h-10 flex items-center justify-center text-[#4f8f2a] hover:bg-[#7cd244] hover:text-white rounded-xl transition-all border border-blue-50 bg-white shadow-sm"
                               title="Edit Document"
                             >
                               <i className="ri-pencil-line text-lg"></i>
@@ -674,7 +674,7 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
                               </button>
                               <button
                                 onClick={handleSaveDocument}
-                                className="px-8 py-2.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all font-bold shadow-lg shadow-blue-100 active:scale-95 flex items-center gap-2"
+                                className="px-8 py-2.5 bg-[#7cd244] text-white rounded-xl hover:bg-[#6db038] transition-all font-bold shadow-lg shadow-blue-100 active:scale-95 flex items-center gap-2"
                               >
                                 <i className="ri-check-line text-xl"></i> DONE EDITING
                               </button>
@@ -698,9 +698,9 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
             newSections.push({ title: 'New Category', documents: [] });
             setPageContent({ ...pageContent, sections: newSections });
           }}
-          className="group flex flex-col items-center gap-4 p-8 rounded-[2.5rem] border-2 border-dashed border-gray-100 hover:border-blue-400 hover:bg-blue-50 transition-all duration-300"
+          className="group flex flex-col items-center gap-4 p-8 rounded-[2.5rem] border-2 border-dashed border-gray-100 hover:border-blue-400 hover:bg-[#7cd244]/10 transition-all duration-300"
         >
-          <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
+          <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-[#7cd244] group-hover:text-white transition-all shadow-sm">
             <i className="ri-add-line text-3xl"></i>
           </div>
           <div className="text-center">
@@ -734,8 +734,8 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
             </div>
 
             <div className="p-8 max-h-[75vh] overflow-y-auto custom-scrollbar bg-white">
-              <div className="bg-blue-50/30 p-4 rounded-xl border border-blue-100/50 mb-6">
-                <p className="text-xs text-blue-600 font-medium flex items-center gap-2 italic">
+              <div className="bg-[#7cd244]/10/30 p-4 rounded-xl border border-blue-100/50 mb-6">
+                <p className="text-xs text-[#4f8f2a] font-medium flex items-center gap-2 italic">
                   <i className="ri-information-line"></i>
                   Complete all required fields marked with * to enable the add button.
                 </p>
@@ -753,7 +753,7 @@ export default function InvestorCodeOfFairDisclosureUPSICMS() {
               <button
                 onClick={handleSaveDocument}
                 disabled={!editingDocument.document.title.trim() || !editingDocument.document.pdfUrl.trim()}
-                className="px-8 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all font-bold shadow-lg shadow-blue-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none active:scale-95 flex items-center gap-2 text-sm"
+                className="px-8 py-3 bg-[#7cd244] text-white rounded-xl hover:bg-[#6db038] transition-all font-bold shadow-lg shadow-blue-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none active:scale-95 flex items-center gap-2 text-sm"
               >
                 <i className="ri-add-line text-lg"></i> Add Document
               </button>

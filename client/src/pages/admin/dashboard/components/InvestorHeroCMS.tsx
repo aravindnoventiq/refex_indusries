@@ -158,7 +158,7 @@ export default function InvestorHeroCMS() {
           </label>
           <input
             type="text"
-            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
             value={hero.title}
             onChange={(e) => setHero({ ...hero, title: e.target.value })}
             placeholder="Investors"
@@ -183,7 +183,7 @@ export default function InvestorHeroCMS() {
               className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                 uploadingImage
                   ? 'bg-gray-400 text-white cursor-not-allowed'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
+                  : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
               }`}
             >
               {uploadingImage ? 'Uploading...' : 'Upload Image'}
@@ -213,7 +213,7 @@ export default function InvestorHeroCMS() {
           <input
             type="checkbox"
             id="isActive"
-            className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+            className="h-4 w-4 text-[#4f8f2a] border-gray-300 rounded"
             checked={hero.isActive}
             onChange={(e) => setHero({ ...hero, isActive: e.target.checked })}
           />
@@ -225,7 +225,7 @@ export default function InvestorHeroCMS() {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Hero Section
           </button>

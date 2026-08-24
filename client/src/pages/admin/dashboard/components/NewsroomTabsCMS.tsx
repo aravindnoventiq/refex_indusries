@@ -184,7 +184,7 @@ export default function NewsroomTabsCMS() {
         <h2 className="text-2xl font-bold text-gray-900">Newsroom Tabs</h2>
         <button
           onClick={handleAddTab}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add Tab
@@ -218,7 +218,7 @@ export default function NewsroomTabsCMS() {
                 type="text"
                 value={editingTab.key}
                 onChange={(e) => setEditingTab({ ...editingTab, key: e.target.value.toLowerCase().replace(/\s+/g, '-') })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="press"
                 disabled={!!editingTab.id}
               />
@@ -232,7 +232,7 @@ export default function NewsroomTabsCMS() {
                 type="text"
                 value={editingTab.label}
                 onChange={(e) => setEditingTab({ ...editingTab, label: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Press Releases"
               />
             </div>
@@ -245,7 +245,7 @@ export default function NewsroomTabsCMS() {
                   type="number"
                   value={editingTab.order}
                   onChange={(e) => setEditingTab({ ...editingTab, order: parseInt(e.target.value) || 0 })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 />
               </div>
               <div className="flex items-center pt-8">
@@ -254,7 +254,7 @@ export default function NewsroomTabsCMS() {
                   id="isActive"
                   checked={editingTab.isActive}
                   onChange={(e) => setEditingTab({ ...editingTab, isActive: e.target.checked })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
                   Active
@@ -266,7 +266,7 @@ export default function NewsroomTabsCMS() {
                   id="isDefault"
                   checked={editingTab.isDefault}
                   onChange={(e) => setEditingTab({ ...editingTab, isDefault: e.target.checked })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label htmlFor="isDefault" className="ml-2 text-sm text-gray-700">
                   Default Tab
@@ -276,7 +276,7 @@ export default function NewsroomTabsCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveTab}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 {editingTab.id ? 'Update Tab' : 'Create Tab'}
               </button>
@@ -321,7 +321,7 @@ export default function NewsroomTabsCMS() {
                           {tab.isActive ? 'Active' : 'Inactive'}
                         </span>
                         {tab.isDefault && (
-                          <span className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">
+                          <span className="px-2 py-1 text-xs bg-[#7cd244]/20 text-[#3f7220] rounded">
                             Default
                           </span>
                         )}
@@ -333,7 +333,7 @@ export default function NewsroomTabsCMS() {
                     <div className="flex gap-2 ml-4">
                       <button
                         onClick={() => handleEditTab(tab)}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
+                        className="px-3 py-1 bg-[#7cd244]/20 text-[#3f7220] rounded hover:bg-blue-200 transition-colors"
                       >
                         <i className="ri-edit-line"></i>
                       </button>
@@ -352,7 +352,7 @@ export default function NewsroomTabsCMS() {
                         className={`px-3 py-1 rounded transition-colors ${
                           tab.isDefault
                             ? 'bg-orange-100 text-orange-700 hover:bg-orange-200'
-                            : 'bg-blue-100 text-blue-700 hover:bg-blue-200'
+                            : 'bg-[#7cd244]/20 text-[#3f7220] hover:bg-blue-200'
                         }`}
                         title={tab.isDefault ? 'Remove as default' : 'Set as default'}
                       >

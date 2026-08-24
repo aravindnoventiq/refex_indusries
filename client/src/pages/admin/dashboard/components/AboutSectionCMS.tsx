@@ -134,7 +134,7 @@ export default function AboutSectionCMS() {
             setEditingSection(null);
             setShowForm(true);
           }}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add New Section
@@ -172,7 +172,7 @@ export default function AboutSectionCMS() {
                   name="title"
                   defaultValue={editingSection?.title || ''}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   placeholder="e.g., ABOUT US"
                 />
               </div>
@@ -186,7 +186,7 @@ export default function AboutSectionCMS() {
                   defaultValue={editingSection?.content || ''}
                   required
                   rows={6}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   placeholder="Enter section content/description"
                 />
               </div>
@@ -200,11 +200,11 @@ export default function AboutSectionCMS() {
                     type="text"
                     name="icon"
                     defaultValue={editingSection?.icon || ''}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                     placeholder="e.g., ri-information-line"
                   />
                   <p className="text-xs text-gray-500 mt-1">
-                    <a href="https://remixicon.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    <a href="https://remixicon.com/" target="_blank" rel="noopener noreferrer" className="text-[#4f8f2a] hover:underline">
                       Browse icons
                     </a>
                   </p>
@@ -225,7 +225,7 @@ export default function AboutSectionCMS() {
                       type="text"
                       name="color"
                       defaultValue={editingSection?.color || '#7abc43'}
-                      className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                      className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                       placeholder="#7abc43"
                     />
                   </div>
@@ -241,7 +241,7 @@ export default function AboutSectionCMS() {
                   name="order"
                   defaultValue={editingSection?.order || 0}
                   min="0"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                 />
                 <p className="text-xs text-gray-500 mt-1">Lower numbers appear first</p>
               </div>
@@ -251,7 +251,7 @@ export default function AboutSectionCMS() {
                   type="checkbox"
                   name="isActive"
                   defaultChecked={editingSection?.isActive !== false}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label className="ml-2 text-sm text-gray-700">Active (show on website)</label>
               </div>
@@ -259,7 +259,7 @@ export default function AboutSectionCMS() {
               <div className="flex gap-3 pt-4">
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="flex-1 px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                 >
                   {editingSection ? 'Update Section' : 'Create Section'}
                 </button>
@@ -345,7 +345,7 @@ export default function AboutSectionCMS() {
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <button
                         onClick={() => handleEdit(section)}
-                        className="text-blue-600 hover:text-blue-900 mr-4"
+                        className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                       >
                         <i className="ri-edit-line"></i> Edit
                       </button>

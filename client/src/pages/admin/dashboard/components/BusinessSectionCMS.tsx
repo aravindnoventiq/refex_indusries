@@ -249,7 +249,7 @@ export default function BusinessSectionCMS() {
             setImageUrlFromUpload(false);
             setShowForm(true);
           }}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add New Business
@@ -287,7 +287,7 @@ export default function BusinessSectionCMS() {
                   name="title"
                   defaultValue={editingBusiness?.title || ''}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   placeholder="e.g., Ash Utilization and Coal Handling"
                 />
               </div>
@@ -301,7 +301,7 @@ export default function BusinessSectionCMS() {
                   defaultValue={editingBusiness?.description || ''}
                   required
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   placeholder="Enter business description"
                 />
               </div>
@@ -316,7 +316,7 @@ export default function BusinessSectionCMS() {
                     accept="image/*"
                     onChange={handleImageUpload}
                     disabled={uploadingImage}
-                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   />
                   {uploadingImage && (
                     <div className="flex items-center text-sm text-gray-600">
@@ -362,7 +362,7 @@ export default function BusinessSectionCMS() {
                   name="link"
                   defaultValue={editingBusiness?.link || ''}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   placeholder="e.g., /ash-utilization or /green-mobility"
                 />
                 <p className="text-xs text-gray-500 mt-1">Relative URL path (e.g., /ash-utilization)</p>
@@ -377,7 +377,7 @@ export default function BusinessSectionCMS() {
                   name="order"
                   defaultValue={editingBusiness?.order || 0}
                   min="0"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                 />
                 <p className="text-xs text-gray-500 mt-1">Lower numbers appear first</p>
               </div>
@@ -387,7 +387,7 @@ export default function BusinessSectionCMS() {
                   type="checkbox"
                   name="isActive"
                   defaultChecked={editingBusiness?.isActive !== false}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label className="ml-2 text-sm text-gray-700">Active (show on website)</label>
               </div>
@@ -395,7 +395,7 @@ export default function BusinessSectionCMS() {
               <div className="flex gap-3 pt-4">
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="flex-1 px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                 >
                   {editingBusiness ? 'Update Business' : 'Create Business'}
                 </button>
@@ -474,7 +474,7 @@ export default function BusinessSectionCMS() {
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="text-sm text-blue-600">{business.link}</div>
+                      <div className="text-sm text-[#4f8f2a]">{business.link}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className="px-2 py-1 text-xs font-semibold text-gray-700 bg-gray-100 rounded">
@@ -495,7 +495,7 @@ export default function BusinessSectionCMS() {
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <button
                         onClick={() => handleEdit(business)}
-                        className="text-blue-600 hover:text-blue-900 mr-4"
+                        className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                       >
                         <i className="ri-edit-line"></i> Edit
                       </button>

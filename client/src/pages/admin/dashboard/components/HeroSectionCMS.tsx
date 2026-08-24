@@ -193,7 +193,7 @@ export default function HeroSectionCMS() {
             setImageUrlFromUpload(false);
             setShowForm(true);
           }}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add New Slide
@@ -231,7 +231,7 @@ export default function HeroSectionCMS() {
                   name="title"
                   defaultValue={editingSlide?.title || ''}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   placeholder="Enter slide title"
                 />
               </div>
@@ -246,7 +246,7 @@ export default function HeroSectionCMS() {
                     accept="image/*"
                     onChange={handleImageUpload}
                     disabled={uploadingImage}
-                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                   />
                   {uploadingImage && (
                     <div className="flex items-center text-sm text-gray-600">
@@ -292,7 +292,7 @@ export default function HeroSectionCMS() {
                   name="order"
                   defaultValue={editingSlide?.order || 0}
                   min="0"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none"
                 />
                 <p className="text-xs text-gray-500 mt-1">Lower numbers appear first</p>
               </div>
@@ -302,7 +302,7 @@ export default function HeroSectionCMS() {
                   type="checkbox"
                   name="isActive"
                   defaultChecked={editingSlide?.isActive !== false}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label className="ml-2 text-sm text-gray-700">Active (show on website)</label>
               </div>
@@ -310,7 +310,7 @@ export default function HeroSectionCMS() {
               <div className="flex gap-3 pt-4">
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="flex-1 px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                 >
                   {editingSlide ? 'Update Slide' : 'Create Slide'}
                 </button>
@@ -396,7 +396,7 @@ export default function HeroSectionCMS() {
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <button
                         onClick={() => handleEdit(slide)}
-                        className="text-blue-600 hover:text-blue-900 mr-4"
+                        className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                       >
                         <i className="ri-edit-line"></i> Edit
                       </button>

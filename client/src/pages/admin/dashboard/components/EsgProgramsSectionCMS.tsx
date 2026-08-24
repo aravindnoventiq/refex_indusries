@@ -267,7 +267,7 @@ export default function EsgProgramsSectionCMS() {
           </button>
           <button
             onClick={handleAddProgram}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             <i className="ri-add-line mr-2"></i>
             Add Program
@@ -300,7 +300,7 @@ export default function EsgProgramsSectionCMS() {
                 type="text"
                 value={header.title}
                 onChange={(e) => setHeader({ ...header, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="PROGRAMS"
               />
             </div>
@@ -310,7 +310,7 @@ export default function EsgProgramsSectionCMS() {
                 id="headerActive"
                 checked={header.isActive}
                 onChange={(e) => setHeader({ ...header, isActive: e.target.checked })}
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
               />
               <label htmlFor="headerActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -319,7 +319,7 @@ export default function EsgProgramsSectionCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveHeader}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 Save Header
               </button>
@@ -349,7 +349,7 @@ export default function EsgProgramsSectionCMS() {
                 type="text"
                 value={editingProgram.title}
                 onChange={(e) => setEditingProgram({ ...editingProgram, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Energy Transition Program"
               />
             </div>
@@ -371,7 +371,7 @@ export default function EsgProgramsSectionCMS() {
                   className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                     uploadingImage
                       ? 'bg-gray-400 text-white cursor-not-allowed'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
                   }`}
                 >
                   {uploadingImage ? 'Uploading...' : 'Upload Image'}
@@ -401,7 +401,7 @@ export default function EsgProgramsSectionCMS() {
                 value={editingProgram.content}
                 onChange={(e) => setEditingProgram({ ...editingProgram, content: e.target.value })}
                 rows={10}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Enter program content. You can use HTML tags like &lt;p&gt;, &lt;strong&gt;, &lt;ul&gt;, &lt;li&gt;, etc."
               />
               <p className="mt-1 text-sm text-gray-500">
@@ -417,7 +417,7 @@ export default function EsgProgramsSectionCMS() {
                   type="number"
                   value={editingProgram.order}
                   onChange={(e) => setEditingProgram({ ...editingProgram, order: parseInt(e.target.value) || 0 })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 />
               </div>
               <div className="flex items-center pt-8">
@@ -426,7 +426,7 @@ export default function EsgProgramsSectionCMS() {
                   id="programActive"
                   checked={editingProgram.isActive}
                   onChange={(e) => setEditingProgram({ ...editingProgram, isActive: e.target.checked })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label htmlFor="programActive" className="ml-2 text-sm text-gray-700">
                   Active
@@ -436,7 +436,7 @@ export default function EsgProgramsSectionCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveProgram}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 {editingProgram.id ? 'Update Program' : 'Create Program'}
               </button>
@@ -475,7 +475,7 @@ export default function EsgProgramsSectionCMS() {
                         <span className={`px-2 py-1 text-xs rounded ${program.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
                           {program.isActive ? 'Active' : 'Inactive'}
                         </span>
-                        <span className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">
+                        <span className="px-2 py-1 text-xs bg-[#7cd244]/20 text-[#3f7220] rounded">
                           Order: {program.order}
                         </span>
                       </div>
@@ -494,7 +494,7 @@ export default function EsgProgramsSectionCMS() {
                     <div className="flex gap-2 ml-4">
                       <button
                         onClick={() => handleEditProgram(program)}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
+                        className="px-3 py-1 bg-[#7cd244]/20 text-[#3f7220] rounded hover:bg-blue-200 transition-colors"
                       >
                         <i className="ri-edit-line"></i>
                       </button>

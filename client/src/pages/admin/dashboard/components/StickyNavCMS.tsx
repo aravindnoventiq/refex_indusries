@@ -155,7 +155,7 @@ export default function StickyNavCMS() {
             setEditingItem(null);
             setShowForm(true);
           }}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add New Item
@@ -192,7 +192,7 @@ export default function StickyNavCMS() {
                     name="name"
                     required
                     defaultValue={editingItem?.name || ''}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                   />
                 </div>
 
@@ -206,7 +206,7 @@ export default function StickyNavCMS() {
                     required
                     defaultValue={editingItem?.href || ''}
                     placeholder="#mission-vision"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                   />
                   <p className="text-xs text-gray-500 mt-1">Use anchor links like #mission-vision</p>
                 </div>
@@ -221,7 +221,7 @@ export default function StickyNavCMS() {
                     required
                     defaultValue={editingItem?.sectionId || ''}
                     placeholder="mission-vision"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                   />
                   <p className="text-xs text-gray-500 mt-1">ID of the section element (without #)</p>
                 </div>
@@ -234,7 +234,7 @@ export default function StickyNavCMS() {
                     type="number"
                     name="order"
                     defaultValue={editingItem?.order || 0}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7cd244]"
                   />
                 </div>
 
@@ -243,7 +243,7 @@ export default function StickyNavCMS() {
                     type="checkbox"
                     name="isActive"
                     defaultChecked={editingItem?.isActive !== false}
-                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                    className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                   />
                   <label className="ml-2 text-sm font-medium text-gray-700">
                     Active
@@ -253,7 +253,7 @@ export default function StickyNavCMS() {
                 <div className="flex gap-3 pt-4">
                   <button
                     type="submit"
-                    className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="flex-1 px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
                   >
                     {editingItem ? 'Update Item' : 'Create Item'}
                   </button>
@@ -331,7 +331,7 @@ export default function StickyNavCMS() {
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <button
                       onClick={() => handleEdit(item)}
-                      className="text-blue-600 hover:text-blue-900 mr-4"
+                      className="text-[#4f8f2a] hover:text-blue-900 mr-4"
                     >
                       Edit
                     </button>

@@ -156,7 +156,7 @@ export default function VenwindRefexHeroSectionCMS() {
             type="text"
             value={hero.title}
             onChange={(e) => setHero({ ...hero, title: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
             placeholder="e.g., Venwind Refex"
             required
           />
@@ -169,7 +169,7 @@ export default function VenwindRefexHeroSectionCMS() {
           <textarea
             value={hero.description || ''}
             onChange={(e) => setHero({ ...hero, description: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
             rows={4}
             placeholder="Enter description text..."
           />
@@ -193,7 +193,7 @@ export default function VenwindRefexHeroSectionCMS() {
               className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                 uploadingImage
                   ? 'bg-gray-400 text-white cursor-not-allowed'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
+                  : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
               }`}
             >
               {uploadingImage ? 'Uploading...' : 'Upload Image'}
@@ -224,7 +224,7 @@ export default function VenwindRefexHeroSectionCMS() {
             id="isActive"
             checked={hero.isActive}
             onChange={(e) => setHero({ ...hero, isActive: e.target.checked })}
-            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
           />
           <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
             Active
@@ -234,7 +234,7 @@ export default function VenwindRefexHeroSectionCMS() {
         <div className="flex gap-3">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Changes
           </button>

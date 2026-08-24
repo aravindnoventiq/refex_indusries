@@ -260,7 +260,7 @@ export default function ContactOfficeAddressesCMS() {
         <h2 className="text-2xl font-bold text-gray-900">Office Addresses</h2>
         <button
           onClick={handleAddAddress}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           <i className="ri-add-line mr-2"></i>
           Add Office Address
@@ -294,7 +294,7 @@ export default function ContactOfficeAddressesCMS() {
                 type="text"
                 value={editingAddress.title}
                 onChange={(e) => setEditingAddress({ ...editingAddress, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Registered Office"
               />
             </div>
@@ -309,7 +309,7 @@ export default function ContactOfficeAddressesCMS() {
                     type="text"
                     value={detail}
                     onChange={(e) => updateDetailLine(index, e.target.value)}
-                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                     placeholder={`Detail line ${index + 1}`}
                   />
                   {editingAddress.details.length > 1 && (
@@ -343,7 +343,7 @@ export default function ContactOfficeAddressesCMS() {
                   accept="image/*"
                   onChange={handleImageUpload}
                   disabled={uploadingImage || !editingAddress.isTopOffice}
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
                 />
                 {uploadingImage && (
                   <div className="flex items-center text-sm text-gray-600">
@@ -391,7 +391,7 @@ export default function ContactOfficeAddressesCMS() {
                   type="number"
                   value={editingAddress.order}
                   onChange={(e) => setEditingAddress({ ...editingAddress, order: parseInt(e.target.value) || 0 })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 />
               </div>
               <div className="flex items-center pt-8">
@@ -400,7 +400,7 @@ export default function ContactOfficeAddressesCMS() {
                   id="isTopOffice"
                   checked={editingAddress.isTopOffice}
                   onChange={(e) => setEditingAddress({ ...editingAddress, isTopOffice: e.target.checked })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label htmlFor="isTopOffice" className="ml-2 text-sm text-gray-700">
                   Top Office (with image)
@@ -412,7 +412,7 @@ export default function ContactOfficeAddressesCMS() {
                   id="isActive"
                   checked={editingAddress.isActive}
                   onChange={(e) => setEditingAddress({ ...editingAddress, isActive: e.target.checked })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
                   Active
@@ -422,7 +422,7 @@ export default function ContactOfficeAddressesCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveAddress}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 {editingAddress.id ? 'Update Address' : 'Create Address'}
               </button>
@@ -535,7 +535,7 @@ function AddressCard({
             <span className={`px-2 py-1 text-xs rounded ${address.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
               {address.isActive ? 'Active' : 'Inactive'}
             </span>
-            <span className={`px-2 py-1 text-xs rounded ${address.isTopOffice ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 text-gray-800'}`}>
+            <span className={`px-2 py-1 text-xs rounded ${address.isTopOffice ? 'bg-[#7cd244]/20 text-[#3f7220]' : 'bg-gray-100 text-gray-800'}`}>
               {address.isTopOffice ? 'Top Office' : 'Bottom Office'}
             </span>
             <span className="px-2 py-1 text-xs bg-purple-100 text-purple-800 rounded">
@@ -546,7 +546,7 @@ function AddressCard({
         <div className="flex gap-2 ml-4">
           <button
             onClick={() => onEdit(address)}
-            className="px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
+            className="px-3 py-1 bg-[#7cd244]/20 text-[#3f7220] rounded hover:bg-blue-200 transition-colors"
           >
             <i className="ri-edit-line"></i>
           </button>

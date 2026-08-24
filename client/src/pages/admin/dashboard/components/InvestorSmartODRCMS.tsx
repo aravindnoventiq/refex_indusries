@@ -247,7 +247,7 @@ export default function InvestorSmartODRCMS() {
         </div>
         <button
           onClick={handleSave}
-          className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           Save All Changes
         </button>
@@ -270,7 +270,7 @@ export default function InvestorSmartODRCMS() {
             <label className="block text-sm font-medium text-gray-700 mb-2">Page Title</label>
             <input
               type="text"
-              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
               value={pageContent.title}
               onChange={(e) => setPageContent({ ...pageContent, title: e.target.value })}
             />
@@ -281,7 +281,7 @@ export default function InvestorSmartODRCMS() {
               id="smart-odr-isActive"
               checked={pageContent.isActive}
               onChange={(e) => setPageContent({ ...pageContent, isActive: e.target.checked })}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
             />
             <label htmlFor="smart-odr-isActive" className="ml-2 block text-sm text-gray-900">
               Active
@@ -294,7 +294,7 @@ export default function InvestorSmartODRCMS() {
         <h3 className="text-lg font-semibold text-gray-900">Documents ({docs.length})</h3>
         <button
           onClick={handleAddDocument}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
         >
           + Add Document
         </button>
@@ -316,7 +316,7 @@ export default function InvestorSmartODRCMS() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => handleEditDocument(index)}
-                    className="text-blue-600 hover:text-blue-800 text-sm"
+                    className="text-[#4f8f2a] hover:text-[#3f7220] text-sm"
                   >
                     Edit
                   </button>
@@ -343,7 +343,7 @@ export default function InvestorSmartODRCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Document Title *</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={editingDocument.document.title}
                 onChange={(e) =>
                   setEditingDocument({
@@ -361,7 +361,7 @@ export default function InvestorSmartODRCMS() {
                   type="button"
                   onClick={() => setIsManualUrl(!isManualUrl)}
                   className={`px-3 py-1 text-xs rounded ${
-                    isManualUrl ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                    isManualUrl ? 'bg-[#7cd244] text-white' : 'bg-gray-200 text-gray-700'
                   }`}
                 >
                   {isManualUrl ? 'Manual URL' : 'Upload PDF'}
@@ -371,7 +371,7 @@ export default function InvestorSmartODRCMS() {
               {isManualUrl ? (
                 <input
                   type="text"
-                  className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                   value={editingDocument.document.pdfUrl}
                   onChange={(e) =>
                     setEditingDocument({
@@ -413,7 +413,7 @@ export default function InvestorSmartODRCMS() {
             <div className="flex gap-3">
               <button
                 onClick={handleSaveDocument}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 Save Document
               </button>

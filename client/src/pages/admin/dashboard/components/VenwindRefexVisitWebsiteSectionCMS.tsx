@@ -158,7 +158,7 @@ export default function VenwindRefexVisitWebsiteSectionCMS() {
             type="text"
             value={section.title}
             onChange={(e) => setSection({ ...section, title: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
             placeholder="e.g., To know more about Venwind Refex, click on"
             required
           />
@@ -185,7 +185,7 @@ export default function VenwindRefexVisitWebsiteSectionCMS() {
               className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                 uploadingImage
                   ? 'bg-gray-400 text-white cursor-not-allowed'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
+                  : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
               }`}
             >
               {uploadingImage ? 'Uploading...' : 'Upload Image'}
@@ -218,7 +218,7 @@ export default function VenwindRefexVisitWebsiteSectionCMS() {
             type="text"
             value={section.buttonText || ''}
             onChange={(e) => setSection({ ...section, buttonText: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
             placeholder="e.g., Visit Website"
           />
         </div>
@@ -231,7 +231,7 @@ export default function VenwindRefexVisitWebsiteSectionCMS() {
             type="text"
             value={section.buttonLink || ''}
             onChange={(e) => setSection({ ...section, buttonLink: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-[#7cd244]"
             placeholder="https://venwindrefex.com/"
           />
         </div>
@@ -242,7 +242,7 @@ export default function VenwindRefexVisitWebsiteSectionCMS() {
             id="isActive"
             checked={section.isActive}
             onChange={(e) => setSection({ ...section, isActive: e.target.checked })}
-            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            className="h-4 w-4 text-[#4f8f2a] focus:ring-[#7cd244] border-gray-300 rounded"
           />
           <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
             Active
@@ -252,7 +252,7 @@ export default function VenwindRefexVisitWebsiteSectionCMS() {
         <div className="flex gap-3">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Changes
           </button>

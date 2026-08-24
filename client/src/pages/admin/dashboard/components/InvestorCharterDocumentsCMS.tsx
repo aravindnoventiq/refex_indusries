@@ -244,7 +244,7 @@ export default function InvestorCharterDocumentsCMS() {
                 setEditingDocument(updatedDoc);
               }
             }}
-            className="w-full px-5 py-4 bg-gray-50 border-2 border-transparent rounded-xl focus:bg-white focus:border-blue-500/30 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none text-gray-700 font-medium placeholder:text-gray-300 shadow-inner group-hover:bg-gray-100/50"
+            className="w-full px-5 py-4 bg-gray-50 border-2 border-transparent rounded-xl focus:bg-white focus:border-[#7cd244]/30 focus:ring-4 focus:ring-[#7cd244]/5 transition-all outline-none text-gray-700 font-medium placeholder:text-gray-300 shadow-inner group-hover:bg-gray-100/50"
             placeholder="e.g. Certificate of Incorporation"
           />
           <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-300 group-focus-within:text-blue-500 transition-colors">
@@ -258,7 +258,7 @@ export default function InvestorCharterDocumentsCMS() {
           <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest">Document Source</label>
           <button
             onClick={() => setIsManualPdfUrl(!isManualPdfUrl)}
-            className="text-[10px] font-bold text-blue-600 uppercase tracking-tighter bg-blue-50 px-2 py-1 rounded hover:bg-blue-100 transition-colors"
+            className="text-[10px] font-bold text-[#4f8f2a] uppercase tracking-tighter bg-[#7cd244]/10 px-2 py-1 rounded hover:bg-[#7cd244]/20 transition-colors"
           >
             Switch to {isManualPdfUrl ? 'File Upload' : 'Manual URL'}
           </button>
@@ -270,12 +270,12 @@ export default function InvestorCharterDocumentsCMS() {
               type="text"
               value={pdfUrlInput}
               onChange={(e) => handlePdfUrlChange(e.target.value)}
-              className="w-full px-5 py-4 bg-gray-50 border-2 border-transparent rounded-xl focus:bg-white focus:border-blue-500/30 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none text-gray-700 font-medium placeholder:text-gray-300 shadow-inner group-hover:bg-gray-100/50"
+              className="w-full px-5 py-4 bg-gray-50 border-2 border-transparent rounded-xl focus:bg-white focus:border-[#7cd244]/30 focus:ring-4 focus:ring-[#7cd244]/5 transition-all outline-none text-gray-700 font-medium placeholder:text-gray-300 shadow-inner group-hover:bg-gray-100/50"
               placeholder="https://example.com/document.pdf"
             />
             {downloadingPdf && (
               <div className="absolute right-12 top-1/2 -translate-y-1/2">
-                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-500"></div>
+                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-[#7cd244]"></div>
               </div>
             )}
             <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-300 group-focus-within:text-blue-500 transition-colors">
@@ -292,17 +292,17 @@ export default function InvestorCharterDocumentsCMS() {
             />
             <label
               htmlFor={`charter-documents-pdf-upload-${index}`}
-              className="flex items-center justify-between w-full px-5 py-4 bg-gray-50 border-2 border-dashed border-gray-200 rounded-xl hover:bg-gray-100/50 hover:border-blue-500/30 transition-all cursor-pointer group"
+              className="flex items-center justify-between w-full px-5 py-4 bg-gray-50 border-2 border-dashed border-gray-200 rounded-xl hover:bg-gray-100/50 hover:border-[#7cd244]/30 transition-all cursor-pointer group"
             >
               <span className="text-gray-500 font-medium truncate pr-4">
                 {doc.pdfUrl ? doc.pdfUrl.split('/').pop() : 'Click to upload PDF...'}
               </span>
-              <div className="flex items-center gap-2 text-blue-600">
+              <div className="flex items-center gap-2 text-[#4f8f2a]">
                 {uploadingPdf ? (
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-current"></div>
                 ) : (
                   <>
-                    <span className="text-xs font-bold uppercase tracking-widest bg-blue-50 px-3 py-1.5 rounded-lg group-hover:bg-blue-100">Browse</span>
+                    <span className="text-xs font-bold uppercase tracking-widest bg-[#7cd244]/10 px-3 py-1.5 rounded-lg group-hover:bg-[#7cd244]/20">Browse</span>
                     <i className="ri-upload-cloud-2-line text-xl"></i>
                   </>
                 )}
@@ -329,7 +329,7 @@ export default function InvestorCharterDocumentsCMS() {
                   setEditingDocument(updatedDoc);
                 }
               }}
-              className="w-full px-5 py-3 bg-gray-50 border-2 border-transparent rounded-xl focus:bg-white focus:border-blue-500/30 transition-all outline-none text-gray-700 font-medium placeholder:text-gray-300 group-hover:bg-gray-100/50"
+              className="w-full px-5 py-3 bg-gray-50 border-2 border-transparent rounded-xl focus:bg-white focus:border-[#7cd244]/30 transition-all outline-none text-gray-700 font-medium placeholder:text-gray-300 group-hover:bg-gray-100/50"
               placeholder="DD/MM/YYYY"
             />
             <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-300">
@@ -382,13 +382,13 @@ export default function InvestorCharterDocumentsCMS() {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-12">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
+              <div className="w-10 h-10 bg-[#7cd244] rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
                 <i className="ri-file-paper-line text-white text-xl"></i>
               </div>
               <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">Charter Documents Page CMS</h2>
             </div>
             <p className="text-sm text-gray-400 flex items-center gap-2 ml-1">
-              <span className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)] animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-[#7cd244]/100 shadow-[0_0_8px_rgba(59,130,246,0.6)] animate-pulse"></span>
               Manage documents for the Charter Documents section
             </p>
           </div>
@@ -396,7 +396,7 @@ export default function InvestorCharterDocumentsCMS() {
           <button
             onClick={handleSave}
             disabled={loading}
-            className="group relative px-8 py-4 bg-[#2563EB] text-white rounded-2xl hover:bg-blue-700 transition-all shadow-[0_10px_20px_-5px_rgba(37,99,235,0.3)] hover:shadow-[0_15px_30px_-5px_rgba(37,99,235,0.4)] flex items-center gap-3 active:scale-95 disabled:opacity-70"
+            className="group relative px-8 py-4 bg-[#2563EB] text-white rounded-2xl hover:bg-[#6db038] transition-all shadow-[0_10px_20px_-5px_rgba(37,99,235,0.3)] hover:shadow-[0_15px_30px_-5px_rgba(37,99,235,0.4)] flex items-center gap-3 active:scale-95 disabled:opacity-70"
           >
             {loading ? (
               <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
@@ -439,10 +439,10 @@ export default function InvestorCharterDocumentsCMS() {
           {/* Settings Sidebar */}
           <div className="lg:col-span-1 space-y-8">
             <div className="bg-white rounded-[2rem] p-8 shadow-xl shadow-blue-900/5 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-700"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#7cd244]/10 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-700"></div>
 
               <h3 className="text-lg font-bold text-gray-900 mb-8 relative flex items-center gap-2">
-                <span className="w-2 h-8 bg-blue-600 rounded-full"></span>
+                <span className="w-2 h-8 bg-[#7cd244] rounded-full"></span>
                 General Settings
               </h3>
 
@@ -453,12 +453,12 @@ export default function InvestorCharterDocumentsCMS() {
                     type="text"
                     value={pageContent.title}
                     onChange={(e) => setPageContent({ ...pageContent, title: e.target.value })}
-                    className="w-full px-5 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-blue-500/30 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none text-gray-700 font-semibold shadow-inner"
+                    className="w-full px-5 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-[#7cd244]/30 focus:ring-4 focus:ring-[#7cd244]/5 transition-all outline-none text-gray-700 font-semibold shadow-inner"
                   />
                 </div>
 
                 <div className="space-y-4 pt-4">
-                  <div className="group/item flex items-center justify-between p-4 bg-gray-50 rounded-2xl border-2 border-transparent hover:border-blue-500/10 hover:bg-white hover:shadow-lg transition-all cursor-pointer" onClick={() => setPageContent({ ...pageContent, isActive: !pageContent.isActive })}>
+                  <div className="group/item flex items-center justify-between p-4 bg-gray-50 rounded-2xl border-2 border-transparent hover:border-[#7cd244]/10 hover:bg-white hover:shadow-lg transition-all cursor-pointer" onClick={() => setPageContent({ ...pageContent, isActive: !pageContent.isActive })}>
                     <div className="flex items-center gap-3">
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${pageContent.isActive ? 'bg-green-100 text-green-600' : 'bg-gray-200 text-gray-500'}`}>
                         <i className={`ri-power-flash-line text-xl ${pageContent.isActive ? 'animate-pulse' : ''}`}></i>
@@ -470,26 +470,26 @@ export default function InvestorCharterDocumentsCMS() {
                     </div>
                   </div>
 
-                  <div className="group/item flex items-center justify-between p-4 bg-gray-50 rounded-2xl border-2 border-transparent hover:border-blue-500/10 hover:bg-white hover:shadow-lg transition-all cursor-pointer" onClick={() => setPageContent({ ...pageContent, showCmsPublishDate: !pageContent.showCmsPublishDate })}>
+                  <div className="group/item flex items-center justify-between p-4 bg-gray-50 rounded-2xl border-2 border-transparent hover:border-[#7cd244]/10 hover:bg-white hover:shadow-lg transition-all cursor-pointer" onClick={() => setPageContent({ ...pageContent, showCmsPublishDate: !pageContent.showCmsPublishDate })}>
                     <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${pageContent.showCmsPublishDate ? 'bg-blue-100 text-blue-600' : 'bg-gray-200 text-gray-500'}`}>
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${pageContent.showCmsPublishDate ? 'bg-[#7cd244]/20 text-[#4f8f2a]' : 'bg-gray-200 text-gray-500'}`}>
                         <i className="ri-calendar-todo-line text-xl"></i>
                       </div>
                       <span className="font-bold text-gray-700 text-sm tracking-tight">CMS Published Date</span>
                     </div>
-                    <div className={`w-12 h-6 rounded-full relative transition-colors duration-300 ${pageContent.showCmsPublishDate ? 'bg-blue-600' : 'bg-gray-300'}`}>
+                    <div className={`w-12 h-6 rounded-full relative transition-colors duration-300 ${pageContent.showCmsPublishDate ? 'bg-[#7cd244]' : 'bg-gray-300'}`}>
                       <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-all duration-300 ${pageContent.showCmsPublishDate ? 'left-7' : 'left-1'}`}></div>
                     </div>
                   </div>
 
-                  <div className="group/item flex items-center justify-between p-4 bg-gray-50 rounded-2xl border-2 border-transparent hover:border-blue-500/10 hover:bg-white hover:shadow-lg transition-all cursor-pointer" onClick={() => setPageContent({ ...pageContent, showPublishDate: !pageContent.showPublishDate })}>
+                  <div className="group/item flex items-center justify-between p-4 bg-gray-50 rounded-2xl border-2 border-transparent hover:border-[#7cd244]/10 hover:bg-white hover:shadow-lg transition-all cursor-pointer" onClick={() => setPageContent({ ...pageContent, showPublishDate: !pageContent.showPublishDate })}>
                     <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${pageContent.showPublishDate ? 'bg-blue-100 text-blue-600' : 'bg-gray-200 text-gray-500'}`}>
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${pageContent.showPublishDate ? 'bg-[#7cd244]/20 text-[#4f8f2a]' : 'bg-gray-200 text-gray-500'}`}>
                         <i className="ri-global-line text-xl"></i>
                       </div>
                       <span className="font-bold text-gray-700 text-sm tracking-tight">Public Website Dates</span>
                     </div>
-                    <div className={`w-12 h-6 rounded-full relative transition-colors duration-300 ${pageContent.showPublishDate ? 'bg-blue-600' : 'bg-gray-300'}`}>
+                    <div className={`w-12 h-6 rounded-full relative transition-colors duration-300 ${pageContent.showPublishDate ? 'bg-[#7cd244]' : 'bg-gray-300'}`}>
                       <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-all duration-300 ${pageContent.showPublishDate ? 'left-7' : 'left-1'}`}></div>
                     </div>
                   </div>
@@ -503,9 +503,9 @@ export default function InvestorCharterDocumentsCMS() {
             <div className="bg-white rounded-[2rem] p-8 shadow-xl shadow-blue-900/5 min-h-[500px]">
               <div className="flex justify-between items-center mb-10">
                 <h3 className="text-xl font-bold text-gray-900 flex items-center gap-3">
-                  <div className="w-2 h-10 bg-blue-600 rounded-full"></div>
+                  <div className="w-2 h-10 bg-[#7cd244] rounded-full"></div>
                   Documents List
-                  <span className="bg-blue-50 text-blue-600 text-xs px-3 py-1.5 rounded-full font-extrabold">{documents.length} Items</span>
+                  <span className="bg-[#7cd244]/10 text-[#4f8f2a] text-xs px-3 py-1.5 rounded-full font-extrabold">{documents.length} Items</span>
                 </h3>
                 <button
                   onClick={handleAddDocument}
@@ -519,7 +519,7 @@ export default function InvestorCharterDocumentsCMS() {
               {showDocumentForm && editingDocument && editingIndex === -1 && (
                 <div className="mb-12 animate-in zoom-in-95 duration-200">
                   <div className="bg-gray-50 rounded-2xl p-6 border-2 border-blue-100 shadow-xl shadow-blue-500/5">
-                    <h4 className="text-sm font-extrabold text-blue-600 uppercase tracking-widest mb-6 flex items-center gap-2">
+                    <h4 className="text-sm font-extrabold text-[#4f8f2a] uppercase tracking-widest mb-6 flex items-center gap-2">
                       <i className="ri-file-add-line"></i>
                       New Document Form
                     </h4>
@@ -538,7 +538,7 @@ export default function InvestorCharterDocumentsCMS() {
                   {documents.map((doc, docIndex) => (
                     <div key={docIndex} className="group relative">
                       {editingIndex === docIndex ? (
-                        <div className="bg-blue-50/50 rounded-2xl p-1 animate-in slide-in-from-top-4 duration-200 border-2 border-blue-100">
+                        <div className="bg-[#7cd244]/10/50 rounded-2xl p-1 animate-in slide-in-from-top-4 duration-200 border-2 border-blue-100">
                           {renderDocumentFields(doc, docIndex)}
                         </div>
                       ) : (
@@ -552,12 +552,12 @@ export default function InvestorCharterDocumentsCMS() {
 
                           {/* Document Info */}
                           <div className="flex-1 min-w-0">
-                            <h4 className="font-bold text-gray-800 text-lg mb-1 truncate leading-tight group-hover:text-blue-600 transition-colors">
+                            <h4 className="font-bold text-gray-800 text-lg mb-1 truncate leading-tight group-hover:text-[#4f8f2a] transition-colors">
                               {doc.title}
                             </h4>
                             <div className="flex items-center gap-3 text-gray-400 font-bold text-[10px] uppercase tracking-widest">
                               {pageContent.showPublishDate && (doc.date || doc.publishedDate) && (
-                                <div className="flex items-center gap-1.5 px-2 py-0.5 bg-gray-50 rounded group-hover:bg-blue-50 transition-colors">
+                                <div className="flex items-center gap-1.5 px-2 py-0.5 bg-gray-50 rounded group-hover:bg-[#7cd244]/10 transition-colors">
                                   <i className="ri-calendar-line text-blue-400"></i>
                                   <span>{doc.date || doc.publishedDate || 'No Date'}</span>
                                 </div>
@@ -573,7 +573,7 @@ export default function InvestorCharterDocumentsCMS() {
                           <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 group-hover:translate-x-0">
                             <button
                               onClick={() => handleEditDocument(docIndex)}
-                              className="w-10 h-10 bg-white border border-gray-100 text-blue-600 rounded-xl flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-lg shadow-gray-200"
+                              className="w-10 h-10 bg-white border border-gray-100 text-[#4f8f2a] rounded-xl flex items-center justify-center hover:bg-[#7cd244] hover:text-white hover:border-blue-600 transition-all shadow-lg shadow-gray-200"
                               title="Edit Content"
                             >
                               <i className="ri-edit-2-fill text-lg"></i>

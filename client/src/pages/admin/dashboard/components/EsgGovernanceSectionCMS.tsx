@@ -253,7 +253,7 @@ export default function EsgGovernanceSectionCMS() {
           </button>
           <button
             onClick={handleAddItem}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             <i className="ri-add-line mr-2"></i>
             Add Item
@@ -286,7 +286,7 @@ export default function EsgGovernanceSectionCMS() {
                 type="text"
                 value={header.title}
                 onChange={(e) => setHeader({ ...header, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Governance"
               />
             </div>
@@ -296,7 +296,7 @@ export default function EsgGovernanceSectionCMS() {
                 id="headerActive"
                 checked={header.isActive}
                 onChange={(e) => setHeader({ ...header, isActive: e.target.checked })}
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
               />
               <label htmlFor="headerActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -305,7 +305,7 @@ export default function EsgGovernanceSectionCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveHeader}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 Save Header
               </button>
@@ -335,7 +335,7 @@ export default function EsgGovernanceSectionCMS() {
                 type="text"
                 value={editingItem.title}
                 onChange={(e) => setEditingItem({ ...editingItem, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Grievance Mechanism"
               />
             </div>
@@ -378,7 +378,7 @@ export default function EsgGovernanceSectionCMS() {
                   type="number"
                   value={editingItem.order}
                   onChange={(e) => setEditingItem({ ...editingItem, order: parseInt(e.target.value) || 0 })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 />
               </div>
               <div className="flex items-center pt-8">
@@ -387,7 +387,7 @@ export default function EsgGovernanceSectionCMS() {
                   id="itemActive"
                   checked={editingItem.isActive}
                   onChange={(e) => setEditingItem({ ...editingItem, isActive: e.target.checked })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label htmlFor="itemActive" className="ml-2 text-sm text-gray-700">
                   Active
@@ -397,7 +397,7 @@ export default function EsgGovernanceSectionCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveItem}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 {editingItem.id ? 'Update Item' : 'Create Item'}
               </button>
@@ -437,7 +437,7 @@ export default function EsgGovernanceSectionCMS() {
                         <span className={`px-2 py-1 text-xs rounded ${item.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
                           {item.isActive ? 'Active' : 'Inactive'}
                         </span>
-                        <span className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">
+                        <span className="px-2 py-1 text-xs bg-[#7cd244]/20 text-[#3f7220] rounded">
                           Order: {item.order}
                         </span>
                       </div>
@@ -445,7 +445,7 @@ export default function EsgGovernanceSectionCMS() {
                     <div className="flex gap-2 ml-4">
                       <button
                         onClick={() => handleEditItem(item)}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
+                        className="px-3 py-1 bg-[#7cd244]/20 text-[#3f7220] rounded hover:bg-blue-200 transition-colors"
                       >
                         <i className="ri-edit-line"></i>
                       </button>

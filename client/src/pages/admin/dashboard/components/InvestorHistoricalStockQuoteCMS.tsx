@@ -140,7 +140,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
     <div className="bg-white rounded-lg shadow p-6">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Historical Stock Quote Section</h2>
       
-      <div className="mb-4 p-4 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg">
+      <div className="mb-4 p-4 bg-[#7cd244]/10 border border-[#7cd244]/40 text-[#3f7220] rounded-lg">
         <p className="font-semibold">Note:</p>
         <p className="text-sm mt-1">Historical stock quote data is fetched automatically from the API. You can customize the section title, column labels, and settings here.</p>
       </div>
@@ -166,7 +166,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Title *</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.title}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, title: e.target.value })}
                 placeholder="Historical Stock Quote"
@@ -175,7 +175,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Default Exchange</label>
               <select
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.defaultExchange || 'BSE'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, defaultExchange: e.target.value })}
               >
@@ -189,7 +189,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
                 type="number"
                 min="1"
                 max="100"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.recordsPerPage || 10}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, recordsPerPage: parseInt(e.target.value) || 10 })}
               />
@@ -198,7 +198,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">API Nonce</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.nonce || ''}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, nonce: e.target.value })}
                 placeholder="44efac5c14"
@@ -217,7 +217,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Date Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.columnDate || 'DATE'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, columnDate: e.target.value })}
               />
@@ -226,7 +226,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Open Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.columnOpen || 'OPEN'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, columnOpen: e.target.value })}
               />
@@ -235,7 +235,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">High Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.columnHigh || 'HIGH'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, columnHigh: e.target.value })}
               />
@@ -244,7 +244,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Low Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.columnLow || 'LOW'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, columnLow: e.target.value })}
               />
@@ -253,7 +253,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Close Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.columnClose || 'CLOSE'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, columnClose: e.target.value })}
               />
@@ -262,7 +262,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Volume Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.columnVolume || 'VOLUME'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, columnVolume: e.target.value })}
               />
@@ -271,7 +271,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Trade Value Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.columnTradeValue || 'TRADE VALUE'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, columnTradeValue: e.target.value })}
               />
@@ -280,7 +280,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Trades Column</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.columnTrades || 'No. OF TRADES'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, columnTrades: e.target.value })}
               />
@@ -296,7 +296,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">1 Month Filter</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.filter1M || '1M'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, filter1M: e.target.value })}
               />
@@ -305,7 +305,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">3 Months Filter</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.filter3M || '3M'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, filter3M: e.target.value })}
               />
@@ -314,7 +314,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">6 Months Filter</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.filter6M || '6M'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, filter6M: e.target.value })}
               />
@@ -323,7 +323,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
               <label className="block text-sm font-medium text-gray-700 mb-2">1 Year Filter</label>
               <input
                 type="text"
-                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="w-full border-gray-300 rounded-lg shadow-sm focus:border-[#7cd244] focus:ring-[#7cd244]"
                 value={historicalStockQuote.filter1Y || '1Y'}
                 onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, filter1Y: e.target.value })}
               />
@@ -336,7 +336,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
           <input
             type="checkbox"
             id="isActive"
-            className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+            className="h-4 w-4 text-[#4f8f2a] border-gray-300 rounded"
             checked={historicalStockQuote.isActive}
             onChange={(e) => setHistoricalStockQuote({ ...historicalStockQuote, isActive: e.target.checked })}
           />
@@ -348,7 +348,7 @@ export default function InvestorHistoricalStockQuoteCMS() {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             Save Historical Stock Quote Settings
           </button>

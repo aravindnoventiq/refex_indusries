@@ -456,7 +456,7 @@ export default function EsgCollaborationSectionCMS() {
           </button>
           <button
             onClick={handleAddOrg}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
           >
             <i className="ri-add-line mr-2"></i>
             Add Organization
@@ -489,7 +489,7 @@ export default function EsgCollaborationSectionCMS() {
                 type="text"
                 value={sectionHeader.title}
                 onChange={(e) => setSectionHeader({ ...sectionHeader, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Collaboration & Membership"
               />
             </div>
@@ -499,7 +499,7 @@ export default function EsgCollaborationSectionCMS() {
                 id="sectionHeaderActive"
                 checked={sectionHeader.isActive}
                 onChange={(e) => setSectionHeader({ ...sectionHeader, isActive: e.target.checked })}
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
               />
               <label htmlFor="sectionHeaderActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -508,7 +508,7 @@ export default function EsgCollaborationSectionCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveSectionHeader}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 Save Header
               </button>
@@ -542,7 +542,7 @@ export default function EsgCollaborationSectionCMS() {
                   ...(mainCollaboration || { logo: '', isActive: true }), 
                   title: e.target.value 
                 })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="United Nations Global Compact – Network India (UNGC NI)"
               />
             </div>
@@ -564,7 +564,7 @@ export default function EsgCollaborationSectionCMS() {
                   className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                     uploadingMainLogo
                       ? 'bg-gray-400 text-white cursor-not-allowed'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
                   }`}
                 >
                   {uploadingMainLogo ? 'Uploading...' : 'Upload Logo'}
@@ -597,7 +597,7 @@ export default function EsgCollaborationSectionCMS() {
                   content: e.target.value 
                 })}
                 rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Enter collaboration description..."
               />
             </div>
@@ -619,7 +619,7 @@ export default function EsgCollaborationSectionCMS() {
                   className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                     uploadingMainLargeImage
                       ? 'bg-gray-400 text-white cursor-not-allowed'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
                   }`}
                 >
                   {uploadingMainLargeImage ? 'Uploading...' : 'Upload Image'}
@@ -650,7 +650,7 @@ export default function EsgCollaborationSectionCMS() {
                   ...(mainCollaboration || { title: '', logo: '', isActive: true }), 
                   isActive: e.target.checked 
                 })}
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
               />
               <label htmlFor="mainCollabActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -659,7 +659,7 @@ export default function EsgCollaborationSectionCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveMainCollaboration}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 Save Main Collaboration
               </button>
@@ -687,7 +687,7 @@ export default function EsgCollaborationSectionCMS() {
                 type="text"
                 value={orgsSectionHeader.title}
                 onChange={(e) => setOrgsSectionHeader({ ...orgsSectionHeader, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Developmental Organizations"
               />
             </div>
@@ -697,7 +697,7 @@ export default function EsgCollaborationSectionCMS() {
                 id="orgsSectionHeaderActive"
                 checked={orgsSectionHeader.isActive}
                 onChange={(e) => setOrgsSectionHeader({ ...orgsSectionHeader, isActive: e.target.checked })}
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
               />
               <label htmlFor="orgsSectionHeaderActive" className="ml-2 text-sm text-gray-700">
                 Active
@@ -706,7 +706,7 @@ export default function EsgCollaborationSectionCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveOrgsSectionHeader}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 Save Header
               </button>
@@ -736,7 +736,7 @@ export default function EsgCollaborationSectionCMS() {
                 type="text"
                 value={editingOrg.title}
                 onChange={(e) => setEditingOrg({ ...editingOrg, title: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Organization Name"
               />
             </div>
@@ -758,7 +758,7 @@ export default function EsgCollaborationSectionCMS() {
                   className={`px-4 py-2 rounded-lg cursor-pointer transition-colors ${
                     uploadingOrgLogo
                       ? 'bg-gray-400 text-white cursor-not-allowed'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-[#7cd244] text-white hover:bg-[#6db038]'
                   }`}
                 >
                   {uploadingOrgLogo ? 'Uploading...' : 'Upload Logo'}
@@ -788,7 +788,7 @@ export default function EsgCollaborationSectionCMS() {
                 value={editingOrg.content}
                 onChange={(e) => setEditingOrg({ ...editingOrg, content: e.target.value })}
                 rows={6}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 placeholder="Enter organization description..."
               />
             </div>
@@ -801,7 +801,7 @@ export default function EsgCollaborationSectionCMS() {
                   type="number"
                   value={editingOrg.order}
                   onChange={(e) => setEditingOrg({ ...editingOrg, order: parseInt(e.target.value) || 0 })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7cd244] focus:border-transparent"
                 />
               </div>
               <div className="flex items-center pt-8">
@@ -810,7 +810,7 @@ export default function EsgCollaborationSectionCMS() {
                   id="orgActive"
                   checked={editingOrg.isActive}
                   onChange={(e) => setEditingOrg({ ...editingOrg, isActive: e.target.checked })}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-[#4f8f2a] border-gray-300 rounded focus:ring-[#7cd244]"
                 />
                 <label htmlFor="orgActive" className="ml-2 text-sm text-gray-700">
                   Active
@@ -820,7 +820,7 @@ export default function EsgCollaborationSectionCMS() {
             <div className="flex gap-2">
               <button
                 onClick={handleSaveOrg}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-[#7cd244] text-white rounded-lg hover:bg-[#6db038] transition-colors"
               >
                 {editingOrg.id ? 'Update Organization' : 'Create Organization'}
               </button>
@@ -871,7 +871,7 @@ export default function EsgCollaborationSectionCMS() {
                         <span className={`px-2 py-1 text-xs rounded ${org.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
                           {org.isActive ? 'Active' : 'Inactive'}
                         </span>
-                        <span className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">
+                        <span className="px-2 py-1 text-xs bg-[#7cd244]/20 text-[#3f7220] rounded">
                           Order: {org.order}
                         </span>
                       </div>
@@ -882,7 +882,7 @@ export default function EsgCollaborationSectionCMS() {
                     <div className="flex gap-2 ml-4">
                       <button
                         onClick={() => handleEditOrg(org)}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
+                        className="px-3 py-1 bg-[#7cd244]/20 text-[#3f7220] rounded hover:bg-blue-200 transition-colors"
                       >
                         <i className="ri-edit-line"></i>
                       </button>
