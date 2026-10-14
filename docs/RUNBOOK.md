@@ -98,6 +98,107 @@ These are not just visual tweaks. Existing user, CMS, or deep-link behaviour cha
 
 ---
 
+## Production (Docker) after `git pull`
+
+Do this **on the production server**. The app talks to MySQL at hostname `mysql` (Docker network). Run migrate/seed **inside the app container**, not on the host.
+
+These UX changes are almost all **frontend**. Production only updates after a **rebuild** of the client image (or a new `client/dist` if nginx serves a built volume). A plain `docker restart` of an old image will not pick up the code.
+
+### 0. This work must be on the remote first
+
+Local `raghul` changes are still uncommitted. Production `git pull` only gets what you **committed and pushed**. Push, then pull on the server.
+
+### 1. Pull and rebuild
+
+```bash
+cd /path/to/Refex_Industries_Ltd   # production clone path
+
+git fetch
+git status
+git pull
+
+docker ps
+# note the app / nginx / mysql container names
+
+# If you use Compose (typical):
+docker compose up -d --build
+
+# If the project uses a specific file:
+# docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+```
+
+Wait until containers are healthy:
+
+```bash
+docker compose ps
+docker compose logs -f --tail=80
+```
+
+Stop logs with Ctrl+C when the app is listening.
+
+### 2. Schema migrate (inside the app container)
+
+Safe and idempotent. This UX pass does **not** need new tables, but run it so prod stays in sync with `migrate_db.js`.
+
+```bash
+docker ps   # copy the app container name, not mysql
+
+docker exec -it <app-container> sh -c "cd /app/server && NODE_ENV=production npm run db:migrate"
+```
+
+If the working directory in the image is already `/app/server`, use:
+
+```bash
+docker exec -it <app-container> sh -c "NODE_ENV=production npm run db:migrate"
+```
+
+### 3. Do **not** run `npm run seed:all` on production
+
+Seeds overwrite CMS rows. Live investor PDFs, header, footer, and copy would be replaced.
+
+This drop already hides the removed people/nav/office **in the client**. You do not need a seed for:
+
+- Power Trading Surrender Petition (header filter)
+- Jaya Krishna / Sachin Navtosh Jha
+- Factory office
+- Related Links (30-item fallback merge)
+
+Optional DB cleanup later in **Admin CMS** (not seed):
+
+- Header: delete Power Trading if it is still in the CMS list
+- Contact: fix hero copy; Factory is hidden even if the row remains
+- Leadership / Committees: deactivate those people if you want the CMS list to match the public site
+
+### 4. Smoke-check production
+
+Hard-refresh (cache). Then:
+
+1. Home — video only in hero; light/dark backgrounds  
+2. Header — no Power Trading  
+3. About — no Purpose/Direction chips; no Jaya / Sachin  
+4. ESG — hero text + bird; `/esg#refex-esg` and `/esg#programs`  
+5. Contact — no Factory card  
+6. Investors Related Links — 30 items, each route loads  
+7. Historical Stock Quote — date inputs readable; no HTTP 500 banner  
+
+### 5. If the UI did not change after pull
+
+The running container is still the **old image**.
+
+```bash
+docker compose up -d --build --force-recreate
+# or rebuild a named service, e.g.
+# docker compose build --no-cache client && docker compose up -d client
+```
+
+Confirm the container started after the pull:
+
+```bash
+docker inspect -f '{{.Created}} {{.Name}}' <app-container>
+```
+
+---
+
 ## How to run locally
 
 ```bash
