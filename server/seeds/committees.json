@@ -143,13 +143,6 @@
         "category": "Member",
         "order": 4,
         "isActive": true
-      },
-      {
-        "name": "Mr. Sachin Navtosh Jha",
-        "designation": "Chief of Staff (Holding Co.)",
-        "category": "Member",
-        "order": 5,
-        "isActive": true
       }
     ]
   },

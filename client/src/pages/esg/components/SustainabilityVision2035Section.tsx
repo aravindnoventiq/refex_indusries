@@ -2,17 +2,17 @@ import { useLayoutEffect, useRef } from 'react';
 import {
   Award,
   Globe2,
-  GraduationCap,
   Leaf,
   Recycle,
   ShieldCheck,
   Target,
   Users,
   Wind,
+  Zap,
   type LucideIcon,
 } from 'lucide-react';
 import { gsap, prefersReducedMotion } from '../../about-us/aboutGsap';
-import { esgContainer, esgScrollMargin } from '../esgLayout';
+import { esgContainer, esgScrollMargin, esgSectionHeading } from '../esgLayout';
 import { esgScrollStart } from '../esgMotion';
 
 const SECTION_BG = '/esg/esg-background.png';
@@ -63,9 +63,9 @@ const VISION_PILLARS: VisionPillar[] = [
 ];
 
 const VISION_FOOTER = [
-  { icon: Target, label: 'Future-Ready by 2035' },
-  { icon: Leaf, label: 'Carbon Neutral by 2035' },
-  { icon: GraduationCap, label: 'Net Zero by 2040' },
+  { icon: Target, label: 'Future-Ready by 2035', color: '#0072CE' },
+  { icon: Leaf, label: 'Carbon Neutral by 2035', color: '#4C8C2B' },
+  { icon: Zap, label: 'Net Zero by 2040', color: '#F39200' },
 ];
 
 function VisionPillarCard({ pillar }: { pillar: VisionPillar }) {
@@ -274,20 +274,10 @@ export default function SustainabilityVision2035Section() {
           <h2
             id="vision-2035-title"
             data-vision-header-title
-            className="text-3xl font-bold uppercase tracking-[0.08em] text-[#2b2b2b] sm:text-4xl lg:text-[2.35rem]"
+            className={esgSectionHeading}
           >
-            Sustainability <span className="text-[#4C8C2B]">Vision 2035</span>
+            Sustainable <span className="text-[#4C8C2B]">Business Model</span>
           </h2>
-          <p
-            data-vision-header-intro
-            className="mt-5 text-base leading-relaxed text-[#4a4a4a] sm:text-lg"
-          >
-            Unified agenda, shared goal for responsible growth — advancing{' '}
-            <span className="font-semibold text-[#4C8C2B]">Environment</span>,{' '}
-            <span className="font-semibold text-[#F39200]">Social</span>, and{' '}
-            <span className="font-semibold text-[#0072CE]">Governance</span> commitments across Refex
-            Group.
-          </p>
         </header>
 
         <div className="grid gap-6 md:grid-cols-3 md:gap-5 lg:gap-6">
@@ -305,10 +295,18 @@ export default function SustainabilityVision2035Section() {
             return (
               <div
                 key={item.label}
-                className="flex items-center justify-center gap-3 px-2 py-2 text-center sm:px-4"
+                className="flex min-h-[4.5rem] items-center justify-center gap-3.5 px-3 py-4 text-left sm:min-h-[5.25rem] sm:justify-center sm:px-5 sm:text-center"
               >
-                <FooterIcon className="h-5 w-5 shrink-0 text-[#0072CE]" strokeWidth={2} />
-                <span className="text-xs font-semibold uppercase tracking-[0.06em] text-[#0072CE] sm:text-[11px] lg:text-xs">
+                <span
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border bg-white shadow-sm sm:h-14 sm:w-14"
+                  style={{ borderColor: `${item.color}55`, color: item.color }}
+                >
+                  <FooterIcon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={1.9} />
+                </span>
+                <span
+                  className="text-lg font-bold leading-snug tracking-tight sm:text-xl lg:text-[1.45rem]"
+                  style={{ color: item.color }}
+                >
                   {item.label}
                 </span>
               </div>

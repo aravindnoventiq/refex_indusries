@@ -94,7 +94,7 @@ function WhoWeAreSection() {
   const paragraphs = data.content.split('\n\n').filter((p) => p.trim());
 
   return (
-    <AshSectionShell id="who-we-are" eyebrow="Overview" title={data.title}>
+    <AshSectionShell id="who-we-are" title={data.title}>
       <div
         ref={gridRef}
         className={`grid items-center lg:grid-cols-2 ${ashContentGap}`}

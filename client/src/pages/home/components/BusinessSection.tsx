@@ -3,7 +3,7 @@ import { homeCmsApi } from '../../../services/api';
 import { metaFor } from '../../../utils/businessMeta';
 import { resolveBusinessLink } from '../../../utils/businessNavLinks';
 import { prefersReducedMotion } from '../homeMotion';
-import { HomeLoading, HomeSection, homeContentText, homeMobileCard, homeExpandableBody, homeRevealCard, homeMobileStack } from './HomeSection';
+import { HomeLoading, HomeSection, homeExpandableBody, homeRevealCard, homeMobileStack, useHomeTheme } from './HomeSection';
 
 interface Business {
   id: number;
@@ -20,6 +20,7 @@ const PATHWAY_LABELS = ['CORE OPERATIONS', 'SUSTAINABLE FLEETS', 'CLEAN ENERGY']
 const EXPLORE_COLORS = ['#f97316', '#7cd144', '#3b82f6'] as const;
 
 export default function BusinessSection() {
+  const { text, mobileCard, businessRule } = useHomeTheme();
   const [businesses, setBusinesses] = useState<Business[]>([]);
   const [loading, setLoading] = useState(true);
   const [revealed, setRevealed] = useState(false);
@@ -107,7 +108,7 @@ export default function BusinessSection() {
   if (businesses.length === 0) return null;
 
   return (
-    <HomeSection id="businesses" label="What We Do" afterHero>
+    <HomeSection id="businesses" title="What We Do" afterHero>
       <div ref={listRef} className={`${homeMobileStack} sm:grid-cols-3 lg:gap-10`}>
         {businesses.map((business, index) => {
           const meta = metaFor(business.title);
@@ -120,20 +121,19 @@ export default function BusinessSection() {
               key={business.id}
               data-pathway
               className={
-                `${homeMobileCard} group flex flex-col outline-none ${homeRevealCard(revealed)} ` +
-                'sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:border-t sm:border-white/20 sm:pt-5 ' +
-                'hover:border-white/40 sm:hover:border-white/40'
+                `${mobileCard} group flex flex-col outline-none ${homeRevealCard(revealed)} ` +
+                `sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:pt-5 ${businessRule}`
               }
               style={{ transitionDelay: revealed ? `${index * 70}ms` : '0ms' }}
               tabIndex={0}
             >
-              <span className={homeContentText.meta}>
-                {String(index + 1).padStart(2, '0')} · {pathway}
+              <span className={text.meta}>
+                {pathway}
               </span>
-              <h3 className={`mt-2 sm:mt-3 ${homeContentText.cardTitle}`}>{business.title}</h3>
+              <h3 className={`mt-2 sm:mt-3 ${text.cardTitle}`}>{business.title}</h3>
 
               <div className={homeExpandableBody}>
-                <p className={`mt-2 min-h-0 overflow-hidden sm:mt-3 ${homeContentText.bodySm}`}>
+                <p className={`mt-2 min-h-0 overflow-hidden sm:mt-3 ${text.bodySm}`}>
                   {business.description}
                 </p>
               </div>

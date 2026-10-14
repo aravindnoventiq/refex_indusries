@@ -1,10 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import {
   ArrowUpRight,
-  BarChart3,
   FileText,
-  Leaf,
-  type LucideIcon,
 } from 'lucide-react';
 import { esgCmsApi } from '../../../services/api';
 import { prefersReducedMotion } from '../../about-us/aboutGsap';
@@ -63,7 +60,6 @@ const FALLBACK_REPORTS: Report[] = [
 ];
 
 const REPORT_ACCENTS = ['#4C8C2B', '#0072CE', '#F39200'] as const;
-const REPORT_ICONS: LucideIcon[] = [Leaf, FileText, BarChart3];
 
 function ReportCard({
   report,
@@ -75,8 +71,6 @@ function ReportCard({
   revealed: boolean;
 }) {
   const accent = REPORT_ACCENTS[index % REPORT_ACCENTS.length];
-  const Icon = REPORT_ICONS[index] ?? FileText;
-  const orderLabel = String(index + 1).padStart(2, '0');
 
   return (
     <article
@@ -107,17 +101,6 @@ function ReportCard({
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1f1f1f]/55 via-[#1f1f1f]/10 to-transparent"
         />
-        <div className="absolute left-4 top-4 flex items-center gap-2">
-          <span
-            className="rounded-full px-2.5 py-1 text-[11px] font-bold tracking-[0.12em] text-white backdrop-blur-sm"
-            style={{ backgroundColor: `${accent}cc` }}
-          >
-            {orderLabel}
-          </span>
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/35 bg-white/20 text-white backdrop-blur-sm">
-            <Icon className="h-4 w-4" strokeWidth={1.8} aria-hidden />
-          </span>
-        </div>
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
           <h3 className="text-lg font-bold leading-snug text-white drop-shadow-sm sm:text-xl">
             {report.title}
@@ -126,17 +109,6 @@ function ReportCard({
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div className="mb-4 flex items-center gap-2">
-          <span
-            className="h-2 w-2 rounded-full"
-            style={{ backgroundColor: accent }}
-            aria-hidden
-          />
-          <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#6b7280]">
-            PDF Report
-          </span>
-        </div>
-
         <a
           href={getFullUrl(report.link)}
           target="_blank"
@@ -253,9 +225,6 @@ export default function ReportsSection() {
 
       <div className={`relative z-10 ${esgContainer}`}>
         <EsgSectionHeader
-          badgeIcon={FileText}
-          badgeLabel="Transparency & Disclosure"
-          accent="orange"
           title={displayHeader.title}
           titleId="esg-reports-title"
           motionReady={motionReadyResolved}

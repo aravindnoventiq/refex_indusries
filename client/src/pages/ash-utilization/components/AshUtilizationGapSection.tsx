@@ -224,8 +224,7 @@ function AshUtilizationGapSection() {
             </div>
 
             <ul className="relative m-0 list-none space-y-3 p-0 sm:space-y-4">
-              {PAIRS.map((pair, index) => {
-                const n = String(index + 1).padStart(2, '0');
+              {PAIRS.map((pair) => {
                 return (
                   <li key={pair.challenge} data-gap-row className="relative">
                     {/* Mobile card */}
@@ -236,7 +235,6 @@ function AshUtilizationGapSection() {
                       />
                       <div className="relative">
                         <div className="mb-2 flex items-center gap-2.5">
-                          <span className="font-mono text-[11px] tabular-nums text-[#7cd244]">{n}</span>
                           <span className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${muteLabel}`}>
                             Challenge
                           </span>
@@ -277,9 +275,6 @@ function AshUtilizationGapSection() {
                         data-gap-challenge
                         className={`min-w-0 text-right ${surface} ${itemPad}`}
                       >
-                        <span className="mb-1.5 block font-mono text-[11px] tabular-nums tracking-wider text-[#7cd244]/80">
-                          {n}
-                        </span>
                         <p
                           className={`text-[0.98rem] leading-snug transition-colors duration-300 group-hover:text-[#7cd244] lg:text-[1.05rem] ${challengeTone}`}
                         >

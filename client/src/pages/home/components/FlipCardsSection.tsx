@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { homeCmsApi } from '../../../services/api';
-import { HomeLoading, HomeSection, homeContentText, homeMobileCard, homeExpandableBodyNested, homeMobileStack } from './HomeSection';
+import { HomeLoading, HomeSection, homeExpandableBodyNested, homeMobileStack, useHomeTheme } from './HomeSection';
 
 interface FlipCard {
   id: number;
@@ -44,6 +44,7 @@ const FALLBACK_CARDS: FlipCard[] = [
 ];
 
 export default function FlipCardsSection() {
+  const { text, mobileCard, cardTitleHover } = useHomeTheme();
   const [cards, setCards] = useState<FlipCard[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -72,7 +73,6 @@ export default function FlipCardsSection() {
   return (
     <HomeSection
       id="careers"
-      label="Careers"
       title="Join us in creating a sustainable future for India"
       subtitle="Where ambition meets opportunities"
       compact
@@ -88,25 +88,24 @@ export default function FlipCardsSection() {
       </div>
 
       <div className={`${homeMobileStack} sm:grid-cols-2 lg:grid-cols-3 lg:gap-12`}>
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <article
             key={card.id}
-            className={`${homeMobileCard} border-l-0 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:border-l sm:border-[#7cd144]/50 sm:pl-6`}
+            className={`${mobileCard} border-l-0 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:border-l sm:border-[#7cd144]/50 sm:pl-6`}
           >
-            <span className={homeContentText.meta}>{String(index + 1).padStart(2, '0')}</span>
-            <div className="group/title mt-2 outline-none sm:mt-2.5" tabIndex={0}>
+            <div className="group/title outline-none sm:mt-0" tabIndex={0}>
               <h3
-                className={`${homeContentText.cardTitle} cursor-default transition-colors duration-300 group-hover/title:text-[#8ee04f] group-focus-within/title:text-[#8ee04f]`}
+                className={`${text.cardTitle} cursor-default transition-colors duration-300 ${cardTitleHover}`}
               >
                 {card.title}
               </h3>
               <div className={homeExpandableBodyNested}>
-                <p className={`mt-2 min-h-0 overflow-hidden sm:mt-2.5 ${homeContentText.bodySm}`}>
+                <p className={`mt-2 min-h-0 overflow-hidden sm:mt-2.5 ${text.bodySm}`}>
                   {card.description}
                 </p>
               </div>
             </div>
-            <a href={card.link} className={`mt-3.5 sm:mt-5 ${homeContentText.link}`}>
+            <a href={card.link} className={`mt-3.5 sm:mt-5 ${text.link}`}>
               Learn More
               <i className="ri-arrow-right-line" />
             </a>

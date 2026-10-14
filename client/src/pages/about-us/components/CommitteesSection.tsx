@@ -23,10 +23,6 @@ interface Committee {
   members: CommitteeMember[];
 }
 
-function isChair(category: string) {
-  return /chair/i.test(category);
-}
-
 function CommitteesSection() {
   const [committees, setCommittees] = useState<Committee[]>([]);
   const [loading, setLoading] = useState(true);
@@ -51,7 +47,7 @@ function CommitteesSection() {
   }, []);
 
   const { classes } = useDarkPageTheme();
-  const { text, imageCard, borderBottom, listDivide, categoryMuted } = classes;
+  const { text, imageCard, borderBottom, listDivide } = classes;
 
   if (loading) {
     return (
@@ -75,6 +71,8 @@ function CommitteesSection() {
           {displayCommittees.map((committee, index) => {
             const activeMembers = (committee.members || [])
               .filter((m) => m.isActive !== false)
+              .filter((m) => !/sachin\s+navtosh\s+jha/i.test(m.name))
+              .filter((m) => !/chief of staff/i.test(m.designation || ''))
               .sort((a, b) => (a.order || 0) - (b.order || 0));
 
             return (
@@ -83,44 +81,25 @@ function CommitteesSection() {
                 className={`group relative flex h-full flex-col border-l-2 border-[#7cd244]/60 ${imageCard}`}
               >
                 <header className={`px-5 py-4 pl-6 sm:px-6 sm:pl-7 ${borderBottom}`}>
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <h3
-                        className="font-bold tracking-[-0.015em] leading-snug text-lg sm:text-xl lg:text-[1.35rem]"
-                        style={{ color: COMMITTEE_NAME_COLOR }}
-                      >
-                        {committee.name}
-                      </h3>
-                    </div>
-                    <span className={`shrink-0 ${text.meta}`}>
-                      {activeMembers.length}{' '}
-                      {activeMembers.length === 1 ? 'member' : 'members'}
-                    </span>
-                  </div>
+                  <h3
+                    className="font-bold tracking-[-0.015em] leading-snug text-lg sm:text-xl lg:text-[1.35rem]"
+                    style={{ color: COMMITTEE_NAME_COLOR }}
+                  >
+                    {committee.name}
+                  </h3>
                 </header>
 
                 <ul className={`flex flex-1 flex-col px-5 py-1 pl-6 sm:px-6 sm:pl-7 ${listDivide}`}>
                   {activeMembers.map((member, idx) => {
-                    const chair = isChair(member.category);
                     return (
                       <li
                         key={member.id || idx}
                         className="py-3.5"
                       >
                         <div className="min-w-0">
-                          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-                            <p className={`text-sm sm:text-[15px] ${text.cardTitle}`}>
-                              {member.name}
-                            </p>
-                            <span
-                              className={
-                                'text-[10px] font-semibold uppercase tracking-[0.16em] ' +
-                                (chair ? 'text-[#7cd244]' : categoryMuted)
-                              }
-                            >
-                              {member.category}
-                            </span>
-                          </div>
+                          <p className={`text-sm sm:text-[15px] ${text.cardTitle}`}>
+                            {member.name}
+                          </p>
                           <p className={`mt-0.5 text-xs sm:text-sm ${text.bodySm}`}>
                             {member.designation}
                           </p>

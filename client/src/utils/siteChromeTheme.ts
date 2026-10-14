@@ -25,8 +25,8 @@ export function getBrandHeaderLogoUrl(theme: SiteTheme): string {
 
 export function getHeaderNavLinkClass(theme: SiteTheme, active: boolean, isLongLabel: boolean) {
   const size = isLongLabel
-    ? 'max-w-[8.5rem] text-center text-[9px] leading-tight tracking-[0.08em] whitespace-normal xl:max-w-[9.5rem] xl:text-[10px]'
-    : 'text-[11px] tracking-[0.12em] lg:text-[12px]';
+    ? 'max-w-[9.5rem] text-center text-[10px] leading-tight tracking-[0.08em] whitespace-normal xl:max-w-[11rem] xl:text-[11px]'
+    : 'text-xs tracking-[0.12em] lg:text-[13px]';
 
   const color = active
     ? 'text-[#7cd244]'

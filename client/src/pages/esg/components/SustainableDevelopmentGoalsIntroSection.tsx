@@ -1,7 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Globe2 } from 'lucide-react';
 import { gsap, prefersReducedMotion } from '../../about-us/aboutGsap';
-import { esgContainer, esgScrollMargin, esgSectionPad } from '../esgLayout';
+import { esgContainer, esgScrollMargin, esgSectionHeading, esgSectionPad } from '../esgLayout';
 import { esgScrollStart } from '../esgMotion';
 import { esgCmsApi } from '../../../services/api';
 import { getFullUrl } from '../esgUtils';
@@ -41,7 +40,7 @@ export default function SustainableDevelopmentGoalsIntroSection() {
     if (prefersReducedMotion()) {
       gsap.set(
         section.querySelectorAll(
-          '[data-sdg-badge], [data-sdg-title], [data-sdg-subtitle], [data-sdg-paragraph], [data-sdg-image-wrap], [data-sdg-ungc]',
+          '[data-sdg-title], [data-sdg-paragraph], [data-sdg-image-wrap]',
         ),
         { autoAlpha: 1, y: 0, x: 0, scale: 1 },
       );
@@ -57,9 +56,7 @@ export default function SustainableDevelopmentGoalsIntroSection() {
         },
       });
 
-      tl.from('[data-sdg-badge]', { autoAlpha: 0, y: 16, duration: 0.5, ease: 'power2.out' })
-        .from('[data-sdg-title]', { autoAlpha: 0, y: 28, duration: 0.65, ease: 'power3.out' }, '-=0.2')
-        .from('[data-sdg-subtitle]', { autoAlpha: 0, y: 18, duration: 0.55, ease: 'power2.out' }, '-=0.35')
+      tl.from('[data-sdg-title]', { autoAlpha: 0, y: 28, duration: 0.65, ease: 'power3.out' })
         .from('[data-sdg-paragraph]', {
           autoAlpha: 0,
           y: 20,
@@ -72,7 +69,6 @@ export default function SustainableDevelopmentGoalsIntroSection() {
           { autoAlpha: 0, x: 40, scale: 0.96, duration: 0.75, ease: 'power3.out' },
           '-=0.45',
         )
-        .from('[data-sdg-ungc]', { autoAlpha: 0, y: 12, duration: 0.45, ease: 'power2.out' }, '-=0.3');
     }, section);
 
     return () => ctx.revert();
@@ -97,30 +93,13 @@ export default function SustainableDevelopmentGoalsIntroSection() {
       <div className={`relative z-10 ${esgContainer}`}>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
           <div>
-            <div
-              data-sdg-badge
-              className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0072CE]/20 bg-[#0072CE]/8 px-3 py-1.5"
-            >
-              <Globe2 className="h-4 w-4 text-[#0072CE]" strokeWidth={2} />
-              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0072CE]">
-                UN SDGs · UNGC
-              </span>
-            </div>
-
             <h2
               id="sdg-intro-title"
               data-sdg-title
-              className="text-3xl font-bold uppercase tracking-[0.06em] text-[#2b2b2b] sm:text-4xl lg:text-[2.35rem]"
+              className={esgSectionHeading}
             >
               Sustainable <span className="text-[#0072CE]">Development Goals</span>
             </h2>
-
-            <p
-              data-sdg-subtitle
-              className="mt-5 text-lg font-medium leading-snug text-[#4C8C2B] sm:text-xl"
-            >
-              Advancing Sustainable Development Through Purposeful Action
-            </p>
 
             <div className="mt-6 space-y-4 sm:mt-8">
               {paragraphs.map((paragraph) => (
@@ -133,13 +112,6 @@ export default function SustainableDevelopmentGoalsIntroSection() {
                 </p>
               ))}
             </div>
-
-            <p
-              data-sdg-ungc
-              className="mt-6 text-xs font-semibold uppercase tracking-[0.12em] text-[#888]"
-            >
-              Aligned with United Nations Sustainable Development Goals
-            </p>
           </div>
 
           <div

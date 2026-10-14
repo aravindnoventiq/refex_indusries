@@ -106,7 +106,7 @@ Refex is known for superior quality, reliability, and commitment to sustainabili
           {/* Right - Content */}
           <div>
             <h2
-              className="mb-6 text-2xl font-bold uppercase tracking-wide text-[#1f1f1f] sm:mb-8 sm:text-3xl lg:text-[2.125rem]"
+              className="mb-6 text-4xl font-bold uppercase tracking-wide text-[#1f1f1f] sm:mb-8 sm:text-5xl lg:text-[3.9rem]"
               data-aos="fade-right"
             >
               {section.title}

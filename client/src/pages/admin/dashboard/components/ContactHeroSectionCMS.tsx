@@ -39,9 +39,9 @@ export default function ContactHeroSectionCMS() {
       }
       // Fallback to default data
       setHero({
-        title: "Partnering with India's Thermal Ecosystem for Responsible Ash Utilization",
+        title: "Drop us a line, we'd love to hear from you.",
         description:
-          'Join us in creating a sustainable future through innovative circular economy solutions. Together, we can transform industrial by-products into valuable infrastructure resources.',
+          'Reach our registered office, corporate office, or write to us — the Refex team is here to help.',
         backgroundImage: '/contact/hero-bg.png',
         isActive: true,
       });

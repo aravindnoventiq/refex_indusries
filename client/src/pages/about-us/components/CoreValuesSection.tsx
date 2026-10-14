@@ -80,9 +80,6 @@ export default function CoreValuesSection() {
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-              <span className={`absolute left-4 top-4 ${text.meta}`}>
-                {String(index + 1).padStart(2, '0')}
-              </span>
               {value.letter && (
                 <span className="absolute bottom-3 right-4 text-5xl font-semibold leading-none text-white/90 drop-shadow-sm sm:text-6xl">
                   {value.letter}

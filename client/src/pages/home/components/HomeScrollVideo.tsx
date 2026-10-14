@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -6,20 +6,17 @@ import {
   HOME_HERO_ID,
   HOME_POSTER,
   MOBILE_HERO_VIDEOS,
+  getHeroPinScrollPx,
   getHomeSeekFps,
   getHomeVideoObjectPosition,
   getHeroVideoSrc,
   isWebKit,
   shouldUseStaticHomeBackground,
 } from '../homeMotion';
-import { HOME_HERO_SENTINEL_ID, useHomeMobile } from '../homeMobile';
+import { useHomeMobile } from '../homeMobile';
 import HomeHeroVideoFrame from './HomeHeroVideoFrame';
 
 gsap.registerPlugin(ScrollTrigger);
-
-interface HomeScrollVideoProps {
-  children: ReactNode;
-}
 
 function getFrameStep(seekFps: number): number {
   return 1 / seekFps;
@@ -108,7 +105,7 @@ function HomeBackgroundOverlay({ staticMode }: { staticMode?: boolean }) {
   return (
     <div
       className={`home-bg-overlay absolute inset-0 [transform:translateZ(0)] ${
-        staticMode ? 'home-static-bg-overlay' : 'transition-[opacity,background] duration-700 ease-out'
+        staticMode ? 'home-static-bg-overlay' : ''
       }`}
       style={
         staticMode
@@ -131,17 +128,12 @@ function resolveVideoSrc(index: number, isMobile: boolean): string {
   return getHeroVideoSrc(index, isMobile);
 }
 
-/**
- * Full-page scroll-scrubbed video — portrait 9:16 on mobile, 16:9 on desktop.
- */
-export default function HomeScrollVideo({ children }: HomeScrollVideoProps) {
+/** Hero-only scroll-scrubbed video — clipped to the pinned hero, not the full page. */
+export default function HomeScrollVideo() {
   const isMobile = useHomeMobile();
-  const pageRef = useRef<HTMLDivElement | null>(null);
   const bgRef = useRef<HTMLDivElement | null>(null);
-  const contentRef = useRef<HTMLDivElement | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-  const pageTriggerRef = useRef<ScrollTrigger | null>(null);
-  const postHeroRef = useRef(false);
+  const heroTriggerRef = useRef<ScrollTrigger | null>(null);
   const [staticBackground, setStaticBackground] = useState(shouldUseStaticHomeBackground);
   const [heroVideoReady, setHeroVideoReady] = useState(false);
 
@@ -150,58 +142,23 @@ export default function HomeScrollVideo({ children }: HomeScrollVideoProps) {
     0,
   );
 
-  const setPostHeroDom = (pastHero: boolean) => {
-    if (postHeroRef.current === pastHero) return;
-    postHeroRef.current = pastHero;
-    bgRef.current?.classList.toggle('home-is-post-hero', pastHero);
-    contentRef.current?.classList.toggle('home-post-hero', pastHero);
-  };
-
   useEffect(() => {
     const motionMq = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-    const syncMode = () => {
-      setStaticBackground(motionMq.matches);
-    };
-
+    const syncMode = () => setStaticBackground(motionMq.matches);
     syncMode();
     motionMq.addEventListener('change', syncMode);
-
-    return () => {
-      motionMq.removeEventListener('change', syncMode);
-    };
+    return () => motionMq.removeEventListener('change', syncMode);
   }, []);
 
   useEffect(() => {
     setHeroVideoReady(false);
   }, [isMobile]);
 
-  useEffect(() => {
-    if (!staticBackground) return;
-
-    const target =
-      document.getElementById(HOME_HERO_SENTINEL_ID) ?? document.getElementById(HOME_HERO_ID);
-    if (!target) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => setPostHeroDom(!entry.isIntersecting),
-      { threshold: 0 },
-    );
-
-    observer.observe(target);
-    return () => {
-      observer.disconnect();
-      bgRef.current?.classList.remove('home-is-post-hero');
-      contentRef.current?.classList.remove('home-post-hero');
-      postHeroRef.current = false;
-    };
-  }, [staticBackground]);
-
   useLayoutEffect(() => {
     if (staticBackground) return;
 
-    const page = pageRef.current;
-    if (!page) return;
+    const hero = document.getElementById(HOME_HERO_ID);
+    if (!hero) return;
 
     const videos = videoRefs.current.filter(Boolean) as HTMLVideoElement[];
     if (!videos.length) return;
@@ -237,8 +194,8 @@ export default function HomeScrollVideo({ children }: HomeScrollVideoProps) {
       ready[index] = Number.isFinite(durations[index]) && durations[index] > 0;
       if (ready[0]) enableScrub();
       if (index === 0 && ready[0]) setHeroVideoReady(true);
-      if (scrubEnabled && pageTriggerRef.current) {
-        applyFrame(pageTriggerRef.current.progress);
+      if (scrubEnabled && heroTriggerRef.current) {
+        applyFrame(heroTriggerRef.current.progress);
       }
     };
 
@@ -251,7 +208,7 @@ export default function HomeScrollVideo({ children }: HomeScrollVideoProps) {
         if (i === 0) showVideo(clip);
         else hideVideo(clip);
       });
-      if (pageTriggerRef.current) applyFrame(pageTriggerRef.current.progress);
+      if (heroTriggerRef.current) applyFrame(heroTriggerRef.current.progress);
     };
 
     void primeClip(0);
@@ -303,8 +260,7 @@ export default function HomeScrollVideo({ children }: HomeScrollVideoProps) {
       const segmentCount = videos.length;
       const segmentSize = 1 / segmentCount;
       const index = Math.min(Math.floor(scrubProgress / segmentSize), segmentCount - 1);
-      const local =
-        segmentSize > 0 ? (scrubProgress - index * segmentSize) / segmentSize : 0;
+      const local = segmentSize > 0 ? (scrubProgress - index * segmentSize) / segmentSize : 0;
 
       if (index !== activeIndex) {
         videos.forEach((v, i) => (i === index ? showVideo(v) : hideVideo(v)));
@@ -318,39 +274,36 @@ export default function HomeScrollVideo({ children }: HomeScrollVideoProps) {
       }
     };
 
-    const pageTrigger = ScrollTrigger.create({
-      trigger: page,
+    const heroTrigger = ScrollTrigger.create({
+      trigger: hero,
       start: 'top top',
-      end: 'bottom bottom',
+      end: () => `+=${getHeroPinScrollPx()}`,
       invalidateOnRefresh: true,
       onUpdate: (self) => applyFrame(self.progress),
       onRefresh: (self) => applyFrame(self.progress),
     });
-    pageTriggerRef.current = pageTrigger;
+    heroTriggerRef.current = heroTrigger;
 
-    const hero = document.getElementById(HOME_HERO_ID);
-    const postHeroTrigger = hero
-      ? ScrollTrigger.create({
-          trigger: hero,
-          start: 'top top',
-          end: 'bottom top',
-          invalidateOnRefresh: true,
-          onLeave: () => setPostHeroDom(true),
-          onEnterBack: () => setPostHeroDom(false),
-          onLeaveBack: () => setPostHeroDom(false),
-        })
-      : undefined;
-
-    applyFrame(pageTrigger.progress);
+    applyFrame(heroTrigger.progress);
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) return;
+        videos.forEach((clip) => {
+          if (!clip.paused) clip.pause();
+        });
+      },
+      { threshold: 0.08 },
+    );
+    visibilityObserver.observe(hero);
 
     const refreshTimer = window.setTimeout(() => ScrollTrigger.refresh(), 350);
 
     return () => {
       cancelled = true;
       window.clearTimeout(refreshTimer);
-      pageTriggerRef.current = null;
-      pageTrigger.kill();
-      postHeroTrigger?.kill();
+      visibilityObserver.disconnect();
+      heroTriggerRef.current = null;
+      heroTrigger.kill();
       cleanups.forEach((c) => c());
     };
   }, [staticBackground, isMobile]);
@@ -366,76 +319,71 @@ export default function HomeScrollVideo({ children }: HomeScrollVideoProps) {
   };
 
   return (
-    <div ref={pageRef} className="relative">
-      <div
-        ref={bgRef}
-        className={`home-scroll-video-bg pointer-events-none fixed inset-0 z-0 overflow-hidden bg-[#05070a] isolate ${
-          isMobile ? 'home-scroll-video-bg--mobile' : '[contain:strict]'
-        }`}
-      >
-        {staticBackground ? (
-          <HomeHeroVideoFrame isMobile={isMobile}>
+    <div
+      ref={bgRef}
+      className={`home-scroll-video-bg pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#05070a] isolate ${
+        isMobile ? 'home-scroll-video-bg--mobile' : '[contain:strict]'
+      }`}
+      aria-hidden
+    >
+      {staticBackground ? (
+        <HomeHeroVideoFrame isMobile={isMobile}>
+          <img
+            src={HOME_POSTER}
+            alt=""
+            aria-hidden="true"
+            decoding="async"
+            fetchPriority="high"
+            className="home-hero-poster absolute inset-0 h-full w-full object-cover"
+            style={{ objectPosition: posterObjectPosition }}
+          />
+        </HomeHeroVideoFrame>
+      ) : (
+        <HomeHeroVideoFrame isMobile={isMobile}>
+          {!heroVideoReady && (
             <img
               src={HOME_POSTER}
               alt=""
               aria-hidden="true"
               decoding="async"
               fetchPriority="high"
-              className="home-hero-poster absolute inset-0 h-full w-full object-cover"
+              className={`home-hero-poster absolute inset-0 z-[1] h-full w-full object-cover ${
+                isMobile ? '' : 'object-[center_38%] sm:object-[center_42%] lg:object-center'
+              }`}
               style={{ objectPosition: posterObjectPosition }}
             />
-          </HomeHeroVideoFrame>
-        ) : (
-          <HomeHeroVideoFrame isMobile={isMobile}>
-            {!heroVideoReady && (
-              <img
-                src={HOME_POSTER}
-                alt=""
+          )}
+          {HERO_VIDEOS.map((src, index) => {
+            const videoSrc = resolveVideoSrc(index, isMobile);
+            const objectPosition = getHomeVideoObjectPosition(videoSrc, index);
+
+            return (
+              <video
+                key={`${src}-${isMobile ? 'mobile' : 'desktop'}`}
+                ref={(el) => {
+                  videoRefs.current[index] = el;
+                }}
+                src={videoSrc}
+                poster={index === 0 ? HOME_POSTER : undefined}
+                muted
+                playsInline
+                preload={index === 0 ? 'auto' : isWebKit() ? 'auto' : 'metadata'}
+                disablePictureInPicture
                 aria-hidden="true"
-                decoding="async"
-                fetchPriority="high"
-                className={`home-hero-poster absolute inset-0 z-[1] h-full w-full object-cover ${
+                className={`home-hero-bg-video absolute inset-0 h-full w-full object-cover [transform:translateZ(0)] ${
                   isMobile ? '' : 'object-[center_38%] sm:object-[center_42%] lg:object-center'
                 }`}
-                style={{ objectPosition: posterObjectPosition }}
+                style={{
+                  visibility: index === 0 ? 'visible' : 'hidden',
+                  objectPosition,
+                }}
+                onError={() => handleVideoError(index)}
               />
-            )}
-            {HERO_VIDEOS.map((src, index) => {
-              const videoSrc = resolveVideoSrc(index, isMobile);
-              const objectPosition = getHomeVideoObjectPosition(videoSrc, index);
-
-              return (
-                <video
-                  key={`${src}-${isMobile ? 'mobile' : 'desktop'}`}
-                  ref={(el) => {
-                    videoRefs.current[index] = el;
-                  }}
-                  src={videoSrc}
-                  poster={index === 0 ? HOME_POSTER : undefined}
-                  muted
-                  playsInline
-                  preload={index === 0 ? 'auto' : isWebKit() ? 'auto' : 'metadata'}
-                  disablePictureInPicture
-                  aria-hidden="true"
-                  className={`home-hero-bg-video absolute inset-0 h-full w-full object-cover [transform:translateZ(0)] ${
-                    isMobile ? '' : 'object-[center_38%] sm:object-[center_42%] lg:object-center'
-                  }`}
-                  style={{
-                    visibility: index === 0 ? 'visible' : 'hidden',
-                    objectPosition,
-                  }}
-                  onError={() => handleVideoError(index)}
-                />
-              );
-            })}
-          </HomeHeroVideoFrame>
-        )}
-        <HomeBackgroundOverlay staticMode={staticBackground} />
-      </div>
-
-      <div ref={contentRef} className="relative z-10">
-        {children}
-      </div>
+            );
+          })}
+        </HomeHeroVideoFrame>
+      )}
+      <HomeBackgroundOverlay staticMode={staticBackground} />
     </div>
   );
 }

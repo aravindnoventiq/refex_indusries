@@ -31,6 +31,7 @@ function LeadershipTeamSection() {
         const activeLeaders = (data || [])
           .filter((item: Leader) => item.isActive !== false)
           .filter((item: Leader) => !/gagan\s+bihari\s+pattnaik/i.test(item.name))
+          .filter((item: Leader) => !/jaya\s+krishna/i.test(item.name))
           .sort((a: Leader, b: Leader) => (a.order || 0) - (b.order || 0));
 
         // CMS is source of truth when any active leaders exist
@@ -143,7 +144,6 @@ function LeadershipTeamSection() {
                   }}
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 md:hidden">
-                  <p className={text.label}>Leadership</p>
                   <h2 className="mt-1 font-bold tracking-[-0.015em] leading-snug text-lg text-white sm:text-xl">
                     {selectedLeader.name}
                   </h2>
@@ -152,8 +152,7 @@ function LeadershipTeamSection() {
 
               <div className="px-6 py-7 sm:px-8 sm:py-9">
                 <div className="hidden md:block">
-                  <p className={text.label}>Leadership</p>
-                  <h2 className={`mt-2 ${text.titleLg}`}>{selectedLeader.name}</h2>
+                  <h2 className={text.titleLg}>{selectedLeader.name}</h2>
                   <p className={`mt-1.5 ${text.body}`}>{selectedLeader.position}</p>
                 </div>
                 <p className={`mt-2 md:hidden ${text.bodySm}`}>{selectedLeader.position}</p>

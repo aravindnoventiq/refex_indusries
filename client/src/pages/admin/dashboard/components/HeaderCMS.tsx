@@ -3,9 +3,6 @@ import { headerCmsApi } from '../../../../services/api';
 import { ABOUT_US_NAV_DROPDOWN } from '../../../about-us/aboutNavLinks';
 import { BUSINESS_NAV_DROPDOWN } from '../../../../utils/businessNavLinks';
 
-const POWER_TRADING_SURRENDER_PETITION_PDF =
-  'https://refex.co.in/uploads/pdfs/pdf-1783071359067-610585102.pdf';
-
 interface NavigationItem {
   name: string;
   href: string;
@@ -94,11 +91,6 @@ function getDefaultNavigationItems(): NavigationItem[] {
     {
       name: 'Careers',
       href: '/careers/',
-      dropdown: [],
-    },
-    {
-      name: 'Power Trading Surrender Petition',
-      href: POWER_TRADING_SURRENDER_PETITION_PDF,
       dropdown: [],
     },
   ];

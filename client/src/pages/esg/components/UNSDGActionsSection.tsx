@@ -1,11 +1,10 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { LayoutGrid, List, Target } from 'lucide-react';
+import { LayoutGrid, List } from 'lucide-react';
 import { esgCmsApi } from '../../../services/api';
 import { gsap, prefersReducedMotion, ScrollTrigger } from '../../about-us/aboutGsap';
 import { esgContainer, esgScrollMargin, esgSectionPad } from '../esgLayout';
 import { esgScrollStart } from '../esgMotion';
 import { getFullUrl } from '../esgUtils';
-import EsgSectionHeader from './EsgSectionHeader';
 import EsgSectionLoader from './EsgSectionLoader';
 
 interface UnsdgAction {
@@ -17,18 +16,6 @@ interface UnsdgAction {
   order: number;
   isActive: boolean;
 }
-
-interface UnsdgActionsSectionHeader {
-  id: number;
-  title: string;
-  isActive: boolean;
-}
-
-const FALLBACK_HEADER: UnsdgActionsSectionHeader = {
-  id: 1,
-  title: 'Driving Impact Through UN SDGs',
-  isActive: true,
-};
 
 const FALLBACK_SDGS: UnsdgAction[] = [
   {
@@ -288,7 +275,6 @@ export default function UNSDGActionsSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const gridRef = useRef<HTMLDivElement | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
-  const [header, setHeader] = useState<UnsdgActionsSectionHeader | null>(null);
   const [sdgs, setSdgs] = useState<UnsdgAction[]>([]);
   const [loading, setLoading] = useState(true);
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
@@ -302,25 +288,12 @@ export default function UNSDGActionsSection() {
     try {
       setLoading(true);
 
-      let headerData = null;
       let actionsData: UnsdgAction[] = [];
-
-      try {
-        headerData = await esgCmsApi.getUnsdgActionsSection();
-      } catch (err: unknown) {
-        console.warn('Failed to fetch UN SDG Actions section header:', err);
-      }
 
       try {
         actionsData = await esgCmsApi.getUnsdgActions();
       } catch (err: unknown) {
         console.warn('Failed to fetch UN SDG Actions:', err);
-      }
-
-      if (headerData && (headerData.isActive === true || headerData.isActive === undefined || headerData.isActive === null)) {
-        setHeader(headerData);
-      } else {
-        setHeader(FALLBACK_HEADER);
       }
 
       const activeActions = (actionsData || [])
@@ -330,7 +303,6 @@ export default function UNSDGActionsSection() {
       setSdgs(activeActions.length > 0 ? activeActions : FALLBACK_SDGS);
     } catch (error) {
       console.error('Failed to fetch UN SDG Actions section:', error);
-      setHeader(FALLBACK_HEADER);
       setSdgs(FALLBACK_SDGS);
     } finally {
       setLoading(false);
@@ -425,25 +397,13 @@ export default function UNSDGActionsSection() {
 
     if (prefersReducedMotion()) {
       gsap.set(
-        section.querySelectorAll('[data-unsdg-header], [data-unsdg-grid-item], [data-unsdg-card]'),
+        section.querySelectorAll('[data-unsdg-toggle], [data-unsdg-grid-item], [data-unsdg-card]'),
         { autoAlpha: 1, y: 0, x: 0, scale: 1 },
       );
       return;
     }
 
     const ctx = gsap.context(() => {
-      gsap.from('[data-unsdg-header]', {
-        autoAlpha: 0,
-        y: 28,
-        duration: 0.7,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: section,
-          start: esgScrollStart('top 84%'),
-          once: true,
-        },
-      });
-
       gsap.from('[data-unsdg-toggle]', {
         autoAlpha: 0,
         y: 16,
@@ -470,14 +430,12 @@ export default function UNSDGActionsSection() {
     return null;
   }
 
-  const displayHeader = header || FALLBACK_HEADER;
-
   return (
     <section
       ref={sectionRef}
       id="un-sdg-actions"
       className={`relative overflow-hidden bg-white ${esgSectionPad} ${esgScrollMargin}`}
-      aria-labelledby="unsdg-actions-title"
+      aria-labelledby="sdg-intro-title"
     >
       <div
         aria-hidden
@@ -489,24 +447,6 @@ export default function UNSDGActionsSection() {
       />
 
       <div className={`relative z-10 ${esgContainer}`}>
-        <div data-unsdg-header>
-          <EsgSectionHeader
-            badgeIcon={Target}
-            badgeLabel="Global Goals in Practice"
-            accent="blue"
-            title={
-              displayHeader.title.includes('Actions') ? (
-                <>
-                  UN SDGs and our <span className="text-[#0072CE]">Actions</span>
-                </>
-              ) : (
-                displayHeader.title
-              )
-            }
-            titleId="unsdg-actions-title"
-          />
-        </div>
-
         <div
           data-unsdg-toggle
           className="mb-8 flex justify-center sm:mb-10"

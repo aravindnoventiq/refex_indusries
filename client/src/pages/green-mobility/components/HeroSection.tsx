@@ -102,7 +102,7 @@ function HeroSection() {
       <div className="absolute inset-0 flex items-end pb-8 sm:pb-12">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <h1 className="mb-2 animate-fadeInUp text-2xl font-bold text-[#83e034] sm:mb-3 sm:text-3xl lg:text-4xl">
+            <h1 className="mb-2 animate-fadeInUp text-4xl font-bold text-[#83e034] sm:mb-3 sm:text-5xl md:text-6xl lg:text-[4rem]">
               {hero.title}
             </h1>
             {hero.subtitle && (

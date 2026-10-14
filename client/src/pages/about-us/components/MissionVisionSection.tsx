@@ -63,6 +63,12 @@ export default function MissionVisionSection() {
   }
 
   const display = vm || FALLBACK_VM;
+  const missionTitle = /purpose/i.test(display.missionTitle || '')
+    ? 'Mission'
+    : display.missionTitle || 'Mission';
+  const visionTitle = /direction/i.test(display.visionTitle || '')
+    ? 'Vision'
+    : display.visionTitle || 'Vision';
   const missionPoints =
     Array.isArray(display.missionPoints) && display.missionPoints.length > 0
       ? display.missionPoints
@@ -71,7 +77,7 @@ export default function MissionVisionSection() {
   const visionBody = display.visionDescription?.trim() || FALLBACK_VISION;
 
   return (
-    <AboutSectionShell id="mission-vision" eyebrow="Purpose" title="Mission & Vision">
+    <AboutSectionShell id="mission-vision" title="Mission & Vision">
       <AboutReveal>
         <div className={card}>
           <div className="relative w-full overflow-hidden">
@@ -93,9 +99,8 @@ export default function MissionVisionSection() {
             <AboutReveal delay={ABOUT_REVEAL_STAGGER_MS}>
               <article className={`relative h-full overflow-hidden rounded-xl p-6 sm:p-7 md:p-8 ${surfaceStrong}`}>
             <div aria-hidden className="absolute left-0 top-0 h-full w-[3px] bg-[#7cd244]" />
-            <p className={text.label}>Our Purpose</p>
-            <h3 className={`mt-2 ${text.cardTitle}`}>
-              {display.missionTitle || 'Mission'}
+            <h3 className={text.cardTitle}>
+              {missionTitle}
             </h3>
             {missionPoints ? (
               <ul className={`mt-4 space-y-3 ${text.body}`}>
@@ -115,9 +120,8 @@ export default function MissionVisionSection() {
             <AboutReveal delay={ABOUT_REVEAL_STAGGER_MS * 2}>
               <article className={`relative h-full overflow-hidden rounded-xl p-6 sm:p-7 md:p-8 ${surfaceStrong}`}>
             <div aria-hidden className="absolute left-0 top-0 h-full w-[3px] bg-[#6db038]" />
-            <p className={text.label}>Our Direction</p>
-            <h3 className={`mt-2 ${text.cardTitle}`}>
-              {display.visionTitle || 'Vision'}
+            <h3 className={text.cardTitle}>
+              {visionTitle}
             </h3>
             <p className={`mt-4 ${text.body}`}>{visionBody}</p>
               </article>

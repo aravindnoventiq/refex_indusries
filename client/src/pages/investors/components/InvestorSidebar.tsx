@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { investorsCmsApi } from '../../../services/api';
-import { dedupeInvestorRelatedLinks } from '../../../utils/investorRelatedLinks';
-import { getFallbackInvestorNavLinks } from '../../../utils/investorNavLinks';
+import { canonicalizeInvestorHref, investorPathsMatch } from '../../../utils/investorRelatedLinks';
+import { mergeInvestorRelatedLinks } from '../../../utils/investorNavLinks';
 import {
   investorActiveNavClass,
   investorInactiveNavClass,
@@ -67,11 +67,10 @@ export default function InvestorSidebar({ currentPath }: InvestorSidebarProps) {
         console.error('Failed to load investor pages:', err);
       }
 
-      const merged = dedupeInvestorRelatedLinks(allLinks);
-      setLinks(merged.length > 0 ? merged : getFallbackInvestorNavLinks());
+      setLinks(mergeInvestorRelatedLinks(allLinks));
     } catch (err) {
       console.error('Failed to load investor links:', err);
-      setLinks(getFallbackInvestorNavLinks());
+      setLinks(mergeInvestorRelatedLinks([]));
     } finally {
       setLoading(false);
     }
@@ -90,20 +89,13 @@ export default function InvestorSidebar({ currentPath }: InvestorSidebarProps) {
   }
 
   const sortedLinks = [...links].sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
-  const activeLink = sortedLinks.find((link) => {
-    const hrefPath = link.href.replace(/\/investors\//, '').replace(/\/$/, '');
-    const currentSlug = currentPath.replace(/\/investors\//, '').replace(/\/$/, '');
-    return hrefPath === currentSlug || link.href.replace(/\/$/, '') === currentPath.replace(/\/$/, '');
-  });
+  const activeLink = sortedLinks.find((link) => investorPathsMatch(currentPath, link.href));
 
   const navLinks = (
     <nav className="divide-y divide-[#eef2ea]">
       {sortedLinks.map((link) => {
-        const hrefPath = link.href.replace(/\/investors\//, '').replace(/\/$/, '');
-        const currentSlug = currentPath.replace(/\/investors\//, '').replace(/\/$/, '');
-        const isActive =
-          hrefPath === currentSlug || link.href.replace(/\/$/, '') === currentPath.replace(/\/$/, '');
-        const linkPath = hrefPath ? `/investors/${hrefPath}` : link.href;
+        const isActive = investorPathsMatch(currentPath, link.href);
+        const linkPath = canonicalizeInvestorHref(link.href);
 
         return (
           <Link

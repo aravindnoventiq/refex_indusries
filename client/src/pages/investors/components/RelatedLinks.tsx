@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { investorsCmsApi } from '../../../services/api';
-import { dedupeInvestorRelatedLinks } from '../../../utils/investorRelatedLinks';
-import { getFallbackInvestorNavLinks } from '../../../utils/investorNavLinks';
+import { canonicalizeInvestorHref } from '../../../utils/investorRelatedLinks';
+import { mergeInvestorRelatedLinks } from '../../../utils/investorNavLinks';
 import {
   investorCardClass,
   investorContainer,
@@ -33,8 +33,7 @@ interface KeyPersonnel {
   isActive: boolean;
 }
 
-// Fallback data
-const fallbackLinks = getFallbackInvestorNavLinks();
+const fallbackLinks = mergeInvestorRelatedLinks([]);
 
 const fallbackPersonnel: KeyPersonnel[] = [
   {
@@ -131,11 +130,10 @@ export default function RelatedLinks() {
           console.error('Failed to load investor pages:', err);
         }
 
-        const merged = dedupeInvestorRelatedLinks(allLinks);
-        setInvestorLinks(merged.length > 0 ? merged : dedupeInvestorRelatedLinks(fallbackLinks));
+        setInvestorLinks(mergeInvestorRelatedLinks(allLinks));
       } catch (err) {
         console.error('Failed to load links:', err);
-        setInvestorLinks(dedupeInvestorRelatedLinks(fallbackLinks));
+        setInvestorLinks(fallbackLinks);
       }
 
       // Load personnel
@@ -149,7 +147,7 @@ export default function RelatedLinks() {
       }
     } catch (err) {
       console.error('Failed to load related links data:', err);
-      setInvestorLinks(dedupeInvestorRelatedLinks(fallbackLinks));
+      setInvestorLinks(fallbackLinks);
       setKeyPersonnel(fallbackPersonnel);
     } finally {
       setLoading(false);
@@ -192,12 +190,11 @@ export default function RelatedLinks() {
             <div className={`${investorCardClass} p-4 sm:p-6`}>
               <nav className="divide-y divide-[#eef2ea]">
                 {sortedLinks.map((link, index) => {
-                  const hrefPath = link.href.replace(/\/investors\//, '').replace(/\/$/, '');
-                  const linkPath = hrefPath ? `/investors/${hrefPath}` : link.href;
+                  const linkPath = canonicalizeInvestorHref(link.href);
 
                   return (
                     <Link
-                      key={link.id || index}
+                      key={link.id || link.href || index}
                       to={linkPath}
                       className={`block px-3 py-3 text-base ${investorInactiveNavClass}`}
                     >

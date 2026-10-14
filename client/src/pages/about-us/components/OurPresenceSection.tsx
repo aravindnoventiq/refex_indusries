@@ -73,9 +73,7 @@ function OurPresenceSection() {
   return (
     <AboutSectionShell
       id="our-presence"
-      eyebrow="our presence"
       title={display.title}
-      // subtitle={display.subtitle}
     >
       <AboutReveal>
         <figure className={`relative overflow-visible px-5 pt-5 pb-4 sm:px-6 sm:pt-6 sm:pb-5 lg:px-7 lg:pt-7 lg:pb-5 ${imageCard}`}>
@@ -93,7 +91,7 @@ function OurPresenceSection() {
               <p className={`mb-3 lg:hidden ${text.label}`}>Business verticals</p>
 
               <div className="flex flex-1 flex-col justify-center gap-2.5">
-                {verticals.map((vertical, index) => {
+                {verticals.map((vertical) => {
                   const isActive = activeVertical === vertical.id;
                   return (
                     <article
@@ -113,10 +111,7 @@ function OurPresenceSection() {
                         aria-hidden
                       />
                       <div className="pl-3">
-                        <div className="flex items-start justify-between gap-2">
-                          <span className={text.meta}>
-                            {String(index + 1).padStart(2, '0')}
-                          </span>
+                        <div className="flex items-start justify-end gap-2">
                           <span
                             className="rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide"
                             style={{ backgroundColor: `${vertical.accent}22`, color: vertical.accent }}

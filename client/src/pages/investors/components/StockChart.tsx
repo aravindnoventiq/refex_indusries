@@ -878,7 +878,7 @@ export default function StockChart() {
     <section className={investorSectionSageClass}>
       <div className={investorContainer}>
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-black uppercase tracking-wider">
+          <h2 className="text-4xl font-bold text-black uppercase tracking-wider sm:text-5xl">
             {settings.title || 'STOCK CHART'}
           </h2>
         </div>

@@ -179,8 +179,8 @@ function HeroContent({
       <h1
         className={`mt-4 font-bold leading-[1.08] tracking-[-0.03em] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.55)] sm:mt-5 ${
           compact
-            ? 'text-[1.75rem] sm:text-[2.15rem]'
-            : 'text-[2rem] sm:text-[2.65rem] md:text-[3rem] lg:text-[3.35rem]'
+            ? 'text-[2.15rem] sm:text-[2.65rem]'
+            : 'text-[2.35rem] sm:text-[3.1rem] md:text-[3.5rem] lg:text-[3.9rem]'
         }`}
       >
         {titleParts.accent ? (

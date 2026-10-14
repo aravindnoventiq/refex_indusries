@@ -10,7 +10,6 @@ import EsgTopSection from './components/EsgTopSection';
 import SustainabilityPillarsSection from './components/SustainabilityPillarsSection';
 import SustainabilityVision2035Section from './components/SustainabilityVision2035Section';
 import SustainableWellBeingSection from './components/SustainableWellBeingSection';
-import EsgNatureShowcaseSection from './components/EsgNatureShowcaseSection';
 import SustainableDevelopmentGoalsIntroSection from './components/SustainableDevelopmentGoalsIntroSection';
 import ESGPoliciesSection from './components/ESGPoliciesSection';
 import ReportsSection from './components/ReportsSection';
@@ -53,7 +52,7 @@ export default function ESGPage() {
       <Header />
       <main>
         {/* Act 1 — Intro & strategy */}
-        {/* <EsgTopSection /> */}
+        <EsgTopSection />
         <SustainabilityPillarsSection />
         <SustainabilityVision2035Section />
 
@@ -61,7 +60,6 @@ export default function ESGPage() {
 
         {/* Act 2 — Impact */}
         <SustainableWellBeingSection />
-        {/* <EsgNatureShowcaseSection /> */}
 
         <div className={esgSectionDivider} aria-hidden />
 

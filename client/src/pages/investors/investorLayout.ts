@@ -22,7 +22,7 @@ export const investorSidebarCardClass =
   'overflow-hidden rounded-[1.25rem] border border-[#dfe7da] bg-white shadow-[0_8px_28px_rgba(45,80,22,0.06)]';
 
 export const investorSectionTitleClass =
-  'font-serif text-xl font-semibold text-[#2d5016] sm:text-2xl';
+  'font-serif text-2xl font-semibold text-[#2d5016] sm:text-3xl lg:text-4xl';
 
 export const investorLinkClass = 'font-semibold text-[#2d5016] transition-colors hover:text-[#4C8C2B]';
 

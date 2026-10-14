@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState, type RefObject } from 'react';
+import { useLayoutEffect, useRef, type RefObject } from 'react';
+import { useSiteTheme } from '../../../components/SiteThemeProvider';
 import { gsap, prefersReducedMotion } from '../../about-us/aboutGsap';
 import { ashRefexGradientText } from '../../ash-utilization/ashLayout';
 import { esgContainer } from '../esgLayout';
-
-const ESG_VIDEO = '/esg/lotus-swan-intro.mp4';
+import AwardsHighlightsVisual from './AwardsHighlightsVisual';
 
 const ESG_INTRO_WORDS = [
   'At',
@@ -52,13 +52,32 @@ const ESG_INTRO_WORDS = [
   '2040).',
 ];
 
-function EsgHeroCopy({ introRef }: { introRef: RefObject<HTMLParagraphElement | null> }) {
+function EsgHeroCopy({
+  introRef,
+  isLight,
+}: {
+  introRef: RefObject<HTMLParagraphElement | null>;
+  isLight: boolean;
+}) {
   return (
-    <div className="max-w-5xl">
+    <div className="min-w-0">
+      <h1
+        className={`mb-5 font-bold uppercase tracking-[0.12em] text-[2.75rem] sm:text-[3.5rem] md:text-[4.25rem] lg:text-[5rem] ${
+          isLight
+            ? 'text-[#1f1f1f]'
+            : 'text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.7)]'
+        }`}
+      >
+        ESG
+      </h1>
       <p
         ref={introRef}
         data-esg-intro
-        className="text-lg font-medium leading-[1.75] text-white [text-shadow:0_1px_14px_rgba(0,0,0,0.65)] sm:text-xl md:text-[1.35rem] lg:text-[1.425rem] lg:leading-[1.78]"
+        className={`text-xl font-medium leading-[1.75] sm:text-2xl md:text-[1.65rem] lg:text-[1.85rem] lg:leading-[1.7] ${
+          isLight
+            ? 'text-[#1f1f1f]'
+            : 'text-white [text-shadow:0_1px_14px_rgba(0,0,0,0.65)]'
+        }`}
       >
         {ESG_INTRO_WORDS.map((word, index) => {
           const isRefex = word === 'Refex';
@@ -80,71 +99,9 @@ function EsgHeroCopy({ introRef }: { introRef: RefObject<HTMLParagraphElement | 
   );
 }
 
-function EsgHeroVideo({ eager = false }: { eager?: boolean }) {
-  const wrapRef = useRef<HTMLDivElement | null>(null);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [ready, setReady] = useState(false);
-
-  const playVideo = useCallback(async () => {
-    const video = videoRef.current;
-    if (!video || prefersReducedMotion()) return;
-    try {
-      await video.play();
-    } catch {
-      /* autoplay blocked */
-    }
-  }, []);
-
-  useEffect(() => {
-    const wrap = wrapRef.current;
-    const video = videoRef.current;
-    if (!wrap || !video) return;
-
-    const markReady = () => setReady(true);
-    video.addEventListener('loadeddata', markReady);
-    video.addEventListener('canplay', markReady);
-    if (video.readyState >= 2) markReady();
-
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.05) void playVideo();
-        else video.pause();
-      },
-      { threshold: [0, 0.05, 0.2] },
-    );
-
-    io.observe(wrap);
-    if (eager) void playVideo();
-
-    return () => {
-      video.removeEventListener('loadeddata', markReady);
-      video.removeEventListener('canplay', markReady);
-      io.disconnect();
-      video.pause();
-    };
-  }, [eager, playVideo]);
-
-  return (
-    <div ref={wrapRef} className="absolute inset-0 overflow-hidden bg-[#050505]">
-      <video
-        ref={videoRef}
-        src={ESG_VIDEO}
-        muted
-        loop
-        playsInline
-        preload={eager ? 'auto' : 'metadata'}
-        disablePictureInPicture
-        className={`absolute inset-0 h-full w-full scale-[1.02] object-cover object-center transition-opacity duration-500 ${
-          ready ? 'opacity-100' : 'opacity-0'
-        }`}
-        aria-label="Lotus to swan sustainability animation"
-      />
-      {!ready && <div className="absolute inset-0 animate-pulse bg-white/5" aria-hidden />}
-    </div>
-  );
-}
-
 export default function EsgTopSection() {
+  const { theme } = useSiteTheme();
+  const isLight = theme === 'light';
   const sectionRef = useRef<HTMLElement | null>(null);
   const introRef = useRef<HTMLParagraphElement | null>(null);
 
@@ -192,25 +149,19 @@ export default function EsgTopSection() {
     <section
       ref={sectionRef}
       id="esg-vision"
-      className="relative min-h-[88dvh] overflow-hidden bg-[#050505] md:min-h-[100dvh]"
+      className={`relative min-h-[88dvh] overflow-hidden md:min-h-[100dvh] ${
+        isLight ? 'bg-white' : 'bg-[#0a0e0c]'
+      }`}
     >
-      <div className="absolute inset-0">
-        <EsgHeroVideo eager />
-      </div>
-
       <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-[min(62vh,560px)] bg-gradient-to-t from-[#050505] via-[#050505]/90 to-transparent"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(124,210,68,0.12),transparent_62%)]"
-      />
-
-      <div
-        className={`relative z-30 flex min-h-[88dvh] flex-col justify-end md:min-h-[100dvh] ${esgContainer} pb-10 pt-[calc(var(--header-offset,5.25rem)+1.5rem)] sm:pb-12`}
+        className={`relative z-10 grid min-h-[88dvh] items-center gap-8 md:min-h-[100dvh] md:grid-cols-[minmax(0,1.15fr)_minmax(16rem,0.85fr)] md:gap-10 lg:gap-14 ${esgContainer} pb-12 pt-[calc(var(--header-offset,5.25rem)+1.5rem)] sm:pb-16`}
       >
-        <EsgHeroCopy introRef={introRef} />
+        <div className="relative z-20 min-w-0">
+          <EsgHeroCopy introRef={introRef} isLight={isLight} />
+        </div>
+        <div className="relative z-10 min-w-0 justify-self-end self-center w-full max-w-[28rem]">
+          <AwardsHighlightsVisual placement="hero" />
+        </div>
       </div>
     </section>
   );

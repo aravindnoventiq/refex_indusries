@@ -47,6 +47,36 @@ interface HistoricalStockQuoteSettings {
   isActive: boolean;
 }
 
+function toLocalDateInput(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function todayLocal(): string {
+  return toLocalDateInput(new Date());
+}
+
+function monthsAgoLocal(months: number): string {
+  const now = new Date();
+  const target = new Date(now.getFullYear(), now.getMonth() - months, 1);
+  const lastDay = new Date(target.getFullYear(), target.getMonth() + 1, 0).getDate();
+  target.setDate(Math.min(now.getDate(), lastDay));
+  return toLocalDateInput(target);
+}
+
+function openDatePicker(event: React.MouseEvent<HTMLInputElement>) {
+  const input = event.currentTarget;
+  if (typeof input.showPicker === 'function') {
+    try {
+      input.showPicker();
+    } catch {
+      /* picker already open or not allowed */
+    }
+  }
+}
+
 export default function HistoricalStockQuote() {
   const [settings, setSettings] = useState<HistoricalStockQuoteSettings | null>(null);
   const [exchange, setExchange] = useState<'BSE' | 'NSE'>('NSE');
@@ -57,7 +87,6 @@ export default function HistoricalStockQuote() {
   const [stockData, setStockData] = useState<StockRecord[]>([]);
   const [pagination, setPagination] = useState<PaginationInfo | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
   const isFilterButtonChange = useRef(false); // Track if date change is from filter button
 
   useEffect(() => {
@@ -66,6 +95,9 @@ export default function HistoricalStockQuote() {
 
   useEffect(() => {
     if (settings) {
+      if (settings.defaultExchange === 'BSE' || settings.defaultExchange === 'NSE') {
+        setExchange(settings.defaultExchange);
+      }
       initializeDates();
     }
   }, [settings]);
@@ -135,15 +167,11 @@ export default function HistoricalStockQuote() {
   };
 
   const initializeDates = () => {
-    const end = new Date();
-    const start = new Date();
-    start.setMonth(start.getMonth() - 1); // Default to 1 month
-
     if (!startDate) {
-      setStartDate(start.toISOString().split('T')[0]);
+      setStartDate(monthsAgoLocal(1));
     }
     if (!endDate) {
-      setEndDate(end.toISOString().split('T')[0]);
+      setEndDate(todayLocal());
     }
   };
 
@@ -152,7 +180,6 @@ export default function HistoricalStockQuote() {
 
     try {
       setLoading(true);
-      setError('');
 
       const recordsPerPage = settings.recordsPerPage || 10;
       
@@ -187,13 +214,11 @@ export default function HistoricalStockQuote() {
           });
         }
       } else {
-        setError(response?.message || 'No data received from API');
         setStockData([]);
         setPagination(null);
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Failed to fetch historical stock data:', err);
-      setError(err.message || 'Failed to fetch historical stock data');
       setStockData([]);
       setPagination(null);
     } finally {
@@ -257,16 +282,6 @@ export default function HistoricalStockQuote() {
       });
     });
 
-    // Log sample record to debug
-    if (records.length > 0) {
-      console.log('Sample parsed record:', {
-        date: records[0].date,
-        tradeValue: records[0].tradeValue,
-        rawItem: dataArray[0]
-      });
-    }
-
-    // Sort by date descending (most recent first)
     records.sort((a, b) => {
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
@@ -277,29 +292,35 @@ export default function HistoricalStockQuote() {
   };
 
   const handleQuickFilter = (months: number) => {
-    isFilterButtonChange.current = true; // Mark that this change is from filter button
-    const end = new Date();
-    const start = new Date();
-    start.setMonth(start.getMonth() - months);
-    
-    setCurrentPage(1); // Reset to first page when filter changes
-    setEndDate(end.toISOString().split('T')[0]);
-    setStartDate(start.toISOString().split('T')[0]);
+    isFilterButtonChange.current = true;
+    setCurrentPage(1);
+    setEndDate(todayLocal());
+    setStartDate(monthsAgoLocal(months));
     setActiveFilter(months);
   };
 
   const handleStartDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    isFilterButtonChange.current = false; // Mark as manual change
-    setCurrentPage(1); // Reset to first page
-    setStartDate(e.target.value);
-    setActiveFilter(null); // Clear filter selection
+    const nextStart = e.target.value;
+    if (!nextStart) return;
+    isFilterButtonChange.current = false;
+    setCurrentPage(1);
+    setActiveFilter(null);
+    if (endDate && nextStart > endDate) {
+      setEndDate(nextStart);
+    }
+    setStartDate(nextStart);
   };
 
   const handleEndDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    isFilterButtonChange.current = false; // Mark as manual change
-    setCurrentPage(1); // Reset to first page
-    setEndDate(e.target.value);
-    setActiveFilter(null); // Clear filter selection
+    const nextEnd = e.target.value;
+    if (!nextEnd) return;
+    isFilterButtonChange.current = false;
+    setCurrentPage(1);
+    setActiveFilter(null);
+    if (startDate && nextEnd < startDate) {
+      setStartDate(nextEnd);
+    }
+    setEndDate(nextEnd);
   };
 
   const handleSearch = () => {
@@ -382,13 +403,13 @@ export default function HistoricalStockQuote() {
     <section className={investorSectionWhiteClass}>
       <div className={investorContainer}>
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-black uppercase tracking-wider">
+          <h2 className="text-4xl font-bold text-black uppercase tracking-wider sm:text-5xl">
             {settings.title || 'Historical Stock Quote'}
           </h2>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm p-6">
-          <div className="mb-6 flex flex-wrap gap-4 items-end">
+        <div className="theme-keep-light bg-white rounded-lg shadow-sm p-6">
+          <div className="historical-quote-controls mb-6 flex flex-wrap gap-4 items-end" style={{ colorScheme: 'light' }}>
             <div className="flex flex-col">
               <label className="text-sm font-medium text-gray-700 mb-2">Exchange</label>
               <select
@@ -397,30 +418,40 @@ export default function HistoricalStockQuote() {
                   setExchange(e.target.value as 'BSE' | 'NSE');
                   setCurrentPage(1); // Reset to first page when exchange changes
                 }}
-                className="px-4 py-2 border border-gray-300 rounded-md cursor-pointer bg-white"
+                className="h-[42px] cursor-pointer rounded-md border border-gray-300 bg-white px-4 py-2 text-base text-gray-900"
               >
                 <option value="NSE">NSE</option>
                 <option value="BSE">BSE</option>
               </select>
             </div>
 
-            <div className="flex flex-col">
-              <label className="text-sm font-medium text-gray-700 mb-2">Start Date:</label>
+            <div className="flex min-w-[16rem] flex-col">
+              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="historical-start-date">Start Date</label>
               <input
+                required
+                id="historical-start-date"
                 type="date"
                 value={startDate}
+                min="2000-01-01"
+                max={endDate || todayLocal()}
                 onChange={handleStartDateChange}
-                className="px-4 py-2 border border-gray-300 rounded-md"
+                onClick={openDatePicker}
+                className="h-[42px] min-w-[16rem] cursor-pointer rounded-md border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 [color-scheme:light] [appearance:auto]"
               />
             </div>
 
-            <div className="flex flex-col">
-              <label className="text-sm font-medium text-gray-700 mb-2">End Date:</label>
+            <div className="flex min-w-[16rem] flex-col">
+              <label className="text-sm font-medium text-gray-700 mb-2" htmlFor="historical-end-date">End Date</label>
               <input
+                required
+                id="historical-end-date"
                 type="date"
                 value={endDate}
+                min={startDate || '2000-01-01'}
+                max={todayLocal()}
                 onChange={handleEndDateChange}
-                className="px-4 py-2 border border-gray-300 rounded-md"
+                onClick={openDatePicker}
+                className="h-[42px] min-w-[16rem] cursor-pointer rounded-md border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 [color-scheme:light] [appearance:auto]"
               />
             </div>
 
@@ -476,12 +507,6 @@ export default function HistoricalStockQuote() {
               {settings.filter1Y || '1Y'}
             </button>
           </div>
-
-          {error && (
-            <div className="mb-4 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
-              {error}
-            </div>
-          )}
 
           <div className="mb-4 text-sm text-gray-600">
             <p>Exchange : {exchange} | Period : {startDate} to {endDate}</p>

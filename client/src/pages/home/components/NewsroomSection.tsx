@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { homeCmsApi } from '../../../services/api';
-import { HomeLoading, HomeSection, homeImageCard, homeContentText, getHomeImageUrl, homeMobileSnapRow, homeMobileSnapItem, homeImageCardMobile } from './HomeSection';
+import { HomeLoading, HomeSection, getHomeImageUrl, homeMobileSnapRow, homeMobileSnapItem, useHomeTheme } from './HomeSection';
 
 interface NewsItem {
   id: number;
@@ -44,6 +44,7 @@ const fallbackNews: NewsItem[] = [
 ];
 
 export default function NewsroomSection() {
+  const { text, imageCard, imageCardMobile, hairline, newsTitle } = useHomeTheme();
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -72,11 +73,10 @@ export default function NewsroomSection() {
   return (
     <HomeSection
       id="newsroom"
-      label="Latest Updates"
       title="Newsroom"
       compact
       headerExtra={
-        <a href="/newsroom/" className={`${homeContentText.link} shrink-0`}>
+        <a href="/newsroom/" className={`${text.link} shrink-0`}>
           View All
           <i className="ri-arrow-right-line" />
         </a>
@@ -87,7 +87,7 @@ export default function NewsroomSection() {
           <a
             key={item.id}
             href={item.link}
-            className={`${homeMobileSnapItem} ${homeImageCard} ${homeImageCardMobile} flex flex-col`}
+            className={`${homeMobileSnapItem} ${imageCard} ${imageCardMobile} flex flex-col`}
           >
             <div className="relative aspect-[5/3] overflow-hidden bg-black/40 sm:aspect-[16/10]">
               <img
@@ -102,8 +102,8 @@ export default function NewsroomSection() {
                 </span>
               )}
             </div>
-            <div className="flex flex-1 flex-col border-t border-white/10 p-3 sm:p-5">
-              <h3 className="line-clamp-2 text-[0.875rem] font-semibold leading-snug text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.5)] transition-colors group-hover:text-[#8ee04f] sm:line-clamp-3 sm:text-base">
+            <div className={`flex flex-1 flex-col border-t p-3 sm:p-5 ${hairline}`}>
+              <h3 className={`line-clamp-2 text-[0.875rem] font-semibold leading-snug sm:line-clamp-3 sm:text-base ${newsTitle}`}>
                 {item.title}
               </h3>
               <span className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#7cd244] sm:mt-3 sm:text-xs">

@@ -98,16 +98,11 @@ function PlatformTitleCell({
         className={`pointer-events-none absolute inset-0 bg-gradient-to-b ${col.sheen} to-transparent`}
       />
       <div className="relative flex h-full flex-col px-4 py-5 xl:px-5 xl:py-6">
-        <div className="mb-3 flex items-center justify-between gap-2">
+        <div className="mb-3">
           <span
             className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border backdrop-blur-sm ${col.iconBg}`}
           >
             <i className={`${col.icon} text-lg ${col.accent}`} aria-hidden />
-          </span>
-          <span
-            className={`font-mono text-[10px] font-semibold uppercase tracking-[0.28em] ${col.accent}`}
-          >
-            {col.step}
           </span>
         </div>
         <h3
@@ -181,10 +176,7 @@ function PlatformColumnCard({ col }: { col: PlatformColumn }) {
           <i className={`${col.icon} text-xl ${col.accent}`} aria-hidden />
         </span>
         <div className="min-w-0">
-          <span className={`text-[10px] font-semibold uppercase tracking-[0.24em] ${col.accent}`}>
-            Step {col.step}
-          </span>
-          <h3 className={`mt-1 ${text.cardTitle}`}>{col.title}</h3>
+          <h3 className={text.cardTitle}>{col.title}</h3>
         </div>
       </div>
       <div className="relative px-5 py-5">

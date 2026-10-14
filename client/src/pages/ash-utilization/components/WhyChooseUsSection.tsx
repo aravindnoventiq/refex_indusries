@@ -129,7 +129,6 @@ function WhyChooseUsSection() {
   return (
     <AshSectionShell
       id="why-choose-us"
-      eyebrow="Strengths"
       title="Why Choose Us"
       headerAlign="center"
       subtitle="Technology-led operations, regulatory compliance, and scale across India's power sector."

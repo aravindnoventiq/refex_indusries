@@ -199,14 +199,6 @@ export const FALLBACK_LEADERSHIP = [
     isActive: true,
   },
   {
-    id: 14,
-    name: 'Jaya Krishna',
-    position: 'Director - Corporate Finance',
-    image: '/leadership-jaya-krishna.png',
-    order: 14,
-    isActive: true,
-  },
-  {
     id: 15,
     name: 'Prasad Jakkaraju',
     position: 'Group Head - ESG',

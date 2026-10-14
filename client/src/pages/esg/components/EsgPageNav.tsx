@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { esgBrandColors } from '../esgLayout';
 
 const NAV_ITEMS = [
-  { id: 'sustainability-pillars', label: 'Pillars' },
-  { id: 'sustainability-vision-2035', label: 'Vision 2035' },
-  { id: 'sustainable-well-being', label: 'Well-being' },
+  { id: 'refex-esg', label: 'Refex on ESG' },
+  { id: 'sustainability-vision-2035', label: 'Business Model' },
+  { id: 'programs', label: 'Programs' },
   { id: 'esg-nature-showcase', label: 'Nature' },
   { id: 'sustainable-development-goals', label: 'SDGs' },
   { id: 'un-sdg-actions', label: 'Actions' },

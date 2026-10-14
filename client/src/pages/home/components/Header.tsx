@@ -70,34 +70,30 @@ const sanitizeNavigationItems = (items: NavigationItem[]): NavigationItem[] =>
         }),
     }));
 
-const POWER_TRADING_SURRENDER_PETITION_PDF =
-  'https://refex.co.in/uploads/pdfs/pdf-1783071359067-610585102.pdf';
-
 const POST_ESG_NAV_ITEMS: NavigationItem[] = [
   {
     name: 'Careers',
     href: '/careers/',
     dropdown: [],
   },
-  {
-    name: 'Power Trading Surrender Petition',
-    href: POWER_TRADING_SURRENDER_PETITION_PDF,
-    dropdown: [],
-  },
 ];
+
+const isPowerTradingSurrenderPetition = (item: NavigationItem) =>
+  item.name.trim().toLowerCase().includes('power trading surrender') ||
+  item.href.includes('pdf-1783071359067-610585102.pdf');
 
 const matchesPostEsgNavItem = (item: NavigationItem, required: NavigationItem) =>
   item.name.trim().toLowerCase() === required.name.toLowerCase() ||
   item.href === required.href ||
   (required.name === 'Careers' &&
-    item.href.replace(/\/$/, '').toLowerCase() === '/careers') ||
-  (required.name.includes('Power Trading') &&
-    item.href.includes('pdf-1783071359067-610585102.pdf'));
+    item.href.replace(/\/$/, '').toLowerCase() === '/careers');
 
 const ensurePostEsgNavItems = (items: NavigationItem[]): NavigationItem[] => {
-  const list = [...(items || [])].filter(
-    (item) => !POST_ESG_NAV_ITEMS.some((required) => matchesPostEsgNavItem(item, required)),
-  );
+  const list = [...(items || [])]
+    .filter((item) => !isPowerTradingSurrenderPetition(item))
+    .filter(
+      (item) => !POST_ESG_NAV_ITEMS.some((required) => matchesPostEsgNavItem(item, required)),
+    );
 
   const esgIndex = list.findIndex(
     (item) =>
@@ -142,11 +138,6 @@ const defaultNavItems: NavigationItem[] = [
   {
     name: 'Careers',
     href: '/careers/',
-    dropdown: [],
-  },
-  {
-    name: 'Power Trading Surrender Petition',
-    href: POWER_TRADING_SURRENDER_PETITION_PDF,
     dropdown: [],
   },
 ];
@@ -611,13 +602,13 @@ export default function Header() {
 
       {/* Main Header */}
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-        <div className="flex min-h-[3.25rem] items-center justify-between gap-3 py-2 transition-all duration-300 sm:gap-5 lg:min-h-[3.75rem] lg:gap-8 lg:py-2.5">
+        <div className="flex min-h-[4.5rem] items-center justify-between gap-3 py-2.5 transition-all duration-300 sm:min-h-[5rem] sm:gap-5 lg:min-h-[5.5rem] lg:gap-8 lg:py-3.5">
           {/* Logo */}
           <a href="/" className="group flex shrink-0 items-center cursor-pointer">
             <img
               src={logoUrl}
               alt={logoAlt}
-              className="h-8 w-auto object-contain transition-all duration-300 group-hover:opacity-90 lg:h-9"
+              className="h-11 w-auto object-contain transition-all duration-300 group-hover:opacity-90 sm:h-12 lg:h-14"
               onError={(e) => {
                 const img = e.currentTarget;
                 const fallback = getBrandHeaderLogoUrl(theme);
@@ -638,7 +629,7 @@ export default function Header() {
             <a
               href={contactButtonHref}
               style={{ transitionDelay: '240ms' }}
-              className={`header-contact-btn relative inline-flex cursor-pointer items-center gap-1.5 overflow-hidden rounded-full border px-4 py-1.5 text-xs font-semibold whitespace-nowrap transition-all duration-300 group hover:border-[#7cd244] hover:bg-[#7cd244] hover:text-[#0a0a0a] transition-[opacity,transform] duration-700 ease-out ${
+              className={`header-contact-btn relative inline-flex cursor-pointer items-center gap-1.5 overflow-hidden rounded-full border px-5 py-2 text-sm font-semibold whitespace-nowrap transition-all duration-300 group hover:border-[#7cd244] hover:bg-[#7cd244] hover:text-[#0a0a0a] transition-[opacity,transform] duration-700 ease-out ${
                 hasLaunched ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1'
               }`}
             >

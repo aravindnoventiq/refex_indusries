@@ -48,7 +48,7 @@ export default function AboutSection() {
   const accent = section.color || '#7cd244';
 
   return (
-    <HomeSection id="about" label="Why Refex" title="Built by operators who want a new industry standard.">
+    <HomeSection id="about" title="Built by operators who want a new industry standard.">
       <div className="max-w-3xl">
         <p className={`mb-10 text-lg sm:text-xl lg:text-2xl ${homeVideoText.body}`}>{section.content}</p>
         <a

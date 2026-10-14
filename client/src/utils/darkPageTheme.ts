@@ -43,14 +43,14 @@ export function persistTheme(_page: DarkPageThemePage, theme: DarkPageTheme) {
 export const darkPageText = {
   dark: {
     label:
-      'inline-block text-[10px] font-semibold uppercase tracking-[0.3em] text-[#7cd144] sm:text-[11px] sm:tracking-[0.32em]',
+      'inline-block text-xs font-semibold uppercase tracking-[0.22em] text-[#7cd144] sm:text-sm sm:tracking-[0.24em]',
     title:
       'font-bold tracking-[-0.02em] leading-[1.12] text-white [text-shadow:0_1px_18px_rgba(0,0,0,0.45)] ' +
-      'text-[1.65rem] sm:text-[2.15rem] md:text-[2.65rem] lg:text-[3rem]',
+      'text-[2.15rem] sm:text-[2.85rem] md:text-[3.4rem] lg:text-[3.9rem]',
     titleLg:
       'font-bold tracking-[-0.03em] leading-[1.1] text-white ' +
       '[text-shadow:0_2px_32px_rgba(0,0,0,0.95),0_1px_3px_rgba(0,0,0,0.85),0_0_1px_rgba(0,0,0,1)] ' +
-      'text-[1.65rem] sm:text-[2.2rem] md:text-[2.65rem] lg:text-[3rem]',
+      'text-[2.15rem] sm:text-[2.9rem] md:text-[3.4rem] lg:text-[3.9rem]',
     cardTitle:
       'font-bold tracking-[-0.015em] leading-snug text-white text-lg sm:text-xl lg:text-[1.35rem]',
     body:
@@ -61,13 +61,13 @@ export const darkPageText = {
   },
   light: {
     label:
-      'inline-block text-[10px] font-semibold uppercase tracking-[0.3em] text-[#4C8C2B] sm:text-[11px] sm:tracking-[0.32em]',
+      'inline-block text-xs font-semibold uppercase tracking-[0.22em] text-[#4C8C2B] sm:text-sm sm:tracking-[0.24em]',
     title:
       'font-bold tracking-[-0.02em] leading-[1.12] text-[#1f1f1f] ' +
-      'text-[1.65rem] sm:text-[2.15rem] md:text-[2.65rem] lg:text-[3rem]',
+      'text-[2.15rem] sm:text-[2.85rem] md:text-[3.4rem] lg:text-[3.9rem]',
     titleLg:
       'font-bold tracking-[-0.03em] leading-[1.1] text-[#1f1f1f] ' +
-      'text-[1.65rem] sm:text-[2.2rem] md:text-[2.65rem] lg:text-[3rem]',
+      'text-[2.15rem] sm:text-[2.9rem] md:text-[3.4rem] lg:text-[3.9rem]',
     cardTitle:
       'font-bold tracking-[-0.015em] leading-snug text-[#1f1f1f] text-lg sm:text-xl lg:text-[1.35rem]',
     body: 'leading-relaxed text-[#484848] text-[0.9375rem] sm:text-base',

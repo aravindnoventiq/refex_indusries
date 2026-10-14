@@ -127,20 +127,6 @@ export default function OfficeAddresses() {
 
     const fallbackBottomOffices: OfficeAddress[] = [
       {
-        id: 3,
-        title: 'Factory',
-        details: [
-          'No: 1/171, Old Mahabalipuram Road,',
-          'Thiruporur, Kanchipuram Dist – 603 110.',
-          'Tamil Nadu, India – 600034',
-          'Phone: +91-44 – 2744 5295',
-          'Email: factory@refex.co.in',
-        ],
-        isTopOffice: false,
-        order: 1,
-        isActive: true,
-      },
-      {
         id: 4,
         title: 'Investors Grievances',
         details: [
@@ -187,8 +173,11 @@ export default function OfficeAddresses() {
           return a.order - b.order;
         });
 
-      const topOffices = activeAddresses.filter((a: OfficeAddress) => a.isTopOffice);
-      const bottom = activeAddresses.filter((a: OfficeAddress) => !a.isTopOffice);
+      const withoutFactory = activeAddresses.filter(
+        (a: OfficeAddress) => !/factory/i.test(a.title),
+      );
+      const topOffices = withoutFactory.filter((a: OfficeAddress) => a.isTopOffice);
+      const bottom = withoutFactory.filter((a: OfficeAddress) => !a.isTopOffice);
 
       if (topOffices.length === 0 && bottom.length === 0) {
         setOffices(fallbackTopOffices);
@@ -222,17 +211,14 @@ export default function OfficeAddresses() {
     <section className={`border-y border-[#dfe9d8] bg-[#f3f7ef] ${contactSectionPad}`} aria-labelledby="office-addresses-title">
       <div className={contactContainer}>
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#4C8C2B] sm:text-sm">
-            Our Locations
-          </p>
           <h2
             id="office-addresses-title"
-            className="font-serif text-3xl font-medium text-[#1f1f1f] sm:text-4xl lg:text-[2.75rem]"
+            className="font-serif text-3xl font-medium text-[#1f1f1f] sm:text-4xl lg:text-[3.1rem]"
           >
             Office <span className="text-[#2d5016]">Addresses</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[#484848] sm:text-base">
-            Reach our registered, corporate, and operational teams across India.
+            Reach our registered and corporate teams across India.
           </p>
         </div>
 
@@ -243,7 +229,7 @@ export default function OfficeAddresses() {
         </div>
 
         {bottomOffices.length > 0 ? (
-          <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:mt-8 lg:grid-cols-3">
+          <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:mt-8">
             {bottomOffices.map((office) => (
               <OfficeCard key={office.id} office={office} />
             ))}

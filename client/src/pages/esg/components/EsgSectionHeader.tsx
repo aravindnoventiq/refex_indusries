@@ -1,17 +1,7 @@
-import type { LucideIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
-import {
-  esgBadgeClasses,
-  esgBadgeStyle,
-  esgBadgeTextStyle,
-  esgSectionHeading,
-  type EsgAccentColor,
-} from '../esgLayout';
+import { esgSectionHeading } from '../esgLayout';
 
 type EsgSectionHeaderProps = {
-  badgeIcon: LucideIcon;
-  badgeLabel: string;
-  accent: EsgAccentColor;
   title: ReactNode;
   titleId: string;
   motionReady?: boolean;
@@ -23,9 +13,6 @@ type EsgSectionHeaderProps = {
 };
 
 export default function EsgSectionHeader({
-  badgeIcon: BadgeIcon,
-  badgeLabel,
-  accent,
   title,
   titleId,
   motionReady = true,
@@ -36,8 +23,6 @@ export default function EsgSectionHeader({
   children,
 }: EsgSectionHeaderProps) {
   const alignClass = align === 'center' ? 'text-center mx-auto max-w-4xl' : 'max-w-4xl';
-  const badgeWrapClass = align === 'center' ? 'flex justify-center' : '';
-  const accentColor = onDark ? undefined : esgBadgeTextStyle(accent).color;
 
   return (
     <header
@@ -45,31 +30,11 @@ export default function EsgSectionHeader({
         motionReady ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}
     >
-        <div className={`mb-4 ${badgeWrapClass}`}>
-        <div
-          className={`esg-section-badge ${esgBadgeClasses(accent, onDark)}`}
-          style={esgBadgeStyle(accent, onDark)}
-        >
-          <BadgeIcon
-            className="h-4 w-4"
-            style={onDark ? { color: '#b8e986' } : { color: accentColor }}
-            strokeWidth={2}
-            aria-hidden
-          />
-          <span
-            className="text-[11px] font-bold uppercase tracking-[0.14em]"
-            style={esgBadgeTextStyle(accent, onDark)}
-          >
-            {badgeLabel}
-          </span>
-        </div>
-      </div>
-
       <h2
         id={titleId}
         className={
           onDark
-            ? 'text-3xl font-bold uppercase tracking-[0.06em] text-white sm:text-4xl lg:text-[2.35rem]'
+            ? 'text-[2.35rem] font-bold uppercase tracking-[0.06em] text-white sm:text-[2.85rem] lg:text-[3.9rem]'
             : esgSectionHeading
         }
       >

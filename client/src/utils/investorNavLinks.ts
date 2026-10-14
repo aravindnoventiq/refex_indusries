@@ -1,4 +1,9 @@
-import { dedupeInvestorRelatedLinks } from './investorRelatedLinks';
+import {
+  canonicalizeInvestorHref,
+  dedupeInvestorRelatedLinks,
+  isSmartOdrHref,
+  normalizeInvestorLinkKey,
+} from './investorRelatedLinks';
 
 export type InvestorNavLink = {
   name: string;
@@ -19,7 +24,7 @@ export const FALLBACK_INVESTOR_NAV_LINKS: InvestorNavLink[] = [
   { name: 'Credit Ratings', href: '/investors/credit-ratings', displayOrder: 7, isActive: true },
   {
     name: 'Recording & Transcripts of Post Earnings / Quarterly Calls',
-    href: '/investors/recording-transcripts-of-post-earnings-quarterly-calls',
+    href: '/investors/recording-transcripts',
     displayOrder: 8,
     isActive: true,
   },
@@ -37,7 +42,7 @@ export const FALLBACK_INVESTOR_NAV_LINKS: InvestorNavLink[] = [
   },
   {
     name: 'Familiarization Programme for Independent Directors',
-    href: '/investors/familiarization-programme-for-independent-directors',
+    href: '/investors/familiarization-programme',
     displayOrder: 11,
     isActive: true,
   },
@@ -103,4 +108,34 @@ export const FALLBACK_INVESTOR_NAV_LINKS: InvestorNavLink[] = [
 
 export function getFallbackInvestorNavLinks(): InvestorNavLink[] {
   return dedupeInvestorRelatedLinks(FALLBACK_INVESTOR_NAV_LINKS);
+}
+
+/**
+ * Always show the live-site Related Links list locally.
+ * CMS names overlay matching entries; missing CMS rows are filled from fallbacks.
+ * Smart ODR stays out of this list to match refex.co.in/investors.
+ */
+export function mergeInvestorRelatedLinks(
+  cmsLinks: Array<{ name: string; href: string; displayOrder?: number; isActive?: boolean }> | null | undefined,
+): InvestorNavLink[] {
+  const cmsByKey = new Map<string, { name: string; href: string; displayOrder?: number }>();
+  for (const link of cmsLinks || []) {
+    if (link.isActive === false) continue;
+    const href = canonicalizeInvestorHref(link.href);
+    if (!href || isSmartOdrHref(href) || isSmartOdrHref(link.href)) continue;
+    const key = normalizeInvestorLinkKey(href);
+    if (!key || cmsByKey.has(key)) continue;
+    cmsByKey.set(key, { name: link.name, href, displayOrder: link.displayOrder });
+  }
+
+  return getFallbackInvestorNavLinks().map((fallback, index) => {
+    const href = canonicalizeInvestorHref(fallback.href);
+    const cms = cmsByKey.get(normalizeInvestorLinkKey(href));
+    return {
+      name: cms?.name || fallback.name,
+      href,
+      displayOrder: typeof cms?.displayOrder === 'number' ? cms.displayOrder : fallback.displayOrder ?? index,
+      isActive: true,
+    };
+  });
 }

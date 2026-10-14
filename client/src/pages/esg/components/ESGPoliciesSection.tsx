@@ -1,12 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import {
-  ArrowUpRight,
-  FileCheck,
-  HeartHandshake,
-  Leaf,
-  ShieldCheck,
-  type LucideIcon,
-} from 'lucide-react';
 import { esgCmsApi } from '../../../services/api';
 import { prefersReducedMotion } from '../../about-us/aboutGsap';
 import { esgContainer, esgScrollMargin, esgSectionPad } from '../esgLayout';
@@ -75,7 +67,6 @@ const FALLBACK_POLICIES: Policy[] = [
 ];
 
 const POLICY_ACCENTS = ['#4C8C2B', '#0072CE', '#F39200', '#2d5016'] as const;
-const POLICY_ICONS: LucideIcon[] = [FileCheck, ShieldCheck, Leaf, HeartHandshake];
 
 function PolicyCard({
   policy,
@@ -87,8 +78,6 @@ function PolicyCard({
   revealed: boolean;
 }) {
   const accent = POLICY_ACCENTS[index % POLICY_ACCENTS.length];
-  const Icon = POLICY_ICONS[index] ?? FileCheck;
-  const orderLabel = String(index + 1).padStart(2, '0');
 
   return (
     <article
@@ -119,17 +108,6 @@ function PolicyCard({
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1f1f1f]/55 via-[#1f1f1f]/10 to-transparent"
         />
-        <div className="absolute left-4 top-4 flex items-center gap-2">
-          <span
-            className="rounded-full px-2.5 py-1 text-[11px] font-bold tracking-[0.12em] text-white backdrop-blur-sm"
-            style={{ backgroundColor: `${accent}cc` }}
-          >
-            {orderLabel}
-          </span>
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/35 bg-white/20 text-white backdrop-blur-sm">
-            <Icon className="h-4 w-4" strokeWidth={1.8} aria-hidden />
-          </span>
-        </div>
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
           <h3 className="text-lg font-bold leading-snug text-white drop-shadow-sm sm:text-xl">
             {policy.title}
@@ -138,35 +116,14 @@ function PolicyCard({
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div className="mb-4 flex items-center gap-2">
-          <span
-            className="h-2 w-2 rounded-full"
-            style={{ backgroundColor: accent }}
-            aria-hidden
-          />
-          <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#6b7280]">
-            Policy Document
-          </span>
-        </div>
-
         <a
           href={getFullUrl(policy.link)}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-auto inline-flex items-center justify-between gap-3 rounded-xl border border-[#e3ebe0] bg-[#f7faf5] px-4 py-3.5 transition-all duration-300 hover:border-[var(--policy-accent)] hover:bg-white hover:shadow-[0_8px_24px_rgba(76,140,43,0.08)]"
+          className="mt-auto text-sm font-semibold transition-colors hover:underline"
+          style={{ color: accent }}
         >
-          <span
-            className="text-sm font-semibold transition-colors"
-            style={{ color: accent }}
-          >
-            View Policy
-          </span>
-          <span
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-white transition-transform duration-300 group-hover:scale-105"
-            style={{ backgroundColor: accent }}
-          >
-            <ArrowUpRight className="h-4 w-4" strokeWidth={2.2} aria-hidden />
-          </span>
+          View Policy
         </a>
       </div>
     </article>
@@ -245,9 +202,6 @@ export default function ESGPoliciesSection() {
 
       <div className={`relative z-10 ${esgContainer}`}>
         <EsgSectionHeader
-          badgeIcon={ShieldCheck}
-          badgeLabel="Framework & Standards"
-          accent="green"
           title={header.title}
           titleId="esg-policies-title"
           motionReady={motionReadyResolved}

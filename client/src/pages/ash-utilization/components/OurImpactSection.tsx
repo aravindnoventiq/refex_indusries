@@ -96,7 +96,6 @@ function OurImpactSection() {
   return (
     <AshSectionShell
       id="our-impact"
-      eyebrow="Scale"
       title="Our Impact"
       headerAlign="center"
     >

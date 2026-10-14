@@ -8,7 +8,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { gsap, prefersReducedMotion } from '../../about-us/aboutGsap';
-import { esgContainer, esgScrollMargin, esgSectionPad } from '../esgLayout';
+import { esgContainer, esgScrollMargin, esgSectionHeading, esgSectionPad } from '../esgLayout';
 import { esgScrollStart } from '../esgMotion';
 
 type WellBeingTopic = {
@@ -202,10 +202,7 @@ export default function SustainableWellBeingSection() {
       });
 
       headerTl
-        .from('[data-wellbeing-eyebrow]', { autoAlpha: 0, y: 18, duration: 0.5, ease: 'power2.out' })
-        .from('[data-wellbeing-title-main]', { autoAlpha: 0, y: 28, duration: 0.65, ease: 'power3.out' }, '-=0.2')
-        .from('[data-wellbeing-subtitle]', { autoAlpha: 0, y: 16, duration: 0.55, ease: 'power2.out' }, '-=0.35')
-        .from('[data-wellbeing-subtitle-line]', { scaleX: 0, duration: 0.55, ease: 'power3.inOut' }, '-=0.2');
+        .from('[data-wellbeing-title-main]', { autoAlpha: 0, y: 28, duration: 0.65, ease: 'power3.out' });
 
       section.querySelectorAll('[data-wellbeing-card]').forEach((card, index) => {
         const fromX = index % 2 === 0 ? -36 : 36;
@@ -273,7 +270,7 @@ export default function SustainableWellBeingSection() {
   return (
     <section
       ref={sectionRef}
-      id="sustainable-well-being"
+      id="programs"
       className={`relative overflow-hidden bg-[#f7faf5] ${esgSectionPad} ${esgScrollMargin}`}
     >
       <div
@@ -293,17 +290,9 @@ export default function SustainableWellBeingSection() {
           >
             Sustainable Wellbeing
           </p> */}
-          <h2 className="text-3xl font-bold uppercase tracking-[0.06em] text-[#2b2b2b] sm:text-4xl lg:text-[2.35rem]">
-            <span data-wellbeing-title-main className="inline-block">
-              Sustainable <span className="text-[#4C8C2B]">Well-Being</span>
-            </span>
+          <h2 className={esgSectionHeading}>
+            <span data-wellbeing-title-main className="inline-block">PROGRAMS</span>
           </h2>
-          <p
-            data-wellbeing-subtitle
-            className="mt-4 text-lg font-medium text-[#5a5a5a] sm:text-xl"
-          >
-            Across Communities and Environment
-          </p>
           
         </header>
 

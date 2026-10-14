@@ -21,6 +21,7 @@ html {
   scroll-behavior: smooth;
   max-width: 100%;
   overflow-x: clip;
+  --header-offset: 6rem;
 }
 
 html.home-page,
@@ -32,20 +33,20 @@ html.ash-utilization-page {
 @media (max-width: 767px) {
   html {
     scroll-behavior: auto;
-    --header-offset: 4.25rem;
+    --header-offset: 5.5rem;
     --section-px: 1.25rem;
   }
 
   html.home-page,
   html.about-us-page,
   html.ash-utilization-page {
-    --header-offset: 4.25rem;
+    --header-offset: 5.5rem;
   }
 
   .home-post-hero-content > section,
   main > section,
   [id] {
-    scroll-margin-top: calc(var(--header-offset, 4.25rem) + 0.5rem);
+    scroll-margin-top: calc(var(--header-offset, 5.5rem) + 0.5rem);
   }
 
   a,
@@ -97,7 +98,7 @@ html.ash-utilization-page {
   }
 
   html.home-mobile .home-post-hero-content > section {
-    scroll-margin-top: calc(var(--header-offset, 4.25rem) + 0.25rem);
+    scroll-margin-top: calc(var(--header-offset, 5.5rem) + 0.25rem);
   }
 
   html.home-mobile [class*='home-mobile-snap-row'],
@@ -151,28 +152,12 @@ html.ash-utilization-page {
     backface-visibility: hidden;
   }
 
-  html.home-mobile .home-scroll-video-bg.home-is-post-hero .home-hero-bg-video {
-    opacity: 0.45;
-    transition: opacity 0.4s ease-out;
-  }
-
   html.home-mobile .home-hero-poster {
     object-fit: cover;
   }
 
   html.home-mobile .home-static-bg-overlay {
     opacity: 0.92;
-  }
-
-  html.home-mobile .home-scroll-video-bg.home-is-post-hero .home-hero-poster {
-    opacity: 0.42;
-  }
-
-  html.home-mobile .home-scroll-video-bg.home-is-post-hero .home-static-bg-overlay {
-    opacity: 1;
-    background:
-      linear-gradient(to bottom, rgba(5, 7, 10, 0.78) 0%, rgba(5, 7, 10, 0.58) 45%, rgba(5, 7, 10, 0.82) 100%),
-      linear-gradient(to right, rgba(5, 7, 10, 0.48) 0%, rgba(5, 7, 10, 0.22) 55%, rgba(5, 7, 10, 0.42) 100%);
   }
 
   html.home-mobile .home-mobile-hero-title {
@@ -196,17 +181,6 @@ html.ash-utilization-page {
 
 .home-scroll-video-bg .home-hero-bg-video {
   opacity: 1;
-}
-
-@media (min-width: 768px) {
-  .home-scroll-video-bg .home-hero-bg-video {
-    transition: opacity 0.7s ease-out, filter 0.7s ease-out;
-  }
-
-  .home-scroll-video-bg.home-is-post-hero .home-hero-bg-video {
-    opacity: 0.45;
-    filter: brightness(0.62) saturate(0.85);
-  }
 }
 
 html.about-us-page:not(.page-theme-light),
@@ -576,11 +550,50 @@ html[data-theme="dark"] [class*="shadow-\[0_8px_28px_rgba(45,80,22"] {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Home — always dark canvas regardless of site theme toggle */
-html[data-theme="light"] .site-page-dark,
-html.page-theme-light .site-page-dark {
-  background-color: #050505;
+/* Homepage canvas — light/dark theme, home page only */
+html.home-page.page-theme-dark,
+html.home-page[data-theme="dark"] {
+  background-color: #05070a;
+}
+
+html.home-page.page-theme-dark body,
+html.home-page[data-theme="dark"] body {
+  background-color: #05070a;
   color: #f5f5f5;
+}
+
+html.home-page.page-theme-light,
+html.home-page.page-theme-light body {
+  background-color: #ffffff;
+  color: #1f1f1f;
+}
+
+.home-page-root {
+  position: relative;
+  isolation: isolate;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.home-page-root--dark {
+  background-color: #05070a;
+  color: #f5f5f5;
+}
+
+.home-page-root--light {
+  background-color: #ffffff;
+  color: #1f1f1f;
+}
+
+.home-page-root--dark .home-post-hero-content {
+  background-color: #05070a;
+}
+
+.home-page-root--light .home-post-hero-content {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(ellipse 110% 70% at 50% -8%, rgba(76, 140, 43, 0.07), transparent 55%),
+    radial-gradient(ellipse 75% 55% at 100% 55%, rgba(45, 80, 22, 0.05), transparent 52%),
+    linear-gradient(180deg, #ffffff 0%, #fafcf8 32%, #f3f7ef 68%, #eef5e8 100%);
 }
 
 /* Modals / overlays that must stay light-surface in dark site theme */
@@ -655,6 +668,21 @@ html[data-theme="dark"] .site-page-light textarea {
   background-color: #0a0e0c !important;
   color: #f5f5f5 !important;
   border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html[data-theme="dark"] .site-page-light .historical-quote-controls,
+html[data-theme="dark"] .site-page-light .historical-quote-controls select,
+html[data-theme="dark"] .site-page-light .historical-quote-controls input[type="date"] {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  border-color: #d1d5db !important;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] .site-page-light .historical-quote-controls input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: none;
+  opacity: 1;
+  cursor: pointer;
 }
 
 /* Additional sage / neutral hex tokens */
@@ -841,6 +869,26 @@ html[data-theme="dark"] .site-page-light .esg-awards-bird video {
 html[data-theme="dark"] .site-page-light .esg-awards-branch img {
   mix-blend-mode: lighten;
   filter: saturate(1.12) brightness(1.08);
+}
+
+.esg-awards-nature-visual--hero {
+  --esg-awards-bg: #ffffff;
+}
+
+html[data-theme="dark"] .esg-awards-nature-visual--hero {
+  --esg-awards-bg: #0a0e0c;
+}
+
+.esg-awards-nature-visual--hero .esg-awards-bird video {
+  mix-blend-mode: multiply;
+  background-color: var(--esg-awards-bg);
+  mask-image: radial-gradient(ellipse 72% 78% at 50% 50%, #000 42%, transparent 74%);
+  -webkit-mask-image: radial-gradient(ellipse 72% 78% at 50% 50%, #000 42%, transparent 74%);
+}
+
+html[data-theme="dark"] .esg-awards-nature-visual--hero .esg-awards-bird video {
+  mix-blend-mode: normal;
+  background-color: var(--esg-awards-bg);
 }
 
 @media (max-width: 639px) {

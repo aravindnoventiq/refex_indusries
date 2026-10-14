@@ -82,7 +82,7 @@ function JourneyVideo({
   return (
     <div
       ref={wrapRef}
-      className="relative min-h-[220px] w-full overflow-hidden rounded-lg bg-black sm:min-h-[280px] md:min-h-[320px]"
+      className="relative aspect-[16/9] min-h-[220px] w-full overflow-hidden rounded-lg bg-black sm:min-h-[280px] md:min-h-[320px]"
     >
       {!ready && (
         <div className="absolute inset-0 flex items-center justify-center bg-black">
@@ -90,7 +90,7 @@ function JourneyVideo({
             src={poster}
             alt=""
             aria-hidden
-            className="max-h-full max-w-full object-contain opacity-70"
+            className="h-full w-full object-cover opacity-70"
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="h-9 w-9 animate-spin rounded-full border-2 border-[#7cd244]/30 border-t-[#7cd244]" />
@@ -100,7 +100,7 @@ function JourneyVideo({
 
       <video
         ref={videoRef}
-        className={`relative z-10 block h-auto w-full object-contain transition-opacity duration-500 ease-out [transform:translateZ(0)] ${
+        className={`absolute inset-0 z-10 h-full w-full object-cover transition-opacity duration-500 ease-out [transform:translateZ(0)] ${
           ready ? 'opacity-100' : 'opacity-0'
         }`}
         src={JOURNEY_VIDEO}
@@ -182,7 +182,6 @@ function JourneySection() {
   return (
     <AboutSectionShell
       id="journey"
-      eyebrow="Timeline"
       title={journey?.title || 'Our Journey'}
       subtitle={
         summary ||

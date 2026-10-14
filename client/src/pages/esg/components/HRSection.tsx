@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { Download, Gift, Users, type LucideIcon } from 'lucide-react';
+import { ArrowUpRight, FileText } from 'lucide-react';
 import { esgCmsApi } from '../../../services/api';
 import { prefersReducedMotion } from '../../about-us/aboutGsap';
-import { esgContainer, esgScrollMargin } from '../esgLayout';
+import { esgContainer, esgScrollMargin, esgSectionPad } from '../esgLayout';
 import { useEsgReveal } from '../esgMotion';
 import { getFullUrl } from '../esgUtils';
 import EsgSectionHeader from './EsgSectionHeader';
@@ -11,6 +11,7 @@ import EsgSectionLoader from './EsgSectionLoader';
 interface HrItem {
   id: number;
   title: string;
+  image?: string;
   link: string;
   order: number;
   isActive: boolean;
@@ -22,7 +23,7 @@ interface HrSectionHeader {
   isActive: boolean;
 }
 
-const HR_BG = '/esg/hr-background.jpg';
+const HR_IMAGE = '/esg/hr-background.jpg';
 
 const FALLBACK_HEADER: HrSectionHeader = {
   id: 1,
@@ -34,75 +35,89 @@ const FALLBACK_ITEMS: HrItem[] = [
   {
     id: 1,
     title: 'Employee Benefits and ESOP',
+    image: HR_IMAGE,
     link: 'https://refex.co.in/wp-content/uploads/2025/02/ESOP-Disclosure-2023-24.pdf',
     order: 1,
     isActive: true,
   },
 ];
 
-const HR_ICONS: LucideIcon[] = [Gift];
+const CARD_ACCENTS = ['#4C8C2B', '#0072CE', '#F39200'] as const;
 
-function HrOrb({
+function HrCard({
+  item,
   index,
-  title,
-  link,
-  icon: Icon,
   revealed,
-  delayMs,
-  featured,
 }: {
+  item: HrItem;
   index: number;
-  title: string;
-  link: string;
-  icon: LucideIcon;
   revealed: boolean;
-  delayMs: number;
-  featured: boolean;
 }) {
+  const accent = CARD_ACCENTS[index % CARD_ACCENTS.length];
+
   return (
-    <a
-      href={getFullUrl(link)}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`group relative mx-auto flex aspect-square w-full flex-col items-center justify-center rounded-full px-5 py-6 text-center transition-all duration-700 ease-out hover:scale-[1.04] esg-orb-link ${
-        featured
-          ? 'max-w-[15rem] sm:max-w-[17rem] lg:max-w-[18.5rem]'
-          : 'max-w-[13.5rem] sm:max-w-[15rem] lg:max-w-[16.5rem]'
-      } ${revealed ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-8 scale-95 opacity-0'}`}
+    <article
+      className={`group relative flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-[#e3ebe0] bg-white shadow-[0_18px_50px_rgba(76,140,43,0.08)] transition-all duration-700 ease-out hover:-translate-y-1.5 hover:shadow-[0_26px_64px_rgba(76,140,43,0.14)] ${
+        revealed ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+      }`}
       style={{
-        transitionDelay: revealed ? `${delayMs}ms` : '0ms',
-        background:
-          'radial-gradient(circle at 32% 24%, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.58) 36%, rgba(255,248,240,0.32) 68%, rgba(255,240,225,0.22) 100%)',
-        boxShadow:
-          'inset -10px -14px 28px rgba(255,255,255,0.75), inset 10px 10px 24px rgba(243,146,0,0.08), 0 18px 44px rgba(0,0,0,0.16)',
-        border: '1px solid rgba(255,255,255,0.78)',
-        backdropFilter: 'blur(6px)',
+        transitionDelay: revealed ? `${140 + index * 100}ms` : '0ms',
+        ['--card-accent' as string]: accent,
       }}
-      aria-label={`Download ${title}`}
     >
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-[12%] rounded-full border border-[#F39200]/25 opacity-80"
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute left-[18%] top-[14%] h-8 w-10 rotate-[-24deg] rounded-full bg-white/60 blur-[2px]"
+        className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-[var(--card-accent)] transition-transform duration-500 group-hover:scale-x-100"
       />
 
-      <Icon
-        className="relative z-[1] mb-3 h-9 w-9 text-[#b45309] transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:w-10"
-        strokeWidth={1.6}
-        aria-hidden
-      />
-      <span className="relative z-[1] px-1 text-sm font-semibold leading-snug text-[#9a3412] sm:text-[15px]">
-        {index}. {title}
-      </span>
-      <Download
-        className="relative z-[1] mt-3 h-5 w-5 text-[#b45309]/85 transition-transform duration-300 group-hover:translate-y-0.5"
-        strokeWidth={2}
-        aria-hidden
-      />
-    </a>
+      <div className="relative aspect-[4/3] overflow-hidden bg-[#f7faf5]">
+        <img
+          src={getFullUrl(item.image || HR_IMAGE)}
+          alt={item.title}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          onError={(e) => {
+            (e.target as HTMLImageElement).style.display = 'none';
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1f1f1f]/55 via-[#1f1f1f]/10 to-transparent"
+        />
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+          <h3 className="text-lg font-bold leading-snug text-white drop-shadow-sm sm:text-xl">
+            {item.title}
+          </h3>
+        </div>
+      </div>
+
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <a
+          href={getFullUrl(item.link)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-auto inline-flex items-center justify-between gap-3 rounded-xl border border-[#e3ebe0] bg-[#f7faf5] px-4 py-3.5 transition-all duration-300 hover:border-[var(--card-accent)] hover:bg-white hover:shadow-[0_8px_24px_rgba(76,140,43,0.08)]"
+        >
+          <span className="inline-flex items-center gap-2">
+            <FileText
+              className="h-4 w-4 transition-colors"
+              style={{ color: accent }}
+              strokeWidth={2}
+              aria-hidden
+            />
+            <span className="text-sm font-semibold transition-colors" style={{ color: accent }}>
+              View Report
+            </span>
+          </span>
+          <span
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-white transition-transform duration-300 group-hover:scale-105"
+            style={{ backgroundColor: accent }}
+          >
+            <ArrowUpRight className="h-4 w-4" strokeWidth={2.2} aria-hidden />
+          </span>
+        </a>
+      </div>
+    </article>
   );
 }
 
@@ -172,59 +187,37 @@ export default function HRSection() {
   }
 
   const motionReadyResolved = motionReady || prefersReducedMotion();
-  const isSingleItem = items.length === 1;
 
   return (
     <section
       ref={sectionRef}
       id="hr"
-      className={`relative min-h-0 overflow-hidden sm:min-h-[620px] lg:min-h-[660px] ${esgScrollMargin}`}
+      className={`relative overflow-hidden bg-[#f3f3f3] ${esgSectionPad} ${esgScrollMargin}`}
       aria-labelledby="hr-section-title"
     >
-      <div className="absolute inset-0 overflow-hidden">
-        <img
-          src={HR_BG}
-          alt=""
-          aria-hidden
-          className="h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#F39200]/35 via-[#2d5016]/45 to-[#1a2e10]/55" />
-      </div>
-
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/20 to-transparent"
+        className="pointer-events-none absolute -left-20 top-12 h-72 w-72 rounded-full bg-[#F39200]/8 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-16 bottom-10 h-80 w-80 rounded-full bg-[#4C8C2B]/8 blur-3xl"
       />
 
-      <div className={`relative z-10 px-5 py-8 sm:px-6 sm:py-14 lg:py-20 ${esgContainer}`}>
+      <div className={`relative z-10 ${esgContainer}`}>
         <EsgSectionHeader
-          badgeIcon={Users}
-          badgeLabel="People & Talent"
-          accent="orange"
           title={displayHeader.title}
           titleId="hr-section-title"
           motionReady={motionReadyResolved}
-          onDark
-          className="lg:mb-14"
         />
 
-        <div
-          className={`mx-auto grid max-w-5xl gap-8 ${
-            isSingleItem
-              ? 'grid-cols-1 justify-items-center'
-              : 'sm:grid-cols-2 lg:grid-cols-3'
-          } sm:gap-6 lg:gap-10`}
-        >
+        <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8">
           {items.map((item, index) => (
-            <HrOrb
+            <HrCard
               key={item.id}
-              index={index + 1}
-              title={item.title}
-              link={item.link}
-              icon={HR_ICONS[index] ?? Gift}
+              item={item}
+              index={index}
               revealed={motionReadyResolved}
-              delayMs={180 + index * 120}
-              featured={isSingleItem}
             />
           ))}
         </div>

@@ -15,7 +15,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { gsap, prefersReducedMotion } from '../../about-us/aboutGsap';
-import { esgContainer, esgScrollMargin } from '../esgLayout';
+import { esgContainer, esgScrollMargin, esgSectionHeading } from '../esgLayout';
 import { esgScrollStart } from '../esgMotion';
 
 const PILLARS_BG = '/esg/sustainability-pillars-bg.png';
@@ -257,7 +257,7 @@ export default function SustainabilityPillarsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="sustainability-pillars" className={`relative overflow-hidden bg-white ${esgScrollMargin}`}>
+    <section ref={sectionRef} id="refex-esg" className={`relative overflow-hidden bg-white ${esgScrollMargin}`}>
       <div
         data-pillars-bg
         aria-hidden
@@ -274,21 +274,10 @@ export default function SustainabilityPillarsSection() {
         <header data-pillars-header className="mx-auto mb-10 max-w-4xl text-center sm:mb-12">
           <h2
             data-pillars-title
-            className="text-3xl font-bold uppercase tracking-[0.08em] text-[#2b2b2b] sm:text-4xl lg:text-[2.35rem]"
+            className={`${esgSectionHeading}`}
           >
-            Our <span className="text-[#F39200]">Sustainability</span> Pillars
+            Refex on <span className="text-[#F39200]">ESG</span>
           </h2>
-          <p
-            data-pillars-intro
-            className="mt-5 text-base leading-relaxed text-[#4a4a4a] sm:text-lg"
-          >
-            At Refex Industries Limited, we believe in creating a better world through sustainable
-            business practices. We prioritize{' '}
-            <span className="font-semibold text-[#F39200]">People</span>,{' '}
-            <span className="font-semibold text-[#4C8C2B]">Planet</span>, and{' '}
-            <span className="font-semibold text-[#0072CE]">Profit</span> equally and are committed to
-            becoming an ESG champion and carbon-neutral company.
-          </p>
         </header>
 
         <div data-pillars-grid className="grid gap-6 md:grid-cols-3 md:gap-5 lg:gap-6">

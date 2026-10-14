@@ -11,6 +11,7 @@ import {
 } from '../homeMotion';
 import { HOME_HERO_SENTINEL_ID, useHomeMobile } from '../homeMobile';
 import { homeContainer, homeVideoText } from './HomeSection';
+import HomeScrollVideo from './HomeScrollVideo';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,9 +106,10 @@ export default function TerminalHeroChapters() {
     <div ref={rootRef} id={HOME_HERO_ID} className="home-hero-chapters relative">
       <div
         ref={pinRef}
-        className="home-hero-pin relative flex min-h-[100svh] items-end pb-8 pt-[calc(var(--header-offset,4.25rem)+1rem)] sm:min-h-[100dvh] sm:pb-10 sm:pt-[calc(var(--header-offset,5.25rem)+1.5rem)] lg:pb-14"
+        className="home-hero-pin relative flex min-h-[100svh] items-end overflow-hidden bg-[#05070a] pb-8 pt-[calc(var(--header-offset,4.25rem)+1rem)] sm:min-h-[100dvh] sm:pb-10 sm:pt-[calc(var(--header-offset,5.25rem)+1.5rem)] lg:pb-14"
       >
-        <div className={`${homeContainer} relative w-full`}>
+        <HomeScrollVideo />
+        <div className={`${homeContainer} relative z-10 w-full`}>
           <div className="home-hero-copy relative min-h-[14rem] w-full max-w-4xl sm:min-h-[16rem] lg:min-h-[20rem]">
             {CHAPTERS.map((chapter, i) => {
               const HeadlineTag = i === 0 ? 'h1' : 'p';

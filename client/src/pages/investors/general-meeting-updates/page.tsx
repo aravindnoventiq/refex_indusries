@@ -6,7 +6,8 @@ import ScrollToTop from '../../home/components/ScrollToTop';
 import HeroSection from '../components/HeroSection';
 import { investorsCmsApi } from '../../../services/api';
 import { isInvestorCmsActive } from '../../../utils/investorCmsHelpers';
-import { dedupeInvestorRelatedLinks } from '../../../utils/investorRelatedLinks';
+import { canonicalizeInvestorHref, investorPathsMatch } from '../../../utils/investorRelatedLinks';
+import { mergeInvestorRelatedLinks } from '../../../utils/investorNavLinks';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || "";
 
@@ -65,7 +66,9 @@ const GeneralMeetingUpdatesPage = () => {
   });
   const [selectedYear, setSelectedYear] = useState('');
   const [loading, setLoading] = useState(true);
-  const [sidebarLinks, setSidebarLinks] = useState<Array<{ name: string; href: string }>>([]);
+  const [sidebarLinks, setSidebarLinks] = useState<Array<{ name: string; href: string }>>(
+    mergeInvestorRelatedLinks([]),
+  );
 
   useEffect(() => {
     loadPageContent();
@@ -149,9 +152,10 @@ const GeneralMeetingUpdatesPage = () => {
         console.error('Failed to load investor pages:', err);
       }
 
-      setSidebarLinks(dedupeInvestorRelatedLinks(allLinks));
+      setSidebarLinks(mergeInvestorRelatedLinks(allLinks));
     } catch (err) {
       console.error('Failed to load sidebar links:', err);
+      setSidebarLinks(mergeInvestorRelatedLinks([]));
     }
   };
 
@@ -406,11 +410,11 @@ const GeneralMeetingUpdatesPage = () => {
                 <nav>
                   <ul>
                     {sidebarLinks.map((link, index) => {
-                      const isActive = link.href.replace(/\/$/, '') === location.pathname.replace(/\/$/, '');
+                      const isActive = investorPathsMatch(location.pathname, link.href);
                       return (
                         <li key={index}>
                           <Link
-                            to={link.href}
+                            to={canonicalizeInvestorHref(link.href)}
                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                             className={`block w-full min-w-0 px-4 py-3 text-base transition-colors cursor-pointer sm:px-6 ${
                               isActive

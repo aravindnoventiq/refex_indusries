@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { Download, FileBarChart, Leaf, Scale, Users, type LucideIcon } from 'lucide-react';
+import { ArrowUpRight, FileText } from 'lucide-react';
 import { esgCmsApi } from '../../../services/api';
 import { prefersReducedMotion } from '../../about-us/aboutGsap';
-import { esgContainer, esgScrollMargin } from '../esgLayout';
+import { esgContainer, esgScrollMargin, esgSectionPad } from '../esgLayout';
 import { useEsgReveal } from '../esgMotion';
 import { getFullUrl } from '../esgUtils';
 import EsgSectionHeader from './EsgSectionHeader';
@@ -11,6 +11,7 @@ import EsgSectionLoader from './EsgSectionLoader';
 interface GovernanceItem {
   id: number;
   title: string;
+  image?: string;
   link: string;
   order: number;
   isActive: boolean;
@@ -22,7 +23,7 @@ interface GovernanceSectionHeader {
   isActive: boolean;
 }
 
-const GOVERNANCE_BG = '/esg/governance-background.png';
+const GOVERNANCE_IMAGE = '/esg/governance-background.png';
 
 const FALLBACK_HEADER: GovernanceSectionHeader = {
   id: 1,
@@ -34,6 +35,7 @@ const FALLBACK_ITEMS: GovernanceItem[] = [
   {
     id: 1,
     title: 'Grievance Mechanism',
+    image: GOVERNANCE_IMAGE,
     link: 'https://refex.co.in/wp-content/uploads/2025/02/Refex-Grievance-Redressal-Policy-01-06-2024.pdf',
     order: 1,
     isActive: true,
@@ -41,6 +43,7 @@ const FALLBACK_ITEMS: GovernanceItem[] = [
   {
     id: 2,
     title: 'Annual Report',
+    image: GOVERNANCE_IMAGE,
     link: 'https://refex.co.in/wp-content/uploads/2025/07/RIL_23rd_AR_FY24-25.pdf',
     order: 2,
     isActive: true,
@@ -48,77 +51,96 @@ const FALLBACK_ITEMS: GovernanceItem[] = [
   {
     id: 3,
     title: 'BRSR Report',
+    image: GOVERNANCE_IMAGE,
     link: 'https://refex.co.in/wp-content/uploads/2025/09/BRSR.pdf',
     order: 3,
     isActive: true,
   },
 ];
 
-const ORB_ICONS: LucideIcon[] = [Users, FileBarChart, Leaf];
+const CARD_ACCENTS = ['#4C8C2B', '#0072CE', '#F39200'] as const;
 
-function formatOrbTitle(title: string): string {
+function formatTitle(title: string): string {
   if (title === 'BRSR') return 'BRSR Report';
   if (title === 'Annual Reports') return 'Annual Report';
   return title;
 }
 
-function GovernanceOrb({
+function GovernanceCard({
+  item,
   index,
-  title,
-  link,
-  icon: Icon,
   revealed,
-  delayMs,
 }: {
+  item: GovernanceItem;
   index: number;
-  title: string;
-  link: string;
-  icon: LucideIcon;
   revealed: boolean;
-  delayMs: number;
 }) {
+  const accent = CARD_ACCENTS[index % CARD_ACCENTS.length];
+  const title = formatTitle(item.title);
+
   return (
-    <a
-      href={getFullUrl(link)}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`group relative mx-auto flex aspect-square w-full max-w-[13.5rem] flex-col items-center justify-center rounded-full px-5 py-6 text-center transition-all duration-700 ease-out sm:max-w-[15rem] lg:max-w-[16.5rem] esg-orb-link ${
-        revealed ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-8 scale-95 opacity-0'
-      } hover:scale-[1.04]`}
+    <article
+      className={`group relative flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-[#e3ebe0] bg-white shadow-[0_18px_50px_rgba(76,140,43,0.08)] transition-all duration-700 ease-out hover:-translate-y-1.5 hover:shadow-[0_26px_64px_rgba(76,140,43,0.14)] ${
+        revealed ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+      }`}
       style={{
-        transitionDelay: revealed ? `${delayMs}ms` : '0ms',
-        background:
-          'radial-gradient(circle at 32% 24%, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.55) 36%, rgba(255,255,255,0.28) 68%, rgba(255,255,255,0.18) 100%)',
-        boxShadow:
-          'inset -10px -14px 28px rgba(255,255,255,0.75), inset 10px 10px 24px rgba(76,140,43,0.06), 0 18px 44px rgba(0,0,0,0.14)',
-        border: '1px solid rgba(255,255,255,0.72)',
-        backdropFilter: 'blur(6px)',
+        transitionDelay: revealed ? `${140 + index * 100}ms` : '0ms',
+        ['--card-accent' as string]: accent,
       }}
-      aria-label={`Download ${title}`}
     >
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-[12%] rounded-full border border-white/50 opacity-70"
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute left-[18%] top-[14%] h-8 w-10 rotate-[-24deg] rounded-full bg-white/55 blur-[2px]"
+        className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-[var(--card-accent)] transition-transform duration-500 group-hover:scale-x-100"
       />
 
-      <Icon
-        className="relative z-[1] mb-3 h-9 w-9 text-[#2d5016] transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:w-10"
-        strokeWidth={1.6}
-        aria-hidden
-      />
-      <span className="relative z-[1] px-1 text-sm font-semibold leading-snug text-[#2d5016] sm:text-[15px]">
-        {index}. {formatOrbTitle(title)}
-      </span>
-      <Download
-        className="relative z-[1] mt-3 h-5 w-5 text-[#2d5016]/85 transition-transform duration-300 group-hover:translate-y-0.5"
-        strokeWidth={2}
-        aria-hidden
-      />
-    </a>
+      <div className="relative aspect-[4/3] overflow-hidden bg-[#f7faf5]">
+        <img
+          src={getFullUrl(item.image || GOVERNANCE_IMAGE)}
+          alt={title}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          onError={(e) => {
+            (e.target as HTMLImageElement).style.display = 'none';
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1f1f1f]/55 via-[#1f1f1f]/10 to-transparent"
+        />
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+          <h3 className="text-lg font-bold leading-snug text-white drop-shadow-sm sm:text-xl">
+            {title}
+          </h3>
+        </div>
+      </div>
+
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <a
+          href={getFullUrl(item.link)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-auto inline-flex items-center justify-between gap-3 rounded-xl border border-[#e3ebe0] bg-[#f7faf5] px-4 py-3.5 transition-all duration-300 hover:border-[var(--card-accent)] hover:bg-white hover:shadow-[0_8px_24px_rgba(76,140,43,0.08)]"
+        >
+          <span className="inline-flex items-center gap-2">
+            <FileText
+              className="h-4 w-4 transition-colors"
+              style={{ color: accent }}
+              strokeWidth={2}
+              aria-hidden
+            />
+            <span className="text-sm font-semibold transition-colors" style={{ color: accent }}>
+              View Report
+            </span>
+          </span>
+          <span
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-white transition-transform duration-300 group-hover:scale-105"
+            style={{ backgroundColor: accent }}
+          >
+            <ArrowUpRight className="h-4 w-4" strokeWidth={2.2} aria-hidden />
+          </span>
+        </a>
+      </div>
+    </article>
   );
 }
 
@@ -193,41 +215,32 @@ export default function GovernanceSection() {
     <section
       ref={sectionRef}
       id="governance"
-      className={`relative min-h-0 overflow-hidden sm:min-h-[680px] lg:min-h-[720px] ${esgScrollMargin}`}
+      className={`relative overflow-hidden bg-white ${esgSectionPad} ${esgScrollMargin}`}
       aria-labelledby="governance-section-title"
     >
-      <div className="absolute inset-0 overflow-hidden">
-        <img
-          src={GOVERNANCE_BG}
-          alt=""
-          aria-hidden
-          className="h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2d5016]/55 via-[#2d5016]/25 to-[#1a2e10]/40" />
-      </div>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-20 top-12 h-72 w-72 rounded-full bg-[#4C8C2B]/8 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-16 bottom-10 h-80 w-80 rounded-full bg-[#0072CE]/8 blur-3xl"
+      />
 
-      <div className={`relative z-10 px-5 py-8 sm:px-6 sm:py-14 lg:py-20 ${esgContainer}`}>
+      <div className={`relative z-10 ${esgContainer}`}>
         <EsgSectionHeader
-          badgeIcon={Scale}
-          badgeLabel="Corporate Governance"
-          accent="green"
           title={displayHeader.title}
           titleId="governance-section-title"
           motionReady={motionReadyResolved}
-          onDark
-          className="lg:mb-14"
         />
 
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6 lg:gap-10">
+        <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8">
           {items.map((item, index) => (
-            <GovernanceOrb
+            <GovernanceCard
               key={item.id}
-              index={index + 1}
-              title={item.title}
-              link={item.link}
-              icon={ORB_ICONS[index] ?? FileBarChart}
+              item={item}
+              index={index}
               revealed={motionReadyResolved}
-              delayMs={180 + index * 120}
             />
           ))}
         </div>

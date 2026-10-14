@@ -326,9 +326,6 @@ export default function CollaborationSection() {
 
       <div className={`relative z-10 ${esgContainer}`}>
         <EsgSectionHeader
-          badgeIcon={Handshake}
-          badgeLabel="Partnerships"
-          accent="green"
           title={displayHeader.title}
           titleId="collaboration-section-title"
           motionReady={motionReadyResolved}

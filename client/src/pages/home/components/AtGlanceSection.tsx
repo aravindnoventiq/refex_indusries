@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { homeCmsApi } from '../../../services/api';
 import { prefersReducedMotion } from '../homeMotion';
-import { HomeSection, homeContentText } from './HomeSection';
+import { HomeSection, useHomeTheme } from './HomeSection';
 
 interface Statistic {
   id: number;
@@ -19,6 +19,7 @@ function parseNumericStat(value: string): { end: number; suffix: string } | null
 }
 
 export default function AtGlanceSection() {
+  const { text } = useHomeTheme();
   const [statistics, setStatistics] = useState<Statistic[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
   const valueRefs = useRef(new Map<number, HTMLSpanElement>());
@@ -111,14 +112,18 @@ export default function AtGlanceSection() {
   if (statistics.length === 0) return null;
 
   return (
-    <HomeSection id="glance" label="Driving Impact At Scale" title="Refex Footprint" headerAlign="center">
+    <HomeSection
+      id="glance"
+      title="Driving Impact At Scale"
+      headerAlign="center"
+    >
       <div ref={sectionRef} className="grid grid-cols-3 gap-3 sm:gap-6 lg:gap-12">
         {statistics.map((stat) => {
           const parsed = parseNumericStat(stat.value);
 
           return (
             <div key={stat.id} className="text-center px-0.5 sm:px-0">
-              <div className={homeContentText.statValue}>
+              <div className={text.statValue}>
                 {parsed ? (
                   <span
                     ref={(node) => {
@@ -132,7 +137,7 @@ export default function AtGlanceSection() {
                   stat.value
                 )}
               </div>
-              <div className={`uppercase tracking-[0.14em] text-[9px] sm:tracking-[0.18em] sm:text-[11px] ${homeContentText.bodySm}`}>
+              <div className={`uppercase tracking-[0.14em] text-[9px] sm:tracking-[0.18em] sm:text-[11px] ${text.bodySm}`}>
                 {stat.description || stat.title}
               </div>
             </div>

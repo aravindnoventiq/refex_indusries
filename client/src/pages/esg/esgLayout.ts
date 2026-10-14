@@ -7,10 +7,10 @@ export const esgSectionPad = 'py-8 sm:py-14 lg:py-20';
 export const esgScrollMargin = 'scroll-mt-[calc(var(--header-offset,5.25rem)+0.75rem)]';
 
 export const esgSectionTitle =
-  'text-[1.45rem] font-semibold tracking-tight text-[#1f1f1f] sm:text-[2.125rem]';
+  'text-[2.35rem] font-semibold tracking-tight text-[#1f1f1f] sm:text-[2.95rem] lg:text-[3.9rem]';
 
 export const esgSectionHeading =
-  'text-[1.45rem] font-bold uppercase tracking-[0.06em] text-[#2b2b2b] sm:text-4xl lg:text-[2.35rem]';
+  'text-[2.35rem] font-bold uppercase tracking-[0.06em] text-[#2b2b2b] sm:text-[2.85rem] lg:text-[3.9rem]';
 
 export const esgSectionSubtitle = 'text-base leading-relaxed text-[#484848]';
 

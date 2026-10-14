@@ -149,7 +149,6 @@ function ServicesSection() {
   return (
     <AshSectionShell
       id="services"
-      eyebrow="Capabilities"
       title="Our Services"
       headerAlign="center"
     >

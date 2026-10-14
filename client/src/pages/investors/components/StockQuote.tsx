@@ -254,7 +254,7 @@ export default function StockQuote() {
           <p className="text-center text-xs font-semibold uppercase tracking-[0.24em] text-[#4C8C2B]">
             Market Data
           </p>
-          <h2 className="mt-3 text-center font-serif text-3xl font-medium uppercase tracking-wide text-[#1f1f1f] sm:text-4xl">
+          <h2 className="mt-3 text-center font-serif text-4xl font-medium uppercase tracking-wide text-[#1f1f1f] sm:text-5xl">
             {currentSettings.title}
           </h2>
 

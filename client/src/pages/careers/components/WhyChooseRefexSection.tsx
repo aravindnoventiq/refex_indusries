@@ -173,7 +173,7 @@ export default function WhyChooseRefexSection({
         <div className="mx-auto max-w-3xl text-center">
           <h2
             id="why-choose-refex-title"
-            className="font-serif text-3xl font-medium text-[#1f1f1f] sm:text-4xl lg:text-[2.75rem]"
+            className="font-serif text-4xl font-medium text-[#1f1f1f] sm:text-5xl lg:text-[3.5rem]"
           >
             {title.includes('Refex') ? (
               <>

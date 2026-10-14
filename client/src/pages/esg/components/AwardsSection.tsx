@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Trophy } from 'lucide-react';
 import { esgCmsApi } from '../../../services/api';
 import { prefersReducedMotion } from '../../about-us/aboutGsap';
 import { esgContainer, esgScrollMargin, esgSectionPad } from '../esgLayout';
@@ -184,9 +183,6 @@ export default function AwardsSection() {
     >
       <div className={`relative z-10 ${esgContainer}`}>
         <EsgSectionHeader
-          badgeIcon={Trophy}
-          badgeLabel="Recognition"
-          accent="orange"
           title={displayHeader.title}
           titleId="awards-section-title"
           motionReady={motionReadyResolved}

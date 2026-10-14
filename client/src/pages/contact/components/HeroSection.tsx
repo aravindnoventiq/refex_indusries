@@ -12,9 +12,9 @@ interface ContactHero {
 
 const FALLBACK_HERO: ContactHero = {
   id: 1,
-  title: "Partnering with India's Thermal Ecosystem for Responsible Ash Utilization",
+  title: "Drop us a line, we'd love to hear from you.",
   description:
-    'Join us in creating a sustainable future through innovative circular economy solutions. Together, we can transform industrial by-products into valuable infrastructure resources.',
+    'Reach our registered office, corporate office, or write to us — the Refex team is here to help.',
   backgroundImage: CONTACT_HERO_BG,
   isActive: true,
 };
@@ -81,12 +81,9 @@ export default function HeroSection() {
       />
 
       <div className={`relative z-10 ${contactContainer} py-16 text-center sm:py-20`}>
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#7cd244] sm:text-sm">
-          Contact Us
-        </p>
         <h1
           id="contact-hero-title"
-          className="mx-auto max-w-4xl font-serif text-3xl font-medium leading-tight text-white sm:text-4xl md:text-5xl lg:text-[3.25rem]"
+          className="mx-auto max-w-4xl font-serif text-4xl font-medium leading-tight text-white sm:text-5xl md:text-6xl lg:text-[4rem]"
         >
           {hero.title}
         </h1>

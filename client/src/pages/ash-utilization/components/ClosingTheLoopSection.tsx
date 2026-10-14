@@ -138,12 +138,6 @@ function MobileLoopStepCard({ step }: { step: LoopStep }) {
       />
 
       <div className="relative z-10 flex gap-4 p-4 sm:p-5">
-        <span
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[11px] font-bold text-white"
-          style={{ backgroundColor: step.color }}
-        >
-          {step.step}
-        </span>
         <div className="min-w-0 flex-1">
           <div className="mb-2 flex items-center gap-2">
             <span
@@ -241,15 +235,8 @@ function LoopStepCard({
       />
 
       <div className="relative z-10 flex h-full flex-col p-3 sm:p-3.5">
-        <span
-          className="absolute left-3 top-3 flex h-6 w-6 items-center justify-center rounded-full text-[9px] font-bold text-white sm:left-3.5 sm:top-3.5 sm:h-7 sm:w-7 sm:text-[10px]"
-          style={{ backgroundColor: step.color }}
-        >
-          {step.step}
-        </span>
-
         <div
-          className={`flex flex-1 flex-col items-center justify-center px-1 pt-5 text-center transition-opacity duration-300 ${
+          className={`flex flex-1 flex-col items-center justify-center px-1 text-center transition-opacity duration-300 ${
             showDetails ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
           }`}
         >

@@ -2,7 +2,8 @@ import { resolveBusinessLink } from './businessNavLinks';
 
 /** Legacy ESG hash targets mapped to current section ids */
 const ESG_HASH_ALIASES: Record<string, string> = {
-  'refex-esg': 'esg-vision',
+  'sustainability-pillars': 'refex-esg',
+  'sustainable-well-being': 'programs',
 };
 
 /** Canonical footer targets — link labels unchanged, routes always correct */

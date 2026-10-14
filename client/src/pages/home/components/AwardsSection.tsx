@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { homeCmsApi } from '../../../services/api';
 import { prefersReducedMotion } from '../homeMotion';
-import { HomeSection, homeImageCard, homeContentText, getHomeImageUrl, HomeLoading, homeMobileSnapRow, homeMobileSnapItem, homeRevealCard, homeImageCardMobile } from './HomeSection';
+import { HomeSection, getHomeImageUrl, HomeLoading, homeMobileSnapRow, homeMobileSnapItem, homeRevealCard, useHomeTheme } from './HomeSection';
 
 interface Award {
   id: number;
@@ -104,13 +104,14 @@ export default function AwardsSection() {
     return () => observer.disconnect();
   }, [loading, awards.length]);
 
+  const { text, imageCard, imageCardMobile, hairline, awardImageBg } = useHomeTheme();
+
   if (loading) return <HomeLoading />;
   if (awards.length === 0) return null;
 
   return (
     <HomeSection
       id="awards"
-      label="Recognition"
       title="Awards & Accolades"
       subtitle="Recognized for quality, sustainability, and innovation across our businesses."
       compact
@@ -122,10 +123,10 @@ export default function AwardsSection() {
         {awards.map((award, index) => (
           <article
             key={award.id}
-            className={`${homeMobileSnapItem} ${homeImageCard} ${homeImageCardMobile} flex flex-col ${homeRevealCard(revealed)}`}
+            className={`${homeMobileSnapItem} ${imageCard} ${imageCardMobile} flex flex-col ${homeRevealCard(revealed)}`}
             style={{ transitionDelay: revealed ? `${index * 70}ms` : '0ms' }}
           >
-            <div className="flex h-28 items-center justify-center bg-black/30 p-3 sm:h-36 sm:p-4 lg:h-40">
+            <div className={`flex h-28 items-center justify-center p-3 sm:h-36 sm:p-4 lg:h-40 ${awardImageBg}`}>
               <img
                 src={getHomeImageUrl(award.image)}
                 alt={award.title}
@@ -133,8 +134,8 @@ export default function AwardsSection() {
                 loading="lazy"
               />
             </div>
-            <div className="flex min-h-[3.75rem] flex-1 items-start border-t border-white/10 p-2.5 sm:min-h-[5rem] sm:p-4">
-              <p className={`line-clamp-3 w-full text-center text-xs font-medium leading-snug ${homeContentText.bodySm}`}>
+            <div className={`flex min-h-[3.75rem] flex-1 items-start border-t p-2.5 sm:min-h-[5rem] sm:p-4 ${hairline}`}>
+              <p className={`line-clamp-3 w-full text-center text-xs font-medium leading-snug ${text.bodySm}`}>
                 {award.title}
               </p>
             </div>
