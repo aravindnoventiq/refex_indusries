@@ -75,7 +75,7 @@ const DEFAULT_FOOTER: FooterData = {
       title: 'Sustainability',
       links: [
         { name: 'Refex on ESG', href: '/esg#refex-esg' },
-        { name: 'ESG Policies', href: '/esg#esg-policies' },
+        { name: 'ESG Reports', href: '/esg#esg-reports' },
       ],
     },
     {
@@ -215,34 +215,20 @@ export default function Footer() {
     const sections = (src.sections?.length ? src.sections : DEFAULT_FOOTER.sections!).map(
       (section) => {
         if (section.title === 'About Us') {
-          const cmsLinks = (section.links || [])
-            .map(normalizeFooterLink)
-            .filter((link) => link.name.trim());
-          const links =
-            cmsLinks.length > 0
-              ? cmsLinks
-              : FOOTER_ABOUT_US_LINKS.map(normalizeFooterLink);
-          const hasDiversity = links.some((link) => /diversity/i.test(link.name));
-          if (!hasDiversity) {
-            links.push(
-              normalizeFooterLink({
-                name: 'Diversity & Inclusion',
-                href: 'https://www.refex.group/diversity-inclusion/',
-              }),
-            );
-          }
-          return { ...section, links };
+          const pageLinks = FOOTER_ABOUT_US_LINKS.filter(
+            (link) => !/^https?:/i.test(link.href),
+          ).map(normalizeFooterLink);
+          const groupLinks = FOOTER_ABOUT_US_LINKS.filter((link) =>
+            /^https?:/i.test(link.href),
+          ).map(normalizeFooterLink);
+          return { ...section, links: [...pageLinks, ...groupLinks] };
         }
         if (section.title === 'Business') {
-          const cmsLinks = (section.links || [])
-            .map(normalizeFooterLink)
-            .filter((link) => link.name.trim());
           return {
             ...section,
-            links:
-              cmsLinks.length > 0
-                ? cmsLinks
-                : [...BUSINESS_NAV_DROPDOWN].map(normalizeFooterLink),
+            links: [...BUSINESS_NAV_DROPDOWN]
+              .filter((link) => !/refrigerant/i.test(link.name))
+              .map(normalizeFooterLink),
           };
         }
         if (isInvestorsFooterSection(section.title)) {
@@ -259,10 +245,15 @@ export default function Footer() {
           };
         }
         if (section.title === 'Sustainability') {
-          return {
-            ...section,
-            links: mergeFooterSectionLinks(section.links, FOOTER_SUSTAINABILITY_LINKS),
-          };
+          const links = mergeFooterSectionLinks(section.links, FOOTER_SUSTAINABILITY_LINKS).filter(
+            (link) => !/polic/i.test(link.name),
+          );
+          if (!links.some((link) => /report/i.test(link.name))) {
+            links.push(
+              normalizeFooterLink({ name: 'ESG Reports', href: '/esg#esg-reports' }),
+            );
+          }
+          return { ...section, links };
         }
         return {
           ...section,

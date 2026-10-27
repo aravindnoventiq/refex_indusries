@@ -82,14 +82,14 @@ export default function NewsroomSection() {
         </a>
       }
     >
-      <div className={`${homeMobileSnapRow} sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6`}>
+      <div className={`${homeMobileSnapRow} sm:grid-cols-2 sm:gap-3 lg:grid-cols-4 lg:gap-4`}>
         {news.slice(0, 6).map((item) => (
           <a
             key={item.id}
             href={item.link}
             className={`${homeMobileSnapItem} ${imageCard} ${imageCardMobile} flex flex-col`}
           >
-            <div className="relative aspect-[5/3] overflow-hidden bg-black/40 sm:aspect-[16/10]">
+            <div className="relative aspect-[16/8] overflow-hidden bg-black/40 sm:aspect-[16/7]">
               <img
                 src={getHomeImageUrl(item.image)}
                 alt={item.title}
@@ -102,8 +102,8 @@ export default function NewsroomSection() {
                 </span>
               )}
             </div>
-            <div className={`flex flex-1 flex-col border-t p-3 sm:p-5 ${hairline}`}>
-              <h3 className={`line-clamp-2 text-[0.875rem] font-semibold leading-snug sm:line-clamp-3 sm:text-base ${newsTitle}`}>
+            <div className={`flex flex-1 flex-col border-t p-2.5 sm:p-3 ${hairline}`}>
+              <h3 className={`line-clamp-2 text-[0.8rem] font-semibold leading-snug sm:text-[0.8125rem] ${newsTitle}`}>
                 {item.title}
               </h3>
               <span className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#7cd244] sm:mt-3 sm:text-xs">

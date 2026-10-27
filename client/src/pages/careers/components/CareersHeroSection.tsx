@@ -48,7 +48,7 @@ export default function CareersHeroSection({
         ) : null}
         <HeadingTag
           id={id}
-          className="font-serif text-4xl font-medium leading-tight text-white sm:text-5xl md:text-6xl lg:text-[4.25rem]"
+          className="text-4xl font-medium leading-tight text-white sm:text-5xl md:text-6xl lg:text-[4.25rem]"
         >
           {title}
         </HeadingTag>

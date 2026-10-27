@@ -2,7 +2,7 @@
  * CMS DB migrate — idempotent, production-safe.
  *
  * Only applies the schema needed for the latest CMS work:
- *   - careers_page, legal_pages, product_pages
+ *   - careers_page, legal_pages, product_pages, ready_mix_page
  *   - about_presence.states_json
  *   - footer / leadership / investors CMS columns
  *   - users.user_type InvestorsCMS enum
@@ -99,6 +99,19 @@ const NEW_TABLES = [
         \`updated_at\` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         PRIMARY KEY (\`id\`),
         UNIQUE KEY \`product_pages_slug_unique\` (\`slug\`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+    `,
+  },
+  {
+    name: "ready_mix_page",
+    sql: `
+      CREATE TABLE IF NOT EXISTS \`ready_mix_page\` (
+        \`id\` INT NOT NULL AUTO_INCREMENT,
+        \`content_json\` LONGTEXT NOT NULL,
+        \`is_active\` TINYINT(1) NOT NULL DEFAULT 1,
+        \`created_at\` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        \`updated_at\` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        PRIMARY KEY (\`id\`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
     `,
   },

@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
@@ -490,11 +490,14 @@ html[data-theme="dark"] [class*="bg-\[\#ececec\]"] {
   background-color: #1a1a1a !important;
 }
 
-html[data-theme="dark"] [class*="bg-\[\#eef5e8\]"] {
+html[data-theme="dark"] [class*="bg-\[\#eef5e8\]"],
+html[data-theme="dark"] [class*="bg-\[\#eef5ea\]"],
+html[data-theme="dark"] [class*="bg-\[\#f7faf5\]"],
+html[data-theme="dark"] [class*="bg-\[\#fafcf8\]"] {
   background-color: #1a2218 !important;
 }
 
-html[data-theme="dark"] [class*="text-\[\#1f1f1f\]"]:not(header [class*="text-"]):not(footer [class*="text-"]):not(.preserve-dark-text [class*="text-"]) {
+html[data-theme="dark"] [class*="text-\[\#1f1f1f\]"]:not(header.header-dark [class*="text-"]):not(footer.footer-dark [class*="text-"]):not(.preserve-dark-text [class*="text-"]) {
   color: #f5f5f5 !important;
 }
 
@@ -623,19 +626,80 @@ html[data-theme="dark"] .theme-keep-light [class*="hover:bg-gray-100"]:hover {
 }
 
 /* Tailwind gray scale on light pages in dark site theme */
-html[data-theme="dark"] .site-page-light .text-gray-900,
-html[data-theme="dark"] .site-page-light .text-black {
+html[data-theme="dark"] .text-gray-900:not(header.header-dark *):not(footer.footer-dark *):not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *),
+html[data-theme="dark"] .text-black:not(header.header-dark *):not(footer.footer-dark *):not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *) {
   color: #f5f5f5 !important;
 }
 
-html[data-theme="dark"] .site-page-light .text-gray-800,
-html[data-theme="dark"] .site-page-light .text-gray-700 {
+html[data-theme="dark"] .text-gray-800:not(header.header-dark *):not(footer.footer-dark *):not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *),
+html[data-theme="dark"] .text-gray-700:not(header.header-dark *):not(footer.footer-dark *):not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *) {
   color: rgba(255, 255, 255, 0.82) !important;
 }
 
-html[data-theme="dark"] .site-page-light .text-gray-600,
-html[data-theme="dark"] .site-page-light .text-gray-500 {
-  color: rgba(255, 255, 255, 0.65) !important;
+html[data-theme="dark"] .text-gray-600:not(header.header-dark *):not(footer.footer-dark *):not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *),
+html[data-theme="dark"] .text-gray-500:not(header.header-dark *):not(footer.footer-dark *):not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *) {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+/* Inline colours from older sections. Match the color property only, not background-color. */
+html[data-theme="dark"] [style^="color: rgb(31, 31, 31)"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text):not(.preserve-dark-text *),
+html[data-theme="dark"] [style*="; color: rgb(31, 31, 31)"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text):not(.preserve-dark-text *),
+html[data-theme="dark"] [style^="color: #1f1f1f"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text):not(.preserve-dark-text *),
+html[data-theme="dark"] [style*="; color: #1f1f1f"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text):not(.preserve-dark-text *),
+html[data-theme="dark"] [style^="color:#1f1f1f"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text):not(.preserve-dark-text *),
+html[data-theme="dark"] [style*="; color:#1f1f1f"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text):not(.preserve-dark-text *) {
+  color: #f5f5f5 !important;
+}
+
+html[data-theme="dark"] [style^="color: rgb(72, 72, 72)"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *),
+html[data-theme="dark"] [style*="; color: rgb(72, 72, 72)"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *),
+html[data-theme="dark"] [style^="color: #484848"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *),
+html[data-theme="dark"] [style*="; color: #484848"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *) {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+html[data-theme="dark"] [style^="color: rgb(101, 101, 103)"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *),
+html[data-theme="dark"] [style*="; color: rgb(101, 101, 103)"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *),
+html[data-theme="dark"] [style^="color: #656567"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *),
+html[data-theme="dark"] [style*="; color: #656567"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *) {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+html[data-theme="dark"] [style^="color: rgb(45, 80, 22)"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *),
+html[data-theme="dark"] [style*="; color: rgb(45, 80, 22)"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *),
+html[data-theme="dark"] [style^="color: #2d5016"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *),
+html[data-theme="dark"] [style*="; color: #2d5016"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text *) {
+  color: #c6ef86 !important;
+}
+
+html[data-theme="dark"] [style*="background-color: rgb(243, 243, 243)"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text):not(.preserve-dark-text *),
+html[data-theme="dark"] [style*="background-color:#f3f3f3"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text):not(.preserve-dark-text *),
+html[data-theme="dark"] [style*="background-color: #f3f3f3"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text):not(.preserve-dark-text *),
+html[data-theme="dark"] [style*="background-color: rgb(255, 255, 255)"]:not(.theme-keep-light):not(.theme-keep-light *):not(.preserve-dark-text):not(.preserve-dark-text *) {
+  background-color: #111111 !important;
+}
+
+html[data-theme="dark"] .theme-keep-light .text-gray-900,
+html[data-theme="dark"] .theme-keep-light .text-gray-800,
+html[data-theme="dark"] .theme-keep-light .text-gray-700,
+html[data-theme="dark"] .theme-keep-light .text-gray-600,
+html[data-theme="dark"] .theme-keep-light .text-gray-500,
+html[data-theme="dark"] .theme-keep-light.text-gray-600,
+html[data-theme="dark"] .theme-keep-light.text-gray-700 {
+  color: #3a3a3a !important;
+}
+
+html.page-theme-light a.text-teal-600,
+html[data-theme="light"] a.text-teal-600 {
+  color: #0f766e;
+}
+
+html[data-theme="light"] [class*="text-\[\#4C8C2B\]"]:not(.preserve-dark-text):not(.preserve-dark-text *) {
+  color: #2d5016;
+}
+
+html[data-theme="light"] a[class*="text-\[\#7cd244\]"]:not(.preserve-dark-text):not(.preserve-dark-text *) {
+  color: #2d5016 !important;
 }
 
 html[data-theme="dark"] .site-page-light .bg-gray-50,
@@ -953,5 +1017,27 @@ html[data-theme="dark"] .esg-awards-nature-visual--hero .esg-awards-bird video {
     display: block;
     will-change: transform, opacity;
     backface-visibility: hidden;
+  }
+}
+
+@keyframes award-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.award-marquee-track {
+  animation: award-marquee 48s linear infinite;
+}
+
+.award-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .award-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100% !important;
+    justify-content: center;
   }
 }

@@ -28,7 +28,7 @@ export default function LifeAsRefexianSection({
           </p>
           <h2
             id="life-as-refexian-title"
-            className="font-serif text-4xl font-medium text-[#1f1f1f] sm:text-5xl lg:text-[3.5rem]"
+            className="text-4xl font-medium text-[#1f1f1f] sm:text-5xl lg:text-[3.5rem]"
           >
             {title.includes('#Refexian') ? (
               <>

@@ -345,7 +345,7 @@ export default function ContactForm() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#4C8C2B] sm:text-sm">
               Connect With Us
             </p>
-            <h2 className="font-serif text-3xl font-medium text-[#1f1f1f] sm:text-4xl lg:text-[2.75rem]">
+            <h2 className="text-3xl font-medium text-[#1f1f1f] sm:text-4xl lg:text-[2.75rem]">
               {formConfig.title.includes('Touch') ? (
                 <>
                   Get in <span className="text-[#2d5016]">Touch</span>

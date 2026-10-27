@@ -264,6 +264,14 @@ export const aboutCmsApi = {
 };
 
 // Ash Utilization CMS API
+export const readyMixCmsApi = {
+  get: () => apiRequest<any>('/api/cms/ready-mix'),
+  save: (content: any) => apiRequest('/api/cms/ready-mix', {
+    method: 'PUT',
+    body: JSON.stringify({ content }),
+  }),
+};
+
 export const ashUtilizationCmsApi = {
   // Hero
   getHero: () => apiRequest<any>('/api/cms/ash-utilization/hero'),

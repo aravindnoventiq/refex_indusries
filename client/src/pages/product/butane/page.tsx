@@ -58,7 +58,7 @@ function ButanePage() {
             <div className="mb-6">
               <button
                 onClick={() => setIsPackagingOpen(!isPackagingOpen)}
-                className="w-full bg-[#79bb42] text-white px-6 py-4 rounded-lg flex items-center justify-between hover:bg-[#6aa838] transition-colors"
+                className="w-full bg-[#2d5016] text-white px-6 py-4 rounded-lg flex items-center justify-between hover:bg-[#3d6b22] transition-colors"
               >
                 <span className="font-semibold">PACKAGING:</span>
                 <i className={`ri-arrow-${isPackagingOpen ? 'up' : 'down'}-s-line text-xl`}></i>

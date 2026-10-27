@@ -6,7 +6,7 @@ import { ABOUT_REVEAL_STAGGER_MS } from '../useAboutReveal';
 import AboutReveal from './AboutReveal';
 import { AboutSectionShell, AboutSpinner } from './AboutSectionShell';
 
-const MISSION_VISION_IMAGE = '/mission-vision-bg.png';
+const MISSION_VISION_IMAGE = '/mission-vision-visual.png';
 
 interface VisionMission {
   id?: number;

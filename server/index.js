@@ -95,6 +95,7 @@ app.use("/api/cms/home", require("./routes/home_cms"));
 app.use("/api/cms/about", require("./routes/about_cms"));
 app.use("/api/cms/capabilities", require("./routes/capabilities_cms"));
 app.use("/api/cms/ash-utilization", require("./routes/ash_utilization_cms"));
+app.use("/api/cms/ready-mix", require("./routes/ready_mix_cms"));
 app.use("/api/cms/green-mobility", require("./routes/green_mobility_cms"));
 app.use("/api/cms/venwind-refex", require("./routes/venwind_refex_cms"));
 app.use("/api/cms/refrigerant-gas", require("./routes/refrigerant_gas_cms"));

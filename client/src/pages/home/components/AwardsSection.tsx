@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { homeCmsApi } from '../../../services/api';
 import { prefersReducedMotion } from '../homeMotion';
-import { HomeSection, getHomeImageUrl, HomeLoading, homeMobileSnapRow, homeMobileSnapItem, homeRevealCard, useHomeTheme } from './HomeSection';
+import { HomeSection, getHomeImageUrl, HomeLoading, homeRevealCard, useHomeTheme } from './HomeSection';
 
 interface Award {
   id: number;
@@ -52,6 +52,13 @@ const fallbackAwards: Award[] = [
     title: 'Best Waste Management Solution Award',
     image: 'https://refex.co.in/wp-content/uploads/2025/02/waste-managemnet-award01.png',
     order: 6,
+    isActive: true,
+  },
+  {
+    id: 7,
+    title: 'ESG Excellence Award by ESG Grit Awards',
+    image: 'https://refex.co.in/wp-content/uploads/2025/02/esg-excellence-award01.png',
+    order: 7,
     isActive: true,
   },
 ];
@@ -109,6 +116,8 @@ export default function AwardsSection() {
   if (loading) return <HomeLoading />;
   if (awards.length === 0) return null;
 
+  const loop = [...awards, ...awards];
+
   return (
     <HomeSection
       id="awards"
@@ -116,31 +125,29 @@ export default function AwardsSection() {
       subtitle="Recognized for quality, sustainability, and innovation across our businesses."
       compact
     >
-      <div
-        ref={gridRef}
-        className={`${homeMobileSnapRow} sm:grid-cols-3 sm:gap-5 lg:grid-cols-4 lg:gap-6`}
-      >
-        {awards.map((award, index) => (
-          <article
-            key={award.id}
-            className={`${homeMobileSnapItem} ${imageCard} ${imageCardMobile} flex flex-col ${homeRevealCard(revealed)}`}
-            style={{ transitionDelay: revealed ? `${index * 70}ms` : '0ms' }}
-          >
-            <div className={`flex h-28 items-center justify-center p-3 sm:h-36 sm:p-4 lg:h-40 ${awardImageBg}`}>
-              <img
-                src={getHomeImageUrl(award.image)}
-                alt={award.title}
-                className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-            <div className={`flex min-h-[3.75rem] flex-1 items-start border-t p-2.5 sm:min-h-[5rem] sm:p-4 ${hairline}`}>
-              <p className={`line-clamp-3 w-full text-center text-xs font-medium leading-snug ${text.bodySm}`}>
-                {award.title}
-              </p>
-            </div>
-          </article>
-        ))}
+      <div ref={gridRef} className="relative overflow-hidden">
+        <div className={`award-marquee-track flex w-max gap-3 sm:gap-4 ${homeRevealCard(revealed)}`}>
+          {loop.map((award, index) => (
+            <article
+              key={`${award.id}-${index}`}
+              className={`${imageCard} ${imageCardMobile} flex w-[9.5rem] shrink-0 flex-col sm:w-[11rem]`}
+            >
+              <div className={`flex h-20 items-center justify-center p-2.5 sm:h-24 ${awardImageBg}`}>
+                <img
+                  src={getHomeImageUrl(award.image)}
+                  alt={award.title}
+                  className="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <div className={`flex min-h-[3.25rem] flex-1 items-start border-t p-2 ${hairline}`}>
+                <p className={`line-clamp-3 w-full text-center text-[11px] font-medium leading-snug ${text.bodySm}`}>
+                  {award.title}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </HomeSection>
   );

@@ -1034,7 +1034,7 @@ export default function StockChart() {
           {/* Main Price Chart */}
           <div 
             ref={priceChartRef}
-            className="relative bg-[#f5f5f5] cursor-crosshair"
+            className="theme-keep-light relative bg-[#f5f5f5] cursor-crosshair"
             style={{ height: `${priceChartHeight}px` }}
             onMouseMove={(e) => handleChartMouseMove(e, priceChartRef)}
             onMouseLeave={handleChartMouseLeave}
@@ -1225,7 +1225,7 @@ export default function StockChart() {
           {/* Volume Chart */}
           <div 
             ref={volumeChartRef}
-            className="relative bg-[#f5f5f5] border-t border-gray-300 cursor-crosshair"
+            className="theme-keep-light relative bg-[#f5f5f5] border-t border-gray-300 cursor-crosshair"
             style={{ height: `${volumeChartHeight}px` }}
             onMouseMove={(e) => handleChartMouseMove(e, volumeChartRef)}
             onMouseLeave={handleChartMouseLeave}

@@ -458,7 +458,7 @@ export default function HistoricalStockQuote() {
             <button 
               onClick={handleSearch}
               disabled={loading}
-              className="px-6 py-2 bg-[#7cd244] text-white rounded-md font-medium hover:bg-[#6db038] transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-6 py-2 bg-[#2d5016] text-white rounded-md font-medium hover:bg-[#3d6b22] transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Loading...' : 'Search'}
             </button>
@@ -470,7 +470,7 @@ export default function HistoricalStockQuote() {
               onClick={() => handleQuickFilter(1)}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
                 activeFilter === 1
-                  ? 'bg-[#7cd244] text-white hover:bg-[#6db038]'
+                  ? 'bg-[#2d5016] text-white hover:bg-[#3d6b22]'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
@@ -480,7 +480,7 @@ export default function HistoricalStockQuote() {
               onClick={() => handleQuickFilter(3)}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
                 activeFilter === 3
-                  ? 'bg-[#7cd244] text-white hover:bg-[#6db038]'
+                  ? 'bg-[#2d5016] text-white hover:bg-[#3d6b22]'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
@@ -490,7 +490,7 @@ export default function HistoricalStockQuote() {
               onClick={() => handleQuickFilter(6)}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
                 activeFilter === 6
-                  ? 'bg-[#7cd244] text-white hover:bg-[#6db038]'
+                  ? 'bg-[#2d5016] text-white hover:bg-[#3d6b22]'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
@@ -500,7 +500,7 @@ export default function HistoricalStockQuote() {
               onClick={() => handleQuickFilter(12)}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
                 activeFilter === 12
-                  ? 'bg-[#7cd244] text-white hover:bg-[#6db038]'
+                  ? 'bg-[#2d5016] text-white hover:bg-[#3d6b22]'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
@@ -606,7 +606,7 @@ export default function HistoricalStockQuote() {
                       onClick={() => setCurrentPage(pageNum)}
                       className={`px-3 py-1 rounded-md text-sm font-medium transition-colors cursor-pointer ${
                         currentPage === pageNum
-                          ? 'bg-[#7cd244] text-white'
+                          ? 'bg-[#2d5016] text-white'
                           : 'text-black bg-transparent hover:bg-gray-100'
                       }`}
                     >

@@ -88,7 +88,7 @@ function CopperTubesPage() {
               <div className="border border-gray-200 rounded-lg overflow-hidden">
                 <button
                   onClick={() => setIsPackagingOpen(!isPackagingOpen)}
-                  className="w-full px-6 py-4 text-left font-semibold text-white flex items-center justify-between bg-[#79bb42] hover:bg-[#6aa838] transition-colors whitespace-nowrap"
+                  className="w-full px-6 py-4 text-left font-semibold text-white flex items-center justify-between bg-[#2d5016] hover:bg-[#3d6b22] transition-colors whitespace-nowrap"
                 >
                   <span>PACKAGING:</span>
                   <i className={`ri-arrow-${isPackagingOpen ? 'up' : 'down'}-s-line text-xl`}></i>
@@ -136,7 +136,7 @@ function CopperTubesPage() {
           {/* Description */}
           <div className="mb-16">
             <div className="mb-4">
-              <span className="inline-block rounded-lg font-bold" style={{ backgroundColor: '#7dc144', color: '#ffffff', padding: '20px', fontSize: '16px' }}>Description</span>
+              <span className="inline-block rounded-lg font-bold" style={{ backgroundColor: '#2d5016', color: '#ffffff', padding: '20px', fontSize: '16px' }}>Description</span>
             </div>
             <div>
               <p className="leading-relaxed" style={{ fontSize: '16px', color: '#484848' }}>

@@ -31,6 +31,7 @@ async function main() {
         position: item.position,
         category: 'Leadership Team',
         image: item.image || null,
+        biography: item.biography || null,
         description: null,
         achievementsJson: null,
         experience: null,
@@ -44,6 +45,7 @@ async function main() {
       await row.update({
         position: item.position,
         image: item.image || null,
+        biography: item.biography || row.biography || null,
         order: item.order,
         isActive: !!item.isActive,
       });

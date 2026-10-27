@@ -24,7 +24,8 @@ interface AshUtilizationHero {
   isActive: boolean;
 }
 
-const HERO_VIDEO = '/ash-utilization/hero.mp4';
+const HERO_VIDEO = '/home/bg-07-tipper-ash.mp4';
+const HERO_POSTER = '/images/hero/ash-coal-night.png';
 
 const COLLAGE_VIDEOS = [
   '/ash-utilization/collage-1.mp4',
@@ -74,9 +75,11 @@ function buildVideoSet(slides: HeroSlide[]) {
 function AshVideo({
   src,
   eager = false,
+  poster,
 }: {
   src: string;
   eager?: boolean;
+  poster?: string;
 }) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -130,6 +133,7 @@ function AshVideo({
       <video
         ref={videoRef}
         src={src}
+        poster={poster}
         muted
         loop
         playsInline
@@ -147,15 +151,17 @@ function VideoPanel({
   panelRef,
   style,
   eager = false,
+  poster,
 }: {
   src: string;
   panelRef?: (el: HTMLDivElement | null) => void;
   style: CSSProperties;
   eager?: boolean;
+  poster?: string;
 }) {
   return (
     <div ref={panelRef} className="absolute top-0 h-full overflow-hidden" style={style}>
-      <AshVideo src={src} eager={eager} />
+      <AshVideo src={src} eager={eager} poster={poster} />
     </div>
   );
 }
@@ -209,9 +215,11 @@ function HeroContent({
 function VenwindScrollVideoCollage({
   videos,
   content,
+  poster,
 }: {
   videos: ReturnType<typeof buildVideoSet>;
   content: ReactNode;
+  poster?: string;
 }) {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const gridRef = useRef<HTMLDivElement | null>(null);
@@ -373,6 +381,7 @@ function VenwindScrollVideoCollage({
                 <VideoPanel
                   panelRef={panelSlot(3)}
                   src={videos.hero}
+                  poster={poster}
                   eager
                   style={{ ...panelWidth, left: '0%' }}
                 />
@@ -405,7 +414,7 @@ function VenwindScrollVideoCollage({
       <div className="md:hidden">
         <div className="relative min-h-[calc(100svh-var(--header-offset,4.25rem))]">
           <div className="absolute inset-0 overflow-hidden bg-[#050505]">
-            <AshVideo src={videos.hero} eager />
+            <AshVideo src={videos.hero} poster={poster} eager />
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#050505]/55 via-[#050505]/20 to-[#050505]/92"
@@ -485,7 +494,9 @@ function HeroSection() {
   const display = hero || FALLBACK_HERO;
   const title = display.title || FALLBACK_HERO.title;
   const subtitle = display.subtitle || FALLBACK_HERO.subtitle;
-  const videos = buildVideoSet(display.slides?.length ? display.slides : FALLBACK_HERO.slides);
+  const cmsHasVideo = (display.slides || []).some(slideVideoUrl);
+  const videos = buildVideoSet(cmsHasVideo ? display.slides : FALLBACK_HERO.slides);
+  const poster = cmsHasVideo ? undefined : HERO_POSTER;
 
   const titleParts = title.includes('Ash Transformation')
     ? {
@@ -515,6 +526,7 @@ function HeroSection() {
       ) : (
         <VenwindScrollVideoCollage
           videos={videos}
+          poster={poster}
           content={
             <>
               <div className="hidden md:block">{heroContent}</div>

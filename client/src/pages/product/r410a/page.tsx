@@ -97,7 +97,7 @@ function R410APage() {
               <div className="border border-gray-200 rounded-lg overflow-hidden">
                 <button
                   onClick={() => toggleAccordion('packaging')}
-                  className="w-full px-6 py-4 bg-[#79bb42] hover:bg-[#6aa838] text-white font-semibold text-left flex items-center justify-between cursor-pointer whitespace-nowrap transition-colors"
+                  className="w-full px-6 py-4 bg-[#2d5016] hover:bg-[#3d6b22] text-white font-semibold text-left flex items-center justify-between cursor-pointer whitespace-nowrap transition-colors"
                 >
                   <span>PACKAGING:</span>
                   <i className={`ri-arrow-${openAccordion === 'packaging' ? 'up' : 'down'}-s-line text-xl`}></i>
@@ -128,7 +128,7 @@ function R410APage() {
               <div className="border border-gray-200 rounded-lg overflow-hidden">
                 <button
                   onClick={() => toggleAccordion('properties')}
-                  className="w-full px-6 py-4 bg-[#79bb42] hover:bg-[#6aa838] text-white font-semibold text-left flex items-center justify-between cursor-pointer whitespace-nowrap transition-colors"
+                  className="w-full px-6 py-4 bg-[#2d5016] hover:bg-[#3d6b22] text-white font-semibold text-left flex items-center justify-between cursor-pointer whitespace-nowrap transition-colors"
                 >
                   <span>PROPERTIES</span>
                   <i className={`ri-arrow-${openAccordion === 'properties' ? 'up' : 'down'}-s-line text-xl`}></i>
@@ -185,7 +185,7 @@ function R410APage() {
         {/* Description */}
         <div className="mb-16">
           <div className="mb-4">
-            <span className="inline-block rounded-lg font-bold" style={{ backgroundColor: '#7dc144', color: '#ffffff', padding: '20px', fontSize: '16px' }}>Description</span>
+            <span className="inline-block rounded-lg font-bold" style={{ backgroundColor: '#2d5016', color: '#ffffff', padding: '20px', fontSize: '16px' }}>Description</span>
           </div>
           <div>
             <p className="leading-relaxed" style={{ fontSize: '16px', color: '#484848' }}>

@@ -5,6 +5,7 @@ import ProtectedRoute from '../components/ProtectedRoute';
 const HomePage = lazy(() => import('../pages/home/page'));
 const AboutUsPage = lazy(() => import('../pages/about-us/page'));
 const AshUtilizationPage = lazy(() => import('../pages/ash-utilization/page'));
+const ReadyMixConcretePage = lazy(() => import('../pages/ready-mix-concrete/page'));
 const GreenMobilityPage = lazy(() => import('../pages/green-mobility/page'));
 const VenwindRefexPage = lazy(() => import('../pages/venwind-refex/page'));
 // const RefrigerantGasPage = lazy(() => import('../pages/refrigerant-gas/page'));
@@ -61,6 +62,7 @@ const AdminDashboardPage = lazy(() => import('../pages/admin/dashboard/page'));
 const HomeCMSPage = lazy(() => import('../pages/admin/dashboard/home-cms/page'));
 const AboutCMSPage = lazy(() => import('../pages/admin/dashboard/about-cms/page'));
 const AshUtilizationCMSPage = lazy(() => import('../pages/admin/dashboard/ash-utilization-cms/page'));
+const ReadyMixCMSPage = lazy(() => import('../pages/admin/dashboard/ready-mix-cms/page'));
 const GreenMobilityCMSPage = lazy(() => import('../pages/admin/dashboard/green-mobility-cms/page'));
 const VenwindRefexCMSPage = lazy(() => import('../pages/admin/dashboard/venwind-refex-cms/page'));
 const EsgCMSPage = lazy(() => import('../pages/admin/dashboard/esg-cms/page'));
@@ -88,6 +90,10 @@ const routes: RouteObject[] = [
   {
     path: '/ash-utilization',
     element: <AshUtilizationPage />,
+  },
+  {
+    path: '/ready-mix-concrete',
+    element: <ReadyMixConcretePage />,
   },
   {
     path: '/green-mobility',
@@ -334,6 +340,14 @@ const routes: RouteObject[] = [
     element: (
       <ProtectedRoute>
         <AshUtilizationCMSPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/admin/dashboard/ready-mix-cms',
+    element: (
+      <ProtectedRoute>
+        <ReadyMixCMSPage />
       </ProtectedRoute>
     ),
   },

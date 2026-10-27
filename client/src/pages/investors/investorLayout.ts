@@ -22,7 +22,7 @@ export const investorSidebarCardClass =
   'overflow-hidden rounded-[1.25rem] border border-[#dfe7da] bg-white shadow-[0_8px_28px_rgba(45,80,22,0.06)]';
 
 export const investorSectionTitleClass =
-  'font-serif text-2xl font-semibold text-[#2d5016] sm:text-3xl lg:text-4xl';
+  'text-2xl font-semibold text-[#2d5016] sm:text-[1.75rem] lg:text-[2rem]';
 
 export const investorLinkClass = 'font-semibold text-[#2d5016] transition-colors hover:text-[#4C8C2B]';
 
@@ -37,7 +37,7 @@ export const investorInactiveNavClass =
 export const investorToggleActiveClass = 'bg-[#2d5016] text-white shadow-sm';
 
 export const investorToggleInactiveClass =
-  'bg-white text-[#2d5016] ring-1 ring-[#dfe7da] hover:bg-[#f3f7ef]';
+  'bg-white text-[#1f1f1f] ring-1 ring-[#dfe7da] hover:bg-[#f3f7ef]';
 
 export const investorSpinnerClass =
   'inline-block h-12 w-12 animate-spin rounded-full border-2 border-[#dfe7da] border-t-[#4C8C2B]';

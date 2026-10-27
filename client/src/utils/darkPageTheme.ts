@@ -71,8 +71,8 @@ export const darkPageText = {
     cardTitle:
       'font-bold tracking-[-0.015em] leading-snug text-[#1f1f1f] text-lg sm:text-xl lg:text-[1.35rem]',
     body: 'leading-relaxed text-[#484848] text-[0.9375rem] sm:text-base',
-    bodySm: 'leading-relaxed text-[#5a5a5a] text-sm sm:text-[0.9375rem]',
-    meta: 'font-mono text-[10px] uppercase tracking-[0.2em] text-[#6b7a63] sm:text-[11px]',
+    bodySm: 'leading-relaxed text-[#3a3a3a] text-sm sm:text-[0.9375rem]',
+    meta: 'font-mono text-[10px] uppercase tracking-[0.2em] text-[#2d5016] sm:text-[11px]',
     link: 'inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#2d5016] transition-all duration-300 hover:gap-3 hover:text-[#4C8C2B]',
   },
 } as const;

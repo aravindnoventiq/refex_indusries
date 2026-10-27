@@ -208,7 +208,7 @@ export default function TalentNetworkSection({
               {eyebrow}
             </div>
 
-            <h2 className="font-serif text-4xl leading-tight text-[#1f1f1f] sm:text-5xl lg:text-[3.5rem]">
+            <h2 className="text-4xl leading-tight text-[#1f1f1f] sm:text-5xl lg:text-[3.5rem]">
               {title}
             </h2>
 

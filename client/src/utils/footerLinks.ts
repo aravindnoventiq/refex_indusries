@@ -70,7 +70,7 @@ function resolveInvestorFooterSlug(href: string): string | null {
 
 export const FOOTER_SUSTAINABILITY_LINKS: Record<string, string> = {
   'Refex on ESG': '/esg#refex-esg',
-  'ESG Policies': '/esg#esg-policies',
+  'ESG Reports': '/esg#esg-reports',
 };
 
 export function resolveEsgSectionHash(hash: string): string {

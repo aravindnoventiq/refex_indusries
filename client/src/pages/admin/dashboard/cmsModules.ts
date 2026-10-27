@@ -64,6 +64,13 @@ export const CMS_MODULES: CmsModule[] = [
     group: 'business',
   },
   {
+    name: 'Ready Mix Concrete',
+    href: '/admin/dashboard/ready-mix-cms',
+    description: 'RMC page copy, banner, products, footprint, and news',
+    icon: 'ri-building-2-line',
+    group: 'business',
+  },
+  {
     name: 'Green Mobility',
     href: '/admin/dashboard/green-mobility-cms',
     description: 'Mobility page sections and services',
@@ -122,6 +129,7 @@ export const SITE_PAGES: { path: string; name: string; cms: string }[] = [
   { path: '/newsroom', name: 'Newsroom', cms: '/admin/dashboard/newsroom-cms' },
   { path: '/contact', name: 'Contact', cms: '/admin/dashboard/contact-cms' },
   { path: '/ash-utilization', name: 'Ash Utilization', cms: '/admin/dashboard/ash-utilization-cms' },
+  { path: '/ready-mix-concrete', name: 'Ready Mix Concrete', cms: '/admin/dashboard/ready-mix-cms' },
   { path: '/green-mobility', name: 'Green Mobility', cms: '/admin/dashboard/green-mobility-cms' },
   { path: '/venwind-refex', name: 'Venwind Refex', cms: '/admin/dashboard/venwind-refex-cms' },
   { path: '/investors', name: 'Investors', cms: '/admin/dashboard/investors-cms' },

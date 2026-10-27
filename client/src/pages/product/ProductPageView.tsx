@@ -141,7 +141,7 @@ export default function ProductPageView({ data }: { data: ProductPageData }) {
             <div className="mb-4">
               <span
                 className="inline-block rounded-lg font-bold"
-                style={{ backgroundColor: '#7dc144', color: '#ffffff', padding: '20px', fontSize: '16px' }}
+                style={{ backgroundColor: '#2d5016', color: '#ffffff', padding: '20px', fontSize: '16px' }}
               >
                 Description
               </span>
@@ -192,7 +192,7 @@ function Accordion({
       <button
         type="button"
         onClick={() => onToggle(isOpen ? null : id)}
-        className="flex w-full cursor-pointer items-center justify-between whitespace-nowrap bg-[#79bb42] px-6 py-4 text-left font-semibold text-white transition-colors hover:bg-[#6aa838]"
+        className="flex w-full cursor-pointer items-center justify-between whitespace-nowrap bg-[#2d5016] px-6 py-4 text-left font-semibold text-white transition-colors hover:bg-[#3d6b22]"
       >
         <span>{title}</span>
         <i className={`ri-arrow-${isOpen ? 'up' : 'down'}-s-line text-xl`} />

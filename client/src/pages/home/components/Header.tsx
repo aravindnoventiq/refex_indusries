@@ -12,7 +12,7 @@ import {
 } from '../../../utils/siteChromeTheme';
 import { goToAboutSection } from '../../about-us/goToAboutSection';
 import { ABOUT_US_NAV_DROPDOWN } from '../../about-us/aboutNavLinks';
-import { BUSINESS_NAV_DROPDOWN } from '../../../utils/businessNavLinks';
+import { BUSINESS_NAV_DROPDOWN, REFEX_GROUP_CAREERS_URL } from '../../../utils/businessNavLinks';
 
 interface NavigationItem {
   name: string;
@@ -73,7 +73,7 @@ const sanitizeNavigationItems = (items: NavigationItem[]): NavigationItem[] =>
 const POST_ESG_NAV_ITEMS: NavigationItem[] = [
   {
     name: 'Careers',
-    href: '/careers/',
+    href: REFEX_GROUP_CAREERS_URL,
     dropdown: [],
   },
 ];
@@ -137,7 +137,7 @@ const defaultNavItems: NavigationItem[] = [
   },
   {
     name: 'Careers',
-    href: '/careers/',
+    href: REFEX_GROUP_CAREERS_URL,
     dropdown: [],
   },
 ];
@@ -436,6 +436,12 @@ export default function Header() {
     }
     if (item.name === 'Business' || item.href === '#business') {
       return { ...item, dropdown: [...BUSINESS_NAV_DROPDOWN] };
+    }
+    if (
+      item.name.trim().toLowerCase() === 'careers' ||
+      item.href.replace(/\/$/, '').toLowerCase() === '/careers'
+    ) {
+      return { ...item, href: REFEX_GROUP_CAREERS_URL, dropdown: [] };
     }
     return item;
   });

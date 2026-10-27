@@ -13,14 +13,14 @@ interface OfficeAddress {
   isActive: boolean;
 }
 
-function DetailLine({ line }: { line: string }) {
+function DetailLine({ line, showPin = false }: { line: string; showPin?: boolean }) {
   const phoneMatch = line.match(/Phone:\s*(.+)/i);
   const emailMatch = line.match(/Email:\s*(.+)/i);
 
   if (phoneMatch) {
     const phone = phoneMatch[1].trim();
     return (
-      <li className="flex items-start gap-2 text-sm leading-relaxed text-[#484848] sm:text-[15px]">
+      <li className="flex items-start gap-2 text-sm leading-relaxed text-[#1f1f1f] sm:text-[15px]">
         <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#4C8C2B]" strokeWidth={2} aria-hidden />
         <a href={`tel:${phone.replace(/\s/g, '')}`} className="hover:text-[#2d5016]">
           {phone}
@@ -32,7 +32,7 @@ function DetailLine({ line }: { line: string }) {
   if (emailMatch) {
     const email = emailMatch[1].trim();
     return (
-      <li className="flex items-start gap-2 text-sm leading-relaxed text-[#484848] sm:text-[15px]">
+      <li className="flex items-start gap-2 text-sm leading-relaxed text-[#1f1f1f] sm:text-[15px]">
         <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#4C8C2B]" strokeWidth={2} aria-hidden />
         <a href={`mailto:${email}`} className="break-all hover:text-[#2d5016]">
           {email}
@@ -42,8 +42,12 @@ function DetailLine({ line }: { line: string }) {
   }
 
   return (
-    <li className="flex items-start gap-2 text-sm leading-relaxed text-[#484848] sm:text-[15px]">
-      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#4C8C2B]/80" strokeWidth={2} aria-hidden />
+    <li className="flex items-start gap-2 text-sm leading-relaxed text-[#1f1f1f] sm:text-[15px]">
+      {showPin ? (
+        <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#4C8C2B]" strokeWidth={2} aria-hidden />
+      ) : (
+        <span className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+      )}
       <span>{line}</span>
     </li>
   );
@@ -63,9 +67,15 @@ function OfficeCard({ office, featured }: { office: OfficeAddress; featured?: bo
 
       <div className={featured ? 'grid gap-6 p-5 sm:grid-cols-[1fr_minmax(0,200px)] sm:p-6' : 'p-5 sm:p-6'}>
         <ul className="space-y-2.5">
-          {office.details.map((detail) => (
-            <DetailLine key={detail} line={detail} />
-          ))}
+          {(() => {
+            let pinUsed = false;
+            return office.details.map((detail) => {
+              const isContact = /^(phone|email)\s*:/i.test(detail.trim());
+              const showPin = !isContact && !pinUsed;
+              if (showPin) pinUsed = true;
+              return <DetailLine key={detail} line={detail} showPin={showPin} />;
+            });
+          })()}
         </ul>
         {featured && office.image ? (
           <div className="overflow-hidden rounded-xl border border-[#e3ebe0]">
@@ -213,7 +223,7 @@ export default function OfficeAddresses() {
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
           <h2
             id="office-addresses-title"
-            className="font-serif text-3xl font-medium text-[#1f1f1f] sm:text-4xl lg:text-[3.1rem]"
+            className="text-3xl font-semibold text-[#1f1f1f] sm:text-4xl"
           >
             Office <span className="text-[#2d5016]">Addresses</span>
           </h2>

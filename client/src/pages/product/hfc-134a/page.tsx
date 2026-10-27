@@ -97,7 +97,7 @@ const HFC134APage = () => {
             <div className="mb-4">
               <button
                 onClick={() => toggleAccordion('packaging')}
-                className="w-full bg-[#79bb42] text-white px-6 py-4 rounded-lg flex items-center justify-between hover:bg-[#6aa838] transition-colors"
+                className="w-full bg-[#2d5016] text-white px-6 py-4 rounded-lg flex items-center justify-between hover:bg-[#3d6b22] transition-colors"
               >
                 <span className="font-semibold">PACKAGING:</span>
                 <i className={`ri-arrow-${activeAccordion === 'packaging' ? 'up' : 'down'}-s-line text-xl`}></i>
@@ -128,7 +128,7 @@ const HFC134APage = () => {
             <div className="mb-8">
               <button
                 onClick={() => toggleAccordion('properties')}
-                className="w-full bg-[#79bb42] text-white px-6 py-4 rounded-lg flex items-center justify-between hover:bg-[#6aa838] transition-colors"
+                className="w-full bg-[#2d5016] text-white px-6 py-4 rounded-lg flex items-center justify-between hover:bg-[#3d6b22] transition-colors"
               >
                 <span className="font-semibold">PROPERTIES</span>
                 <i className={`ri-arrow-${activeAccordion === 'properties' ? 'up' : 'down'}-s-line text-xl`}></i>
@@ -182,7 +182,7 @@ const HFC134APage = () => {
         {/* Description */}
         <div className="mb-16">
           <div className="mb-4">
-            <span className="inline-block rounded-lg font-bold" style={{ backgroundColor: '#7dc144', color: '#ffffff', padding: '20px', fontSize: '16px' }}>Description</span>
+            <span className="inline-block rounded-lg font-bold" style={{ backgroundColor: '#2d5016', color: '#ffffff', padding: '20px', fontSize: '16px' }}>Description</span>
           </div>
           <div>
             <p className="leading-relaxed" style={{ fontSize: '16px', color: '#484848' }}>

@@ -15,12 +15,20 @@ export const ABOUT_US_NAV_DROPDOWN = ABOUT_US_SECTIONS.map(({ name, href }) => (
   href,
 }));
 
-/** Footer About Us column — page sections plus external Diversity link. */
+/** Footer About Us column — page sections plus Refex Group links. */
 export const FOOTER_ABOUT_US_LINKS = [
   ...ABOUT_US_NAV_DROPDOWN,
   {
     name: 'Diversity & Inclusion',
     href: 'https://www.refex.group/diversity-inclusion/',
+  },
+  {
+    name: 'Gallery',
+    href: 'https://www.refex.group/gallery/',
+  },
+  {
+    name: 'Careers',
+    href: 'https://www.refex.group/careers/',
   },
 ];
 

@@ -74,6 +74,7 @@ function OurPresenceSection() {
     <AboutSectionShell
       id="our-presence"
       title={display.title}
+      subtitle={display.subtitle?.trim() || undefined}
     >
       <AboutReveal>
         <figure className={`relative overflow-visible px-5 pt-5 pb-4 sm:px-6 sm:pt-6 sm:pb-5 lg:px-7 lg:pt-7 lg:pb-5 ${imageCard}`}>

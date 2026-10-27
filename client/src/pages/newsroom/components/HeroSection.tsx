@@ -83,7 +83,7 @@ export default function HeroSection() {
         </p> */}
         <h1
           id="newsroom-hero-title"
-          className="mx-auto max-w-4xl font-serif text-4xl font-medium leading-tight text-white sm:text-5xl md:text-6xl lg:text-[4rem]"
+          className="mx-auto max-w-4xl text-4xl font-medium leading-tight text-white sm:text-5xl md:text-6xl lg:text-[4rem]"
         >
           {hero.title}
         </h1>

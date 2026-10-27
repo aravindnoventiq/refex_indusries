@@ -179,16 +179,15 @@ export default function RelatedLinks() {
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#4C8C2B]">
             Investor Centre
           </p>
-          <h2 className="mt-3 font-serif text-3xl font-medium text-[#1f1f1f] sm:text-4xl">
+          <h2 className="mt-3 text-2xl font-semibold text-[#1f1f1f] sm:text-3xl">
             {sectionTitle}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          {/* Left Sidebar - Links */}
-          <div className="lg:col-span-4">
-            <div className={`${investorCardClass} p-4 sm:p-6`}>
-              <nav className="divide-y divide-[#eef2ea]">
+          <div className="lg:col-span-7">
+            <div className={`${investorCardClass} p-4 sm:p-5`}>
+              <nav className="grid grid-cols-1 gap-x-6 sm:grid-cols-2">
                 {sortedLinks.map((link, index) => {
                   const linkPath = canonicalizeInvestorHref(link.href);
 
@@ -196,7 +195,7 @@ export default function RelatedLinks() {
                     <Link
                       key={link.id || link.href || index}
                       to={linkPath}
-                      className={`block px-3 py-3 text-base ${investorInactiveNavClass}`}
+                      className={`block border-b border-[#eef2ea] px-2 py-2.5 text-sm leading-snug ${investorInactiveNavClass}`}
                     >
                       {link.name}
                     </Link>
@@ -206,8 +205,7 @@ export default function RelatedLinks() {
             </div>
           </div>
 
-          {/* Right Content - Key Personnel */}
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-5">
             <div className="grid grid-cols-1 gap-6">
               {sortedPersonnel.map((person, index) => (
                 <div key={person.id || index} className={`${investorCardClass} p-6 sm:p-8`}>

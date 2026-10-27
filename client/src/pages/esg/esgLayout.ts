@@ -2,17 +2,17 @@
 export const esgContainer =
   'mx-auto w-full max-w-[90rem] px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12';
 
-export const esgSectionPad = 'py-8 sm:py-14 lg:py-20';
+export const esgSectionPad = 'py-8 sm:py-12 lg:py-14';
 
 export const esgScrollMargin = 'scroll-mt-[calc(var(--header-offset,5.25rem)+0.75rem)]';
 
 export const esgSectionTitle =
-  'text-[2.35rem] font-semibold tracking-tight text-[#1f1f1f] sm:text-[2.95rem] lg:text-[3.9rem]';
+  'text-[1.65rem] font-semibold tracking-tight text-[#1f1f1f] sm:text-[2rem] lg:text-[2.35rem]';
 
 export const esgSectionHeading =
-  'text-[2.35rem] font-bold uppercase tracking-[0.06em] text-[#2b2b2b] sm:text-[2.85rem] lg:text-[3.9rem]';
+  'text-[1.5rem] font-bold uppercase tracking-[0.04em] text-[#1f1f1f] sm:text-[1.85rem] lg:text-[2.15rem]';
 
-export const esgSectionSubtitle = 'text-base leading-relaxed text-[#484848]';
+export const esgSectionSubtitle = 'text-sm leading-relaxed text-[#3a3a3a] sm:text-base';
 
 export const esgBgWhite = 'bg-white';
 

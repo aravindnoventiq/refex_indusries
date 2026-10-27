@@ -65,7 +65,7 @@ function R290Page() {
             <div className="border-0">
               <button
                 onClick={() => toggleAccordion('packaging')}
-                className="w-full px-6 py-4 bg-[#79bb42] hover:bg-[#6aa838] text-white font-semibold text-left flex items-center justify-between cursor-pointer whitespace-nowrap rounded-md transition-colors"
+                className="w-full px-6 py-4 bg-[#2d5016] hover:bg-[#3d6b22] text-white font-semibold text-left flex items-center justify-between cursor-pointer whitespace-nowrap rounded-md transition-colors"
               >
                 <span className="text-base">PACKAGING:</span>
                 <i className={`ri-arrow-${openAccordion === 'packaging' ? 'up' : 'down'}-s-line text-2xl`}></i>
@@ -97,7 +97,7 @@ function R290Page() {
         {/* Description */}
         <div className="mb-16">
           <div className="mb-4">
-            <span className="inline-block rounded-lg font-bold" style={{ backgroundColor: '#7dc144', color: '#ffffff', padding: '20px', fontSize: '16px' }}>Description</span>
+            <span className="inline-block rounded-lg font-bold" style={{ backgroundColor: '#2d5016', color: '#ffffff', padding: '20px', fontSize: '16px' }}>Description</span>
           </div>
           <div>
             <div className="space-y-4 leading-relaxed">

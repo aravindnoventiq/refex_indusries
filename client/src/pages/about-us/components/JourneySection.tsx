@@ -176,17 +176,13 @@ function JourneySection() {
     );
   }
 
-  const summary = journey?.summary?.trim();
   const poster = journey?.image || FALLBACK_POSTER;
 
   return (
     <AboutSectionShell
       id="journey"
       title={journey?.title || 'Our Journey'}
-      subtitle={
-        summary ||
-        'Milestones that mark Refex’s growth from a focused enterprise to a diversified industrial group.'
-      }
+      subtitle={journey?.summary?.trim() || undefined}
     >
       <AboutReveal>
       <div className={`relative overflow-hidden ${imageCard}`}>

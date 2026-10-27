@@ -73,7 +73,7 @@ function HydrocarbonPage() {
             <div className="border border-gray-200 rounded-lg">
               <button
                 onClick={() => setIsPackagingOpen(!isPackagingOpen)}
-                className="w-full px-6 py-4 flex items-center justify-between bg-[#79bb42] text-white rounded-lg hover:bg-[#6aa838] transition-colors cursor-pointer"
+                className="w-full px-6 py-4 flex items-center justify-between bg-[#2d5016] text-white rounded-lg hover:bg-[#3d6b22] transition-colors cursor-pointer"
               >
                 <span className="font-semibold text-base">PACKAGING:</span>
                 <i className={`ri-arrow-${isPackagingOpen ? 'up' : 'down'}-s-line text-xl`}></i>

@@ -29,7 +29,9 @@ export function getHeaderNavLinkClass(theme: SiteTheme, active: boolean, isLongL
     : 'text-xs tracking-[0.12em] lg:text-[13px]';
 
   const color = active
-    ? 'text-[#7cd244]'
+    ? theme === 'dark'
+      ? 'text-[#7cd244]'
+      : 'text-[#2d5016]'
     : theme === 'dark'
       ? 'text-white/85 hover:text-white'
       : 'text-[#2d5016]/88 hover:text-[#2d5016]';
@@ -38,14 +40,14 @@ export function getHeaderNavLinkClass(theme: SiteTheme, active: boolean, isLongL
 }
 
 export function getHeaderMobileLinkClass(theme: SiteTheme, active: boolean) {
-  if (active) return 'text-[#7cd244]';
+  if (active) return theme === 'dark' ? 'text-[#7cd244]' : 'text-[#2d5016]';
   return theme === 'dark'
     ? 'text-white/90 hover:text-[#7cd244]'
-    : 'text-[#2d5016]/90 hover:text-[#7cd244]';
+    : 'text-[#2d5016]/90 hover:text-[#3d6b22]';
 }
 
 export function getHeaderMobileSubLinkClass(theme: SiteTheme) {
   return theme === 'dark'
     ? 'text-white/75 hover:text-[#7cd244]'
-    : 'text-[#484848] hover:text-[#7cd244]';
+    : 'text-[#3a3a3a] hover:text-[#2d5016]';
 }

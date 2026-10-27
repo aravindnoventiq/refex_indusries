@@ -96,7 +96,7 @@ export default function HeroSection({ title: propTitle, withHeaderOffset = true 
         </p> */}
         <h1
           id="investor-hero-title"
-          className="mx-auto max-w-4xl font-serif text-3xl font-medium leading-tight text-white sm:text-4xl md:text-5xl lg:text-[3.25rem]"
+          className="mx-auto max-w-4xl text-3xl font-medium leading-tight text-white sm:text-4xl md:text-5xl lg:text-[3.25rem]"
         >
           {displayTitle}
         </h1>

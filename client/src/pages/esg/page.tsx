@@ -11,10 +11,8 @@ import SustainabilityPillarsSection from './components/SustainabilityPillarsSect
 import SustainabilityVision2035Section from './components/SustainabilityVision2035Section';
 import SustainableWellBeingSection from './components/SustainableWellBeingSection';
 import SustainableDevelopmentGoalsIntroSection from './components/SustainableDevelopmentGoalsIntroSection';
-import ESGPoliciesSection from './components/ESGPoliciesSection';
 import ReportsSection from './components/ReportsSection';
 import UNSDGActionsSection from './components/UNSDGActionsSection';
-import AwardsSection from './components/AwardsSection';
 import CollaborationSection from './components/CollaborationSection';
 import GovernanceSection from './components/GovernanceSection';
 import HRSection from './components/HRSection';
@@ -69,14 +67,12 @@ export default function ESGPage() {
 
         <div className={esgSectionDivider} aria-hidden />
 
-        {/* Act 4 — Recognition & partners */}
-        <AwardsSection />
+        {/* Act 4 — Partners */}
         <CollaborationSection />
 
         <div className={esgSectionDivider} aria-hidden />
 
         {/* Act 5 — Documents & governance */}
-        <ESGPoliciesSection />
         <ReportsSection />
         <GovernanceSection />
         <HRSection />

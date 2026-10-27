@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { aboutCmsApi } from '../../../services/api';
-import { COMMITTEE_NAME_COLOR, FALLBACK_COMMITTEES } from '../aboutFallbacks';
+import { FALLBACK_COMMITTEES } from '../aboutFallbacks';
 import { useDarkPageTheme } from '../../../components/DarkPageThemeProvider';
 import { ABOUT_REVEAL_STAGGER_MS } from '../useAboutReveal';
 import AboutReveal from './AboutReveal';
@@ -46,8 +46,14 @@ function CommitteesSection() {
     fetchCommittees();
   }, []);
 
-  const { classes } = useDarkPageTheme();
-  const { text, imageCard, borderBottom, listDivide } = classes;
+  const { theme, classes } = useDarkPageTheme();
+  const { text } = classes;
+  const shell =
+    theme === 'light'
+      ? 'overflow-hidden rounded-xl border border-[#dfe9d8] bg-white'
+      : 'overflow-hidden rounded-xl border border-white/15 bg-white/[0.04]';
+  const rowBorder = theme === 'light' ? 'border-[#eef3ea]' : 'border-white/10';
+  const nameBar = theme === 'light' ? 'bg-[#f3f7ef] text-[#2d5016]' : 'bg-white/[0.06] text-[#7cd244]';
 
   if (loading) {
     return (
@@ -66,53 +72,35 @@ function CommitteesSection() {
       title="Composition of Committees"
       // subtitle="Board committees that guide audit, remuneration, stakeholder relations, and responsible governance."
     >
-      <div>
-        <div className="grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 lg:gap-6">
-          {displayCommittees.map((committee, index) => {
-            const activeMembers = (committee.members || [])
-              .filter((m) => m.isActive !== false)
-              .filter((m) => !/sachin\s+navtosh\s+jha/i.test(m.name))
-              .filter((m) => !/chief of staff/i.test(m.designation || ''))
-              .sort((a, b) => (a.order || 0) - (b.order || 0));
+      <div className={shell}>
+        {displayCommittees.map((committee, index) => {
+          const activeMembers = (committee.members || [])
+            .filter((m) => m.isActive !== false)
+            .filter((m) => !/sachin\s+navtosh\s+jha/i.test(m.name))
+            .filter((m) => !/chief of staff/i.test(m.designation || ''))
+            .sort((a, b) => (a.order || 0) - (b.order || 0));
 
-            return (
-              <AboutReveal key={committee.id || index} delay={index * ABOUT_REVEAL_STAGGER_MS}>
-              <article
-                className={`group relative flex h-full flex-col border-l-2 border-[#7cd244]/60 ${imageCard}`}
-              >
-                <header className={`px-5 py-4 pl-6 sm:px-6 sm:pl-7 ${borderBottom}`}>
-                  <h3
-                    className="font-bold tracking-[-0.015em] leading-snug text-lg sm:text-xl lg:text-[1.35rem]"
-                    style={{ color: COMMITTEE_NAME_COLOR }}
-                  >
-                    {committee.name}
-                  </h3>
-                </header>
-
-                <ul className={`flex flex-1 flex-col px-5 py-1 pl-6 sm:px-6 sm:pl-7 ${listDivide}`}>
-                  {activeMembers.map((member, idx) => {
-                    return (
-                      <li
-                        key={member.id || idx}
-                        className="py-3.5"
-                      >
-                        <div className="min-w-0">
-                          <p className={`text-sm sm:text-[15px] ${text.cardTitle}`}>
-                            {member.name}
-                          </p>
-                          <p className={`mt-0.5 text-xs sm:text-sm ${text.bodySm}`}>
-                            {member.designation}
-                          </p>
-                        </div>
-                      </li>
-                    );
-                  })}
+          return (
+            <AboutReveal key={committee.id || index} delay={index * ABOUT_REVEAL_STAGGER_MS}>
+              <section className={index > 0 ? `border-t ${rowBorder}` : ''}>
+                <h3 className={`px-4 py-2 text-sm font-semibold tracking-[-0.01em] sm:px-5 ${nameBar}`}>
+                  {committee.name}
+                </h3>
+                <ul>
+                  {activeMembers.map((member, idx) => (
+                    <li
+                      key={member.id || idx}
+                      className={`flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 border-t px-4 py-2 text-sm sm:flex-nowrap sm:px-5 ${rowBorder}`}
+                    >
+                      <span className={`font-medium ${text.cardTitle}`}>{member.name}</span>
+                      <span className={`text-xs sm:text-[13px] ${text.bodySm}`}>{member.designation}</span>
+                    </li>
+                  ))}
                 </ul>
-              </article>
-              </AboutReveal>
-            );
-          })}
-        </div>
+              </section>
+            </AboutReveal>
+          );
+        })}
       </div>
     </AboutSectionShell>
   );

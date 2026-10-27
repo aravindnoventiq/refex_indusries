@@ -87,11 +87,16 @@ function BoardMembersSection() {
   useEffect(() => {
     if (!selectedMember) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeModal();
+      if (e.key !== 'Escape') return;
+      if (showDirectorship) {
+        setShowDirectorship(false);
+        return;
+      }
+      closeModal();
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [selectedMember, closeModal]);
+  }, [selectedMember, showDirectorship, closeModal]);
 
   if (loading) {
     return (
@@ -130,7 +135,7 @@ function BoardMembersSection() {
             ×
           </button>
 
-          <div className="flex min-h-0 flex-1 flex-col overflow-hidden md:grid md:grid-cols-[minmax(220px,280px)_1fr] md:grid-rows-1">
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden md:grid md:grid-cols-[minmax(140px,180px)_1fr] md:grid-rows-1">
             {/* Photo column — compact on mobile, full height on desktop */}
             <div className="relative shrink-0 md:h-full md:min-h-0">
               <div className="aspect-[5/4] max-h-[36vh] w-full overflow-hidden sm:max-h-[40vh] md:aspect-auto md:h-full md:max-h-none">
@@ -180,13 +185,14 @@ function BoardMembersSection() {
                   </a>
                 )}
 
-                <div className={`mt-4 space-y-3 sm:mt-5 sm:space-y-4 sm:pt-5 md:mt-6 ${borderTop} ${text.body}`}>
-                  {(selectedMember.biography?.trim() || 'Biography will be updated soon.')
+                <div className={`mt-4 space-y-3 sm:mt-5 sm:pt-5 md:mt-6 ${borderTop} ${text.body}`}>
+                  {(selectedMember.biography?.trim() || 'Description to be updated.')
                     .split('\n')
+                    .map((line) => line.trim())
                     .filter(Boolean)
-                    .map((p, i) => (
-                      <p key={i} className="text-[0.9375rem] leading-[1.75] sm:text-base">
-                        {p}
+                    .map((line, index) => (
+                      <p key={index} className="text-[0.9375rem] leading-[1.75] sm:text-base">
+                        {line}
                       </p>
                     ))}
                 </div>
@@ -235,7 +241,7 @@ function BoardMembersSection() {
         id="board-members"
         title="Board Members"
       >
-        <div className="grid grid-cols-2 items-stretch gap-4 sm:grid-cols-3 md:grid-cols-4 lg:gap-6">
+        <div className="mx-auto grid max-w-5xl grid-cols-2 items-stretch gap-3 sm:grid-cols-3 md:grid-cols-4 lg:gap-4">
           {members.map((member, index) => (
             <AboutReveal key={member.id} delay={index * ABOUT_REVEAL_STAGGER_MS} className="h-full">
               <button
@@ -247,7 +253,7 @@ function BoardMembersSection() {
                 }}
               >
                 <div className={`flex h-full w-full flex-col ${imageCard}`}>
-                  <div className="relative aspect-[3/3.6] w-full shrink-0 overflow-hidden">
+                  <div className="relative aspect-square w-full shrink-0 overflow-hidden">
                     <img
                       src={resolveMediaUrl(member.image)}
                       alt={member.name}

@@ -17,6 +17,7 @@ interface AboutSectionShellProps {
   sectionPad?: string;
   headerMargin?: string;
   containerClass?: string;
+  titleClassName?: string;
 }
 
 /** About section shell — editorial React scroll reveal */
@@ -31,6 +32,7 @@ export function AboutSectionShell({
   sectionPad = aboutSectionPad,
   headerMargin = 'mb-5 sm:mb-7 lg:mb-9',
   containerClass = homeContainer,
+  titleClassName,
 }: AboutSectionShellProps) {
   const { classes } = useDarkPageTheme();
   const { text, accentRule } = classes;
@@ -47,7 +49,7 @@ export function AboutSectionShell({
               </AboutReveal>
             )}
             <AboutReveal delay={eyebrow ? 80 : 0}>
-              <h2 className={text.title}>{title}</h2>
+              <h2 className={titleClassName || text.title}>{title}</h2>
             </AboutReveal>
             <AboutReveal variant="rule" delay={160}>
               <div

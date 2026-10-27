@@ -64,14 +64,13 @@ function getHalfWidth(track: HTMLDivElement) {
 function ClientLogoMarquee({
   logos,
   direction = 1,
-  duration = 28,
+  duration = 56,
 }: {
   logos: string[];
   direction?: 1 | -1;
   duration?: number;
 }) {
-  const { theme, classes } = useDarkPageTheme();
-  const { imageCard } = classes;
+  const { theme } = useDarkPageTheme();
   const fadeLeft =
     theme === 'dark'
       ? 'bg-gradient-to-r from-[#050505] via-[#050505]/90 to-transparent'
@@ -180,13 +179,13 @@ function ClientLogoMarquee({
         {loopItems.map((client, index) => (
           <div
             key={`${client}-${index}`}
-            className={`flex h-28 w-44 shrink-0 items-center justify-center rounded-xl p-4 sm:h-32 sm:w-48 ${imageCard}`}
+            className="flex h-20 w-36 shrink-0 items-center justify-center bg-transparent p-2 sm:h-24 sm:w-40"
           >
             <img
               src={client}
               alt=""
               loading="lazy"
-              className="max-h-full max-w-full object-contain brightness-110 contrast-110"
+              className="max-h-full max-w-full object-contain"
               onError={(e) => {
                 (e.target as HTMLImageElement).style.opacity = '0.3';
               }}
@@ -257,13 +256,13 @@ function ClientsSection() {
   }
 
   const groups = [
-    { key: 'thermal' as const, clients: thermalClients, direction: 1 as const, duration: 32 },
-    { key: 'cement' as const, clients: cementClients, direction: -1 as const, duration: 28 },
+    { key: 'thermal' as const, clients: thermalClients, direction: 1 as const, duration: 64 },
+    { key: 'cement' as const, clients: cementClients, direction: -1 as const, duration: 58 },
     {
       key: 'concessionaires' as const,
       clients: concessionairesClients,
       direction: 1 as const,
-      duration: 26,
+      duration: 70,
     },
   ].filter((g) => g.clients.length > 0);
 

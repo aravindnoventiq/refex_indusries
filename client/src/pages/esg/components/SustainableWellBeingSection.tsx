@@ -1,4 +1,6 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { esgCmsApi } from '../../../services/api';
+import { getFullUrl } from '../esgUtils';
 import {
   Droplets,
   Heart,
@@ -153,30 +155,66 @@ function StewardshipCard({ topic }: { topic: WellBeingTopic }) {
 
           <p
             data-wellbeing-intro
-            className="mb-5 max-w-2xl text-[15px] leading-[1.75] text-[#4a4a4a]"
+            className="max-w-2xl text-sm leading-[1.7] text-[#1f1f1f] sm:text-[15px]"
           >
             {topic.intro}
           </p>
-
-          <div data-wellbeing-highlights-wrap className="space-y-4">
-            {topic.highlights.map((item) => (
-              <p
-                key={item.slice(0, 48)}
-                data-wellbeing-highlight
-                className="max-w-2xl text-[14px] leading-[1.7] text-[#3a3a3a]"
-              >
-                {item}
-              </p>
-            ))}
-          </div>
         </div>
       </div>
     </article>
   );
 }
 
+function plainParagraph(content?: string) {
+  const raw = String(content || '')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/p>/gi, '\n')
+    .replace(/<[^>]+>/g, ' ');
+  const first = raw
+    .split(/\n\s*\n/)
+    .map((part) => part.replace(/\s+/g, ' ').trim())
+    .find(Boolean);
+  return first || '';
+}
+
 export default function SustainableWellBeingSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const [topics, setTopics] = useState(TOPICS);
+
+  useEffect(() => {
+    let cancelled = false;
+    esgCmsApi
+      .getPrograms()
+      .then((programs) => {
+        if (cancelled || !Array.isArray(programs)) return;
+        const active = programs
+          .filter((program) => program && program.isActive !== false && plainParagraph(program.content))
+          .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+        if (!active.length) return;
+        setTopics(
+          active.map((program, index) => {
+            const fallback =
+              TOPICS.find((topic) => topic.title.toLowerCase() === String(program.title || '').toLowerCase()) ||
+              TOPICS[index % TOPICS.length];
+            return {
+              id: String(program.id ?? index),
+              title: program.title,
+              category: fallback.category,
+              accent: fallback.accent,
+              icon: fallback.icon,
+              image: getFullUrl(program.image) || fallback.image,
+              imageAlt: program.title || fallback.imageAlt,
+              intro: plainParagraph(program.content),
+              highlights: [],
+            };
+          }),
+        );
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
@@ -265,7 +303,7 @@ export default function SustainableWellBeingSection() {
     }, section);
 
     return () => ctx.revert();
-  }, []);
+  }, [topics]);
 
   return (
     <section
@@ -297,7 +335,7 @@ export default function SustainableWellBeingSection() {
         </header>
 
         <div className="space-y-8 sm:space-y-10 lg:space-y-12">
-          {TOPICS.map((topic) => (
+          {topics.map((topic) => (
             <StewardshipCard key={topic.id} topic={topic} />
           ))}
         </div>

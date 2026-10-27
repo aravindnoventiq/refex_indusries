@@ -214,6 +214,16 @@ export const FALLBACK_LEADERSHIP = [
     order: 16,
     isActive: true,
   },
+  {
+    id: 17,
+    name: 'Mr. Anil S. Kulkarni',
+    position: 'RMC Leadership',
+    image: '',
+    biography:
+      'Mr. Anil S. Kulkarni is a seasoned business leader with over 29 years of experience in the Ready-Mix Concrete, concrete and building materials industry, with extensive expertise in business operations, profit centre management, strategic growth, market expansion and operational excellence. He holds a B.E./B.Tech. in Civil Engineering and an MBA/PGDM in Marketing.',
+    order: 17,
+    isActive: true,
+  },
 ];
 
 export const COMMITTEE_NAME_COLOR = '#7cd144';

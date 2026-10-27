@@ -110,7 +110,7 @@ function R404AProductPage() {
               <div className="mb-4">
                 <button
                   onClick={() => toggleAccordion('packaging')}
-                  className="w-full bg-[#79bb42] text-white px-6 py-4 rounded-lg flex items-center justify-between hover:bg-[#6aa838] transition-colors"
+                  className="w-full bg-[#2d5016] text-white px-6 py-4 rounded-lg flex items-center justify-between hover:bg-[#3d6b22] transition-colors"
                 >
                   <span className="font-semibold">PACKAGING:</span>
                   <i className={`ri-arrow-${openAccordion === 'packaging' ? 'up' : 'down'}-s-line text-xl`}></i>
@@ -141,7 +141,7 @@ function R404AProductPage() {
               <div className="mb-8">
                 <button
                   onClick={() => toggleAccordion('properties')}
-                  className="w-full bg-[#79bb42] text-white px-6 py-4 rounded-lg flex items-center justify-between hover:bg-[#6aa838] transition-colors"
+                  className="w-full bg-[#2d5016] text-white px-6 py-4 rounded-lg flex items-center justify-between hover:bg-[#3d6b22] transition-colors"
                 >
                   <span className="font-semibold">PROPERTIES</span>
                   <i className={`ri-arrow-${openAccordion === 'properties' ? 'up' : 'down'}-s-line text-xl`}></i>
@@ -197,7 +197,7 @@ function R404AProductPage() {
           {/* Description */}
           <div className="mb-20">
             <div className="mb-4">
-              <span className="inline-block rounded-lg font-bold text-2xl" style={{ backgroundColor: '#7dc144', color: '#ffffff', padding: '20px' }}>Description</span>
+              <span className="inline-block rounded-lg font-bold text-2xl" style={{ backgroundColor: '#2d5016', color: '#ffffff', padding: '20px' }}>Description</span>
             </div>
             <div>
               <p className="leading-relaxed" style={{ fontSize: '16px', color: '#484848' }}>

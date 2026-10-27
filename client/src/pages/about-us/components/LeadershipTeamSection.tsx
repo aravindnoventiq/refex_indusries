@@ -18,6 +18,15 @@ interface Leader {
   isActive: boolean;
 }
 
+const ANIL_NAME = /anil\s+s\.?\s+kulkarni/i;
+
+function withAnilKulkarni(leaders: Leader[]): Leader[] {
+  if (leaders.some((leader) => ANIL_NAME.test(leader.name))) return leaders;
+  const anil = FALLBACK_LEADERSHIP.find((leader) => ANIL_NAME.test(leader.name));
+  if (!anil) return leaders;
+  return [...leaders, anil].sort((a, b) => (a.order || 0) - (b.order || 0));
+}
+
 function LeadershipTeamSection() {
   const [leaders, setLeaders] = useState<Leader[]>([]);
   const [loading, setLoading] = useState(true);
@@ -35,9 +44,9 @@ function LeadershipTeamSection() {
           .sort((a: Leader, b: Leader) => (a.order || 0) - (b.order || 0));
 
         // CMS is source of truth when any active leaders exist
-        setLeaders(activeLeaders.length > 0 ? activeLeaders : FALLBACK_LEADERSHIP);
+        setLeaders(withAnilKulkarni(activeLeaders.length > 0 ? activeLeaders : FALLBACK_LEADERSHIP));
       } catch {
-        setLeaders(FALLBACK_LEADERSHIP);
+        setLeaders(withAnilKulkarni(FALLBACK_LEADERSHIP));
       } finally {
         setLoading(false);
       }
@@ -53,8 +62,13 @@ function LeadershipTeamSection() {
     if (!selectedLeader) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedLeader(null);
+    };
+    window.addEventListener('keydown', onKey);
     return () => {
       document.body.style.overflow = prev;
+      window.removeEventListener('keydown', onKey);
     };
   }, [selectedLeader]);
 
@@ -66,7 +80,7 @@ function LeadershipTeamSection() {
     );
   }
 
-  const displayLeaders = leaders.length > 0 ? leaders : FALLBACK_LEADERSHIP;
+  const displayLeaders = withAnilKulkarni(leaders.length > 0 ? leaders : FALLBACK_LEADERSHIP);
 
   return (
     <AboutSectionShell
@@ -75,7 +89,7 @@ function LeadershipTeamSection() {
       title="Leadership Team"
       // subtitle="Operators and specialists driving execution across Refex’s businesses."
     >
-      <div className="grid grid-cols-2 items-stretch gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 lg:gap-5">
+      <div className="mx-auto grid max-w-5xl grid-cols-2 items-stretch gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 lg:gap-4">
         {displayLeaders.map((leader, index) => (
           <AboutReveal key={leader.id} delay={index * ABOUT_REVEAL_STAGGER_MS} className="h-full">
           <button
@@ -84,7 +98,7 @@ function LeadershipTeamSection() {
             onClick={() => setSelectedLeader(leader)}
           >
             <div className={`flex h-full w-full flex-col ${imageCard}`}>
-              <div className="relative aspect-[3/3.5] w-full shrink-0 overflow-hidden">
+              <div className="relative aspect-square w-full shrink-0 overflow-hidden">
                 <img
                   src={resolveMediaUrl(leader.image)}
                   alt={leader.name}
@@ -132,8 +146,8 @@ function LeadershipTeamSection() {
               ×
             </button>
 
-            <div className="grid max-h-[90vh] overflow-y-auto md:grid-cols-[240px_1fr] lg:grid-cols-[280px_1fr]">
-              <div className="relative min-h-[220px] bg-black/30 md:min-h-full">
+            <div className="grid max-h-[90vh] overflow-y-auto md:grid-cols-[150px_1fr]">
+              <div className="relative h-40 bg-black/30 md:h-auto md:max-h-[22rem]">
                 <img
                   src={resolveMediaUrl(selectedLeader.image)}
                   alt={selectedLeader.name}

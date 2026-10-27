@@ -5,7 +5,6 @@ import { AshSectionShell } from './AshSectionShell';
 
 interface PlatformColumn {
   id: string;
-  step: string;
   title: string;
   description: string;
   icon: string;
@@ -19,7 +18,6 @@ interface PlatformColumn {
 const PLATFORM_COLUMNS: PlatformColumn[] = [
   {
     id: 'plant-integration',
-    step: '01',
     title: 'Plant Integration',
     description:
       'Seamless integration with existing plant ash systems for efficient onsite operations.',
@@ -32,7 +30,6 @@ const PLATFORM_COLUMNS: PlatformColumn[] = [
   },
   {
     id: 'evacuation-infrastructure',
-    step: '02',
     title: 'Evacuation Infrastructure',
     description:
       'Dedicated fleet, bulkers, rail loading infrastructure, and high-volume evacuation capability.',
@@ -45,7 +42,6 @@ const PLATFORM_COLUMNS: PlatformColumn[] = [
   },
   {
     id: 'industrial-utilization-network',
-    step: '03',
     title: 'Industrial Utilization Network',
     description:
       'Strong partnerships across cement, infrastructure, mining, and construction sectors to maximize ash utilization.',
@@ -58,7 +54,6 @@ const PLATFORM_COLUMNS: PlatformColumn[] = [
   },
   {
     id: 'digital-operations-compliance',
-    step: '04',
     title: 'Digital Operations & Compliance',
     description:
       'Real-time GPS tracking, geofencing, fuel sensors, digital monitoring, automated reporting, and complete regulatory compliance.',

@@ -63,7 +63,7 @@ function getDefaultFooterData(): FooterData {
         title: 'Sustainability',
         links: [
           { name: 'Refex on ESG', href: '/esg/#refex-esg' },
-          { name: 'ESG Policies', href: '/esg/#esg-policies' },
+          { name: 'ESG Reports', href: '/esg/#esg-reports' },
         ],
       },
       {
